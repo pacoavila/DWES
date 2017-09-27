@@ -122,11 +122,19 @@ Error message and password prompt
 
 <li>$:/config/RelinkOnRename</li>
 
+<li>$:/config/WikiParserRules/Inline/wikilink</li>
+
 <li>$:/core</li>
+
+<li>$:/DefaultTiddlers</li>
 
 <li>$:/isEncrypted</li>
 
 <li>$:/SiteTitle</li>
+
+<li>$:/state/plugin-info-334910430-$:/core---1812962263</li>
+
+<li>$:/state/showeditpreview</li>
 
 <li>$:/state/sidebar</li>
 
@@ -146,7 +154,11 @@ Error message and password prompt
 
 <li>$:/StoryList</li>
 
+<li>$:/temp/advancedsearch</li>
+
 <li>$:/temp/info-plugin</li>
+
+<li>$:/temp/search</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -232,6 +244,9 @@ Error message and password prompt
 <div id="storeArea" style="display:none;">
 <div created="20170920175319294" modified="20170920175319294" title="$:/config/RelinkOnRename">
 <pre>yes</pre>
+</div>
+<div created="20170925111526307" modified="20170925111526307" title="$:/config/WikiParserRules/Inline/wikilink">
+<pre>disable</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.14">
 <pre>{
@@ -8430,26 +8445,35 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20170925111158910" modified="20170925111200245" title="$:/DefaultTiddlers">
+<pre>Contenidos</pre>
+</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
 <div created="20170920173849986" modified="20170920173849986" title="$:/SiteTitle">
 <pre>Características del lenguaje PHP</pre>
 </div>
-<div created="20170920175320671" modified="20170920183506312" title="$:/state/sidebar">
+<div created="20170925111514014" modified="20170925111514015" title="$:/state/plugin-info-334910430-$:/core---1812962263">
+<pre>contents</pre>
+</div>
+<div created="20170925111336136" modified="20170925142657525" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170920173643751" modified="20170920182205549" title="$:/state/tab/sidebar--1835078512">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20170920175320671" modified="20170925152000553" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
-<div created="20170920181845059" modified="20170920181845059" title="$:/state/toc/Contenidos-Anexos-1645261823">
+<div created="20170920173643751" modified="20170925111146456" title="$:/state/tab/sidebar--1835078512">
+<pre>$:/core/ui/SideBar/Recent</pre>
+</div>
+<div created="20170920181845059" modified="20170925121144389" title="$:/state/toc/Contenidos-Anexos-1645261823">
 <pre>open</pre>
 </div>
-<div created="20170920174356578" modified="20170920175942208" title="$:/state/toc/Contenidos-Elementos del lenguaje PHP-1645261823">
+<div created="20170920174356578" modified="20170926192929461" title="$:/state/toc/Contenidos-Elementos del lenguaje PHP-1645261823">
 <pre>close</pre>
 </div>
-<div created="20170920175410981" modified="20170920175943479" title="$:/state/toc/Contenidos-Estructuras de control-1645261823">
-<pre>close</pre>
+<div created="20170920175410981" modified="20170926192439249" title="$:/state/toc/Contenidos-Estructuras de control-1645261823">
+<pre>open</pre>
 </div>
 <div created="20170920181321955" modified="20170920181533990" title="$:/state/toc/Contenidos-Formularios web-1645261823">
 <pre>close</pre>
@@ -8460,8 +8484,11 @@ Error message and password prompt
 <div created="20170920180627850" modified="20170920181136378" title="$:/state/toc/Contenidos-Tipos de datos compuestos-1645261823">
 <pre>close</pre>
 </div>
-<div list="[[Solución propuesta VI]] Contenidos" title="$:/StoryList">
+<div list="Contenidos Condicionales [[Estructuras de control]]" title="$:/StoryList">
 <pre></pre>
+</div>
+<div created="20170925111501897" modified="20170925111507074" title="$:/temp/advancedsearch">
+<pre>camel</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -8476,7 +8503,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///home/gigante/Dropbox/2018/DWES/Temas/UT2.html&quot;
+            &quot;text&quot;: &quot;file:///home/terante/Dropbox/2018/DWES/Temas/DWES-UT2.html&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
@@ -8496,7 +8523,7 @@ Error message and password prompt
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/home/gigante/Dropbox/2018/DWES/Temas/UT2.html&quot;
+            &quot;text&quot;: &quot;/home/terante/Dropbox/2018/DWES/Temas/DWES-UT2.html&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -8508,6 +8535,9 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20170925111151364" modified="20170925111501897" title="$:/temp/search">
+<pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.14">
 <pre>{
@@ -8768,110 +8798,71 @@ while.
 do-while.
 </pre>
 </div>
-<div created="20170920174425684" modified="20170920174517715" orden="010200" tags="[[Elementos del lenguaje PHP]]" title="Cadenas de texto">
-<pre> En PHP las cadenas de texto pueden usar tanto comillas simples como comillas dobles. Sin embargo hay una diferencia importante entre usar unas u otras. Cuando se pone una variable dentro de unas comillas dobles, se procesa y se sustituye por su valor. Así, el ejemplo anterior sobre el uso de print también podía haberse puesto de la siguiente forma:
+<div created="20170920174425684" modified="20170925145937740" orden="010200" tags="[[Elementos del lenguaje PHP]]" title="Cadenas de texto">
+<pre> En PHP ''las cadenas de texto pueden usar tanto comillas simples como comillas dobles''. Sin embargo hay una diferencia importante entre usar unas u otras. Cuando se pone una variable dentro de unas comillas dobles, se procesa y se sustituye por su valor. Así, el ejemplo anterior sobre el uso de print también podía haberse puesto de la siguiente forma:
 
+```
 &lt;?php
-
-$modulo=&quot;DWES&quot;;
-
-print &quot;&lt;p&gt;Módulo: $modulo&lt;/p&gt;&quot;
-
+    $modulo=&quot;DWES&quot;;
+    print &quot;&lt;p&gt;Módulo: $modulo&lt;/p&gt;&quot;
 ?&gt;
+```
 
-La variable $modulo se reconoce dentro de las comillas dobles, y se sustituye por el valor &quot;DWES&quot; antes de generar la salida. Si esto mismo lo hubieras hecho utilizando comillas simples, no se realizaría sustitución alguna.
+La variable `$modulo` se reconoce dentro de las comillas dobles, y se sustituye por el valor `&quot;DWES&quot;` antes de generar la salida. Si esto mismo lo hubieras hecho utilizando comillas simples, no se realizaría sustitución alguna.
 
-Para que PHP distinga correctamente el texto que forma la cadena del nombre de la variable, a veces es necesario rodearla entre llaves.
+&lt;&lt;&lt;
+Para que PHP distinga correctamente el texto que forma la cadena del nombre de la variable, ''a veces es necesario rodearla entre llaves''.
 
+```
 print &quot;&lt;p&gt;Módulo: ${modulo}&lt;/p&gt;&quot;
+```
+&lt;&lt;&lt;
 
-Cuando se usan comillas simples, sólo se realizan dos sustituciones dentro de la cadena: cuando se encuentra la secuencia de caracteres \', se muestra en la salida una comilla simple; y cuando se encuentra la secuencia \\, se muestra en la salida una barra invertida.
+Cuando se usan ''comillas simples'', sólo se realizan ''dos sustituciones'' dentro de la cadena: cuando se encuentra la secuencia de caracteres `\'`, se muestra en la salida una comilla simple; y cuando se encuentra la secuencia `\\`, se muestra en la salida una barra invertida.
 
-Estas secuencias se conocen como secuencias de escape. En las cadenas que usan comillas dobles, además de la secuencia \\, se pueden usar algunas más, pero no la secuencia \'. En esta tabla puedes ver las secuencias de escape que se pueden utilizar, y cuál es su resultado.
+Estas secuencias se conocen como ''secuencias de escape''. En las cadenas que usan comillas dobles, además de la secuencia `\\`, se pueden usar algunas más, pero no la secuencia `\'`. En esta tabla puedes ver las secuencias de escape que se pueden utilizar, y cuál es su resultado.
 Secuencias de escape.
 
-Secuencia
-	
+|!Secuencia|!Resultado|
+|\\|se muestra una barra invertida.|
+|\'|se muestra una comilla simple.|
+|\&quot;|se muestra una comilla doble.|
+|\n|se muestra un avance de línea (LF o 0x0A (10) en ASCII).|
+|\r|se muestra un retorno de carro (CR o 0x0D (13) en ASCII).|
+|\t|se muestra un tabulador horizontal (HT o 0x09 (9) en ASCII).|
+|\v|se muestra un tabulador vertical (VT o 0x0B (11) en ASCII).|
+|\f|se muestra un avance de página (FF o 0x0C (12) en ASCII).|
+|\$|se muestra un signo del dólar.|
 
-Resultado
+En PHP tienes ''dos operadores'' exclusivos para trabajar con ''cadenas de texto''. Con el operador de ''concatenación punto (`.`)'' puedes unir las dos cadenas de texto que le pases como operandos. ''El operador de asignación y concatenación'' (`.=`) concatena al argumento del lado izquierdo la cadena del lado derecho.
 
-\\
-	
-
-se muestra una barra invertida.
-
-\'
-	
-
-se muestra una comilla simple.
-
-\&quot;
-	
-
-se muestra una comilla doble.
-  	
-
-se muestra un avance de línea (LF o 0x0A (10) en ASCII).
-
-\r
-	
-
-se muestra un retorno de carro (CR o 0x0D (13) en ASCII).
-  	
-
-se muestra un tabulador horizontal (HT o 0x09 (9) en ASCII).
-
-\v
-	
-
-se muestra un tabulador vertical (VT o 0x0B (11) en ASCII).
-
-\f
-	
-
-se muestra un avance de página (FF o 0x0C (12) en ASCII).
-
-\$
-	
-
-se muestra un signo del dólar.
-
-En PHP tienes dos operadores exclusivos para trabajar con cadenas de texto. Con el operador de concatenación punto (.) puedes unir las dos cadenas de texto que le pases como operandos. El operador de asignación y concatenación (.=) concatena al argumento del lado izquierdo la cadena del lado derecho.
-
+```
 &lt;?php
-
-$a = &quot;Módulo &quot;;
-
-$b = $a . &quot;DWES&quot;; // ahora $b contiene &quot;Módulo DWES&quot;
-
-$a .= &quot;DWES&quot;; // ahora $a también contiene &quot;Módulo DWES&quot;
-
+    $a = &quot;Módulo &quot;;
+    $b = $a . &quot;DWES&quot;; // ahora $b contiene &quot;Módulo DWES&quot;
+   $a .= &quot;DWES&quot;; // ahora $a también contiene &quot;Módulo DWES&quot;
 ?&gt; 
+```
 
-En PHP tienes otra alternativa para crear cadenas: la sintaxis heredoc. Consiste en poner el operador &lt;&lt;&lt; seguido de un identificador de tu elección, y a continuación y empezando en la línea siguiente la cadena de texto, sin utilizar comillas. La cadena finaliza cuando escribes ese mismo identificador en una nueva línea. Esta línea de cierre no debe llevar más caracteres, ni siquiera espacios o sangría, salvo quizás un punto y coma después del identificador.
+En PHP tienes otra alternativa para crear cadenas: la sintaxis ''heredoc.'' Consiste en ''poner el operador'' `&lt;&lt;&lt;` seguido de un identificador de tu elección, y a continuación y empezando ''en la línea siguiente'' la cadena de texto, ''sin utilizar comillas''. La cadena ''finaliza'' cuando escribes ese mismo identificador en una ''nueva línea.'' Esta línea de cierre no debe llevar más caracteres, ni siquiera espacios o sangría, salvo quizás un punto y coma después del identificador.
 
+```
 &lt;?php
-
-   $a = &lt;&lt;&lt;MICADENA
-
+    $a = &lt;&lt;&lt;MICADENA
 Desarrollo de Aplicaciones Web&lt;br /&gt;
-
 Desarrollo Web en Entorno Servidor
-
 MICADENA;
-
-   print $a;
-
+    print $a;
 ?&gt; 
+```
 
-El texto se procesa de igual forma que si fuera una cadena entre comillas dobles, sustituyendo variables y secuencias de escape. Si no quisieras que se realizara ninguna sustitución, debes poner el identificador de apertura entre comillas simples.
+El texto se procesa de igual forma que si fuera una cadena entre comillas dobles, ''sustituyendo variables y secuencias de escape.'' Si ''no'' quisieras que se realizara ninguna ''sustitución,'' debes poner el identificador de apertura entre ''comillas simples.''
 
+```
 $a = &lt;&lt;&lt;'MICADENA'
-
 ... 
-
 MICADENA; 
-
+```
 </pre>
 </div>
 <div created="20170920182812402" modified="20170920183433049" orden="060700" tags="Anexos" title="Código de ''procesa.php''">
@@ -8924,75 +8915,57 @@ http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 &lt;/html&gt;
 ```</pre>
 </div>
-<div created="20170920175156014" modified="20170920175400721" orden="020100" tags="[[Estructuras de control]]" title="Condicionales">
-<pre>
+<div created="20170920175156014" modified="20170927001756499" orden="020100" tags="[[Estructuras de control]]" title="Condicionales">
+<pre>''if / elseif / else''. La sentencia `if` permite definir una ''expresión'' para ejecutar o no la sentencia o conjunto de sentencias siguiente. Si la expresión se evalúa a true (verdadero), la sentencia se ejecuta. Si se evalúa a false (falso), no se ejecutará.
 
-Signo de interrogación, rodeado por un círculo.
+Cuando el resultado de la expresión sea false, puedes utilizar `else` para indicar una sentencia o grupo de sentencias a ejecutar en ese caso. Otra alternativa a else es utilizar `elseif` y escribir una nueva expresión que comenzará un nuevo condicional.
 
-if / elseif / else. La sentencia if permite definir una expresión para ejecutar o no la sentencia o conjunto de sentencias siguiente. Si la expresión se evalúa a true (verdadero), la sentencia se ejecuta. Si se evalúa a false (falso), no se ejecutará.
-
-Cuando el resultado de la expresión sea false, puedes utilizar else para indicar una sentencia o grupo de sentencias a ejecutar en ese caso. Otra alternativa a else es utilizar elseif y escribir una nueva expresión que comenzará un nuevo condicional.
-
+```
 &lt;?php
-
-if ($a &lt; $b)
-
-print &quot;a es menor que b&quot;;
-
-elseif ($a &gt; $b)
-
-print &quot;a es mayor que b&quot;;
-
-else
-
-print &quot;a es igual a b&quot;;
-
+    if ($a &lt; $b)
+        print &quot;a es menor que b&quot;;
+    elseif ($a &gt; $b)
+        print &quot;a es mayor que b&quot;;
+    else
+        print &quot;a es igual a b&quot;;
 ?&gt;
+```
+Cuando, como sucede en el ejemplo, la sentencia if elseif o else actúe sobre una única sentencia, ''no será necesario usar llaves''. Tendrás que usar llaves para formar un conjunto de sentencias siempre que quieras que el condicional actúe sobre más de una sentencia.
 
-Cuando, como sucede en el ejemplo, la sentencia if elseif o else actúe sobre una única sentencia, no será necesario usar llaves. Tendrás que usar llaves para formar un conjunto de sentencias siempre que quieras que el condicional actúe sobre más de una sentencia.
+''switch''. La sentencia switch es similar a enlazar varias sentencias if comparando una misma variable con diferentes valores. Cada valor va en una sentencia case. Cuando se encuentra una coincidencia, comienzan a ejecutarse las sentencias siguientes hasta que acaba el bloque switch, o hasta que se encuentra una sentencia break. Si no existe coincidencia con el valor de ningún case, se ejecutan las sentencias del bloque default, en caso de que exista.
 
-switch. La sentencia switch es similar a enlazar varias sentencias if comparando una misma variable con diferentes valores. Cada valor va en una sentencia case. Cuando se encuentra una coincidencia, comienzan a ejecutarse las sentencias siguientes hasta que acaba el bloque switch, o hasta que se encuentra una sentencia break. Si no existe coincidencia con el valor de ningún case, se ejecutan las sentencias del bloque default, en caso de que exista.
-
+```
 &lt;?php
-
-switch ($a) {
-
-case 0:
-
-print &quot;a vale 0&quot;;
-
-break;
-
-case 1:
-
-print &quot;a vale 1&quot;;
-
-break;
-
-default:
-
-print &quot;a no vale 0 ni 1&quot;;
-
-}
-
+    switch ($a) {
+        case 0:
+            print &quot;a vale 0&quot;;
+            break;
+        case 1:
+            print &quot;a vale 1&quot;;
+            break;
+        default:
+            print &quot;a no vale 0 ni 1&quot;;
+   }
 ?&gt;
-
-Ejercicio resuelto
+```
+&lt;&lt;&lt;
+!!Ejercicio resuelto
 
 Haz una página web que muestre la fecha actual en castellano, incluyendo el día de la semana, con un formato similar al siguiente: &quot;Miércoles, 13 de Abril de 2011&quot;.
-Autoevaluación
+
+Solución: [[Anexo II]]
+&lt;&lt;&lt;
+&lt;&lt;&lt;
+!!Autoevaluación
 
 ¿Siempre se puede sustituir una sentencia switch por otra sentencia o sentencias if?
-No.
-Sí.
-</pre>
+&lt;&lt;&lt;</pre>
 </div>
 <div created="20170920174340411" modified="20170920183311491" tags="" title="Contenidos">
 <pre>&lt;&lt;toc-selective-expandable Contenidos sort[orden]&gt;&gt;</pre>
 </div>
 <div created="20170920180033618" modified="20170920180129937" orden="030200" tags="Funciones" title="Ejecución y creación de funciones. Calculadora.">
-<pre>
-3.2.- Ejecución y creación de funciones.
+<pre>3.2.- Ejecución y creación de funciones.
 Calculadora.
 
 Ya sabes que para hacer una llamada a una función, basta con poner su nombre y unos paréntesis.
@@ -9142,82 +9115,57 @@ http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 ```
 </pre>
 </div>
-<div created="20170920173854100" modified="20170920174020459" orden="010000" tags="Contenidos" title="Elementos del lenguaje PHP">
-<pre>
+<div created="20170920173854100" modified="20170925120847635" orden="010000" tags="Contenidos" title="Elementos del lenguaje PHP">
+<pre>@@float: right;margin: 10px;
+[img[https://vignette.wikia.nocookie.net/es.futurama/images/5/51/Templo4.jpg/revision/latest?cb=20131006175806]]
+@@
 
 En la unidad anterior, aprendiste a preparar un entorno para programar en PHP. Además también viste algunos de los elementos que se usan en el lenguaje, como las variables y tipos de datos, comentarios, operadores y expresiones.
 
-También sabes ya cómo se integran las etiquetas HTML con el código del lenguaje, utilizando los delimitadores &lt;?php y ?&gt;.
+También sabes ya cómo se integran las etiquetas HTML con el código del lenguaje, utilizando los delimitadores `&lt;?php` y `?&gt;`.
 
-En esta unidad aprenderás a utilizar otros elementos del lenguaje que te permitan crear programas completos en PHP. Los programas escritos en PHP, además de encontrarse estructurados normalmente en varias páginas (ya veremos más adelante cómo se pueden comunicar datos de unas páginas a otras), suelen incluir en una misma página varios bloques de código. Cada bloque de código debe ir entre delimitadores, y en caso de que genere alguna salida, ésta se introduce en el código HTML en el mismo punto en el que figuran las instrucciones en PHP.
+En esta unidad aprenderás a ''utilizar otros elementos del lenguaje ''que te permitan crear programas completos en PHP. Los programas escritos en PHP, además de encontrarse estructurados normalmente en ''varias páginas'' (ya veremos más adelante cómo se pueden comunicar datos de unas páginas a otras), suelen incluir en una misma página ''varios bloques de código.'' Cada bloque de código debe ir entre delimitadores, y ''en caso de que genere alguna salida, ésta se introduce en el código HTML en el mismo punto en el que figuran las instrucciones en PHP''.
 
 Por ejemplo, en las siguientes líneas tenemos dos bloques de código en PHP:
 
+```
 &lt;body&gt;
+    &lt;?php $a=1; ?&gt;
+    &lt;p&gt;Página de prueba&lt;/p&gt;
+    &lt;?php $b=$a; ?&gt;
+    …
+```
+Aunque no se utilice el valor de las variables, en el segundo bloque de código la variable `$a` mantiene el valor `1` que se le ha asignado anteriormente.
 
-&lt;?php $a=1; ?&gt;
+En esta unidad empezarás a ''crear tus propios programas en PHP.'' Para ello vas a usar ''Atom'', que instalaste anteriormente. Deberías organizar tus programas en ''proyectos'', y almacenarlos en una estructura en árbol, colgando todos por ejemplo de `/home/usuario/DWES`.
 
-&lt;p&gt;Página de prueba&lt;/p&gt;
+Tienes que hacer que el servidor web ''Apache'' pueda acceder a la ruta anterior en la que vas a almacenar tus proyectos. Esto puedes hacerlo, por ejemplo, creando un enlace simbólico en la raíz del servidor web (`/var/www`):
 
-&lt;?php $b=$a; ?&gt;
-
-…
-
- 
-
-Aunque no se utilice el valor de las variables, en el segundo bloque de código la variable $a mantiene el valor 1 que se le ha asignado anteriormente.
-
-En esta unidad empezarás a crear tus propios programas en PHP. Para ello vas a usar el IDE NetBeans, que instalaste anteriormente. Deberías organizar tus programas en proyectos, y almacenarlos en una estructura en árbol, colgando todos por ejemplo de /home/usuario/NetBeansProjectos/DWES. Para crear un proyecto nuevo vete a Archivo – Proyecto Nuevo y selecciona PHP Application.
-
-En la siguiente pantalla de configuración del proyecto, debes indicar la ruta que se usará para acceder al mismo desde un navegador. Es decir, tienes que hacer que el servidor web Apache pueda acceder a la ruta anterior en la que vas a almacenar tus proyectos. Esto puedes hacerlo, por ejemplo, creando un enlace simbólico en la raíz del servidor web (/var/www):
-
-sudo ln –s /home/usuario/NetBeansProjects/DWES/ DWES
-
- 
-
-De esta forma, si creas un proyecto nuevo en la ruta /home/usuario/NetBeansProjectos/DWES/Proyecto1, la URL que tendrás que poner en la siguiente pantalla de configuración será http://localhost/DWES/Proyecto1.
-
-Captura de pantalla de la opción nuevo proyecto de la aplicación NetBeans. Aparecen los siguientes valores para configurar: &quot;Run As&quot; y &quot;Project URL&quot;.
-</pre>
+```
+sudo ln –s /home/usuario/DWES/ DWES
+```
+De esta forma, si creas un proyecto nuevo en la ruta `/home/usuario/DWES/Proyecto1`, la URL que tendrás que poner en tu navegador `http://localhost/DWES/Proyecto1.`</pre>
 </div>
-<div created="20170920175004670" modified="20170920175325222" orden="020000" tags="Contenidos" title="Estructuras de control">
-<pre>
+<div created="20170920175004670" modified="20170926192915249" orden="020000" tags="Contenidos" title="Estructuras de control">
+<pre>''En PHP, los scripts se construyen en base a sentencias''. Utilizando llaves, puedes agrupar las sentencias en conjuntos, que se comportan como si fueran una única sentencia.
 
-Caso práctico
-Mano dibujando un diagrama.
+Para definir el flujo de un programa en PHP, al igual que en la mayoría de lenguajes de programación, hay sentencias para dos tipos de estructuras de control: ''sentencias condicionales'', que permiten definir las condiciones bajo las que debe ejecutarse una sentencia o un bloque de sentencias; y ''sentencias de bucle'', con las que puedes definir si una sentencia o conjunto de sentencias se repite o no, y bajo qué condiciones.
 
-¡Bien! Ya están claros los fundamentos del lenguaje.
+Además, en PHP puedes usar también (aunque no es recomendable) la sentencia `goto`, que te permite saltar directamente a otro punto del programa que indiques mediante una etiqueta.
 
-Pero con lo visto hasta el momento, solo es posible hacer programas muy sencillos. Para poder empezar a programar, Carlos sabe qué debe estudiar a continuación. Una de las partes más importantes de cualquier lenguaje es la que permite tomar decisiones, es decir, las sentencias que se pueden usar para indicar bajo qué condiciones se debe ejecutar una instrucción o un bloque de instrucciones. Y como no, también las sentencias para repetir la ejecución de ciertas líneas de código.
-Cuando domine esas estructuras, podrá empezar a probar todo lo que lleva aprendido.
-Diagrama de flujo sencillo.
-
-En PHP los guiones se construyen en base a sentencias. Utilizando llaves, puedes agrupar las sentencias en conjuntos, que se comportan como si fueran una única sentencia.
-
-Para definir el flujo de un programa en PHP, al igual que en la mayoría de lenguajes de programación, hay sentencias para dos tipos de estructuras de control: sentencias condicionales, que permiten definir las condiciones bajo las que debe ejecutarse una sentencia o un bloque de sentencias; y sentencias de bucle, con las que puedes definir si una sentencia o conjunto de sentencias se repite o no, y bajo qué condiciones.
-
-Además, en PHP puedes usar también (aunque no es recomendable) la sentencia goto, que te permite saltar directamente a otro punto del programa que indiques mediante una etiqueta.
-
+```
 &lt;?php
-
-$a = 1;
-
-goto salto;
-
-$a++;  //esta sentencia no se ejecuta
-
-salto:
-
-echo $a;  // el valor obtenido es 1
-
+    $a = 1;
+    goto salto;
+    $a++;  //esta sentencia no se ejecuta
+    salto:
+    echo $a;  // el valor obtenido es 1
 ?&gt;
-
+```
 </pre>
 </div>
 <div created="20170920180921053" modified="20170920181030988" orden="050000" tags="Contenidos" title="Formularios web">
-<pre>
-
-La forma natural para hacer llegar a la aplicación web los datos del usuario desde un navegador, es utilizar formularios HTML.
+<pre>La forma natural para hacer llegar a la aplicación web los datos del usuario desde un navegador, es utilizar formularios HTML.
 
 Los formularios HTML van encerrados siempre entre las etiquetas &lt;FORM&gt; &lt;/FORM&gt;. Dentro de un formulario se incluyen los elementos sobre los que puede actuar el usuario, principalmente usando las etiquetas &lt;INPUT&gt;, &lt;SELECT&gt;, &lt;TEXTAREA&gt; y &lt;BUTTON&gt;.
 
@@ -9241,9 +9189,7 @@ Fíjate que si en un formulario web tienes que enviar alguna variable en la que 
 </pre>
 </div>
 <div created="20170920175759737" modified="20170920175822854" orden="030000" tags="Contenidos" title="Funciones">
-<pre>
-
-Cuando quieres repetir la ejecución de un bloque de código, puedes utilizar un bucle. Las funciones tienen una utilidad similar: nos permiten asociar una etiqueta (el nombre de la función) con un bloque de código a ejecutar. Además, al usar funciones estamos ayudando a estructurar mejor el código. Como ya sabes, las funciones permiten crear variables locales que no serán visibles fuera del cuerpo de las mismas.
+<pre>Cuando quieres repetir la ejecución de un bloque de código, puedes utilizar un bucle. Las funciones tienen una utilidad similar: nos permiten asociar una etiqueta (el nombre de la función) con un bloque de código a ejecutar. Además, al usar funciones estamos ayudando a estructurar mejor el código. Como ya sabes, las funciones permiten crear variables locales que no serán visibles fuera del cuerpo de las mismas.
 
 Como programador puedes aprovecharte de la gran cantidad de funciones disponibles en PHP. De éstas, muchas están incluidas en el núcleo de PHP y se pueden usar directamente. Otras muchas se encuentran disponibles en forma de extensiones, y se pueden incorporar al lenguaje cuando se necesitan.
 
@@ -9260,179 +9206,78 @@ En el manual de PHP tienes más información sobre PECL.
 Información sobre PECL.
 </pre>
 </div>
-<div created="20170920174720772" modified="20170920174816620" orden="010400" tags="[[Elementos del lenguaje PHP]]" title="Funciones relacionadas con los tipos de datos (II).">
-<pre> En PHP no existe un tipo de datos específico para trabajar con fechas y horas. La información de fecha y hora se almacena internamente como un número entero. Sin embargo, dentro de las funciones de PHP tienes a tu disposición unas cuantas para trabajar con ese tipo de datos.
+<div created="20170920174720772" modified="20170926190842456" orden="010400" tags="[[Elementos del lenguaje PHP]]" title="Funciones relacionadas con los tipos de datos (II).">
+<pre>En PHP ''no existe un tipo de datos específico para trabajar con fechas y horas''. La información de fecha y hora se almacena internamente como un número entero. Sin embargo, dentro de las ''funciones'' de PHP tienes a tu disposición unas cuantas ''para trabajar'' con ese tipo de datos.
 
-Una de las más útiles es quizás la función date, que te permite obtener una cadena de texto a partir de una fecha y hora, con el formato que tú elijas. La función recibe dos parámetros, la descripción del formato y el número entero que identifica la fecha, y devuelve una cadena de texto formateada.
+Una de las más útiles es quizás la función `date`, que te permite ''obtener una cadena de texto a partir de una fecha y hora'', con el formato que tú elijas. La función recibe dos parámetros, la ''descripción del formato'' y el número entero que identifica ''la fecha'', y devuelve una cadena de texto formateada.
 
+```
 string date (string $formato [, int $fechahora]);
+```
 
 El formato lo debes componer utilizando como base una serie de caracteres de los que figuran en la siguiente tabla.
-Función date: caracteres de formato para fechas y horas.
 
-Carácter
-	
 
-Resultado
+|!Carácter|!Resultado|
+|d|día del mes con dos dígitos.|
+|j|día del mes con uno o dos dígitos ( sin ceros iniciales ).|
+|z|día del año, comenzando por el cero ( 0 = 1 de enero ).|
+|N|día de la semana ( 1 = lunes, ..., 7 = domingo ).|
+|w|día de la semana ( 0 = domingo, ..., 6 = sábado ).|
+|l|texto del día de la semana, en inglés ( Monday, ..., Sunday ).|
+|D|texto del día de la semana, solo tres letras, en inglés ( Mon, ..., Sun ).|
+|W|número de la semana del año.|
+|m|número del mes con dos dígitos.|
+|n|número del mes con uno o dos dígitos ( sin ceros iniciales ).|
+|t|número de días que tiene el mes.|
+|F|texto del día del mes, en inglés ( January, ..., December ).|
+|M|texto del día del mes, solo tres letras, en inglés ( Jan, ..., Dec ).|
+|Y|número del año.|
+|y|dos últimos dígitos del número del año.|
+|L|1 si el año es bisiesto, 0 si no lo es.|
+|h|formato de 12 horas, siempre con dos dígitos.|
+|H|formato de 24 horas, siempre con dos dígitos.|
+|g|formato de 12 horas, con uno o dos dígitos ( sin ceros iniciales ).|
+|G|formato de 24 horas, con uno o dos dígitos ( sin ceros iniciales ).|
+|i|minutos, siempre con dos dígitos.|
+|s|segundos, siempre con dos dígitos.|
+|u|microsegundos.|
+|a|am o pm, en minúsculas.|
+|A|AM o PM, en mayúsculas.|
+|r|fecha entera con formato RFC 2822.|
+|''Función date: caracteres de formato para fechas y horas''|c
 
-d
-	
+Además, ''el segundo parámetro es opcional.'' Si no se indica, se utilizará la ''hora actual'' para crear la cadena de texto.
 
-día del mes con dos dígitos.
+Para que el sistema pueda darte información sobre tu fecha y hora, debes indicarle tu zona horaria. Puedes hacerlo con la función `date_default_timezone_set`. Para establecer la zona horaria en España peninsular debes indicar:
 
-j
-	
 
-día del mes con uno o dos dígitos ( sin ceros iniciales ).
-
-z
-	
-
-día del año, comenzando por el cero ( 0 = 1 de enero ).
-
-N
-	
-
-día de la semana ( 1 = lunes, ..., 7 = domingo ).
-
-w
-	
-
-día de la semana ( 0 = domingo, ..., 6 = sábado ).
-
-l
-	
-
-texto del día de la semana, en inglés ( Monday, ..., Sunday ).
-
-D
-	
-
-texto del día de la semana, solo tres letras, en inglés ( Mon, ..., Sun ).
-
-W
-	
-
-número de la semana del año.
-
-m
-	
-
-número del mes con dos dígitos.
-
-n
-	
-
-número del mes con uno o dos dígitos ( sin ceros iniciales ).
-
-t
-	
-
-número de días que tiene el mes.
-
-F
-	
-
-texto del día del mes, en inglés ( January, ..., December ).
-
-M
-	
-
-texto del día del mes, solo tres letras, en inglés ( Jan, ..., Dec ).
-
-Y
-	
-
-número del año.
-
-y
-	
-
-dos últimos dígitos del número del año.
-
-L
-	
-
-1 si el año es bisiesto, 0 si no lo es.
-
-h
-	
-
-formato de 12 horas, siempre con dos dígitos.
-
-H
-	
-
-formato de 24 horas, siempre con dos dígitos.
-
-g
-	
-
-formato de 12 horas, con uno o dos dígitos ( sin ceros iniciales ).
-
-G
-	
-
-formato de 24 horas, con uno o dos dígitos ( sin ceros iniciales ).
-
-i
-	
-
-minutos, siempre con dos dígitos.
-
-s
-	
-
-segundos, siempre con dos dígitos.
-
-u
-	
-
-microsegundos.
-
-a
-	
-
-am o pm, en minúsculas.
-
-A
-	
-
-AM o PM, en mayúsculas.
-
-r
-	
-
-fecha entera con formato RFC 2822.
-
-Además, el segundo parámetro es opcional. Si no se indica, se utilizará la hora actual para crear la cadena de texto.
-
-Para que el sistema pueda darte información sobre tu fecha y hora, debes indicarle tu zona horaria. Puedes hacerlo con la función date_default_timezone_set. Para establecer la zona horaria en España peninsular debes indicar:
-
+```
 date_default_timezone_set('Europe/Madrid');
+```
 
-Para saber más
+&lt;&lt;&lt;
+!!Para saber más
 
 En la documentación de PHP puedes consultar las distintas zonas horarias que se pueden indicar.
 
-Distintas zonas horarias soportadas en PHP
-Si utilizas alguna función de fecha y hora sin haber establecido previamente tu zona horaria, lo más probable es que recibas un error o mensaje de advertencia de PHP indicándolo.
+[[Distintas zonas horarias soportadas en PHP|http://php.net/manual/es/timezones.php]]
+&lt;&lt;&lt;
+
+''Si utilizas alguna función de fecha y hora sin haber establecido previamente tu zona horaria, lo más probable es que recibas un error o mensaje de advertencia de PHP indicándolo.''
 
 Otras funciones como getdate devuelven un array con información sobre la fecha y hora actual.
-Debes conocer
+
+&lt;&lt;&lt;
+!!Debes conocer
 
 En la documentación de PHP puedes consultar todas las funciones para gestionar fechas y horas:
 
-Funciones para gestionar fechas y horas.
-
-Intenta resolver la siguiente actividad, relativa a las funciones de PHP que acabas de ver.
-Para realizar la actividad descarga el paquete, descomprímelo y ejecuta la página .html
-</pre>
+[[Funciones para gestionar fechas y horas.|http://php.net/manual/es/ref.datetime.php]]
+&lt;&lt;&lt;</pre>
 </div>
 <div created="20170920180814516" modified="20170920180852163" orden="040300" tags="[[Tipos de datos compuestos]]" title="Funciones relacionadas con los tipos de datos compuestos">
-<pre>
-
-Letra x entre paréntesis.
+<pre>Letra x entre paréntesis.
 
 Además de asignando valores directamente, la función array permite crear un array con una sola línea de código, tal y como vimos anteriormente. Esta función recibe un conjunto de parámetros, y crea un array a partir de los valores que se le pasan. Si en los parámetros no se indica el valor de la clave, crea un array numérico (con base 0). Si no se le pasa ningún parámetro, crea un array vacío.
 
@@ -9485,216 +9330,157 @@ No.
 Sí.
 </pre>
 </div>
-<div created="20170920174549778" modified="20170920174648576" orden="010300" tags="[[Elementos del lenguaje PHP]]" title="Funciones relacionadas con los tipos de datos(I)">
-<pre>En PHP existen funciones específicas para comprobar y establecer el tipo de datos de una variable, gettype obtiene el tipo de la variable que se le pasa como parámetro y devuelve una cadena de texto, que puede ser array, boolean, double, integer, object, string, null, resource o unknowntype.
+<div created="20170920174549778" modified="20170925152652991" orden="010300" tags="[[Elementos del lenguaje PHP]]" title="Funciones relacionadas con los tipos de datos(I)">
+<pre>En PHP existen ''funciones específicas'' para ''comprobar'' y ''establecer'' el tipo de datos de una variable, `gettype` ''obtiene el tipo'' de la variable que se le pasa como parámetro y devuelve una cadena de texto, que puede ser ''array'', ''boolean'', ''double'', ''integer'', ''object'', ''string'', ''null'', ''resource'' o //''unknowntype''.//
 
-También podemos comprobar si la variable es de un tipo concreto utilizando una de las siguientes funciones: is_array(), is_bool(), is_float(), is_integer(), is_null(), is_numeric(), is_object(), is_resource(), is_scalar() e is_string(). Devuelven true si la variable es del tipo indicado.
+También podemos ''comprobar'' si la variable es de un tipo concreto utilizando una de las siguientes funciones: ''is_array(), is_bool(), is_float(), is_integer(), is_null(), is_numeric(), is_object(), is_resource(), is_scalar() e is_string()''. Devuelven ''true'' si la variable es del tipo indicado.
 
-Análogamente, para establecer el tipo de una variable utilizamos la función settype pasándole como parámetros la variable a convertir, y una de las siguientes cadenas: boolean, integer, float, string, array, object o null. La función settype devuelve true si la conversión se realizó correctamente, o false en caso contrario.
+Análogamente, para ''establecer el tipo de una variable ''utilizamos la función `settype` pasándole como parámetros la variable a convertir, y una de las siguientes cadenas: `boolean`, `integer`, `float`, `string`, `array`, `object` o `null`. La función `settype` devuelve `true` si la conversión se realizó correctamente, o `false` en caso contrario.
 
+```
 &lt;?php
-
-$a = $b = &quot;3.1416&quot;; // asignamos a las dos variables la misma cadena de texto
-
-settype($b, &quot;float&quot;); // y cambiamos $b a tipo float
-
-print &quot;\$a vale $a y es de tipo &quot;.gettype($a);
-
-print &quot;&lt;br /&gt;&quot;;
-
-print &quot;\$b vale $b y es de tipo &quot;.gettype($b);
-
-?&gt; 
-
+    $a = $b = &quot;3.1416&quot;; // asignamos a las dos variables la misma cadena de texto
+    settype($b, &quot;float&quot;); // y cambiamos $b a tipo float
+    print &quot;\$a vale $a y es de tipo &quot;.gettype($a);
+    print &quot;&lt;br /&gt;&quot;;
+    print &quot;\$b vale $b y es de tipo &quot;.gettype($b);
+?&gt;
+```
 El resultado del código anterior es:
 
+```
 $a vale 3.1416 y es de tipo string
-
 $b vale 3.1416 y es de tipo double 
 
-Si lo único que te interesa es saber si una variable está definida y no es null, puedes usar la función isset. La función unset destruye la variable o variables que se le pasa como parámetro.
+```
 
+Si lo único que te interesa es saber si una variable está definida y no es null, puedes usar la función `isset`. La función `unset` destruye la variable o variables que se le pasa como parámetro.
+
+
+```
 &lt;?php
-
-$a = &quot;3.1416&quot;;
-
-if (isset($a)) // la variable $a está definida
-
-unset($a); //ahora ya no está definida
-
+    $a = &quot;3.1416&quot;;
+    if (isset($a)) // la variable $a está definida
+    unset($a); //ahora ya no está definida
 ?&gt; 
+```
+&lt;&lt;&lt;
+Es importante ''no confundir'' el que una variable esté definida o valga null, con que se considere como ''vacía'' debido al valor que contenga. Esto último es lo que nos indica la función `empty`.
 
-Es importante no confundir el que una variable esté definida o valga null, con que se considere como vacía debido al valor que contenga. Esto último es lo que nos indica la función empty.
+[[Función empty|http://es.php.net/manual/es/function.empty.php]].
+&lt;&lt;&lt;
 
-Función empty.
+Existe también en PHP una función, `define`, con la que puedes definir ''constantes'', esto es, identificadores a los que se les asigna un valor que no cambia durante la ejecución del programa.
 
-Existe también en PHP una función, define, con la que puedes definir constantes, esto es, identificadores a los que se les asigna un valor que no cambia durante la ejecución del programa.
+```
+bool define (string $identificador , mixed $valor [, bool $case_insensitive = false ] );
+```
 
-bool define ( string $identificador , mixed $valor [, bool $case_insensitive = false ] );
+Los ''identificadores de constantes'' __no van precedidos por el signo__ `$` y __suelen escribirse en mayúsculas__, aunque ''existe un tercer parámetro opcional'', que si vale true hace que se reconozca el identificador independientemente de si está escrito en mayúsculas o en minúsculas.
 
-Los identificadores no van precedidos por el signo &quot;$&quot; y suelen escribirse en mayúsculas, aunque existe un tercer parámetro opcional, que si vale true hace que se reconozca el identificador independientemente de si está escrito en mayúsculas o en minúsculas.
-
+```
 &lt;?php
-
-define (&quot;PI&quot;, 3.1416, true);
-
-print &quot;El valor de PI es &quot;.pi; //El identificador se reconoce tanto por PI como por pi
-
+    define (&quot;PI&quot;, 3.1416, true);
+    print &quot;El valor de PI es &quot;.pi; //El identificador se reconoce tanto por PI como por pi
 ?&gt;
 
-Sólo se permiten los siguientes tipos de valores para las constantes: integer, float, string, boolean y null.
-Autoevaluación
+```
+
+''Sólo'' se permiten los siguientes tipos de ''valores para las constantes'': `integer`, `float`, `string`, `boolean` y `null`.
+
+&lt;&lt;&lt;
+!!Autoevaluación
 
 ¿Qué se muestra en pantalla al ejecutar el siguiente código?
 
+```
 $a = &quot;-3.1416&quot;;
-
 printf(&quot;La variable \'\$a\' vale %+.2f&quot;, $a); 
+```
+*La variable `'$a'` vale -3.14.
+*La variable `'$a'` vale +3.14.
+*La variable `\'$a\'` vale -3.14.
 
-La variable '$a' vale -3.14.
-La variable '$a' vale +3.14.
-La variable \'$a\' vale -3.14.
-La variable \'$a\' vale +3.14.
-</pre>
+&lt;&lt;&lt;
+*La variable `\'$a\'` vale +3.14.
+&lt;&lt;&lt;
+
+&lt;&lt;&lt;</pre>
 </div>
-<div created="20170920174119878" modified="20170920174250171" orden="010100" tags="[[Elementos del lenguaje PHP]]" title="Generación de código HTML.">
-<pre>Existen varias formas incluir contenido en la página web a partir del resultado de la ejecución de código PHP. La forma más sencilla es usando echo, que no devuelve nada (void), y genera como salida el texto de los parámetros que recibe.
+<div created="20170920174119878" modified="20170925124030681" orden="010100" tags="[[Elementos del lenguaje PHP]]" title="Generación de código HTML.">
+<pre>Existen varias formas incluir contenido en la página web a partir del resultado de la ejecución de código PHP. ''La forma más sencilla es usando `echo`'', que no devuelve nada (`void`), y genera como salida el texto de los parámetros que recibe.
 
+```
 void echo (string $arg1, ...);
+```
+''Otra posibilidad es `print`'', que funciona de forma similar. La diferencia más importante entre `print` y `echo`, es que `print` ''sólo puede recibir un parámetro y devuelve siempre 1.''
 
-Otra posibilidad es print, que funciona de forma similar. La diferencia más importante entre print y echo, es que print sólo puede recibir un parámetro y devuelve siempre 1.
-
+```
 int print (string $arg);
+```
+Tanto `print` como `echo` no son realmente funciones, por lo que no es obligatorio que pongas paréntesis cuando las utilices. Por ejemplo, el código del siguiente documento puede hacerse igualmente utilizando echo.
 
-Tanto print como echo no son realmente funciones, por lo que no es obligatorio que pongas paréntesis cuando las utilices. Por ejemplo, el código del siguiente documento puede hacerse igualmente utilizando echo.
+&lt;&lt;&lt;
+Consulta el [[Anexo I|Utilización de la función print en PHP]]: Utilización de la función print en PHP
+&lt;&lt;&lt;
 
-Consulta el Anexo I: Utilización de la función print en PHP
+`printf` es otra opción para generar una salida desde PHP. Puede recibir ''varios parámetros'', el primero de los cuales es siempre una cadena de texto que indica ''el formato ''que se ha de aplicar. Esa cadena debe contener un especificador de conversión por cada uno de los demás parámetros que se le pasen a la función, y en el mismo orden en que figuran en la lista de parámetros. Por ejemplo:
 
-printf es otra opción para generar una salida desde PHP. Puede recibir varios parámetros, el primero de los cuales es siempre una cadena de texto que indica el formato que se ha de aplicar. Esa cadena debe contener un especificador de conversión por cada uno de los demás parámetros que se le pasen a la función, y en el mismo orden en que figuran en la lista de parámetros. Por ejemplo:
-
+```
 &lt;?php
-
-$ciclo=&quot;DAW&quot;;
-
-$modulo=&quot;DWES&quot;;
-
-print &quot;&lt;p&gt;&quot;;
-
-printf(&quot;%s es un módulo de %d curso de %s&quot;, $modulo, 2, $ciclo);
-
-print &quot;&lt;/p&gt;&quot;;
-
+    $ciclo=&quot;DAW&quot;;
+    $modulo=&quot;DWES&quot;;
+    print &quot;&lt;p&gt;&quot;;
+    printf(&quot;%s es un módulo de %d curso de %s&quot;, $modulo, 2, $ciclo);
+    print &quot;&lt;/p&gt;&quot;;
 ?&gt; 
+```
+Cada especificador de conversión va precedido del caracter `%` y se compone de las siguientes partes:
 
-Cada especificador de conversión va precedido del caracter % y se compone de las siguientes partes:
+* ''signo'' (opcional). Indica si se pone signo a los número negativos (por defecto) o también a los positivos (se indica con un signo +).
+* ''relleno'' (opcional). Indica que carácter se usará para ajustar el tamaño de una cadena. Las opciones son el carácter 0 o el carácter espacio (por defecto se usa el espacio).
+* ''alineación'' (opcional). Indica que tipo de alineación se usará para generar la salida: justificación derecha (por defecto) o izquierda (se indica con el carácter -).
+* ''ancho'' (opcional). Indica el mínimo número de caracteres de salida para un parámetro dado.
+* ''precisión'' (opcional). Indica el número de dígitos decimales que se mostrarán para un número real. Se escribe como un dígito precedido por un punto.
+* ''tipo'' (obligatorio). Indica cómo se debe tratar el valor del parámetro correspondiente. En la siguiente tabla puedes ver una lista con todos los especificadores de tipo.
 
-    signo (opcional). Indica si se pone signo a los número negativos (por defecto) o también a los positivos (se indica con un signo +).
-    relleno (opcional). Indica que carácter se usará para ajustar el tamaño de una cadena. Las opciones son el carácter 0 o el carácter espacio (por defecto se usa el espacio).
-    alineación (opcional). Indica que tipo de alineación se usará para generar la salida: justificación derecha (por defecto) o izquierda (se indica con el carácter -).
-    ancho (opcional). Indica el mínimo número de caracteres de salida para un parámetro dado.
-    precisión (opcional). Indica el número de dígitos decimales que se mostrarán para un número real. Se escribe como un dígito precedido por un punto.
-    tipo (obligatorio). Indica cómo se debe tratar el valor del parámetro correspondiente. En la siguiente tabla puedes ver una lista con todos los especificadores de tipo.
 
-Especificadores de tipo para las funciones printf y sprintf.
+|!Especificador|!Significado|
+|!b|el argumento es tratado como un entero y presentado como un número binario.|
+|!c|el argumento es tratado como un entero, y presentado como el carácter con dicho valor ASCII.|
+|!d|el argumento es tratado como un entero y presentado como un número decimal.|
+|!u|el argumento es tratado como un entero y presentado como un número decimal sin signo.|
+|!o|el argumento es tratado como un entero y presentado como un número octal.|
+|!x|el argumento es tratado como un entero y presentado como un número hexadecimal (con minúsculas).|
+|!X|el argumento es tratado como un entero y presentado como un número hexadecimal (con mayúsculas).|
+|!f|el argumento es tratado como un doble y presentado como un número de coma flotante (teniendo en cuenta la localidad).|
+|!F|el argumento es tratado como un doble y presentado como un número de coma flotante (sin tener en cuenta la localidad).|
+|!e|el argumento es presentado en notación científica, utilizando la e minúscula (por ejemplo, 1.2e+3).|
+|!E|el argumento es presentado en notación científica, utilizando la e mayúscula (por ejemplo, 1.2E+3).|
+|!g|se usa la forma más corta entre %f y %e.|
+|!G|se usa la forma más corta entre %f y %E.|
+|!s|el argumento es tratado como una cadena y es presentado como tal.|
+|!%|se muestra el carácter %. No necesita argumento..|
+|''Especificadores de tipo para las funciones printf y sprintf''|c
 
-Especificador
-	
 
-Significado
+Por ejemplo, al ejecutar la línea siguiente, en la salida el número ''PI'' se obtiene con signo y sólo con dos decimales.
 
-b
-	
+```
+printf(&quot;El número π vale %+.2f&quot;, 3.1416); // +3.14
+```
+Existe una función similar a ''printf'' pero en vez de generar una salida con la cadena obtenida, permite guardarla en una variable: sprintf.
 
-el argumento es tratado como un entero y presentado como un número binario.
-
-c
-	
-
-el argumento es tratado como un entero, y presentado como el carácter con dicho valor ASCII.
-
-d
-	
-
-el argumento es tratado como un entero y presentado como un número decimal.
-
-u
-	
-
-el argumento es tratado como un entero y presentado como un número decimal sin signo.
-
-o
-	
-
-el argumento es tratado como un entero y presentado como un número octal.
-
-x
-	
-
-el argumento es tratado como un entero y presentado como un número hexadecimal (con minúsculas).
-
-X
-	
-
-el argumento es tratado como un entero y presentado como un número hexadecimal (con mayúsculas).
-
-f
-	
-
-el argumento es tratado como un doble y presentado como un número de coma flotante (teniendo en cuenta la localidad).
-
-F
-	
-
-el argumento es tratado como un doble y presentado como un número de coma flotante (sin tener en cuenta la localidad).
-
-e
-	
-
-el argumento es presentado en notación científica, utilizando la e minúscula (por ejemplo, 1.2e+3).
-
-E
-	
-
-el argumento es presentado en notación científica, utilizando la e mayúscula (por ejemplo, 1.2E+3).
-
-g
-	
-
-se usa la forma más corta entre %f y %e.
-
-G
-	
-
-se usa la forma más corta entre %f y %E.
-
-s
-	
-
-el argumento es tratado como una cadena y es presentado como tal.
-
-%
-	
-
-se muestra el carácter %. No necesita argumento..
-
-Por ejemplo, al ejecutar la línea siguiente, en la salida el número PI se obtiene con signo y sólo con dos decimales.
-
-printf(&quot;El número PI vale %+.2f&quot;, 3.1416); // +3.14
-
-Existe una función similar a printf pero en vez de generar una salida con la cadena obtenida, permite guardarla en una variable: sprintf.
-
-$txt_pi = sprintf(&quot;El número PI vale %+.2f&quot;, 3.1416);
-
-Autoevaluación
+```
+$txt_pi = sprintf(&quot;El número π vale %+.2f&quot;, 3.1416);
+```
+&lt;&lt;&lt;
+!!Autoevaluación
 Tenemos una variable real, y queremos mostrarla utilizando un número fijo de decimales, por ejemplo 3. ¿Podemos hacerlo sin utilizar la función printf?
-No.
-Sí.
-</pre>
+&lt;&lt;&lt;</pre>
 </div>
 <div created="20170920181417961" modified="20170920181459869" orden="050200" tags="[[Formularios web]]" title="Generación de formularios web en PHP">
-<pre>
-
-Marca de verificación superpuesta a las letras a,b,c.
+<pre>Marca de verificación superpuesta a las letras a,b,c.
 
 Vamos a volver sobre el ejemplo anterior, revisando los datos que se obtienen antes de mostrarlos. Concretamente, tienes que comprobar que el nombre no esté vacío, y que se haya seleccionado como mínimo uno de los módulos.
 
@@ -9801,9 +9587,7 @@ No.
 </pre>
 </div>
 <div created="20170920181155750" modified="20170920181314061" orden="050100" tags="[[Formularios web]]" title="Procesamiento de la información devuelta por un formulario web">
-<pre>
-
-Icono que simboliza la acción de devolver información por un documento.
+<pre>Icono que simboliza la acción de devolver información por un documento.
 
 En el ejemplo anterior creaste un formulario en una página HTML que recogía datos del usuario y los enviaba a una página PHP para que los procesara. Como usaste el método POST, los datos se pueden recoger utilizando la variable $_POST. Si simplemente los quisieras mostrar por pantalla, éste podría ser el código de &quot;procesa.php&quot;:
 Consulta el Anexo VII con el Código de &quot;procesa.php&quot;
@@ -9916,9 +9700,7 @@ No.
 </pre>
 </div>
 <div created="20170920180639059" modified="20170920180747990" orden="040200" tags="[[Tipos de datos compuestos]]" title="Recorrer arrays (II)">
-<pre>
-
-Punta de flecha sobre una cuadrícula.
+<pre>Punta de flecha sobre una cuadrícula.
 
 Pero en PHP también hay otra forma de recorrer los valores de un array. Cada array mantiene un puntero interno, que se puede utilizar con este fin. Utilizando funciones específicas, podemos avanzar, retroceder o inicializar el puntero, así como recuperar los valores del elemento (o de la pareja clave / elemento) al que apunta el puntero en cada momento. Algunas de estas funciones son:
 Funciones para recorrer arrays.
@@ -9983,9 +9765,7 @@ Haz una página PHP que utilice estas funciones para crear una tabla como la del
 </pre>
 </div>
 <div created="20170920181915902" modified="20170920182041261" orden="060200" tags="Anexos" title="Solución propuesta I">
-<pre>
-
-&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
+<pre>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
 
 http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 
@@ -10114,9 +9894,7 @@ print $dia_semana.&quot;, &quot;.date(&quot;j&quot;).&quot; de &quot;.$mes.&quot
 </pre>
 </div>
 <div created="20170920182115495" modified="20170920182156062" orden="060300" tags="Anexos" title="Solución propuesta II">
-<pre>
-
-&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
+<pre>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
 
 http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 
@@ -10560,9 +10338,7 @@ http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 </pre>
 </div>
 <div created="20170920180340729" modified="20170920180448247" orden="040000" tags="Contenidos" title="Tipos de datos compuestos">
-<pre>
-
-Un tipo de datos compuesto es aquel que te permite almacenar más de un valor. En PHP puedes utilizar dos tipos de datos compuestos: el array y el objeto. Los objetos los veremos más adelante; vamos a empezar con los arrays.
+<pre>Un tipo de datos compuesto es aquel que te permite almacenar más de un valor. En PHP puedes utilizar dos tipos de datos compuestos: el array y el objeto. Los objetos los veremos más adelante; vamos a empezar con los arrays.
 
 Un array es un tipo de datos que nos permite almacenar varios valores. Cada miembro del array se almacena en una posición a la que se hace referencia utilizando un valor clave. Las claves pueden ser numéricas o asociativas.
 
@@ -10636,154 +10412,87 @@ $modulos1 [ ] = &quot;Desarrollo web en entorno servidor&quot;;
 
 </pre>
 </div>
-<div created="20170920181539649" modified="20170920181739151" orden="060100" tags="Anexos" title="Utilización de la función print en PHP">
-<pre>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
-
+<div created="20170920181539649" modified="20170925121607352" orden="060100" tags="Anexos" title="Utilización de la función print en PHP">
+<pre>```
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
 http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
-
 &lt;!-- Desarrollo Web en Entorno Servidor --&gt;
-
 &lt;!-- Tema 2 : Características del Lenguaje PHP --&gt;
-
 &lt;!-- Ejemplo: Utilización de print --&gt;
-
 &lt;html&gt;
-
-&lt;head&gt;
-
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-
-&lt;title&gt;Desarrollo Web&lt;/title&gt;
-
-&lt;/head&gt;
-
-&lt;body&gt;
-
-&lt;?php
-
-$modulo=&quot;DWES&quot;;
-
-print &quot;&lt;p&gt;Módulo: &quot;;
-
-print $modulo;
-
-print&quot;&lt;/p&gt;&quot;
-
-?&gt;
-
-&lt;/body&gt;
-
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+        &lt;title&gt;Desarrollo Web&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;?php
+            $modulo=&quot;DWES&quot;;
+            print &quot;&lt;p&gt;Módulo: &quot;;
+            print $modulo;
+            print&quot;&lt;/p&gt;&quot;
+        ?&gt;
+    &lt;/body&gt;
 &lt;/html&gt;
-
+```
 </pre>
 </div>
-<div created="20170920174844660" modified="20170920175039469" orden="010500" tags="[[Elementos del lenguaje PHP]]" title="Variables especiales de PHP">
-<pre>
-Globo terráqueo con las letras PHP superpuestas.
+<div created="20170920174844660" modified="20170926192424969" orden="010500" tags="[[Elementos del lenguaje PHP]]" title="Variables especiales de PHP">
+<pre>En la unidad anterior ya aprendiste qué eran y cómo se utilizaban las variables globales. PHP incluye unas cuantas ''variables internas predefinidas'' que pueden usarse desde cualquier ámbito, por lo que reciben el nombre de ''variables superglobales.'' Ni siquiera es necesario que uses global para acceder a ellas.
 
-En la unidad anterior ya aprendiste qué eran y cómo se utilizaban las variables globales. PHP incluye unas cuantas variables internas predefinidas que pueden usarse desde cualquier ámbito, por lo que reciben el nombre de variables superglobales. Ni siquiera es necesario que uses global para acceder a ellas.
+''Cada una de estas variables es un array'' que contiene un conjunto de valores (en esta unidad veremos más adelante cómo se pueden utilizar los arrays). Las variables superglobales disponibles en PHP son las siguientes:
 
-Cada una de estas variables es un array que contiene un conjunto de valores (en esta unidad veremos más adelante cómo se pueden utilizar los arrays). Las variables superglobales disponibles en PHP son las siguientes:
+''$_SERVER.'' Contiene información sobre el entorno del servidor web y de ejecución. Entre la información que nos ofrece esta variable, tenemos:
 
-$_SERVER. Contiene información sobre el entorno del servidor web y de ejecución. Entre la información que nos ofrece esta variable, tenemos:
-Principales valores de la variable $_SERVER
+|!Valor|!Contenido|
+|$_SERVER['PHP_SELF']|guión que se está ejecutando actualmente.|
+|$_SERVER['SERVER_ADDR']|dirección IP del servidor web.|
+|$_SERVER['SERVER_NAME']|nombre del servidor web.|
+|$_SERVER['DOCUMENT_ROOT']|directorio raíz bajo el que se ejecuta el guión actual.|
+|$_SERVER['REMOTE_ADDR']|dirección IP desde la que el usuario está viendo la página.|
+|$_SERVER['REQUEST_METHOD']|método utilizado para acceder a la página ('GET', 'HEAD', 'POST' o 'PUT')|
+|''Principales valores de la variable $_SERVER''|c
 
-Valor
-	
-
-Contenido
-
-$_SERVER['PHP_SELF']
-	
-
-guión que se está ejecutando actualmente.
-
-$_SERVER['SERVER_ADDR']
-	
-
-dirección IP del servidor web.
-
-$_SERVER['SERVER_NAME']
-	
-
-nombre del servidor web.
-
-$_SERVER['DOCUMENT_ROOT']
-	
-
-directorio raíz bajo el que se ejecuta el guión actual.
-
-$_SERVER['REMOTE_ADDR']
-	
-
-dirección IP desde la que el usuario está viendo la página.
-
-$_SERVER['REQUEST_METHOD']
-	
-
-método utilizado para acceder a la página ('GET', 'HEAD', 'POST' o 'PUT')
-Debes conocer
+&lt;&lt;&lt;
+!!Debes conocer
 
 En la documentación de PHP puedes consultar toda la información que ofrece $_SERVER:
 
-Información que ofrece $_SERVER.
+&lt;center&gt;[[Información que ofrece $_SERVER.|http://es.php.net/manual/es/reserved.variables.server.php]]&lt;/center&gt;
+&lt;&lt;&lt;
 
-$_GET, $_POST y $_COOKIE contienen las variables que se han pasado al guión actual utilizando respectivamente los métodos GET (parámetros en la URL), HTTP POST y Cookies HTTP.
+''$_GET'', ''$_POST'' y ''$_COOKIE'' contienen las variables que se han pasado al guión actual utilizando respectivamente los métodos GET (parámetros en la URL), HTTP POST y Cookies HTTP.
 
-$_REQUEST junta en uno solo el contenido de los tres arrays anteriores, $_GET, $_POST y $_COOKIE.
+''$_REQUEST'' junta en uno solo el contenido de los tres arrays anteriores, $_GET, $_POST y $_COOKIE.
 
-$_ENV contiene las variables que se puedan haber pasado a PHP desde el entorno en que se ejecuta.
+''$_ENV'' contiene las variables que se puedan haber pasado a PHP desde el entorno en que se ejecuta.
 
-$_FILES contiene los ficheros que se puedan haber subido al servidor utilizando el método POST.
+''$_FILES'' contiene los ficheros que se puedan haber subido al servidor utilizando el método POST.
 
-$_SESSION contiene las variables de sesión disponibles para el guión actual.
+''$_SESSION'' contiene las variables de sesión disponibles para el guión actual.
 
 En posteriores unidades iremos trabajando con estas variables.
-Para saber más
+
+&lt;&lt;&lt;
+!!Para saber más
 
 Conviene tener a mano la información sobre estas variables superglobales disponible en el manual de PHP.
 
-Información sobre las variables superglobales.
-Autoevaluación
+&lt;center&gt;[[Información sobre las variables superglobales.|http://es.php.net/manual/es/language.variables.superglobals.php]]&lt;/center&gt;
+&lt;&lt;&lt;
+
+&lt;&lt;&lt;
+
+
+!!Autoevaluación
 
 Relaciona cada variable con la información que contiene:
 Ejercicio para relacionar.
 
-Parámetro
-	
-
-Relación
-	
-
-Finalidad
-
-$_SERVER['DOCUMENT_ROOT']
-	
-
-	
-
-1. Variables de entorno disponibles.
-
-$_ENV
-	
-
-	
-
-2. Guión que se está ejecutando.
-
-$_SESSION
-	
-
-	
-
-3. Variables de sesión disponibles.
-
-$_SERVER['PHP_SELF']
-	
-
-	
-
-4. Directorio raíz del guión actual.
+|!Parámetro|!Relación|!Finalidad|
+|$_SERVER['DOCUMENT_ROOT']||1. Variables de entorno disponibles.|
+|$_ENV||2. Guión que se está ejecutando.|
+|$_SESSION||3. Variables de sesión disponibles.|
+|$_SERVER['PHP_SELF']||4. Directorio raíz del guión actual.|
    </pre>
 </div>
 
