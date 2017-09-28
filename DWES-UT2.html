@@ -8457,7 +8457,7 @@ Error message and password prompt
 <div created="20170925111514014" modified="20170925111514015" title="$:/state/plugin-info-334910430-$:/core---1812962263">
 <pre>contents</pre>
 </div>
-<div created="20170925111336136" modified="20170925142657525" title="$:/state/showeditpreview">
+<div created="20170925111336136" modified="20170928002324907" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20170920175320671" modified="20170925152000553" title="$:/state/sidebar">
@@ -8466,25 +8466,25 @@ Error message and password prompt
 <div created="20170920173643751" modified="20170925111146456" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20170920181845059" modified="20170925121144389" title="$:/state/toc/Contenidos-Anexos-1645261823">
+<div created="20170920181845059" modified="20170928004703425" title="$:/state/toc/Contenidos-Anexos-1645261823">
 <pre>open</pre>
 </div>
-<div created="20170920174356578" modified="20170926192929461" title="$:/state/toc/Contenidos-Elementos del lenguaje PHP-1645261823">
+<div created="20170920174356578" modified="20170928001612175" title="$:/state/toc/Contenidos-Elementos del lenguaje PHP-1645261823">
 <pre>close</pre>
 </div>
-<div created="20170920175410981" modified="20170926192439249" title="$:/state/toc/Contenidos-Estructuras de control-1645261823">
+<div created="20170920175410981" modified="20170928001613776" title="$:/state/toc/Contenidos-Estructuras de control-1645261823">
+<pre>close</pre>
+</div>
+<div created="20170920181321955" modified="20170928001617312" title="$:/state/toc/Contenidos-Formularios web-1645261823">
+<pre>close</pre>
+</div>
+<div created="20170920175945495" modified="20170928001557457" title="$:/state/toc/Contenidos-Funciones-1645261823">
 <pre>open</pre>
 </div>
-<div created="20170920181321955" modified="20170920181533990" title="$:/state/toc/Contenidos-Formularios web-1645261823">
+<div created="20170920180627850" modified="20170928001616040" title="$:/state/toc/Contenidos-Tipos de datos compuestos-1645261823">
 <pre>close</pre>
 </div>
-<div created="20170920175945495" modified="20170920180338111" title="$:/state/toc/Contenidos-Funciones-1645261823">
-<pre>close</pre>
-</div>
-<div created="20170920180627850" modified="20170920181136378" title="$:/state/toc/Contenidos-Tipos de datos compuestos-1645261823">
-<pre>close</pre>
-</div>
-<div list="Contenidos Condicionales [[Estructuras de control]]" title="$:/StoryList">
+<div list="Contenidos [[Solución propuesta II]] Anexos Argumentos" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170925111501897" modified="20170925111507074" title="$:/temp/advancedsearch">
@@ -8651,152 +8651,123 @@ Error message and password prompt
 <div created="20170920181746326" modified="20170920181840564" orden="060000" tags="Contenidos" title="Anexos">
 <pre></pre>
 </div>
-<div created="20170920180210786" modified="20170920180315376" orden="030300" tags="Funciones" title="Argumentos">
-<pre>Acción de duplicar una hoja de papel.
-
-En el ejemplo anterior en la función usabas una variable global, lo cual no es una buena práctica. Siempre es mejor utilizar argumentos o parámetros al hacer la llamada. Además, en lugar de mostrar el resultado en pantalla o guardar el resultado en una variable global, las funciones pueden devolver un valor usando la sentencia return. Cuando en una función se encuentra una sentencia return, termina su procesamiento y devuelve el valor que se indica.
+<div created="20170920180210786" modified="20170928004815233" orden="030300" tags="Funciones" title="Argumentos">
+<pre>En el ejemplo anterior en la función usabas una variable global, lo cual no es una buena práctica. Siempre es mejor utilizar ''argumentos'' o ''parámetros'' al hacer la llamada. Además, en lugar de mostrar el resultado en pantalla o guardar el resultado en una variable global, l''as funciones pueden devolver un valor'' usando la sentencia return. Cuando en una función se encuentra una sentencia `return`, termina su procesamiento y devuelve el valor que se indica.
 
 Puedes reescribir la función anterior de la siguiente forma:
 
+```
 &lt;?php
-
-     function precio_con_iva($precio) {
-
-                return $precio * 1.18;
-
-     }
-
-     $precio = 10;
-
-     $precio_iva = precio_con_iva($precio);
-
-     print &quot;El precio con IVA es &quot;.$precio_iva
-
+    function precio_con_iva($precio) {
+        return $precio * 1.18;
+    }
+    $precio = 10;
+    $precio_iva = precio_con_iva($precio);
+    print &quot;El precio con IVA es &quot;.$precio_iva
 ?&gt;
+```
 
-Los argumentos se indican en la definición de la función como una lista de variables separada por comas. No se indica el tipo de cada argumento, al igual que no se indica si la función va a devolver o no un valor (si una función no tiene una sentencia return, devuelve null al finalizar su procesamiento).
+Los ''argumentos'' se indican en la definición de la función como una ''lista de variables separada por comas''. No se indica ''el tipo'' de cada argumento, al igual que no se indica si la función va a devolver o no un valor (si una función no tiene una sentencia return, devuelve `null` al finalizar su procesamiento).
 
-Al definir la función, puedes indicar valores por defecto para los argumentos, de forma que cuando hagas una llamada a la función puedes no indicar el valor de un argumento; en este caso se toma el valor por defecto indicado.
+Al definir la función, puedes indicar ''valores por defecto para los argumentos'', de forma que cuando hagas una llamada a la función puedes no indicar el valor de un argumento; en este caso se toma el valor por defecto indicado.
 
+```
 &lt;?php
-
-     function precio_con_iva($precio, $iva=0.18) {
-
-                return $precio * (1 + $iva);
-
-     }
-
-     $precio = 10;
-
-     $precio_iva = precio_con_iva($precio);
-
-     print &quot;El precio con IVA es &quot;.$precio_iva
-
+    function precio_con_iva($precio, $iva=0.18) {
+        return $precio * (1 + $iva);
+    }
+    $precio = 10;
+    $precio_iva = precio_con_iva($precio);
+    print &quot;El precio con IVA es &quot;.$precio_iva
 ?&gt;
+```
 
-Puede haber valores por defecto definidos para varios argumentos, pero en la lista de argumentos de la función todos ellos deben estar a la derecha de cualquier otro argumento sin valor por defecto.
 
-En los ejemplos anteriores los argumentos se pasaban por valor. Esto es, cualquier cambio que se haga dentro de la función a los valores de los argumento no se reflejará fuera de la función. Si quieres que esto ocurra debes definir el parámetro para que su valor se pase por referencia, añadiendo el símbolo &amp; antes de su nombre.
+&lt;&lt;&lt;
+//Puede haber valores por defecto definidos para varios argumentos, pero en la lista de argumentos de la función todos ellos deben estar a la derecha de cualquier otro argumento sin valor por defecto.//
+&lt;&lt;&lt;
 
+En los ejemplos anteriores los argumentos se pasaban ''por valor''. Esto es, cualquier cambio que se haga dentro de la función a los valores de los argumento ''no'' se reflejará fuera de la función. Si quieres que esto ocurra debes definir el parámetro para que su valor se pase por referencia, ''añadiendo'' el símbolo `&amp;` antes de su nombre.
+
+```
 &lt;?php
-
-     function precio_con_iva(&amp;$precio, $iva=0.18) {
-
-                $precio *= (1 + $iva);
-
-     }
-
-$precio = 10;
-precio_con_iva($precio);
-
-     print &quot;El precio con IVA es &quot;.$precio
-
+    function precio_con_iva(&amp;$precio, $iva=0.18) {
+        $precio *= (1 + $iva);
+    }
+    $precio = 10;
+    precio_con_iva($precio);
+    print &quot;El precio con IVA es &quot;.$precio
 ?&gt;
-
-Autoevaluación
+```
+&lt;&lt;&lt;
+!!Autoevaluación
 
 ¿Está bien definida una función con el siguiente encabezado?
 
+```
 function precio_final (&amp;$precio, $iva=0.18, $aplicar_iva)
-
-Sí.
-No.
-Ejercicio resuelto
+```
+&lt;&lt;&lt;
+&lt;&lt;&lt;
+!!Ejercicio resuelto
 
 Anteriormente hiciste un ejercicio que mostraba la fecha actual en castellano. Con el mismo objetivo (puedes utilizar el código ya hecho), crea una función que devuelva una cadena de texto con la fecha en castellano, e introdúcela en un fichero externo. Después crea una página en PHP que incluya ese fichero y utilice la función para mostrar en pantalla la fecha obtenida.
+
+[[Anexo III|Solución propuesta II]]
 </pre>
 </div>
-<div created="20170920175458522" modified="20170920175720631" orden="020200" tags="[[Estructuras de control]]" title="Bucles">
-<pre>Bucle o lazo.
+<div created="20170920175458522" modified="20170927234625936" orden="020200" tags="[[Estructuras de control]]" title="Bucles">
+<pre>* ''while:'' Usando while puedes definir un bucle que se ejecuta mientras se cumpla una expresión. La expresión se evalúa antes de comenzar cada ejecución del bucle.
 
-    while: Usando while puedes definir un bucle que se ejecuta mientras se cumpla una expresión. La expresión se evalúa antes de comenzar cada ejecución del bucle.
+```
+&lt;?php
+    $a = 1;
+    while ($a &lt; 8)
+        $a += 3;
+    print $a; // el valor obtenido es 10
+?&gt; 
+```
 
-    &lt;?php
+*''do / while'': Es un bucle similar al anterior, pero la expresión se evalúa al final, con lo cual se asegura que la sentencia o conjunto de sentencias del bucle se ejecutan al menos una vez.
 
-    	$a = 1;
+```
+&lt;?php
+    $a = 5;
+    do
+        $a -= 3;
+    while ($a &gt; 10);
+    print $a; // el bucle se ejecuta una sola vez, con lo que el valor obtenido es 2
+?&gt; 
+```
 
-    	while ($a &lt; 8)
+*''for'': Son los bucles más complejos de PHP. Al igual que los del lenguaje C, se componen de tres expresiones:
 
-    		$a += 3;
+```
+for (expr1; expr2; expr3)
+    sentencia o conjunto de sentencias; 
+```
 
-    	print $a; // el valor obtenido es 10
+La primera expresión, `expr1`, se ejecuta solo una vez al comienzo del bucle.
 
-    ?&gt; 
+    La segunda expresión, `expr2`, se evalúa para saber si se debe ejecutar o no la sentencia o conjunto de sentencias. Si el resultado el false, el bucle termina.
 
-    do / while: Es un bucle similar al anterior, pero la expresión se evalúa al final, con lo cual se asegura que la sentencia o conjunto de sentencias del bucle se ejecutan al menos una vez.
+    Si el resultado es true, se ejecutan las sentencias y al finalizar se ejecuta la tercera expresión, `expr3`, y se vuelve a evaluar expr2 para decidir si se vuelve a ejecutar o no el bucle.
 
-    &lt;?php
+```
+&lt;?php
+    for ($a = 5; $a&lt;10; $a+=3) {
+        print $a; // Se muestran los valores 5 y 8
+        print &quot;&lt;br /&gt;&quot;;
+    }
+?&gt; 
+```
 
-    	$a = 5;
+Puedes anidar cualquiera de los bucles anteriores en varios niveles. También puedes usar las sentencias `break`, para salir del bucle, y `continue`, para omitir la ejecución de las sentencias restantes y volver a la comprobación de la expresión respectivamente.
 
-    	do
-
-    		$a -= 3;
-
-    	while ($a &gt; 10);
-
-    	print $a; // el bucle se ejecuta una sola vez, con lo que el valor obtenido es 2
-
-    ?&gt; 
-
-    for: Son los bucles más complejos de PHP. Al igual que los del lenguaje C, se componen de tres expresiones:
-
-    for (expr1; expr2; expr3)
-
-    	sentencia o conjunto de sentencias; 
-
-    La primera expresión, expr1, se ejecuta solo una vez al comienzo del bucle.
-
-    La segunda expresión, expr2, se evalúa para saber si se debe ejecutar o no la sentencia o conjunto de sentencias. Si el resultado el false, el bucle termina.
-
-    Si el resultado es true, se ejecutan las sentencias y al finalizar se ejecuta la tercera expresión, expr3, y se vuelve a evaluar expr2 para decidir si se vuelve a ejecutar o no el bucle.
-
-    &lt;?php
-
-         for ($a = 5; $a&lt;10; $a+=3) {
-
-              print $a; // Se muestran los valores 5 y 8
-
-              print &quot;&lt;br /&gt;&quot;;
-
-         }
-
-    ?&gt; 
-
-Puedes anidar cualquiera de los bucles anteriores en varios niveles. También puedes usar las sentencias break, para salir del bucle, y continue, para omitir la ejecución de las sentencias restantes y volver a la comprobación de la expresión respectivamente.
-Para saber más
-
-En el siguiente videotutorial puedes ver con ejemplos la utilización de bucles en PHP.
-
-Videotutorial sobre la utilización de bucles en PHP.
-Resumen textual alternativo
-Autoevaluación
+&lt;&lt;&lt;
+!!Autoevaluación
 Si quieres mostrar una cadena de texto letra a letra, y no sabes si está vacía, ¿qué tipo de bucle emplearías, while o do-while?
-
-while.
-
-do-while.
-</pre>
+&lt;&lt;&lt;</pre>
 </div>
 <div created="20170920174425684" modified="20170925145937740" orden="010200" tags="[[Elementos del lenguaje PHP]]" title="Cadenas de texto">
 <pre> En PHP ''las cadenas de texto pueden usar tanto comillas simples como comillas dobles''. Sin embargo hay una diferencia importante entre usar unas u otras. Cuando se pone una variable dentro de unas comillas dobles, se procesa y se sustituye por su valor. Así, el ejemplo anterior sobre el uso de print también podía haberse puesto de la siguiente forma:
@@ -8915,7 +8886,7 @@ http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 &lt;/html&gt;
 ```</pre>
 </div>
-<div created="20170920175156014" modified="20170927001756499" orden="020100" tags="[[Estructuras de control]]" title="Condicionales">
+<div created="20170920175156014" modified="20170927002545192" orden="020100" tags="[[Estructuras de control]]" title="Condicionales">
 <pre>''if / elseif / else''. La sentencia `if` permite definir una ''expresión'' para ejecutar o no la sentencia o conjunto de sentencias siguiente. Si la expresión se evalúa a true (verdadero), la sentencia se ejecuta. Si se evalúa a false (falso), no se ejecutará.
 
 Cuando el resultado de la expresión sea false, puedes utilizar `else` para indicar una sentencia o grupo de sentencias a ejecutar en ese caso. Otra alternativa a else es utilizar `elseif` y escribir una nueva expresión que comenzará un nuevo condicional.
@@ -8953,7 +8924,7 @@ Cuando, como sucede en el ejemplo, la sentencia if elseif o else actúe sobre un
 
 Haz una página web que muestre la fecha actual en castellano, incluyendo el día de la semana, con un formato similar al siguiente: &quot;Miércoles, 13 de Abril de 2011&quot;.
 
-Solución: [[Anexo II]]
+Solución: [[Solución propuesta I]]
 &lt;&lt;&lt;
 &lt;&lt;&lt;
 !!Autoevaluación
@@ -8964,68 +8935,48 @@ Solución: [[Anexo II]]
 <div created="20170920174340411" modified="20170920183311491" tags="" title="Contenidos">
 <pre>&lt;&lt;toc-selective-expandable Contenidos sort[orden]&gt;&gt;</pre>
 </div>
-<div created="20170920180033618" modified="20170920180129937" orden="030200" tags="Funciones" title="Ejecución y creación de funciones. Calculadora.">
-<pre>3.2.- Ejecución y creación de funciones.
-Calculadora.
+<div created="20170920180033618" modified="20170928003553576" orden="030200" tags="Funciones" title="Ejecución y creación de funciones. Calculadora.">
+<pre>Ya sabes que para hacer una llamada a una función, basta con poner su nombre y unos paréntesis.
 
-Ya sabes que para hacer una llamada a una función, basta con poner su nombre y unos paréntesis.
-
+```
 &lt;?php
-
-     phpinfo();
-
+    phpinfo();
 ?&gt;
-
+```
 Para crear tus propias funciones, deberás usar la palabra function.
 
+```
 &lt;?php
-
-     function precio_con_iva() {
-
-                global $precio;
-
-                $precio_iva = $precio * 1.18;
-
-                print &quot;El precio con IVA es &quot;.$precio_iva;
-
+    function precio_con_iva() {
+        global $precio;
+        $precio_iva = $precio * 1.18;
+        print &quot;El precio con IVA es &quot;.$precio_iva;
      }
-
      $precio = 10;
-
      precio_con_iva();
-
 ?&gt;
+```
 
 En PHP no es necesario que definas una función antes de utilizarla, excepto cuando está condicionalmente definida como se muestra en el siguiente ejemplo:
 
+```
 &lt;?php
-
-     $iva = true;
-
-     $precio = 10;
-
-     precio_con_iva();               // Da error, pues aquí aún no está definida la función
-
-     if ($iva) {
-
-          function precio_con_iva() {
-
-                         global $precio;
-
-                         $precio_iva = $precio * 1.18;
-
-                         print &quot;El precio con IVA es &quot;.$precio_iva;
-
-          }
-
+    $iva = true;
+    $precio = 10;
+    precio_con_iva();               // Da error, pues aquí aún no está definida la función
+    if ($iva) {
+         function precio_con_iva() {
+             global $precio;
+             $precio_iva = $precio * 1.18;
+             print &quot;El precio con IVA es &quot;.$precio_iva;
+         }
      }
-
      precio_con_iva();               // Aquí ya no da error
-
 ?&gt;
+```
 
-Cuando una función está definida de una forma condicional sus definiciones deben ser procesadas antes de ser llamadas. Por tanto, la definición de la función debe estar antes de cualquier llamada.
-</pre>
+Cuando una función está definida de una forma condicional sus definiciones deben ser procesadas antes de ser llamadas. Por tanto, ''la definición de la función debe estar antes de cualquier llamada.
+''</pre>
 </div>
 <div created="20170920183841240" modified="20170920184001038" orden="061100" tags="Anexos" title="Ejemplo de validación">
 <pre>```
@@ -9188,23 +9139,26 @@ Crea un formulario HTML para introducir el nombre del alumno y el módulo que cu
 Fíjate que si en un formulario web tienes que enviar alguna variable en la que sea posible almacenar más de un valor, como es el caso de las casillas de verificación en el ejemplo anterior (se pueden marcar varias a la vez), tendrás que ponerle corchetes al nombre de la variable para indicar que se trata de un array.
 </pre>
 </div>
-<div created="20170920175759737" modified="20170920175822854" orden="030000" tags="Contenidos" title="Funciones">
-<pre>Cuando quieres repetir la ejecución de un bloque de código, puedes utilizar un bucle. Las funciones tienen una utilidad similar: nos permiten asociar una etiqueta (el nombre de la función) con un bloque de código a ejecutar. Además, al usar funciones estamos ayudando a estructurar mejor el código. Como ya sabes, las funciones permiten crear variables locales que no serán visibles fuera del cuerpo de las mismas.
+<div created="20170920175759737" modified="20170928001551102" orden="030000" tags="Contenidos" title="Funciones">
+<pre>Cuando quieres repetir la ejecución de un bloque de código, puedes utilizar un ''bucle''. Las ''funciones'' tienen una utilidad similar: nos permiten asociar una etiqueta (el nombre de la función) con un ''bloque de código a ejecuta''r. Además, al usar funciones estamos ayudando a estructurar mejor el código. Como ya sabes, las funciones permiten crear variables locales que no serán visibles fuera del cuerpo de las mismas.
 
-Como programador puedes aprovecharte de la gran cantidad de funciones disponibles en PHP. De éstas, muchas están incluidas en el núcleo de PHP y se pueden usar directamente. Otras muchas se encuentran disponibles en forma de extensiones, y se pueden incorporar al lenguaje cuando se necesitan.
+Como programador puedes aprovecharte de la ''gran cantidad de funciones'' disponibles en ''PHP''. De éstas, ''muchas'' están ''incluidas en el núcleo de PHP'' y se pueden usar directamente. Otras muchas se encuentran disponibles ''en forma de extensiones'', y se pueden incorporar al lenguaje cuando se necesitan.
 
-Con la distribución de PHP se incluyen varias extensiones. Para poder usar las funciones de una extensión, tienes que asegurarte de activarla mediante el uso de una directiva extensión en el fichero php.ini. Muchas otras extensiones no se incluyen con PHP y antes de poder utilizarlas tienes que descargarlas.
+Con la distribución de PHP se incluyen ''varias extensiones''. Para poder usar las funciones de una extensión, tienes que asegurarte de activarla mediante el uso de una directiva extensión en el fichero `php.ini`. Muchas ''otras extensiones'' no se incluyen con PHP y antes de poder utilizarlas tienes que ''descargarlas''.
 
-Para obtener extensiones para el lenguaje PHP puedes utilizar PECL. PECL es un repositorio de extensiones para PHP. Junto con PHP se incluye un comando pecl que puedes utilizar para instalar extensiones de forma sencilla:
+Para ''obtener extensiones'' para el lenguaje PHP puedes utilizar ''PECL''. PECL es un ''repositorio de extensiones'' para PHP. Junto con PHP se incluye un comando pecl que puedes utilizar para instalar extensiones de forma sencilla:
 
+```
 pecl install nombre_extensión
+```
 
-Para saber más
+&lt;&lt;&lt;
+!Para saber más
 
 En el manual de PHP tienes más información sobre PECL.
 
-Información sobre PECL.
-</pre>
+&lt;center&gt;[[Información sobre PECL|http://php.net/manual/es/install.pecl.php]].&lt;/center&gt;
+&lt;&lt;&lt;</pre>
 </div>
 <div created="20170920174720772" modified="20170926190842456" orden="010400" tags="[[Elementos del lenguaje PHP]]" title="Funciones relacionadas con los tipos de datos (II).">
 <pre>En PHP ''no existe un tipo de datos específico para trabajar con fechas y horas''. La información de fecha y hora se almacena internamente como un número entero. Sin embargo, dentro de las ''funciones'' de PHP tienes a tu disposición unas cuantas ''para trabajar'' con ese tipo de datos.
@@ -9561,29 +9515,49 @@ Modifica el ejercicio que mostraba la fecha en castellano, para que obtenga lo m
 Consultar las funciones checkdate y mktime en el manual de PHP.
 </pre>
 </div>
-<div created="20170920175846842" modified="20170920175950376" orden="030100" tags="Funciones" title="Inclusión de ficheros externos">
-<pre>Acción de insertar una fila entre otras.
+<div created="20170920175846842" modified="20170928003142807" orden="030100" tags="Funciones" title="Inclusión de ficheros externos">
+<pre>Conforme vayan creciendo los programas que hagas, verás que resulta ''trabajoso'' encontrar la información que buscas dentro del código. En ocasiones resulta útil ''agrupar'' ciertos grupos de funciones o ''bloques de código'', y ponerlos en un ''fichero aparte''. Posteriormente, puedes hacer ''referencia'' a esos ficheros para que PHP incluya su contenido como parte del programa actual.
 
-Conforme vayan creciendo los programas que hagas, verás que resulta trabajoso encontrar la información que buscas dentro del código. En ocasiones resulta útil agrupar ciertos grupos de funciones o bloques de código, y ponerlos en un fichero aparte. Posteriormente, puedes hacer referencia a esos ficheros para que PHP incluya su contenido como parte del programa actual.
+Para incorporar a tu programa contenido de un archivo externo, tienes ''varias posibilidades'':
 
-Para incorporar a tu programa contenido de un archivo externo, tienes varias posibilidades:
+* ''include'': Evalúa el contenido del fichero que se indica y lo ''incluye'' como parte del fichero actual, en el mismo punto en que se realiza la llamada. La ubicación del fichero puede especificarse utilizando una ruta absoluta, pero lo más usual es con una ''ruta relativa''. En este caso, se toma como base la ruta que se especifica en la directiva `include_path` del fichero `php.ini`. Si no se encuentra en esa ubicación, se buscará también en ''el directorio del script actual'', y en el directorio de ejecución.
 
-    include: Evalúa el contenido del fichero que se indica y lo incluye como parte del fichero actual, en el mismo punto en que se realiza la llamada. La ubicación del fichero puede especificarse utilizando una ruta absoluta, pero lo más usual es con una ruta relativa. En este caso, se toma como base la ruta que se especifica en la directiva include_path del fichero php.ini. Si no se encuentra en esa ubicación, se buscará también en el directorio del guión actual, y en el directorio de ejecución.
+&lt;&lt;&lt;
+!! Ejercicio resuelto
+`definiciones.php`
 
-Ejercicio resuelto
+```
+&lt;?php
+    $modulo = 'DWES'; 
+    $ciclo = 'DAW';
+?&gt;
+```
+`programa.php`
 
-Te presentamos un ejemplo de utilización de include.
-Cuando se comienza a evaluar el contenido del fichero externo, se abandona de forma automática el modo PHP y su contenido se trata en principio como etiquetas HTML. Por este motivo, es necesario delimitar el código PHP que contenga nuestro archivo externo utilizando dentro del mismo los delimitadores &lt;?php y ?&gt;.
+```
+&lt;?php
+    print &quot;Módulo $modulo del ciclo $ciclo&lt;br /&gt;&quot;; //Solo muestra &quot;Modulo del ciclo&quot;
+    include 'definiciones.php';
+    print &quot; Módulo $modulo del ciclo $ciclo&lt;br /&gt;&quot;; // muestra &quot;Modulo DWES del ciclo DAW&quot;
+?&gt;
+```
+&lt;&lt;&lt;
 
-    include_once: Si por equivocación incluyes más de una vez un mismo fichero, lo normal es que obtengas algún tipo de error (por ejemplo, al repetir una definición de una función). include_once funciona exactamente igual que include, pero solo incluye aquellos ficheros que aún no se hayan incluido.
-    require: Si el fichero que queremos incluir no se encuentra, include da un aviso y continua la ejecución del guión. La diferencia más importante al usar require es que en ese caso, cuando no se puede incluir el fichero, se detiene la ejecución del guión.
-    require_once. Es la combinación de las dos anteriores. Asegura la inclusión del fichero indicado solo una vez, y genera un error si no se puede llevar a cabo.
+&lt;&lt;&lt;
+Cuando se comienza a ''evaluar'' el contenido del fichero externo, se ''abandona'' de forma automática el modo PHP y ''su contenido se trata'' en principio ''como etiquetas HTML''. Por este motivo, es necesario delimitar el código PHP que contenga nuestro archivo externo utilizando dentro del mismo los delimitadores `&lt;?php` y `?&gt;`.
+&lt;&lt;&lt;
 
+* ''include_once'': Si por equivocación incluyes más de una vez un mismo fichero, lo normal es que obtengas algún tipo de error (por ejemplo, al repetir una definición de una función). `include_once` funciona exactamente igual que include, pero //solo incluye aquellos ficheros que aún no se hayan incluido//.
+*''require'': Si el fichero que queremos incluir no se encuentra, include da un aviso y continua la ejecución del guión. La diferencia más importante al usar `require` es que en ese caso, cuando no se puede incluir el fichero, //se detiene la ejecución del guión//.
+*''require_once''. Es la combinación de las dos anteriores. Asegura la inclusión del fichero indicado solo una vez, y genera un error si no se puede llevar a cabo.
+
+&lt;&lt;&lt;
 Muchos programadores utilizan la doble extensión .inc.php para aquellos ficheros en lenguaje PHP cuyo destino es ser incluidos dentro de otros, y nunca han de ejecutarse por sí mismos.
-Autoevaluación
+&lt;&lt;&lt;
+&lt;&lt;&lt;
+!!Autoevaluación
 ¿Puedes utilizar include o require para incluir el mismo encabezado HTML en varias páginas?
-Sí.
-No.
+
 </pre>
 </div>
 <div created="20170920181155750" modified="20170920181314061" orden="050100" tags="[[Formularios web]]" title="Procesamiento de la información devuelta por un formulario web">
