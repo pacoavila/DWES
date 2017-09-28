@@ -8457,10 +8457,10 @@ Error message and password prompt
 <div created="20170925111514014" modified="20170925111514015" title="$:/state/plugin-info-334910430-$:/core---1812962263">
 <pre>contents</pre>
 </div>
-<div created="20170925111336136" modified="20170928002324907" title="$:/state/showeditpreview">
+<div created="20170925111336136" modified="20170928075251868" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170920175320671" modified="20170925152000553" title="$:/state/sidebar">
+<div created="20170920175320671" modified="20170928064819608" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20170920173643751" modified="20170925111146456" title="$:/state/tab/sidebar--1835078512">
@@ -8475,16 +8475,16 @@ Error message and password prompt
 <div created="20170920175410981" modified="20170928001613776" title="$:/state/toc/Contenidos-Estructuras de control-1645261823">
 <pre>close</pre>
 </div>
-<div created="20170920181321955" modified="20170928001617312" title="$:/state/toc/Contenidos-Formularios web-1645261823">
+<div created="20170920181321955" modified="20170928072627579" title="$:/state/toc/Contenidos-Formularios web-1645261823">
 <pre>close</pre>
 </div>
-<div created="20170920175945495" modified="20170928001557457" title="$:/state/toc/Contenidos-Funciones-1645261823">
+<div created="20170920175945495" modified="20170928072022432" title="$:/state/toc/Contenidos-Funciones-1645261823">
+<pre>close</pre>
+</div>
+<div created="20170920180627850" modified="20170928073140531" title="$:/state/toc/Contenidos-Tipos de datos compuestos-1645261823">
 <pre>open</pre>
 </div>
-<div created="20170920180627850" modified="20170928001616040" title="$:/state/toc/Contenidos-Tipos de datos compuestos-1645261823">
-<pre>close</pre>
-</div>
-<div list="Contenidos [[Solución propuesta II]] Anexos Argumentos" title="$:/StoryList">
+<div list="Contenidos [[Funciones relacionadas con los tipos de datos compuestos]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170925111501897" modified="20170925111507074" title="$:/temp/advancedsearch">
@@ -9230,59 +9230,55 @@ En la documentación de PHP puedes consultar todas las funciones para gestionar 
 [[Funciones para gestionar fechas y horas.|http://php.net/manual/es/ref.datetime.php]]
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20170920180814516" modified="20170920180852163" orden="040300" tags="[[Tipos de datos compuestos]]" title="Funciones relacionadas con los tipos de datos compuestos">
-<pre>Letra x entre paréntesis.
+<div created="20170920180814516" modified="20170928080517245" orden="040300" tags="[[Tipos de datos compuestos]]" title="Funciones relacionadas con los tipos de datos compuestos">
+<pre>Además de asignando valores directamente, ''la función `array` permite crear un array con una sola línea de código'', tal y como vimos anteriormente. Esta función recibe un conjunto de parámetros, y ''crea un array'' a partir de los valores que se le pasan. Si en los parámetros no se indica el valor de la clave, crea un ''array numérico'' (con base 0). Si no se le pasa ningún parámetro, crea un ''array vacío''.
 
-Además de asignando valores directamente, la función array permite crear un array con una sola línea de código, tal y como vimos anteriormente. Esta función recibe un conjunto de parámetros, y crea un array a partir de los valores que se le pasan. Si en los parámetros no se indica el valor de la clave, crea un array numérico (con base 0). Si no se le pasa ningún parámetro, crea un array vacío.
-
+```
 $a = array();  // array vacío
-
 $modulos = array(&quot;Programación&quot;, &quot;Bases de datos&quot;, ..., &quot;Desarrollo web en entorno servidor&quot;);   // array numérico
-
-Una vez definido un array puedes añadir nuevos elementos (no definiendo el índice, o utilizando un índice nuevo) y modificar los ya existentes (utilizando el índice del elemento a modificar). También se pueden eliminar elementos de un array utilizando la función unset.
+```
+Una vez definido un array puedes ''añadir nuevos elementos'' (no definiendo el índice, o utilizando un índice nuevo) y ''modificar los ya existentes'' (utilizando el índice del elemento a modificar). También se pueden ''eliminar elementos'' de un array utilizando la función `unset`.
 
 En el caso de los arrays numéricos, eliminar un elemento significa que las claves del mismo ya no estarán consecutivas.
 
+```
 unset ($modulos [0]);
-
 // El primer elemento pasa a ser $modulos [1] == &quot;Bases de datos&quot;;
+```
+La función `array_values` recibe un ''array como parámetro'', y devuelve un nuevo array con los mismos elementos y con ''índices numéricos consecutivos'' con base 0.
 
-La función array_values recibe un array como parámetro, y devuelve un nuevo array con los mismos elementos y con índices numéricos consecutivos con base 0.
+Para comprobar si una variable es de ''tipo'' array, utiliza la función `is_array`. Para obtener el ''número de elementos'' que contiene un array, tienes la función `count`.
 
-Para comprobar si una variable es de tipo array, utiliza la función is_array. Para obtener el número de elementos que contiene un array, tienes la función count.
+Si quieres ''buscar'' un elemento concreto dentro de un array, puedes utilizar la función ''in_array''. Recibe como parámetros el ''elemento'' a buscar y la ''variable de tipo array'' en la que buscar, y devuelve `true` si encontró el elemento o `false` en caso contrario.
 
-Si quieres buscar un elemento concreto dentro de un array, puedes utilizar la función in_array. Recibe como parámetros el elemento a buscar y la variable de tipo array en la que buscar, y devuelve true si encontró el elemento o false en caso contrario.
-
+```
 $modulos = array(&quot;Programación&quot;, &quot;Bases de datos&quot;, &quot;Desarrollo web en entorno servidor&quot;);
-
 $modulo = &quot;Bases de datos&quot;;
-
 if (in_array($modulo, $modulos)) printf &quot;Existe el módulo de nombre &quot;.$modulo;
+```
 
-Otra posibilidad es la función array_search, que recibe los mismos parámetros pero devuelve la clave correspondiente al elemento, o false si no lo encuentra.
+''Otra posibilidad'' es la función `array_search`, que recibe los mismos parámetros pero ''devuelve la clave'' correspondiente al elemento, o `false` si no lo encuentra.
 
-Y si lo que quieres buscar es una clave en un array, tienes la función array_key_exists, que devuelve true o false.
-Para saber más
+Y si lo que quieres buscar es una clave en un array, tienes la función `array_key_exists`, que devuelve `true` o `false`.
+
+&lt;&lt;&lt;
+!!Para saber más
 
 En realidad en PHP hay muchas funciones para gestionar arrays. Puedes consultar una lista completa en el manual online de PHP.
 
-Lista completa.
-Autoevaluación
-¿Se puede usar el siguiente código para recorrer un array $a cualquiera?
+&lt;center&gt;[[Lista completa.|http://es.php.net/manual/es/ref.array.php]]&lt;/center&gt;
 
-while ($variable = $current($a))
+&lt;&lt;&lt;
+&lt;&lt;&lt;
+!!Autoevaluación
+¿Se puede usar el siguiente código para recorrer un array `$a` cualquiera?
 
-{
-
+```
+while ($variable = $current($a)){
     …
-
     next($a);
-
 }
-
-No.
-Sí.
-</pre>
+```</pre>
 </div>
 <div created="20170920174549778" modified="20170925152652991" orden="010300" tags="[[Elementos del lenguaje PHP]]" title="Funciones relacionadas con los tipos de datos(I)">
 <pre>En PHP existen ''funciones específicas'' para ''comprobar'' y ''establecer'' el tipo de datos de una variable, `gettype` ''obtiene el tipo'' de la variable que se le pasa como parámetro y devuelve una cadena de texto, que puede ser ''array'', ''boolean'', ''double'', ''integer'', ''object'', ''string'', ''null'', ''resource'' o //''unknowntype''.//
@@ -9628,591 +9624,344 @@ http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 ```
 </pre>
 </div>
-<div created="20170920180518291" modified="20170920180622320" orden="040100" tags="[[Tipos de datos compuestos]]" title="Recorrer arrays (I)">
-<pre>Las cadenas de texto o strings se pueden tratar como arrays en los que se almacena una letra en cada posición, siendo 0 el índice correspondiente a la primera letra, 1 el de la segunda, etc.
+<div created="20170920180518291" modified="20170928071637055" orden="040100" tags="[[Tipos de datos compuestos]]" title="Recorrer arrays (I)">
+<pre>Las ''cadenas de texto'' o ''strings'' se pueden tratar como arrays en los que se almacena una letra en cada posición, siendo 0 el índice correspondiente a la primera letra, 1 el de la segunda, etc.
 
+```
 // cadena de texto
-
 $modulo = &quot;Desarrollo web en entorno servidor&quot;;
-
 // $modulo[3] == &quot;a&quot;;
+```
 
-Para recorrer los elementos de un array, en PHP puedes usar un bucle específico: foreach. Utiliza una variable temporal para asignarle en cada iteración el valor de cada uno de los elementos del array. Puedes usarlo de dos formas. Recorriendo sólo los elementos:
+Para ''recorrer'' los elementos de un array, en PHP puedes usar un ''bucle específico'': `foreach`. Utiliza una ''variable temporal'' para asignarle en cada iteración el valor de cada uno de los elementos del array. Puedes usarlo de dos formas. Recorriendo sólo los elementos:
 
+```
 $modulos = array(&quot;PR&quot; =&gt; &quot;Programación&quot;, &quot;BD&quot; =&gt; &quot;Bases de datos&quot;, ..., &quot;DWES&quot; =&gt; &quot;Desarrollo web en entorno servidor&quot;);
-
 foreach ($modulos as $modulo) {
-
-                print &quot;Módulo: &quot;.$modulo. &quot;&lt;br /&gt;&quot;
-
+    print &quot;Módulo: &quot;.$modulo. &quot;&lt;br /&gt;&quot;
 }
 
+```
 O recorriendo los elementos y sus valores clave de forma simultánea:
 
+```
 $modulos = array(&quot;PR&quot; =&gt; &quot;Programación&quot;, &quot;BD&quot; =&gt; &quot;Bases de datos&quot;, ..., &quot;DWES&quot; =&gt; &quot;Desarrollo web en entorno servidor&quot;);
-
 foreach ($modulos as $codigo =&gt; $modulo) {
-
-                print &quot;El código del módulo &quot;.$modulo.&quot; es &quot;.$codigo.&quot;&lt;br /&gt;&quot;
-
+    print &quot;El código del módulo &quot;.$modulo.&quot; es &quot;.$codigo.&quot;&lt;br /&gt;&quot;
 }
+```
 
-Ejercicio resuelto
+&lt;&lt;&lt;
+!!Ejercicio resuelto
 
-Haz una página PHP que utilice foreach para mostrar todos los valores del array $_SERVER en una tabla con dos columnas. La primera columna debe contener el nombre de la variable, y la segunda su valor.
-Autoevaluación
+Haz una página PHP que utilice `foreach` para mostrar todos los valores del array `$_SERVER` en una tabla con dos columnas. La primera columna debe contener el nombre de la variable, y la segunda su valor.
+
+&lt;center&gt;[[Solución|Solución propuesta III]]&lt;/center&gt;
+&lt;&lt;&lt;
+
+&lt;&lt;&lt;
+!!Autoevaluación
 La inicialización del array en el código siguiente, ¿generará algún error?
 
+```
 $a[0] = 0;
-
 $a[1] = &quot;uno&quot;;
-
 $a[&quot;tres&quot;] = 3;
+```
+&lt;&lt;&lt;
 
-Sí.
-No.
 </pre>
 </div>
-<div created="20170920180639059" modified="20170920180747990" orden="040200" tags="[[Tipos de datos compuestos]]" title="Recorrer arrays (II)">
-<pre>Punta de flecha sobre una cuadrícula.
+<div created="20170920180639059" modified="20170928074917489" orden="040200" tags="[[Tipos de datos compuestos]]" title="Recorrer arrays (II)">
+<pre>Pero en PHP también ''hay otra forma de recorrer los valores de un array''. Cada array mantiene un ''puntero interno'', que se puede utilizar con este fin. Utilizando funciones específicas, podemos ''avanzar'', ''retroceder'' o ''inicializar'' el puntero, así como recuperar los valores del elemento (o de la pareja clave / elemento) al que apunta el puntero en cada momento. Algunas de estas funciones son:
 
-Pero en PHP también hay otra forma de recorrer los valores de un array. Cada array mantiene un puntero interno, que se puede utilizar con este fin. Utilizando funciones específicas, podemos avanzar, retroceder o inicializar el puntero, así como recuperar los valores del elemento (o de la pareja clave / elemento) al que apunta el puntero en cada momento. Algunas de estas funciones son:
-Funciones para recorrer arrays.
 
-Función
-	
+|!Función|!Resultado|
+|reset|Sitúa el puntero interno al comienzo del array.|
+|next|Avanza el puntero interno una posición.|
+|prev|Mueve el puntero interno una posición hacia atrás.|
+|end|Sitúa el puntero interno al final del array.|
+|current|Devuelve el elemento de la posición actual.|
+|key|Devuelve la clave de la posición actual.|
+|each|Devuelve un array con la clave y el elemento de la posición actual. Además, avanza el puntero interno una posición.|
+|''Funciones para recorrer arrays.''|c
 
-Resultado
 
-reset
-	
+&lt;&lt;&lt;
+Las funciones `reset`, `next`, `prev` y `end`, además de mover el puntero interno devuelven, al igual que `current`, ''el valor del nuevo elemento'' en que se posiciona. Si al mover el puntero te sales de los límites del array (por ejemplo, si ya estás en el último elemento y haces un `next`), cualquiera de ellas devuelve `false`. Sin embargo, al comprobar este valor devuelto no serás capaz de distinguir si te has salido de los límites del array, o si estás en una posición válida del array que contiene el valor &quot;false&quot;.
 
-Sitúa el puntero interno al comienzo del array.
+La función `key` devuelve `null` ''si el puntero interno está fuera de los límites del array''.
+&lt;&lt;&lt;
 
-next
-	
+La función `each` devuelve un array con cuatro elementos. Los elementos `0` y `'key'` almacenan el valor de la clave en la posición actual del puntero interno. Los elementos `1` y `'value'` devuelven el valor almacenado.
 
-Avanza el puntero interno una posición.
+Si el puntero interno del array se ha ''pasado de los límites'' del array, la función `each` devuelve `false`, por lo que la puedes usar para crear un bucle que recorra el array de la siguiente forma:
 
-prev
-	
 
-Mueve el puntero interno una posición hacia atrás.
-
-end
-	
-
-Sitúa el puntero interno al final del array.
-
-current
-	
-
-Devuelve el elemento de la posición actual.
-
-key
-	
-
-Devuelve la clave de la posición actual.
-
-each
-	
-
-Devuelve un array con la clave y el elemento de la posición actual. Además, avanza el puntero interno una posición.
-
-Las funciones reset, next, prev y end, además de mover el puntero interno devuelven, al igual que current, el valor del nuevo elemento en que se posiciona. Si al mover el puntero te sales de los límites del array (por ejemplo, si ya estás en el último elemento y haces un next), cualquiera de ellas devuelve false. Sin embargo, al comprobar este valor devuelto no serás capaz de distinguir si te has salido de los límites del array, o si estás en una posición válida del array que contiene el valor &quot;false&quot;.
-
-La función key devuelve null si el puntero interno está fuera de los límites del array.
-
-La función each devuelve un array con cuatro elementos. Los elementos 0 y 'key' almacenan el valor de la clave en la posición actual del puntero interno. Los elementos 1 y 'value' devuelven el valor almacenado.
-
-Si el puntero interno del array se ha pasado de los límites del array, la función each devuelve false, por lo que la puedes usar para crear un bucle que recorra el array de la siguiente forma:
-
+```
 while ($modulo = each($modulos)) {
-
      print &quot;El código del módulo &quot;.$modulo[1].&quot; es &quot;.$modulo[0].&quot;&lt;br /&gt;&quot;
-
 }
+```
 
+&lt;&lt;&lt;
 Ejercicio resuelto
 
 Haz una página PHP que utilice estas funciones para crear una tabla como la del ejercicio anterior.
-</pre>
+&lt;center&gt;[[Anexo V|Solución propuesta IV]]&lt;/center&gt;
+&lt;&lt;&lt;</pre>
 </div>
-<div created="20170920181915902" modified="20170920182041261" orden="060200" tags="Anexos" title="Solución propuesta I">
-<pre>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
-
+<div created="20170920181915902" modified="20170928072608973" orden="060200" tags="Anexos" title="Solución propuesta I">
+<pre>```
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
 http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
-
 &lt;!-- Desarrollo Web en Entorno Servidor --&gt;
-
 &lt;!-- Tema 2 : Características del Lenguaje PHP --&gt;
-
 &lt;!-- Ejemplo: Mostrar fecha en castellano --&gt;
-
 &lt;html&gt;
-
-&lt;head&gt;
-
-&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-
-&lt;title&gt;Fecha en castellano&lt;/title&gt;
-
-&lt;/head&gt;
-
-&lt;body&gt;
-
-&lt;?php
-
-date_default_timezone_set('Europe/Madrid');
-
-$numero_mes = date(&quot;m&quot;);
-
-$numero_dia_semana = date(&quot;N&quot;);
-
-switch($numero_mes)
-
-{
-
-case 1: $mes = &quot;Enero&quot;;
-
-break;
-
-case 2: $mes = &quot;Febrero&quot;;
-
-break;
-
-case 3: $mes = &quot;Marzo&quot;;
-
-break;
-
-case 4: $mes = &quot;Abril&quot;;
-
-break;
-
-case 5: $mes = &quot;Mayo&quot;;
-
-break;
-
-case 6: $mes = &quot;Junio&quot;;
-
-break;
-
-case 7: $mes = &quot;Julio&quot;;
-
-break;
-
-case 8: $mes = &quot;Agosto&quot;;
-
-break;
-
-case 9: $mes = &quot;Septiembre&quot;;
-
-break;
-
-case 10: $mes = &quot;Octubre&quot;;
-
-break;
-
-case 11: $mes = &quot;Noviembre&quot;;
-
-break;
-
-case 12: $mes = &quot;Diciembre&quot;;
-
-break;
-
-}
-
-switch($numero_dia_semana)
-
-{
-
-case 1: $dia_semana = &quot;Lunes&quot;;
-
-break;
-
-case 2: $dia_semana = &quot;Martes&quot;;
-
-break;
-
-case 3: $dia_semana = &quot;Miércoles&quot;;
-
-break;
-
-case 4: $dia_semana = &quot;Jueves&quot;;
-
-break;
-
-case 5: $dia_semana = &quot;Viernes&quot;;
-
-break;
-
-case 6: $dia_semana = &quot;Sábado&quot;;
-
-break;
-
-case 7: $dia_semana = &quot;Domingo&quot;;
-
-break;
-
-}
-
-print $dia_semana.&quot;, &quot;.date(&quot;j&quot;).&quot; de &quot;.$mes.&quot; de &quot;.date(&quot;Y&quot;);
-
-?&gt;
-
-&lt;/body&gt;
-
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+        &lt;title&gt;Fecha en castellano&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;?php
+            date_default_timezone_set('Europe/Madrid');
+            $numero_mes = date(&quot;m&quot;);
+            $numero_dia_semana = date(&quot;N&quot;);
+            switch($numero_mes){
+                case 1: $mes = &quot;Enero&quot;;
+                    break;
+                case 2: $mes = &quot;Febrero&quot;;
+                    break;
+                case 3: $mes = &quot;Marzo&quot;;
+                    break;
+                case 4: $mes = &quot;Abril&quot;;
+                    break;
+                case 5: $mes = &quot;Mayo&quot;;
+                    break;
+                case 6: $mes = &quot;Junio&quot;;
+                    break;
+                case 7: $mes = &quot;Julio&quot;;
+                    break;
+                case 8: $mes = &quot;Agosto&quot;;
+                    break;
+                case 9: $mes = &quot;Septiembre&quot;;
+                    break;
+                case 10: $mes = &quot;Octubre&quot;;
+                    break;
+                case 11: $mes = &quot;Noviembre&quot;;
+                    break;
+                case 12: $mes = &quot;Diciembre&quot;;
+                    break;
+            }
+            switch($numero_dia_semana){
+                case 1: $dia_semana = &quot;Lunes&quot;;
+                    break;
+                case 2: $dia_semana = &quot;Martes&quot;;
+                    break;
+                case 3: $dia_semana = &quot;Miércoles&quot;;
+                    break;
+                case 4: $dia_semana = &quot;Jueves&quot;;
+                    break;
+                case 5: $dia_semana = &quot;Viernes&quot;;
+                    break;
+                case 6: $dia_semana = &quot;Sábado&quot;;
+                    break;
+                case 7: $dia_semana = &quot;Domingo&quot;;
+                    break;
+            }
+            print $dia_semana.&quot;, &quot;.date(&quot;j&quot;).&quot; de &quot;.$mes.&quot; de &quot;.date(&quot;Y&quot;);
+        ?&gt;
+    &lt;/body&gt;
 &lt;/html&gt;
 
+
+```
 </pre>
 </div>
-<div created="20170920182115495" modified="20170920182156062" orden="060300" tags="Anexos" title="Solución propuesta II">
-<pre>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
-
+<div created="20170920182115495" modified="20170928072958021" orden="060300" tags="Anexos" title="Solución propuesta II">
+<pre>```
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
 http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
-
 &lt;!-- Desarrollo Web en Entorno Servidor --&gt;
-
 &lt;!-- Tema 2 : Características del Lenguaje PHP --&gt;
-
 &lt;!-- Ejemplo: Utilización include --&gt;
-
 &lt;html&gt;
-
      &lt;head&gt;
-
           &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-
           &lt;title&gt;Fecha en castellano&lt;/title&gt;
-
      &lt;/head&gt;
-
      &lt;body&gt;
-
 &lt;?php
-
      include 'funciones.inc.php';
-
      print fecha();
-
 ?&gt;
-
      &lt;/body&gt;
-
 &lt;/html&gt;
-
  
-
 &lt;!-- Desarrollo Web en Entorno Servidor --&gt;
-
 &lt;!-- Tema 2 : Características del Lenguaje PHP --&gt;
-
 &lt;!-- Ejemplo: Utilización include --&gt;
-
 &lt;!-- Fichero: funciones.inc.php --&gt;
-
 &lt;?php
-
      // Función que devuelve un texto con la fecha actual en castellano
-
-     function fecha()
-
-     {
-
-     date_default_timezone_set('Europe/Madrid');
-
-     $numero_mes = date(&quot;m&quot;);
-
-     $numero_dia_semana = date(&quot;N&quot;);
-
-     switch($numero_mes)
-
-     {
-
-          case 1: $mes = &quot;Enero&quot;;
-
-               break;
-
-          case 2: $mes = &quot;Febrero&quot;;
-
-               break;
-
-          case 3: $mes = &quot;Marzo&quot;;
-
-               break;
-
-          case 4: $mes = &quot;Abril&quot;;
-
-               break;
-
-          case 5: $mes = &quot;Mayo&quot;;
-
-               break;
-
-          case 6: $mes = &quot;Junio&quot;;
-
-               break;
-
-          case 7: $mes = &quot;Julio&quot;;
-
-               break;
-
-          case 8: $mes = &quot;Agosto&quot;;
-
-               break;
-
-          case 9: $mes = &quot;Septiembre&quot;;
-
-               break;
-
-          case 10: $mes = &quot;Octubre&quot;;
-
-               break;
-
-          case 11: $mes = &quot;Noviembre&quot;;
-
-               break;
-
-          case 12: $mes = &quot;Diciembre&quot;;
-
-               break;
-
+     function fecha(){
+         date_default_timezone_set('Europe/Madrid');
+         $numero_mes = date(&quot;m&quot;);
+         $numero_dia_semana = date(&quot;N&quot;);
+         switch($numero_mes){
+              case 1: $mes = &quot;Enero&quot;;
+                   break;
+              case 2: $mes = &quot;Febrero&quot;;
+                   break;
+              case 3: $mes = &quot;Marzo&quot;;
+                   break;
+              case 4: $mes = &quot;Abril&quot;;
+                   break;
+              case 5: $mes = &quot;Mayo&quot;;
+                   break;
+              case 6: $mes = &quot;Junio&quot;;
+                   break;
+              case 7: $mes = &quot;Julio&quot;;
+                   break;
+              case 8: $mes = &quot;Agosto&quot;;
+                   break;
+              case 9: $mes = &quot;Septiembre&quot;;
+                   break;
+              case 10: $mes = &quot;Octubre&quot;;
+                   break;
+              case 11: $mes = &quot;Noviembre&quot;;
+                   break;
+              case 12: $mes = &quot;Diciembre&quot;;
+                   break;
+         }
+         switch($numero_dia_semana){
+              case 1: $dia_semana = &quot;Lunes&quot;;
+                   break;
+              case 2: $dia_semana = &quot;Martes&quot;;
+                   break;
+              case 3: $dia_semana = &quot;Miércoles&quot;;
+                   break;
+              case 4: $dia_semana = &quot;Jueves&quot;;
+                   break;
+              case 5: $dia_semana = &quot;Viernes&quot;;
+                   break;
+              case 6: $dia_semana = &quot;Sábado&quot;;
+                   break;
+              case 7: $dia_semana = &quot;Domingo&quot;;
+                   break;
+         }
+         return $dia_semana.&quot;, &quot;.date(&quot;j&quot;).&quot; de &quot;.$mes.&quot; de &quot;.date(&quot;Y&quot;);
      }
-
-     switch($numero_dia_semana)
-
-     {
-
-          case 1: $dia_semana = &quot;Lunes&quot;;
-
-               break;
-
-          case 2: $dia_semana = &quot;Martes&quot;;
-
-               break;
-
-          case 3: $dia_semana = &quot;Miércoles&quot;;
-
-               break;
-
-          case 4: $dia_semana = &quot;Jueves&quot;;
-
-               break;
-
-          case 5: $dia_semana = &quot;Viernes&quot;;
-
-               break;
-
-          case 6: $dia_semana = &quot;Sábado&quot;;
-
-               break;
-
-          case 7: $dia_semana = &quot;Domingo&quot;;
-
-               break;
-
-     }
-
-     return $dia_semana.&quot;, &quot;.date(&quot;j&quot;).&quot; de &quot;.$mes.&quot; de &quot;.date(&quot;Y&quot;);
-
-     }
-
 ?&gt;
 
+```
 </pre>
 </div>
-<div created="20170920182252809" modified="20170920182347153" orden="060400" tags="Anexos" title="Solución propuesta III">
-<pre>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
-
+<div created="20170920182252809" modified="20170928071921650" orden="060400" tags="Anexos" title="Solución propuesta III">
+<pre>```
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
 http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
-
 &lt;!-- Desarrollo Web en Entorno Servidor --&gt;
-
 &lt;!-- Tema 2 : Características del Lenguaje PHP --&gt;
-
 &lt;!-- Ejemplo: Tabla con los valores del array $_SERVER utilizando foreach --&gt;
-
 &lt;html&gt;
-
      &lt;head&gt;
-
           &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-
           &lt;title&gt;Tabla&lt;/title&gt;
-
           &lt;style type=&quot;text/css&quot;&gt;
-
                td, th {border: 1px solid grey; padding: 4px;}
-
                th {text-align:center;}
-
                table {border: 1px solid black;}
-
           &lt;/style&gt;
-
      &lt;/head&gt;
-
      &lt;body&gt;
-
           &lt;table&gt;
-
           &lt;tbody&gt;
-
                &lt;tr&gt;
-
                     &lt;th&gt;Variable&lt;/th&gt;
-
                     &lt;th&gt;Valor&lt;/th&gt;
-
                &lt;/tr&gt;
-
 &lt;?php
-
-     foreach ($_SERVER as $variable =&gt; $valor) {
-
-print &quot;&lt;tr&gt;&quot;;
-
-print &quot;&lt;td&gt;&quot;.$variable.&quot;&lt;/td&gt;&quot;;
-
-print &quot;&lt;td&gt;&quot;.$valor.&quot;&lt;/td&gt;&quot;;
-
-print &quot;&lt;/tr&gt;&quot;;
-
-     }
-
+    foreach ($_SERVER as $variable =&gt; $valor) {
+        print &quot;&lt;tr&gt;&quot;;
+        print &quot;&lt;td&gt;&quot;.$variable.&quot;&lt;/td&gt;&quot;;
+        print &quot;&lt;td&gt;&quot;.$valor.&quot;&lt;/td&gt;&quot;;
+        print &quot;&lt;/tr&gt;&quot;;
+    }
 ?&gt;
-
           &lt;/tbody&gt;
-
           &lt;/table&gt;
-
      &lt;/body&gt;
-
 &lt;/html&gt;
 
+```
 </pre>
 </div>
-<div created="20170920182428392" modified="20170920182512445" orden="060500" tags="Anexos" title="Solución propuesta IV">
-<pre>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
-
+<div created="20170920182428392" modified="20170928073115451" orden="060500" tags="Anexos" title="Solución propuesta IV">
+<pre>```
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
 http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
-
 &lt;!-- Desarrollo Web en Entorno Servidor --&gt;
-
 &lt;!-- Tema 2 : Características del Lenguaje PHP --&gt;
-
 &lt;!-- Ejemplo: Tabla con los valores del array $_SERVER utilizando función each --&gt;
-
 &lt;html&gt;
-
      &lt;head&gt;
-
           &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-
           &lt;title&gt;Tabla&lt;/title&gt;
-
           &lt;style type=&quot;text/css&quot;&gt;
-
                td, th {border: 1px solid grey; padding: 4px;}
-
                th {text-align:center;}
-
                table {border: 1px solid black;}
-
           &lt;/style&gt;
-
      &lt;/head&gt;
-
      &lt;body&gt;
-
           &lt;table&gt;
-
           &lt;tbody&gt;
-
                &lt;tr&gt;
-
                     &lt;th&gt;Variable&lt;/th&gt;
-
                     &lt;th&gt;Valor&lt;/th&gt;
-
                &lt;/tr&gt;
-
 &lt;?php
-
      reset($_SERVER);
-
      while ($valor = each($_SERVER)) {
-
           print &quot;&lt;tr&gt;&quot;;
-
           print &quot;&lt;td&gt;&quot;.$valor[0].&quot;&lt;/td&gt;&quot;;
-
           print &quot;&lt;td&gt;&quot;.$valor[1].&quot;&lt;/td&gt;&quot;;
-
           print &quot;&lt;/tr&gt;&quot;;
-
      }
-
 ?&gt;
-
           &lt;/tbody&gt;
-
           &lt;/table&gt;
-
      &lt;/body&gt;
-
 &lt;/html&gt;
-
+```
 </pre>
 </div>
-<div created="20170920182556279" modified="20170920182737650" orden="060600" tags="Anexos" title="Solución propuesta V">
-<pre>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
-
+<div created="20170920182556279" modified="20170928074828620" orden="060600" tags="Anexos" title="Solución propuesta V">
+<pre>
+```
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
 http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
-
 &lt;!-- Desarrollo Web en Entorno Servidor --&gt;
-
 &lt;!-- Tema 2 : Características del Lenguaje PHP --&gt;
-
 &lt;!-- Ejemplo: Formulario web --&gt;
-
 &lt;html&gt;
-
      &lt;head&gt;
-
           &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-
           &lt;title&gt;Formulario web&lt;/title&gt;
-
      &lt;/head&gt;
-
      &lt;body&gt;
-
-&lt;form name=&quot;input&quot; action=&quot;procesa.php&quot; method=&quot;post&quot;&gt;
-
-Nombre del alumno: &lt;input type=&quot;text&quot; name=&quot;nombre&quot; /&gt;&lt;br /&gt;
-
-&lt;p&gt;Ciclos que cursa:&lt;/p&gt;
-
-&lt;input type=&quot;checkbox&quot; name=&quot;modulos[]&quot; value=&quot;DWES&quot; /&gt; Desarrollo web en entorno
-
-servidor&lt;br /&gt;
-
-&lt;input type=&quot;checkbox&quot; name=&quot;modulos[]&quot; value=&quot;DWEC&quot; /&gt; Desarrollo web en entorno
-
-cliente&lt;br /&gt;
-
-&lt;br /&gt;
-
-&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;
-
-&lt;/form&gt;
-
+        &lt;form name=&quot;input&quot; action=&quot;procesa.php&quot; method=&quot;post&quot;&gt;Nombre del alumno: &lt;input type=&quot;text&quot; name=&quot;nombre&quot; /&gt;&lt;br /&gt;
+            &lt;p&gt;Ciclos que cursa:&lt;/p&gt;
+            &lt;input type=&quot;checkbox&quot; name=&quot;modulos[]&quot; value=&quot;DWES&quot; /&gt; Desarrollo web en entorno servidor&lt;br /&gt;
+            &lt;input type=&quot;checkbox&quot; name=&quot;modulos[]&quot; value=&quot;DWEC&quot; /&gt; Desarrollo web en entorno cliente&lt;br /&gt;
+            &lt;br /&gt;
+            &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;
+        &lt;/form&gt;
      &lt;/body&gt;
-
 &lt;/html&gt;
-
+```
 </pre>
 </div>
 <div created="20170920184014648" modified="20170920184202887" orden="061200" tags="Anexos" title="Solución propuesta VI">
@@ -10311,79 +10060,75 @@ http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 ```
 </pre>
 </div>
-<div created="20170920180340729" modified="20170920180448247" orden="040000" tags="Contenidos" title="Tipos de datos compuestos">
-<pre>Un tipo de datos compuesto es aquel que te permite almacenar más de un valor. En PHP puedes utilizar dos tipos de datos compuestos: el array y el objeto. Los objetos los veremos más adelante; vamos a empezar con los arrays.
+<div created="20170920180340729" modified="20170928070559655" orden="040000" tags="Contenidos" title="Tipos de datos compuestos">
+<pre>Un tipo de datos compuesto es aquel que te permite almacenar más de un valor. En PHP puedes utilizar dos tipos de datos compuestos: el ''array'' y el ''objeto''. Los objetos los veremos más adelante; vamos a empezar con los arrays.
 
-Un array es un tipo de datos que nos permite almacenar varios valores. Cada miembro del array se almacena en una posición a la que se hace referencia utilizando un valor clave. Las claves pueden ser numéricas o asociativas.
+Un ''array'' es un tipo de datos que nos permite ''almacenar varios valores''. Cada miembro del array se almacena en una posición a la que se hace referencia utilizando un ''valor clave''. Las claves pueden ser ''numéricas'' o ''asociativas''.
 
+```
 // array numérico
-
 $modulos1 = array(0 =&gt; &quot;Programación&quot;, 1 =&gt; &quot;Bases de datos&quot;, ..., 9 =&gt; &quot;Desarrollo web en entorno servidor&quot;);
 
 // array asociativo
-
 $modulos2 = array(&quot;PR&quot; =&gt; &quot;Programación&quot;, &quot;BD&quot; =&gt; &quot;Bases de datos&quot;, ..., &quot;DWES&quot; =&gt; &quot;Desarrollo web en entorno servidor&quot;); 
 
-Debes conocer
+```
+
+
+&lt;&lt;&lt;
+!!Debes conocer
 
 En PHP existe la función print_r, que nos muestra todo el contenido del array que le pasamos. Es muy útil para tareas de depuración.
+&lt;center&gt;[[Función print_r|http://es.php.net/manual/es/function.print-r.php]]&lt;/center&gt;
+&lt;&lt;&lt;
 
-Función print_r
+Para hacer referencia a los elementos almacenados en un array, tienes que utilizar el valor ''clave entre corchetes'':
 
-Para hacer referencia a los elementos almacenados en un array, tienes que utilizar el valor clave entre corchetes:
-
+```
 $modulos1 [9]
-
 $modulos2 [&quot;DWES&quot;] 
+```
+Los arrays anteriores son ''vectores'', esto es, arrays unidimensionales. En PHP puedes crear también arrays de ''varias dimensiones'' almacenando otro array en cada uno de los elementos de un array.
 
-Los arrays anteriores son vectores, esto es, arrays unidimensionales. En PHP puedes crear también arrays de varias dimensiones almacenando otro array en cada uno de los elementos de un array.
-
+```
 // array bidimensional
-
 $ciclos = array(
-
      &quot;DAW&quot; =&gt; array (&quot;PR&quot; =&gt; &quot;Programación&quot;, &quot;BD&quot; =&gt; &quot;Bases de datos&quot;, ..., &quot;DWES&quot; =&gt; &quot;Desarrollo web en entorno servidor&quot;),
-
      &quot;DAM&quot; =&gt; array (&quot;PR&quot; =&gt; &quot;Programación&quot;, &quot;BD&quot; =&gt; &quot;Bases de datos&quot;, ..., &quot;PMDM&quot; =&gt; &quot;Programación multimedia y de dispositivos móviles&quot;)
-
 );
+```
 
 Para hacer referencia a los elementos almacenados en un array multidimensional, debes indicar las claves para cada una de las dimensiones:
 
+
+```
 $ciclos [&quot;DAW&quot;] [&quot;DWES&quot;]
+```
 
-En PHP no es necesario que indiques el tamaño del array antes de crearlo. Ni siquiera es necesario indicar que una variable concreta es de tipo array. Simplemente puedes comenzar a asignarle valores:
 
+En PHP ''no es necesario que indiques el tamaño'' del array antes de crearlo. Ni siquiera es necesario indicar que una variable concreta es de tipo array. Simplemente puedes comenzar a asignarle valores:
+
+```
 // array numérico
-
 $modulos1 [0] = &quot;Programación&quot;;
-
 $modulos1 [1] = &quot;Bases de datos&quot;;
-
 ...
-
 $modulos1 [9] = &quot;Desarrollo web en entorno servidor&quot;;
 
 // array asociativo
-
 $modulos2 [&quot;PR&quot;] = &quot;Programación&quot;;
-
 $modulos2 [&quot;BD&quot;] = &quot;Bases de datos&quot;;
-
 ...
-
 $modulos2 [&quot;DWES&quot;] = &quot;Desarrollo web en entorno servidor&quot;; 
+```
+''Ni siquiera es necesario que especifiques el valor de la clave''. Si la omites, el array se irá llenando a partir de la última clave numérica existente, o de la posición 0 si no existe ninguna:
 
-Ni siquiera es necesario que especifiques el valor de la clave. Si la omites, el array se irá llenando a partir de la última clave numérica existente, o de la posición 0 si no existe ninguna:
-
+```
 $modulos1 [ ] = &quot;Programación&quot;;
-
 $modulos1 [ ] = &quot;Bases de datos&quot;;
-
 ...
-
 $modulos1 [ ] = &quot;Desarrollo web en entorno servidor&quot;; 
-
+```
 </pre>
 </div>
 <div created="20170920181539649" modified="20170925121607352" orden="060100" tags="Anexos" title="Utilización de la función print en PHP">
