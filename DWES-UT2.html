@@ -8469,8 +8469,8 @@ Error message and password prompt
 <div created="20170920181845059" modified="20170928004703425" title="$:/state/toc/Contenidos-Anexos-1645261823">
 <pre>open</pre>
 </div>
-<div created="20170920174356578" modified="20170928001612175" title="$:/state/toc/Contenidos-Elementos del lenguaje PHP-1645261823">
-<pre>close</pre>
+<div created="20170920174356578" modified="20171004203827687" title="$:/state/toc/Contenidos-Elementos del lenguaje PHP-1645261823">
+<pre>open</pre>
 </div>
 <div created="20170920175410981" modified="20170928001613776" title="$:/state/toc/Contenidos-Estructuras de control-1645261823">
 <pre>close</pre>
@@ -8484,7 +8484,7 @@ Error message and password prompt
 <div created="20170920180627850" modified="20170928073140531" title="$:/state/toc/Contenidos-Tipos de datos compuestos-1645261823">
 <pre>open</pre>
 </div>
-<div list="Contenidos [[Generación de formularios web en PHP]]" title="$:/StoryList">
+<div list="Contenidos [[Cadenas de texto]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170925111501897" modified="20170925111507074" title="$:/temp/advancedsearch">
@@ -8769,8 +8769,8 @@ Puedes anidar cualquiera de los bucles anteriores en varios niveles. También pu
 Si quieres mostrar una cadena de texto letra a letra, y no sabes si está vacía, ¿qué tipo de bucle emplearías, while o do-while?
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20170920174425684" modified="20170925145937740" orden="010200" tags="[[Elementos del lenguaje PHP]]" title="Cadenas de texto">
-<pre> En PHP ''las cadenas de texto pueden usar tanto comillas simples como comillas dobles''. Sin embargo hay una diferencia importante entre usar unas u otras. Cuando se pone una variable dentro de unas comillas dobles, se procesa y se sustituye por su valor. Así, el ejemplo anterior sobre el uso de print también podía haberse puesto de la siguiente forma:
+<div created="20170920174425684" modified="20171004212452600" orden="010200" tags="[[Elementos del lenguaje PHP]]" title="Cadenas de texto">
+<pre> En PHP ''las cadenas de texto pueden usar tanto comillas simples como comillas dobles''. Sin embargo hay una diferencia importante entre usar unas u otras. Cuando se pone una ''variable dentro'' de unas comillas dobles, se procesa y se ''sustituye'' por su ''valor''. Así, el ejemplo anterior sobre el uso de `print` también podía haberse puesto de la siguiente forma:
 
 ```
 &lt;?php
@@ -8779,13 +8779,20 @@ Si quieres mostrar una cadena de texto letra a letra, y no sabes si está vacía
 ?&gt;
 ```
 
-La variable `$modulo` se reconoce dentro de las comillas dobles, y se sustituye por el valor `&quot;DWES&quot;` antes de generar la salida. Si esto mismo lo hubieras hecho utilizando comillas simples, no se realizaría sustitución alguna.
+La variable `$modulo` se reconoce dentro de las comillas dobles, y se sustituye por el valor `&quot;DWES&quot;` antes de generar la salida. Si esto mismo lo hubieras hecho utilizando ''comillas simples, no'' se realizaría sustitución alguna.
 
 &lt;&lt;&lt;
 Para que PHP distinga correctamente el texto que forma la cadena del nombre de la variable, ''a veces es necesario rodearla entre llaves''.
 
 ```
 print &quot;&lt;p&gt;Módulo: ${modulo}&lt;/p&gt;&quot;
+```
+El siguiente código muestra una situación en que es estrictamente necesario para poder &quot;escapar&quot; las comillas dobles:
+
+```
+for($i=0; $i&lt;=count($arrElementos); $i++) {
+echo &quot;Hola mundo este es el elemento '{$arrElementos[$i][&quot;nombre&quot;]}'&quot;;
+}
 ```
 &lt;&lt;&lt;
 
@@ -8805,17 +8812,18 @@ Secuencias de escape.
 |\f|se muestra un avance de página (FF o 0x0C (12) en ASCII).|
 |\$|se muestra un signo del dólar.|
 
+!!Operadores
 En PHP tienes ''dos operadores'' exclusivos para trabajar con ''cadenas de texto''. Con el operador de ''concatenación punto (`.`)'' puedes unir las dos cadenas de texto que le pases como operandos. ''El operador de asignación y concatenación'' (`.=`) concatena al argumento del lado izquierdo la cadena del lado derecho.
 
 ```
 &lt;?php
     $a = &quot;Módulo &quot;;
     $b = $a . &quot;DWES&quot;; // ahora $b contiene &quot;Módulo DWES&quot;
-   $a .= &quot;DWES&quot;; // ahora $a también contiene &quot;Módulo DWES&quot;
+    $a .= &quot;DWES&quot;; // ahora $a también contiene &quot;Módulo DWES&quot;
 ?&gt; 
 ```
 
-En PHP tienes otra alternativa para crear cadenas: la sintaxis ''heredoc.'' Consiste en ''poner el operador'' `&lt;&lt;&lt;` seguido de un identificador de tu elección, y a continuación y empezando ''en la línea siguiente'' la cadena de texto, ''sin utilizar comillas''. La cadena ''finaliza'' cuando escribes ese mismo identificador en una ''nueva línea.'' Esta línea de cierre no debe llevar más caracteres, ni siquiera espacios o sangría, salvo quizás un punto y coma después del identificador.
+En PHP tienes otra alternativa para crear cadenas: la sintaxis ''__heredoc__.'' Consiste en ''poner el operador'' `&lt;&lt;&lt;` seguido de un identificador de tu elección, y a continuación y empezando ''en la línea siguiente'' la cadena de texto, ''sin utilizar comillas''. La cadena ''finaliza'' cuando escribes ese mismo identificador en una ''nueva línea.'' Esta línea de cierre no debe llevar más caracteres, ni siquiera espacios o sangría, salvo quizás un punto y coma después del identificador.
 
 ```
 &lt;?php
@@ -8932,7 +8940,7 @@ Solución: [[Solución propuesta I]]
 ¿Siempre se puede sustituir una sentencia switch por otra sentencia o sentencias if?
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20170920174340411" modified="20170920183311491" tags="" title="Contenidos">
+<div created="20170920174340411" modified="20171004204201825" tags="" title="Contenidos">
 <pre>&lt;&lt;toc-selective-expandable Contenidos sort[orden]&gt;&gt;</pre>
 </div>
 <div created="20170920180033618" modified="20170928003553576" orden="030200" tags="Funciones" title="Ejecución y creación de funciones. Calculadora.">
@@ -9066,7 +9074,7 @@ http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 ```
 </pre>
 </div>
-<div created="20170920173854100" modified="20170925120847635" orden="010000" tags="Contenidos" title="Elementos del lenguaje PHP">
+<div created="20170920173854100" modified="20171004204727846" orden="010000" tags="Contenidos" title="Elementos del lenguaje PHP">
 <pre>@@float: right;margin: 10px;
 [img[https://vignette.wikia.nocookie.net/es.futurama/images/5/51/Templo4.jpg/revision/latest?cb=20131006175806]]
 @@
@@ -9075,7 +9083,7 @@ En la unidad anterior, aprendiste a preparar un entorno para programar en PHP. A
 
 También sabes ya cómo se integran las etiquetas HTML con el código del lenguaje, utilizando los delimitadores `&lt;?php` y `?&gt;`.
 
-En esta unidad aprenderás a ''utilizar otros elementos del lenguaje ''que te permitan crear programas completos en PHP. Los programas escritos en PHP, además de encontrarse estructurados normalmente en ''varias páginas'' (ya veremos más adelante cómo se pueden comunicar datos de unas páginas a otras), suelen incluir en una misma página ''varios bloques de código.'' Cada bloque de código debe ir entre delimitadores, y ''en caso de que genere alguna salida, ésta se introduce en el código HTML en el mismo punto en el que figuran las instrucciones en PHP''.
+En esta unidad aprenderás a ''utilizar otros elementos del lenguaje ''que te permitirán crear programas completos en PHP. Los programas escritos en PHP, además de encontrarse estructurados normalmente en ''varias páginas'' (ya veremos más adelante cómo se pueden comunicar datos de unas páginas a otras), suelen incluir en una misma página ''varios bloques de código.'' Cada bloque de código debe ir entre delimitadores, y ''en caso de que genere alguna salida, ésta se introduce en el código HTML en el mismo punto en el que figuran las instrucciones en PHP''.
 
 Por ejemplo, en las siguientes líneas tenemos dos bloques de código en PHP:
 
@@ -9095,7 +9103,9 @@ Tienes que hacer que el servidor web ''Apache'' pueda acceder a la ruta anterior
 ```
 sudo ln –s /home/usuario/DWES/ DWES
 ```
-De esta forma, si creas un proyecto nuevo en la ruta `/home/usuario/DWES/Proyecto1`, la URL que tendrás que poner en tu navegador `http://localhost/DWES/Proyecto1.`</pre>
+De esta forma, si creas un proyecto nuevo en la ruta `/home/usuario/DWES/Proyecto1`, la URL que tendrás que poner en tu navegador `http://localhost/DWES/Proyecto1.`
+
+Dado que nosotros hemos optado por usar ''XAMMP'' y no hemos instalado Apache de forma independiente, la ''ubicación'' de los ficheros de nuestras páginas web será `/opt/lammp/htdocs` de nuestro Debian a la cual ya le dimos los permisos pertinentes para poder subir ficheros mediante un ''cliente FTP'' o con el propio ''Atom'' con el paquete ''Remote-FTP'' instalado.</pre>
 </div>
 <div created="20170920175004670" modified="20170928185039230" orden="020000" tags="Contenidos" title="Estructuras de control">
 <pre>@@float:right;margin:10px;
@@ -9369,7 +9379,7 @@ printf(&quot;La variable \'\$a\' vale %+.2f&quot;, $a);
 
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20170920174119878" modified="20170925124030681" orden="010100" tags="[[Elementos del lenguaje PHP]]" title="Generación de código HTML.">
+<div created="20170920174119878" modified="20171004205648655" orden="010100" tags="[[Elementos del lenguaje PHP]]" title="Generación de código HTML.">
 <pre>Existen varias formas incluir contenido en la página web a partir del resultado de la ejecución de código PHP. ''La forma más sencilla es usando `echo`'', que no devuelve nada (`void`), y genera como salida el texto de los parámetros que recibe.
 
 ```
@@ -9380,13 +9390,13 @@ void echo (string $arg1, ...);
 ```
 int print (string $arg);
 ```
-Tanto `print` como `echo` no son realmente funciones, por lo que no es obligatorio que pongas paréntesis cuando las utilices. Por ejemplo, el código del siguiente documento puede hacerse igualmente utilizando echo.
+Tanto `print` como `echo` no son realmente funciones, por lo que ''no es obligatorio que pongas paréntesis'' cuando las utilices. Por ejemplo, el código del siguiente documento puede hacerse igualmente utilizando echo.
 
 &lt;&lt;&lt;
 Consulta el [[Anexo I|Utilización de la función print en PHP]]: Utilización de la función print en PHP
 &lt;&lt;&lt;
 
-`printf` es otra opción para generar una salida desde PHP. Puede recibir ''varios parámetros'', el primero de los cuales es siempre una cadena de texto que indica ''el formato ''que se ha de aplicar. Esa cadena debe contener un especificador de conversión por cada uno de los demás parámetros que se le pasen a la función, y en el mismo orden en que figuran en la lista de parámetros. Por ejemplo:
+`printf` es otra opción para generar una salida desde PHP. Puede recibir ''varios parámetros'', el primero de los cuales es siempre una ''cadena de texto'' que indica ''el formato ''que se ha de aplicar. Esa cadena debe contener un especificador de conversión por cada uno de los demás parámetros que se le pasen a la función, y en el mismo orden en que figuran en la lista de parámetros. Por ejemplo:
 
 ```
 &lt;?php
@@ -9426,12 +9436,12 @@ Cada especificador de conversión va precedido del caracter `%` y se compone de 
 |''Especificadores de tipo para las funciones printf y sprintf''|c
 
 
-Por ejemplo, al ejecutar la línea siguiente, en la salida el número ''PI'' se obtiene con signo y sólo con dos decimales.
+Por ejemplo, al ejecutar la línea siguiente, en la salida el número ''π'' se obtiene con signo y sólo con dos decimales.
 
 ```
 printf(&quot;El número π vale %+.2f&quot;, 3.1416); // +3.14
 ```
-Existe una función similar a ''printf'' pero en vez de generar una salida con la cadena obtenida, permite guardarla en una variable: sprintf.
+Existe una función similar a `printf` pero en vez de generar una salida con la cadena obtenida, permite guardarla en una variable: `sprintf`.
 
 ```
 $txt_pi = sprintf(&quot;El número π vale %+.2f&quot;, 3.1416);
@@ -10134,7 +10144,7 @@ $modulos1 [ ] = &quot;Desarrollo web en entorno servidor&quot;;
 ```
 </pre>
 </div>
-<div created="20170920181539649" modified="20170925121607352" orden="060100" tags="Anexos" title="Utilización de la función print en PHP">
+<div created="20170920181539649" modified="20171004205028523" orden="060100" tags="Anexos" title="Utilización de la función print en PHP">
 <pre>```
 &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
 http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
