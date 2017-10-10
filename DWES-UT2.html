@@ -8460,31 +8460,31 @@ Error message and password prompt
 <div created="20170925111336136" modified="20170928075251868" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170920175320671" modified="20170928064819608" title="$:/state/sidebar">
-<pre>no</pre>
+<div created="20170920175320671" modified="20171009221946179" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
-<div created="20170920173643751" modified="20170925111146456" title="$:/state/tab/sidebar--1835078512">
+<div created="20170920173643751" modified="20171009223908897" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20170920181845059" modified="20170928004703425" title="$:/state/toc/Contenidos-Anexos-1645261823">
+<div created="20170920181845059" modified="20171009234609148" title="$:/state/toc/Contenidos-Anexos-1645261823">
 <pre>open</pre>
 </div>
-<div created="20170920174356578" modified="20171004203827687" title="$:/state/toc/Contenidos-Elementos del lenguaje PHP-1645261823">
-<pre>open</pre>
-</div>
-<div created="20170920175410981" modified="20170928001613776" title="$:/state/toc/Contenidos-Estructuras de control-1645261823">
+<div created="20170920174356578" modified="20171009224429545" title="$:/state/toc/Contenidos-Elementos del lenguaje PHP-1645261823">
 <pre>close</pre>
 </div>
-<div created="20170920181321955" modified="20170928223409521" title="$:/state/toc/Contenidos-Formularios web-1645261823">
-<pre>open</pre>
-</div>
-<div created="20170920175945495" modified="20170928072022432" title="$:/state/toc/Contenidos-Funciones-1645261823">
+<div created="20170920175410981" modified="20171009234546234" title="$:/state/toc/Contenidos-Estructuras de control-1645261823">
 <pre>close</pre>
 </div>
-<div created="20170920180627850" modified="20170928073140531" title="$:/state/toc/Contenidos-Tipos de datos compuestos-1645261823">
+<div created="20170920181321955" modified="20171009234607528" title="$:/state/toc/Contenidos-Formularios web-1645261823">
 <pre>open</pre>
 </div>
-<div list="Contenidos [[Cadenas de texto]]" title="$:/StoryList">
+<div created="20170920175945495" modified="20171009234547536" title="$:/state/toc/Contenidos-Funciones-1645261823">
+<pre>open</pre>
+</div>
+<div created="20170920180627850" modified="20171009234604848" title="$:/state/toc/Contenidos-Tipos de datos compuestos-1645261823">
+<pre>open</pre>
+</div>
+<div list="Contenidos Funciones Bucles" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170925111501897" modified="20170925111507074" title="$:/temp/advancedsearch">
@@ -8716,8 +8716,8 @@ Anteriormente hiciste un ejercicio que mostraba la fecha actual en castellano. C
 [[Anexo III|Solución propuesta II]]
 </pre>
 </div>
-<div created="20170920175458522" modified="20170927234625936" orden="020200" tags="[[Estructuras de control]]" title="Bucles">
-<pre>* ''while:'' Usando while puedes definir un bucle que se ejecuta mientras se cumpla una expresión. La expresión se evalúa antes de comenzar cada ejecución del bucle.
+<div created="20170920175458522" modified="20171009234515543" orden="020200" tags="[[Estructuras de control]]" title="Bucles">
+<pre>* ''while:'' Usando `while` puedes definir un ''bucle'' que se ejecuta mientras se cumpla una ''expresión''. La expresión se evalúa ''antes'' de comenzar cada ejecución del bucle.
 
 ```
 &lt;?php
@@ -8728,7 +8728,7 @@ Anteriormente hiciste un ejercicio que mostraba la fecha actual en castellano. C
 ?&gt; 
 ```
 
-*''do / while'': Es un bucle similar al anterior, pero la expresión se evalúa al final, con lo cual se asegura que la sentencia o conjunto de sentencias del bucle se ejecutan al menos una vez.
+*''do / while'': Es un bucle similar al anterior, pero la expresión se evalúa al ''final'', con lo cual se asegura que la sentencia o conjunto de sentencias del bucle se ejecutan ''al menos una vez''.
 
 ```
 &lt;?php
@@ -8747,11 +8747,11 @@ for (expr1; expr2; expr3)
     sentencia o conjunto de sentencias; 
 ```
 
-La primera expresión, `expr1`, se ejecuta solo una vez al comienzo del bucle.
+La primera expresión, `expr1`, se ejecuta solo una vez al ''comienzo'' del bucle.
 
-    La segunda expresión, `expr2`, se evalúa para saber si se debe ejecutar o no la sentencia o conjunto de sentencias. Si el resultado el false, el bucle termina.
+    La segunda expresión, `expr2`, se ''evalúa'' para saber si se debe ejecutar o no la sentencia o conjunto de sentencias. Si el resultado el false, el bucle termina.
 
-    Si el resultado es true, se ejecutan las sentencias y al finalizar se ejecuta la tercera expresión, `expr3`, y se vuelve a evaluar expr2 para decidir si se vuelve a ejecutar o no el bucle.
+    Si el resultado es `true`, se ejecutan las sentencias y al ''finalizar'' se ejecuta la tercera expresión, `expr3`, y se vuelve a evaluar `expr2` para decidir si se vuelve a ejecutar o no el bucle.
 
 ```
 &lt;?php
@@ -8762,14 +8762,14 @@ La primera expresión, `expr1`, se ejecuta solo una vez al comienzo del bucle.
 ?&gt; 
 ```
 
-Puedes anidar cualquiera de los bucles anteriores en varios niveles. También puedes usar las sentencias `break`, para salir del bucle, y `continue`, para omitir la ejecución de las sentencias restantes y volver a la comprobación de la expresión respectivamente.
+Puedes ''anidar'' cualquiera de los bucles anteriores en varios niveles. También puedes usar las sentencias `break`, para ''salir'' del bucle, y `continue`, para omitir la ejecución de las sentencias restantes y ''volver'' a la comprobación de la expresión respectivamente.
 
 &lt;&lt;&lt;
 !!Autoevaluación
-Si quieres mostrar una cadena de texto letra a letra, y no sabes si está vacía, ¿qué tipo de bucle emplearías, while o do-while?
+Si quieres mostrar una cadena de texto letra a letra, y no sabes si está vacía, ¿qué tipo de bucle emplearías, `while` o `do-while`?
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20170920174425684" modified="20171004212452600" orden="010200" tags="[[Elementos del lenguaje PHP]]" title="Cadenas de texto">
+<div created="20170920174425684" modified="20171009215012382" orden="010200" tags="[[Elementos del lenguaje PHP]]" title="Cadenas de texto">
 <pre> En PHP ''las cadenas de texto pueden usar tanto comillas simples como comillas dobles''. Sin embargo hay una diferencia importante entre usar unas u otras. Cuando se pone una ''variable dentro'' de unas comillas dobles, se procesa y se ''sustituye'' por su ''valor''. Así, el ejemplo anterior sobre el uso de `print` también podía haberse puesto de la siguiente forma:
 
 ```
@@ -8799,7 +8799,7 @@ echo &quot;Hola mundo este es el elemento '{$arrElementos[$i][&quot;nombre&quot;
 Cuando se usan ''comillas simples'', sólo se realizan ''dos sustituciones'' dentro de la cadena: cuando se encuentra la secuencia de caracteres `\'`, se muestra en la salida una comilla simple; y cuando se encuentra la secuencia `\\`, se muestra en la salida una barra invertida.
 
 Estas secuencias se conocen como ''secuencias de escape''. En las cadenas que usan comillas dobles, además de la secuencia `\\`, se pueden usar algunas más, pero no la secuencia `\'`. En esta tabla puedes ver las secuencias de escape que se pueden utilizar, y cuál es su resultado.
-Secuencias de escape.
+
 
 |!Secuencia|!Resultado|
 |\\|se muestra una barra invertida.|
@@ -8811,6 +8811,7 @@ Secuencias de escape.
 |\v|se muestra un tabulador vertical (VT o 0x0B (11) en ASCII).|
 |\f|se muestra un avance de página (FF o 0x0C (12) en ASCII).|
 |\$|se muestra un signo del dólar.|
+|''Secuencias de escape''|c
 
 !!Operadores
 En PHP tienes ''dos operadores'' exclusivos para trabajar con ''cadenas de texto''. Con el operador de ''concatenación punto (`.`)'' puedes unir las dos cadenas de texto que le pases como operandos. ''El operador de asignación y concatenación'' (`.=`) concatena al argumento del lado izquierdo la cadena del lado derecho.
@@ -8894,10 +8895,10 @@ http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 &lt;/html&gt;
 ```</pre>
 </div>
-<div created="20170920175156014" modified="20170927002545192" orden="020100" tags="[[Estructuras de control]]" title="Condicionales">
-<pre>''if / elseif / else''. La sentencia `if` permite definir una ''expresión'' para ejecutar o no la sentencia o conjunto de sentencias siguiente. Si la expresión se evalúa a true (verdadero), la sentencia se ejecuta. Si se evalúa a false (falso), no se ejecutará.
+<div created="20170920175156014" modified="20171009225117482" orden="020100" tags="[[Estructuras de control]]" title="Condicionales">
+<pre>''if / elseif / else''. La sentencia `if` permite definir una ''expresión'' para ejecutar o no la sentencia o conjunto de sentencias siguiente. Si la expresión se evalúa a `true` (verdadero), la sentencia se ejecuta. Si se evalúa a `false` (falso), no se ejecutará.
 
-Cuando el resultado de la expresión sea false, puedes utilizar `else` para indicar una sentencia o grupo de sentencias a ejecutar en ese caso. Otra alternativa a else es utilizar `elseif` y escribir una nueva expresión que comenzará un nuevo condicional.
+Cuando el resultado de la expresión sea `false`, puedes utilizar `else` para indicar una sentencia o grupo de sentencias a ejecutar en ese caso. Otra alternativa a `else` es utilizar `elseif` y escribir una nueva expresión que comenzará un nuevo condicional.
 
 ```
 &lt;?php
@@ -8911,7 +8912,7 @@ Cuando el resultado de la expresión sea false, puedes utilizar `else` para indi
 ```
 Cuando, como sucede en el ejemplo, la sentencia if elseif o else actúe sobre una única sentencia, ''no será necesario usar llaves''. Tendrás que usar llaves para formar un conjunto de sentencias siempre que quieras que el condicional actúe sobre más de una sentencia.
 
-''switch''. La sentencia switch es similar a enlazar varias sentencias if comparando una misma variable con diferentes valores. Cada valor va en una sentencia case. Cuando se encuentra una coincidencia, comienzan a ejecutarse las sentencias siguientes hasta que acaba el bloque switch, o hasta que se encuentra una sentencia break. Si no existe coincidencia con el valor de ningún case, se ejecutan las sentencias del bloque default, en caso de que exista.
+''switch''. La sentencia `switch` es similar a enlazar varias sentencias `if` comparando una misma variable con diferentes valores. Cada valor va en una sentencia `case`. Cuando se encuentra una coincidencia, comienzan a ejecutarse las sentencias siguientes hasta que acaba el bloque `switch`, o hasta que se encuentra una sentencia `break`. Si no existe coincidencia con el valor de ningún case, se ejecutan las sentencias del bloque `default`, en caso de que exista.
 
 ```
 &lt;?php
@@ -8940,7 +8941,7 @@ Solución: [[Solución propuesta I]]
 ¿Siempre se puede sustituir una sentencia switch por otra sentencia o sentencias if?
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20170920174340411" modified="20171004204201825" tags="" title="Contenidos">
+<div created="20170920174340411" modified="20171006143407644" tags="" title="Contenidos">
 <pre>&lt;&lt;toc-selective-expandable Contenidos sort[orden]&gt;&gt;</pre>
 </div>
 <div created="20170920180033618" modified="20170928003553576" orden="030200" tags="Funciones" title="Ejecución y creación de funciones. Calculadora.">
@@ -9161,14 +9162,14 @@ Fíjate que si en un formulario web tienes que enviar alguna variable en la que 
 &lt;&lt;&lt;
 </pre>
 </div>
-<div created="20170920175759737" modified="20170928001551102" orden="030000" tags="Contenidos" title="Funciones">
+<div created="20170920175759737" modified="20171010000921477" orden="030000" tags="Contenidos" title="Funciones">
 <pre>Cuando quieres repetir la ejecución de un bloque de código, puedes utilizar un ''bucle''. Las ''funciones'' tienen una utilidad similar: nos permiten asociar una etiqueta (el nombre de la función) con un ''bloque de código a ejecuta''r. Además, al usar funciones estamos ayudando a estructurar mejor el código. Como ya sabes, las funciones permiten crear variables locales que no serán visibles fuera del cuerpo de las mismas.
 
 Como programador puedes aprovecharte de la ''gran cantidad de funciones'' disponibles en ''PHP''. De éstas, ''muchas'' están ''incluidas en el núcleo de PHP'' y se pueden usar directamente. Otras muchas se encuentran disponibles ''en forma de extensiones'', y se pueden incorporar al lenguaje cuando se necesitan.
 
 Con la distribución de PHP se incluyen ''varias extensiones''. Para poder usar las funciones de una extensión, tienes que asegurarte de activarla mediante el uso de una directiva extensión en el fichero `php.ini`. Muchas ''otras extensiones'' no se incluyen con PHP y antes de poder utilizarlas tienes que ''descargarlas''.
 
-Para ''obtener extensiones'' para el lenguaje PHP puedes utilizar ''PECL''. PECL es un ''repositorio de extensiones'' para PHP. Junto con PHP se incluye un comando pecl que puedes utilizar para instalar extensiones de forma sencilla:
+Para ''obtener extensiones'' para el lenguaje PHP puedes utilizar ''PECL''. PECL es un ''repositorio de extensiones'' para PHP. Junto con PHP se incluye un comando `pecl` que puedes utilizar para instalar extensiones de forma sencilla:
 
 ```
 pecl install nombre_extensión
@@ -9182,8 +9183,8 @@ En el manual de PHP tienes más información sobre PECL.
 &lt;center&gt;[[Información sobre PECL|http://php.net/manual/es/install.pecl.php]].&lt;/center&gt;
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20170920174720772" modified="20170926190842456" orden="010400" tags="[[Elementos del lenguaje PHP]]" title="Funciones relacionadas con los tipos de datos (II).">
-<pre>En PHP ''no existe un tipo de datos específico para trabajar con fechas y horas''. La información de fecha y hora se almacena internamente como un número entero. Sin embargo, dentro de las ''funciones'' de PHP tienes a tu disposición unas cuantas ''para trabajar'' con ese tipo de datos.
+<div created="20170920174720772" modified="20171005091625340" orden="010400" tags="[[Elementos del lenguaje PHP]]" title="Funciones relacionadas con los tipos de datos (II).">
+<pre>En PHP ''no existe un tipo de datos específico para trabajar con fechas y horas''. La información de fecha y hora se almacena ''internamente como un número entero''. Sin embargo, dentro de las ''funciones'' de PHP tienes a tu disposición unas cuantas ''para trabajar'' con ese tipo de datos.
 
 Una de las más útiles es quizás la función `date`, que te permite ''obtener una cadena de texto a partir de una fecha y hora'', con el formato que tú elijas. La función recibe dos parámetros, la ''descripción del formato'' y el número entero que identifica ''la fecha'', y devuelve una cadena de texto formateada.
 
@@ -9225,6 +9226,27 @@ El formato lo debes componer utilizando como base una serie de caracteres de los
 
 Además, ''el segundo parámetro es opcional.'' Si no se indica, se utilizará la ''hora actual'' para crear la cadena de texto.
 
+&lt;&lt;&lt;
+
+Por ''ejemplo'', si usamos...
+
+```
+echo date('l jS \of F Y h:i:s A');
+```
+...tendremos algo como...
+
+`Thursday 5th of October 2017 10:47:56 AM `
+
+La vista en español la tendremos si lanzamos:
+
+```
+setlocale(LC_ALL,&quot;es_ES&quot;);
+echo strftime(&quot;%A %d de %B del %Y&quot;);
+```
+¡Ojo!. Los formatos para `strftime()` son distintos a los de `date()`. Puedes consultarlos [[aqui|http://php.net/manual/es/function.strftime.php]].
+&lt;&lt;&lt;
+
+
 Para que el sistema pueda darte información sobre tu fecha y hora, debes indicarle tu zona horaria. Puedes hacerlo con la función `date_default_timezone_set`. Para establecer la zona horaria en España peninsular debes indicar:
 
 
@@ -9242,7 +9264,7 @@ En la documentación de PHP puedes consultar las distintas zonas horarias que se
 
 ''Si utilizas alguna función de fecha y hora sin haber establecido previamente tu zona horaria, lo más probable es que recibas un error o mensaje de advertencia de PHP indicándolo.''
 
-Otras funciones como getdate devuelven un array con información sobre la fecha y hora actual.
+Otras funciones como `getdate` devuelven un array con información sobre la fecha y hora actual.
 
 &lt;&lt;&lt;
 !!Debes conocer
@@ -9302,10 +9324,10 @@ while ($variable = $current($a)){
 }
 ```</pre>
 </div>
-<div created="20170920174549778" modified="20170925152652991" orden="010300" tags="[[Elementos del lenguaje PHP]]" title="Funciones relacionadas con los tipos de datos(I)">
-<pre>En PHP existen ''funciones específicas'' para ''comprobar'' y ''establecer'' el tipo de datos de una variable, `gettype` ''obtiene el tipo'' de la variable que se le pasa como parámetro y devuelve una cadena de texto, que puede ser ''array'', ''boolean'', ''double'', ''integer'', ''object'', ''string'', ''null'', ''resource'' o //''unknowntype''.//
+<div created="20170920174549778" modified="20171009222840927" orden="010300" tags="[[Elementos del lenguaje PHP]]" title="Funciones relacionadas con los tipos de datos(I)">
+<pre>En PHP existen ''funciones específicas'' para ''comprobar'' y ''establecer'' el tipo de datos de una variable, `gettype` ''obtiene el tipo'' de la variable que se le pasa como parámetro y devuelve una ''cadena de texto'', que puede ser ''array'', ''boolean'', ''double'', ''integer'', ''object'', ''string'', ''null'', ''resource'' o //''unknowntype''.//
 
-También podemos ''comprobar'' si la variable es de un tipo concreto utilizando una de las siguientes funciones: ''is_array(), is_bool(), is_float(), is_integer(), is_null(), is_numeric(), is_object(), is_resource(), is_scalar() e is_string()''. Devuelven ''true'' si la variable es del tipo indicado.
+También podemos ''comprobar'' si la variable es de un tipo concreto utilizando una de las siguientes funciones: ''is_array(), is_bool(), is_float(), is_integer(), is_null(), is_numeric(), is_object(), is_resource(), is_scalar()'' e ''is_string()''. Devuelven ''true'' si la variable es del tipo indicado.
 
 Análogamente, para ''establecer el tipo de una variable ''utilizamos la función `settype` pasándole como parámetros la variable a convertir, y una de las siguientes cadenas: `boolean`, `integer`, `float`, `string`, `array`, `object` o `null`. La función `settype` devuelve `true` si la conversión se realizó correctamente, o `false` en caso contrario.
 
@@ -9348,7 +9370,7 @@ Existe también en PHP una función, `define`, con la que puedes definir ''const
 bool define (string $identificador , mixed $valor [, bool $case_insensitive = false ] );
 ```
 
-Los ''identificadores de constantes'' __no van precedidos por el signo__ `$` y __suelen escribirse en mayúsculas__, aunque ''existe un tercer parámetro opcional'', que si vale true hace que se reconozca el identificador independientemente de si está escrito en mayúsculas o en minúsculas.
+Los ''identificadores de constantes'' __no van precedidos por el signo__ `$` y __suelen escribirse en mayúsculas__, aunque ''existe un tercer parámetro opcional'', que si vale ''true'' hace que se ''reconozca'' el identificador independientemente de si está escrito en ''mayúsculas o en minúsculas''.
 
 ```
 &lt;?php
@@ -9369,23 +9391,29 @@ Los ''identificadores de constantes'' __no van precedidos por el signo__ `$` y _
 $a = &quot;-3.1416&quot;;
 printf(&quot;La variable \'\$a\' vale %+.2f&quot;, $a); 
 ```
-*La variable `'$a'` vale -3.14.
-*La variable `'$a'` vale +3.14.
-*La variable `\'$a\'` vale -3.14.
+*`La variable '$a' vale -3.14.`
+*`La variable '$a' vale +3.14.`
+*`La variable \'$a\' vale -3.14.`
+*`La variable \'$a\' vale +3.14.`
 
-&lt;&lt;&lt;
-*La variable `\'$a\'` vale +3.14.
-&lt;&lt;&lt;
+&lt;$button popup=&quot;$:/SamplePopupState2&quot;&gt;Ayuda&lt;/$button&gt;
 
-&lt;&lt;&lt;</pre>
+&lt;$reveal type=&quot;popup&quot;  state=&quot;$:/SamplePopupState2&quot;&gt;
+&lt;div class=&quot;tc-drop-down&quot;&gt;
+
+Ten en cuenta que las comillas simples &lt;br&gt;no necesitan ser escapadas dentro de &lt;br&gt;una cadena delimitada por comillas dobles.
+&lt;/div&gt;
+&lt;/$reveal&gt;
+&lt;&lt;&lt;
+</pre>
 </div>
-<div created="20170920174119878" modified="20171004205648655" orden="010100" tags="[[Elementos del lenguaje PHP]]" title="Generación de código HTML.">
+<div created="20170920174119878" modified="20171009214736167" orden="010100" tags="[[Elementos del lenguaje PHP]]" title="Generación de código HTML.">
 <pre>Existen varias formas incluir contenido en la página web a partir del resultado de la ejecución de código PHP. ''La forma más sencilla es usando `echo`'', que no devuelve nada (`void`), y genera como salida el texto de los parámetros que recibe.
 
 ```
 void echo (string $arg1, ...);
 ```
-''Otra posibilidad es `print`'', que funciona de forma similar. La diferencia más importante entre `print` y `echo`, es que `print` ''sólo puede recibir un parámetro y devuelve siempre 1.''
+''Otra posibilidad es'' `print`, que funciona de forma similar. La diferencia más importante entre `print` y `echo`, es que `print` ''sólo puede recibir un parámetro y devuelve siempre 1.''
 
 ```
 int print (string $arg);
@@ -10168,7 +10196,7 @@ http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
 ```
 </pre>
 </div>
-<div created="20170920174844660" modified="20170926192424969" orden="010500" tags="[[Elementos del lenguaje PHP]]" title="Variables especiales de PHP">
+<div created="20170920174844660" modified="20171009224218738" orden="010500" tags="[[Elementos del lenguaje PHP]]" title="Variables especiales de PHP">
 <pre>En la unidad anterior ya aprendiste qué eran y cómo se utilizaban las variables globales. PHP incluye unas cuantas ''variables internas predefinidas'' que pueden usarse desde cualquier ámbito, por lo que reciben el nombre de ''variables superglobales.'' Ni siquiera es necesario que uses global para acceder a ellas.
 
 ''Cada una de estas variables es un array'' que contiene un conjunto de valores (en esta unidad veremos más adelante cómo se pueden utilizar los arrays). Las variables superglobales disponibles en PHP son las siguientes:
@@ -10192,7 +10220,7 @@ En la documentación de PHP puedes consultar toda la información que ofrece $_S
 &lt;center&gt;[[Información que ofrece $_SERVER.|http://es.php.net/manual/es/reserved.variables.server.php]]&lt;/center&gt;
 &lt;&lt;&lt;
 
-''$_GET'', ''$_POST'' y ''$_COOKIE'' contienen las variables que se han pasado al guión actual utilizando respectivamente los métodos GET (parámetros en la URL), HTTP POST y Cookies HTTP.
+''$_GET'', ''$_POST'' y ''$_COOKIE'' contienen las variables que se han pasado al script actual utilizando respectivamente los métodos GET (parámetros en la URL), HTTP POST y Cookies HTTP.
 
 ''$_REQUEST'' junta en uno solo el contenido de los tres arrays anteriores, $_GET, $_POST y $_COOKIE.
 

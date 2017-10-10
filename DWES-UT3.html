@@ -142,6 +142,16 @@ Error message and password prompt
 
 <li>$:/state/toc/Contenidos-Acceso a bases de datos desde PHP-1645261823</li>
 
+<li>$:/state/toc/Contenidos-MySQL/MariaDB-1645261823</li>
+
+<li>$:/state/toc/Contenidos-Utilizaci'on de bases de datos MySQL en PHP-1645261823</li>
+
+<li>$:/state/toc/Contenidos/MySQL/MariaDB-Herramientas de administraci'on-1645261823</li>
+
+<li>$:/state/toc/Contenidos/Utilizaci'on de bases de datos MySQL en PHP-Extensi'on MySQLi-1645261823</li>
+
+<li>$:/state/toc/Contenidos/Utilizaci'on de bases de datos MySQL en PHP-PHP Data Objects (PDO)-1645261823</li>
+
 <li>$:/StoryList</li>
 
 <li>$:/temp/advancedsearch</li>
@@ -156,9 +166,47 @@ Error message and password prompt
 
 <li>Acceso a bases de datos desde PHP</li>
 
+<li>Consultas preparadas</li>
+
+<li>Consultas preparadas (III)</li>
+
 <li>Contenidos</li>
 
+<li>Ejecuci'on de consultas</li>
+
+<li>Ejecuci'on de consultas(II)</li>
+
+<li>Errores y manejo de excepciones</li>
+
+<li>Establecimiento de conexiones</li>
+
+<li>Establecimiento de conexiones (II)</li>
+
+<li>Excepciones</li>
+
+<li>Extensi'on MySQLi</li>
+
+<li>Herramientas de administraci'on</li>
+
+<li>Instalacion y configuracion</li>
+
+<li>mysql y mysqladmin</li>
+
+<li>MySQL/MariaDB</li>
+
 <li>Nociones de OOP</li>
+
+<li>Obtenci'on y utilizaci'on de conjuntos de resultados</li>
+
+<li>Obtenci'on y utilizaci'on de conjuntos de resultados (II)</li>
+
+<li>PHP Data Objects (PDO)</li>
+
+<li>phpMyAdmin</li>
+
+<li>Transacciones</li>
+
+<li>Utilizaci'on de bases de datos MySQL en PHP</li>
 
 </ul>
 </p>
@@ -8389,16 +8437,31 @@ Error message and password prompt
 <div created="20171002172638357" modified="20171002172638357" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20171002141131853" modified="20171002193204876" title="$:/state/sidebar">
+<div created="20171002141131853" modified="20171007235000056" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20171002175126016" modified="20171002183106298" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20171002175406975" modified="20171002175406975" title="$:/state/toc/Contenidos-Acceso a bases de datos desde PHP-1645261823">
+<div created="20171002175406975" modified="20171007235154879" title="$:/state/toc/Contenidos-Acceso a bases de datos desde PHP-1645261823">
+<pre>close</pre>
+</div>
+<div created="20171007224927075" modified="20171007235156476" title="$:/state/toc/Contenidos-MySQL/MariaDB-1645261823">
+<pre>close</pre>
+</div>
+<div created="20171007231921651" modified="20171007235703047" title="$:/state/toc/Contenidos-Utilizaci'on de bases de datos MySQL en PHP-1645261823">
+<pre>close</pre>
+</div>
+<div created="20171007230220768" modified="20171007230220768" title="$:/state/toc/Contenidos/MySQL/MariaDB-Herramientas de administraci'on-1645261823">
 <pre>open</pre>
 </div>
-<div list="Contenidos [[Nociones de OOP]]" title="$:/StoryList">
+<div created="20171007232707057" modified="20171007232707057" title="$:/state/toc/Contenidos/Utilizaci'on de bases de datos MySQL en PHP-Extensi'on MySQLi-1645261823">
+<pre>open</pre>
+</div>
+<div created="20171007234602724" modified="20171007234602724" title="$:/state/toc/Contenidos/Utilizaci'on de bases de datos MySQL en PHP-PHP Data Objects (PDO)-1645261823">
+<pre>open</pre>
+</div>
+<div list="Excepciones Contenidos" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20171002141449145" modified="20171002141450198" title="$:/temp/advancedsearch">
@@ -8591,8 +8654,778 @@ Y para acceder a los miembros de un objeto, debes utilizar el operador flecha -&
 $a-&gt;fecha();
 ```</pre>
 </div>
+<div created="20171007233420383" modified="20171007233527627" orden="030105" tags="[[Extensi'on MySQLi]]" title="Consultas preparadas">
+<pre>
+3.1.5.- Consultas preparadas.
+Símbolo de obtención de información de una base de datos sobre la que se encuentra media rueda dentada, y junto a las letras mysqli.
+
+Cada vez que se envía una consulta al servidor, éste debe analizarla antes de ejecutarla. Algunas sentencias SQL, como las que insertan valores en una tabla, deben repetirse de forma habitual en un programa. Para acelerar este proceso, MySQL admite consultas preparadas. Estas consultas se almacenan en el servidor listas para ser ejecutadas cuando sea necesario.
+
+Para trabajar con consultas preparadas con la extensión MySQLi de PHP, debes utilizar la clase mysqli_stmt. Utilizando el método stmt_init de la clase mysqli (o la función mysqli_stmt_init) obtienes un objeto de dicha clase.
+
+$dwes = new mysqli('localhost', 'dwes', 'abc123.', 'dwes');
+
+$consulta = $dwes-&gt;stmt_init();
+
+
+Los pasos que debes seguir para ejecutar una consulta preparada son:
+
+    Preparar la consulta en el servidor MySQL utilizando el método prepare (función mysqli_stmt_prepare).
+    Ejecutar la consulta, tantas veces como sea necesario, con el método execute (función mysqli_stmt_execute).
+    Una vez que ya no se necesita más, se debe ejecutar el método close (función mysqli_stmt_close).
+
+Por ejemplo, para preparar y ejecutar una consulta que inserta un nuevo registro en la tabla familia:
+
+$consulta = $dwes-&gt;stmt_init();
+
+$consulta-&gt;prepare('INSERT INTO familia (cod, nombre) VALUES (&quot;TABLET&quot;, &quot;Tablet PC&quot;)');
+
+$consulta-&gt;execute();
+
+$consulta-&gt;close();
+
+$dwes-&gt;close();
+
+
+El problema que ya habrás observado, es que de poco sirve preparar una consulta de inserción de datos como la anterior, si los valores que inserta son siempre los mismos. Por este motivo las consultas preparadas admiten parámetros. Para preparar una consulta con parámetros, en lugar de poner los valores debes indicar con un signo de interrogación su posición dentro de la sentencia SQL.
+
+$consulta-&gt;prepare('INSERT INTO familia (cod, nombre) VALUES (?, ?)');
+
+
+Y antes de ejecutar la consulta tienes que utilizar el método bind_param (o la función mysqli_stmt_bind_param) para sustituir cada parámetro por su valor. El primer parámetro del método bind_param es una cadena de texto en la que cada carácter indica el tipo de un parámetro, según la siguiente tabla.
+Caracteres indicativos del tipo de los parámetros en una consulta preparada. Carácter. 	Tipo del parámetro.
+I. 	Número entero.
+D. 	Número real (doble precisión).
+S. 	Cadena de texto.
+B. 	Contenido en formato binario (BLOB).
+
+En el caso anterior, si almacenas los valores a insertar en sendas variables, puedes hacer:
+
+$consulta = $dwes-&gt;stmt_init();
+
+$consulta-&gt;prepare('INSERT INTO familia (cod, nombre) VALUES (?, ?)');
+
+$cod_producto = &quot;TABLET&quot;;
+
+$nombre_producto = &quot;Tablet PC&quot;;
+
+$consulta-&gt;bind_param('ss', $cod_producto, $nombre_producto);
+
+$consulta-&gt;execute();
+
+$consulta-&gt;close();
+
+$dwes-&gt;close();
+
+ 
+
+Cuando uses bind_param para enlazar los parámetros de una consulta preparada con sus respectivos valores, deberás usar siempre variables como en el ejemplo anterior. Si intentas utilizar literales, por ejemplo:
+
+$consulta-&gt;bind_param('ss', 'TABLET', 'Tablet PC');  // Genera un error
+
+
+Obtendrás un error. El motivo es que los parámetros del método bind_param se pasan por referencia. Aprenderás a usar paso de parámetros por referencia en una unidad posterior.
+
+El método bind_param permite tener una consulta preparada en el servidor MySQL y ejecutarla tantas veces como quieras cambiando ciertos valores cada vez. Además, en el caso de las consultas que devuelven valores, se puede utilizar el método bind_result (función mysqli_stmt_bind_result) para asignar a variables los campos que se obtienen tras la ejecución. Utilizando el método fetch (mysqli_stmt_fetch) se recorren los registros devueltos. Observa el siguiente código:
+
+$consulta = $dwes-&gt;stmt_init();
+
+$consulta-&gt;prepare('SELECT producto, unidades FROM stock WHERE unidades&lt;2');
+
+$consulta-&gt;execute();
+
+$consulta-&gt;bind_result($producto, $unidades);
+
+while($consulta-&gt;fetch()) {
+
+	print &quot;&lt;p&gt;Producto $producto: $unidades unidades.&lt;/p&gt;&quot;;
+
+}
+
+$consulta-&gt;close();
+
+$dwes-&gt;close();
+
+Debes conocer
+
+En el manual de PHP tienes más información sobre consultas preparadas y la clase mysqli_stmt.
+
+Consultas preparas y la clase mysqli_stmt.
+Ejercicio resuelto
+
+A partir de la página web obtenida en el ejercicio anterior, añade la opción de modificar el número de unidades del producto en cada una de las tiendas. Utiliza una consulta preparada para la actualización de registros en la tabla stock. No es necesario tener en cuenta las tareas de inserción (no existían unidades anteriormente) y borrado (si el número final de unidades es cero).
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007235234224" modified="20171007235426140" orden="030204" tags="[[PHP Data Objects (PDO)]]" title="Consultas preparadas (III)">
+<pre>
+3.2.4.- Consultas preparadas.
+Símbolo de obtención de información de una base de datos sobre la que se encuentra media rueda dentada, y junto a las letras PDO.
+
+Al igual que con MySQLi, también utilizando PDO podemos preparar consultas parametrizadas en el servidor para ejecutarlas de forma repetida. El procedimiento es similar e incluso los métodos a ejecutar tienen prácticamente los mismos nombres.
+
+Para preparar la consulta en el servidor MySQL, deberás utilizar el método prepare de la clase PDO. Este método devuelve un objeto de la clase PDOStatement. Los parámetros se pueden marcar utilizando signos de interrogación como en el caso anterior.
+
+$dwes = new PDO(&quot;mysql:host=localhost;dbname=dwes&quot;, &quot;dwes&quot;, &quot;abc123.&quot;);
+
+$consulta = $dwes-&gt;prepare('INSERT INTO familia (cod, nombre) VALUES (?, ?)');
+
+
+O también utilizando parámetros con nombre, precediéndolos por el símbolo de dos puntos.
+
+$dwes = new PDO(&quot;mysql:host=localhost;dbname=dwes&quot;, &quot;dwes&quot;, &quot;abc123.&quot;);
+
+$consulta = $dwes-&gt;prepare('INSERT INTO familia (cod, nombre) VALUES (:cod, :nombre)');
+
+
+Antes de ejecutar la consulta hay que asignar un valor a los parámetros utilizando el método bindParam de la clase PDOStatement.. Si utilizas signos de interrogación para marcar los parámetros, el procedimiento es equivalente al método bindColumn que acabamos de ver.
+
+$cod_producto = &quot;TABLET&quot;;
+
+$nombre_producto = &quot;Tablet PC&quot;;
+
+$consulta-&gt;bindParam(1, $cod_producto);
+
+$consulta-&gt;bindParam(2, $nombre_producto);
+
+
+Si utilizas parámetros con nombre, debes indicar ese nombre en la llamada a bindParam.
+
+$consulta-&gt;bindParam(&quot;:cod&quot;, $cod_producto);
+
+$consulta-&gt;bindParam(&quot;:nombre&quot;, $nombre_producto);
+
+ 
+
+Tal y como sucedía con la extensión MySQLi, cuando uses bindParam para asignar los parámetros de una consulta preparada, deberás usar siempre variables como en el ejemplo anterior.
+
+Una vez preparada la consulta y enlazados los parámetros con sus valores, se ejecuta la consulta utilizando el método execute.
+
+$consulta-&gt;execute();
+
+
+Alternativamente, es posible asignar los valores de los parámetros en el momento de ejecutar la consulta, utilizando un array (asociativo o con claves numéricas dependiendo de la forma en que hayas indicado los parámetros) en la llamada a execute.
+
+$parametros = array(&quot;:cod&quot; =&gt; &quot;TABLET&quot;, &quot;:nombre&quot; =&gt; &quot;Tablet PC&quot;);
+
+$consulta-&gt;execute($parametros);
+
+ 
+Para saber más
+
+Puedes consultar la información sobre la utilización en PDO de consultas preparadas y la clase PDOStatement en el manual de PHP.
+
+Consultas preparadas y la clase PDOStatement.
+Ejercicio resuelto
+
+Modifica el ejercicio sobre consultas preparadas que realizaste con la extensión MySQLi, el que modificaba el número de unidades de un producto en las distintas tiendas, para que utilice ahora la extensión PDO.
+Anterior | Siguiente
+</pre>
+</div>
 <div created="20171002141250546" modified="20171002174757796" orden="010100" tags="" title="Contenidos">
 <pre>&lt;&lt;toc-selective-expandable Contenidos sort[orden]&gt;&gt;</pre>
+</div>
+<div created="20171007232413607" modified="20171007232623728" orden="030102" tags="[[Extensi'on MySQLi]]" title="Ejecuci'on de consultas">
+<pre>
+3.1.2.- Ejecución de consultas.
+Símbolo de media rueda dentada junto a las letras mysqli.
+
+La forma más inmediata de ejecutar una consulta, si utilizas esta extensión, es el método query, equivalente a la función mysqli_query. Si se ejecuta una consulta de acción que no devuelve datos (como una sentencia SQL de tipo UPDATE, INSERT o DELETE), la llamada devuelve true si se ejecuta correctamente o false en caso contrario. El número de registros afectados se puede obtener con la propiedad affected_rows (o con la función mysqli_affected_rows).
+
+@ $dwes = new mysqli('localhost', 'dwes', 'abc123.', 'dwes');
+
+$error = $dwes-&gt;connect_errno;
+
+if ($error == null) {
+
+$resultado = $dwes-&gt;query('DELETE FROM stock WHERE unidades=0');
+
+if ($resultado) {
+
+print &quot;&lt;p&gt;Se han borrado $dwes-&gt;affected_rows registros.&lt;/p&gt;&quot;;
+
+}
+
+$dwes-&gt;close();
+
+}
+
+
+En el caso de ejecutar una sentencia SQL que sí devuelva datos (como un SELECT), éstos se devuelven en forma de un objeto resultado (de la clase mysqli_result). En el punto siguiente verás cómo se pueden manejar los resultados obtenidos.
+
+El método query tiene un parámetro opcional que afecta a cómo se obtienen internamente los resultados, pero no a la forma de utilizarlos posteriormente. En la opción por defecto, MYSQLI_STORE_RESULT, los resultados se recuperan todos juntos de la base de datos y se almacenan de forma local. Si cambiamos esta opción por el valor MYSQLI_USE_RESULT, los datos se van recuperando del servidor según se vayan necesitando.
+
+$resultado = $dwes-&gt;query('SELECT producto, unidades FROM stock', MYSQLI_USE_RESULT);
+
+ 
+Debes conocer
+
+Otra forma que puedes utilizar para ejecutar una consulta es el método real_query (o la función mysqli_real_query), que siempre devuelve true o false según se haya ejecutado correctamente o no. Si la consulta devuelve un conjunto de resultados, se podrán recuperar de forma completa utilizando el método store_result, o según vaya siendo necesario gracias al método use_result.
+
+Método real_query.
+
+Es importante tener en cuenta que los resultados obtenidos se almacenarán en memoria mientras los estés usando. Cuando ya no los necesites, los puedes liberar con el método free de la clase mysqli_result (o con la función mysqli_free_result):
+
+$resultado-&amp;gt;free();
+
+ 
+Autoevaluación
+De las dos opciones que admite el método query, MYSQLI_STORE_RESULT y MYSQLI_USE_RESULT, ¿qué opción será recomendable utilizar para ejecutar una consulta que devuelva una enorme cantidad de datos?
+MYSQLI_STORE_RESULT.
+MYSQLI_USE_RESULT.
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007234029387" modified="20171007234535727" orden="030202" tags="[[PHP Data Objects (PDO)]]" title="Ejecuci'on de consultas(II)">
+<pre>
+3.2.2.- Ejecución de consultas.
+Símbolo de media rueda dentada junto a las letras PDO.
+
+Para ejecutar una consulta SQL utilizando PDO, debes diferenciar aquellas sentencias SQL que no devuelven como resultado un conjunto de datos, de aquellas otras que sí lo devuelven.
+
+En el caso de las consultas de acción, como INSERT, DELETE o UPDATE, el método exec devuelve el número de registros afectados.
+
+$registros = $dwes-&gt;exec('DELETE FROM stock WHERE unidades=0');
+
+print &quot;&lt;p&gt;Se han borrado $registros registros.&lt;/p&gt;&quot;;
+
+
+Si la consulta genera un conjunto de datos, como es el caso de SELECT, debes utilizar el método query, que devuelve un objeto de la clase PDOStatement.
+
+$dwes = new PDO(&quot;mysql:host=localhost;dbname=dwes&quot;, &quot;dwes&quot;, &quot;abc123.&quot;);
+
+$resultado = $dwes-&gt;query(&quot;SELECT producto, unidades FROM stock&quot;);
+
+
+Por defecto PDO trabaja en modo &quot;autocommit&quot;, esto es, confirma de forma automática cada sentencia que ejecuta el servidor. Para trabajar con transacciones, PDO incorpora tres métodos:
+
+    beginTransaction. Deshabilita el modo &quot;autocommit&quot; y comienza una nueva transacción, que finalizará cuando ejecutes uno de los dos métodos siguientes.
+    commit. Confirma la transacción actual.
+    rollback. Revierte los cambios llevados a cabo en la transacción actual.
+
+Una vez ejecutado un commit o un rollback, se volverá al modo de confirmación automática.
+
+$ok = true;
+
+$dwes-&gt;beginTransaction();
+
+if($dwes-&gt;exec('DELETE …') == 0) $ok = false;
+
+if($dwes-&gt;exec('UPDATE …') == 0) $ok = false;
+
+…
+
+if ($ok) $dwes-&gt;commit();  // Si todo fue bien confirma los cambios
+
+else $dwes-&gt;rollback();   //  y si no, los revierte
+
+
+Ten en cuenta que no todos los motores no soportan transacciones. Tal es el caso, como ya viste, del motor MyISAM de MySQL. En este caso concreto, PDO ejecutará el método beginTransaction sin errores, pero naturalmente no será capaz de revertir los cambios si fuera necesario ejecutar un rollback.
+Ejercicio resuelto
+
+De una forma similar al anterior ejercicio de transacciones, utiliza PDO para repartir entre las tiendas las tres unidades que figuran en stock del producto con código PAPYRE62GB.
+Autoevaluación
+Si programas tu aplicación correctamente utilizando &quot;beginTransaction&quot; antes de realizar un cambio, ¿siempre será posible revertirlo utilizando &quot;rollback&quot;?
+Sí.
+No.
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007235515711" modified="20171007235620283" orden="040000" tags="Contenidos" title="Errores y manejo de excepciones">
+<pre>
+4.- Errores y manejo de excepciones.
+Caso práctico
+Símbolo de exclamación sobre un triángulo.
+
+En sus primeros pasos en la programación en lenguaje PHP, Carlos se ha encontrado frecuentemente con pequeños errores en el código. En la mayoría de las ocasiones los errores estaban causados por fallos de programación. Pero en las recientes pruebas llevadas a cabo con bases de datos, se ha dado cuenta de que en algunas ocasiones se pueden producir fallos ajenos al programa.
+
+Por ejemplo, puede obtener un error porque no esté disponible el servidor de bases de datos con el que se ha de conectar la aplicación, o porque se acaba de borrar de la base de datos un registro al que estaba accediendo. En éstos, y muchos otros, casos es necesario que la aplicación que desarrollen se comporte de forma sólida y coherente. Es necesario estudiar a fondo las posibilidades que ofrece PHP para la gestión de errores.
+
+A buen seguro que, conforme has ido resolviendo ejercicios o simplemente probando código, te has encontrado con errores de programación. Algunos son reconocidos por el entorno de desarrollo (NetBeans), y puedes corregirlos antes de ejecutar. Otros aparecen en el navegador en forma de mensaje de error al ejecutar el guión.
+PHP define una clasificación de los errores que se pueden producir en la ejecución de un programa y ofrece métodos para ajustar el tratamiento de los mismos. Para hacer referencia a cada uno de los niveles de error, PHP define una serie de constantes. Cada nivel se identifica por una constante. Por ejemplo, la constante E_NOTICE hace referencia a avisos que pueden indicar un error al ejecutar el guión, y la constante E_ERROR engloba errores fatales que provocan que se interrumpa forzosamente la ejecución.
+Debes conocer
+
+La lista completa de constantes la puedes consultar en el manual de PHP, donde también se describe el tipo de errores que representa.
+
+Lista completa de constantes en PHP.
+
+La configuración inicial de cómo se va a tratar cada error según su nivel se realiza en php.ini el fichero de configuración de PHP. Entre los principales parámetros que puedes ajustar están:
+
+    error_reporting. Indica qué tipos de errores se notificarán. Su valor se forma utilizando los operadores a nivel de bit para combinar las constantes anteriores. Su valor predeterminado es E_ALL &amp; ~E_NOTICE que indica que se notifiquen todos los errores (E_ALL) salvo los avisos en tiempo de ejecución (E_NOTICE).
+    display_errors. En su valor por defecto (On), hace que los mensajes se envíen a la salida estándar (y por lo tanto se muestren en el navegador). Se debe desactivar (Off) en los servidores que no se usan para desarrollo sino para producción.
+
+Para saber más
+
+Existen otros parámetros que podemos utilizar en php.ini para ajustar el comportamiento de PHP cuando se produce un error.
+
+Parámetros que podemos ajustar en php.ini.
+
+Desde código, puedes usar la función error_reporting con las constantes anteriores para establecer el nivel de notificación en un momento determinado. Por ejemplo, si en algún lugar de tu código figura una división en la que exista la posibilidad de que el divisor sea cero, cuando esto ocurra obtendrás un mensaje de error en el navegador. Para evitarlo, puedes desactivar la notificación de errores de nivel E_WARNING antes de la división y restaurarla a su valor normal a continuación:
+
+error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_WARNING);
+
+$resultado = $dividendo / $divisor;
+
+error_reporting(E_ALL &amp; ~E_NOTICE);
+
+
+Al usar la función error_reporting solo controlas qué tipo de errores va a notificar PHP. A veces puede ser suficiente, pero para obtener más control sobre el proceso existe también la posibilidad de reemplazar la gestión de los mismos por la que tú definas. Es decir, puedes programar una función para que sea la que ejecuta PHP cada vez que se produce un error. El nombre de esa función se indica utilizando set_error_handler y debe tener como mínimo dos parámetros obligatorios (el nivel del error y el mensaje descriptivo) y hasta otros tres opcionales con información adicional sobre el error (el nombre del fichero en que se produce, el número de línea, y un volcado del estado de las variables en ese momento).
+
+set_error_handler(&quot;miGestorDeErrores&quot;);
+
+$resultado = $dividendo / $divisor;
+
+restore_error_handler();
+
+
+function miGestorDeErrores($nivel, $mensaje)
+
+{
+
+    switch($nivel) {
+
+        case E_WARNING:
+
+            echo &quot;Error de tipo WARNING: $mensaje.&lt;br /&gt;&quot;;
+
+            break;
+
+        default:
+
+            echo &quot;Error de tipo no especificado: $mensaje.&lt;br /&gt;&quot;;                
+
+    }
+
+}
+
+
+La función restore_error_handler restaura el manejador de errores original de PHP (más concretamente, el que se estaba usando antes de la llamada a set_error_handler).
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007232024936" modified="20171007232309997" orden="030101" tags="[[Extensi'on MySQLi]]" title="Establecimiento de conexiones">
+<pre>
+3.1.1.- Establecimiento de conexiones.
+Símbolo de conexión de dos enchufes junto a las letras mysqli.
+
+Para poder comunicarte desde un programa PHP con un servidor MySQL, el primer paso es establecer una conexión. Toda comunicación posterior que tenga lugar, se hará utilizando esa conexión.
+
+Si utilizas la extensión MySQLi, establecer una conexión con el servidor significa crear una instancia de la clase mysqli. El constructor de la clase puede recibir seis parámetros, todos opcionales, aunque lo más habitual es utilizar los cuatro primeros:
+
+    El nombre o dirección IP del servidor MySQL al que te quieres conectar.
+    Un nombre de usuario con permisos para establecer la conexión.
+    La contraseña del usuario.
+    El nombre de la base de datos a la que conectarse.
+    El número del puerto en que se ejecuta el servidor MySQL.
+    El socket o la tubería con nombre (named pipe) a usar.
+
+Si utilizas el constructor de la clase, para conectarte a la base de datos &quot;dwes&quot; puedes hacer:
+
+// utilizando el constructor de la clase
+
+$dwes = new mysqli('localhost', 'dwes', 'abc123.', 'dwes');
+
+
+Aunque también tienes la opción de primero crear la instancia, y después utilizar el método connect para establecer la conexión con el servidor:
+
+// utilizando el método connect
+
+$dwes = new mysqli();
+
+$dwes-&gt;connect('localhost', 'dwes', 'abc123.', 'dwes');
+
+
+Por el contrario, utilizando el interface procedimental de la extensión:
+
+// utilizando llamadas a funciones
+
+$dwes = mysqli_connect('localhost', 'dwes', 'abc123.', 'dwes');
+
+
+Es importante verificar que la conexión se ha establecido correctamente. Para comprobar el error, en caso de que se produzca, puedes usar las siguientes propiedades (o funciones equivalentes) de la clase mysqli:
+
+    connect_errno (o la función mysqli_connect_errno) devuelve el número de error o null si no se produce ningún error.
+    connect_error (o la función mysqli_connect_error) devuelve el mensaje de error o null si no se produce ningún error.
+
+Por ejemplo, el siguiente código comprueba el establecimiento de una conexión con la base de datos &quot;dwes&quot; y finaliza la ejecución si se produce algún error:
+
+@ $dwes = new mysqli('localhost', 'dwes', 'abc123.', 'dwes');
+
+$error = $dwes-&gt;connect_errno;
+
+if ($error != null) {
+
+     echo &quot;&lt;p&gt;Error $error conectando a la base de datos: $dwes-&gt;connect_error&lt;/p&gt;&quot;;
+
+     exit();
+
+}
+
+ 
+
+En PHP, como veremos posteriormente con más detalle, puedes anteponer a cualquier expresión el operador de control de errores @ para que se ignore cualquier posible error que pueda producirse al ejecutarla.
+
+Operador de control de errores @.
+
+Si una vez establecida la conexión, quieres cambiar la base de datos puedes usar el método select_db (o la función mysqli_select_db de forma equivalente) para indicar el nombre de la nueva.
+
+// utilizando el método connect
+
+$dwes-&gt;select_db('otra_bd');
+
+
+Una vez finalizadas las tareas con la base de datos, utiliza el método close (o la función mysqli_close) para cerrar la conexión con la base de datos y liberar los recursos que utiliza.
+
+$dwes-&gt;close();
+
+ 
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007234738792" modified="20171007234847989" orden="030201" tags="[[PHP Data Objects (PDO)]]" title="Establecimiento de conexiones (II)">
+<pre>
+3.2.1.- Establecimiento de conexiones.
+Símbolo de conexión de dos enchufes junto a las letras PDO.
+
+Para establecer una conexión con una base de datos utilizando PDO, debes instanciar un objeto de la clase PDO pasándole los siguientes parámetros (solo el primero es obligatorio):
+
+    Origen de datos (DSN). Es una cadena de texto que indica qué controlador se va a utilizar y a continuación, separadas por el carácter dos puntos, los parámetros específicos necesarios por el controlador, como por ejemplo el nombre o dirección IP del servidor y el nombre de la base de datos.
+    Nombre de usuario con permisos para establecer la conexión.
+    Contraseña del usuario.
+    Opciones de conexión, almacenadas en forma de array.
+
+Por ejemplo, podemos establecer una conexión con la base de datos 'dwes' creada anteriormente de la siguiente forma:
+
+$dwes = new PDO('mysql:host=localhost;dbname=dwes', 'dwes', 'abc123.');
+
+
+Si como en el ejemplo, se utiliza el controlador para MySQL, los parámetros específicos para utilizar en la cadena DSN (separadas unas de otras por el carácter punto y coma) a continuación del prefijo mysql: son los siguientes:
+
+    host. Nombre o dirección IP del servidor.
+    port. Número de puerto TCP en el que escucha el servidor.
+    dbname. Nombre de la base de datos.
+    unix_socket. Socket de MySQL en sistemas Unix.
+
+Si quisieras indicar al servidor MySQL utilice codificación UTF-8 para los datos que se transmitan, puedes usar una opción específica de la conexión:
+
+$opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND =&gt; &quot;SET NAMES utf8&quot;);
+
+$dwes = new PDO('mysql:host=localhost;dbname=dwes', 'dwes', 'abc123.', $opciones);
+
+Para saber más
+
+En el manual de PHP puedes consultar más información sobre los controladores existentes, los parámetros de las cadenas DSN y las opciones de conexión particulares de cada uno.
+
+Manual de PHP.
+
+Una vez establecida la conexión, puedes utilizar el método getAttribute para obtener información del estado de la conexión y setAttribute para modificar algunos parámetros que afectan a la misma. Por ejemplo, para obtener la versión del servidor puedes hacer:
+
+$version = $dwes-&gt;getAttribute(PDO::ATTR_SERVER_VERSION);
+
+print &quot;Versión: $version&quot;;
+
+
+Y si quieres por ejemplo que te devuelva todos los nombres de columnas en mayúsculas:
+
+$version = $dwes-&gt;setAttribute(PDO::ATTR_CASE, PDO::CASE_UPPER);
+
+ 
+Para saber más
+
+En el manual de PHP, las páginas de las funciones getAttribute y setAttribute te permiten consultar los posibles parámetros que se aplican a cada una.
+
+getAttribute.
+
+setAttribute.
+Autoevaluación
+Para establecer una conexión con MySQL utilizando PDO, ¿dónde se puede indicar el número de puerto TCP?
+En la cadena DSN que indica el origen de datos.
+En el array en que figuran las opciones específicas de conexión con el servidor.
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007235753190" modified="20171007235936481" orden="040100" tags="[[Errores y manejo de excepciones]]" title="Excepciones">
+<pre>
+4.1.- Excepciones.
+Símbolos de media rueda dentada, uno de ellos con un símbolo de exclamación.
+
+A partir de la versión 5 se introdujo en PHP un modelo de excepciones similar al existente en otros lenguajes de programación:
+
+    El código susceptible de producir algún error se introduce en un bloque try.
+    Cuando se produce algún error, se lanza una excepción utilizando la instrucción throw.
+    Después del bloque try debe haber como mínimo un bloque catch encargado de procesar el error.
+    Si una vez acabado el bloque try no se ha lanzado ninguna excepción, se continúa con la ejecución en la línea siguiente al bloque o bloques catch.
+
+Por ejemplo, para lanzar una excepción cuando se produce una división por cero podrías hacer:
+
+try {
+
+    if ($divisor == 0)
+
+        throw new Exception(&quot;División por cero.&quot;);
+
+    $resultado = $dividendo / $divisor;
+
+}
+
+catch (Exception $e) {
+
+    echo &quot;Se ha producido el siguiente error: &quot;.$e-&gt;getMessage();
+
+}
+
+
+PHP ofrece una clase base Exception para utilizar como manejador de excepciones. Para lanzar una excepción no es necesario indicar ningún parámetro, aunque de forma opcional se puede pasar un mensaje de error (como en el ejemplo anterior) y también un código de error.
+Entre los métodos que puedes usar con los objetos de la clase Exception están:
+
+    getMessage. Devuelve el mensaje, en caso de que se haya puesto alguno.
+    getCode. Devuelve el código de error si existe.
+
+Las funciones internas de PHP y muchas extensiones como MySQLi usan el sistema de errores visto anteriormente. Solo las extensiones más modernas orientadas a objetos, como es el caso de PDO, utilizan este modelo de excepciones. En este caso, lo más común es que la extensión defina sus propios manejadores de errores heredando de la clase Exception (veremos cómo utilizar la herencia en una unidad posterior).
+Para saber más
+
+Utilizando la clase ErrorException es posible traducir los errores a excepciones.
+
+Clase ErrorException.
+
+Concretamente, la clase PDO permite definir la fórmula que usará cuando se produzca un error, utilizando el atributo PDO::ATTR_ERRMODE. Las posibilidades son:
+
+    PDO::ERRMODE_SILENT. No se hace nada cuando ocurre un error. Es el comportamiento por defecto.
+    PDO::ERRMODE_WARNING. Genera un error de tipo E_WARNING cuando se produce un error.
+    PDO::ERRMODE_EXCEPTION. Cuando se produce un error lanza una excepción utilizando el manejador propio PDOException.
+
+Es decir, que si quieres utilizar excepciones con la extensión PDO, debes configurar la conexión haciendo:
+
+$dwes-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+Por ejemplo, el siguiente código:
+
+$dwes = new PDO(&quot;mysql:host=localhost; dbname=dwes&quot;, &quot;dwes&quot;, &quot;abc123.&quot;);
+
+$dwes-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+try {
+
+    $sql = &quot;SELECT * FROM stox&quot;;
+
+    $result = $dwes-&gt;query($sql);
+
+    …
+
+}
+
+catch (PDOException $p) {
+
+    echo &quot;Error &quot;.$p-&gt;getMessage().&quot;&lt;br /&gt;&quot;;
+
+}
+
+
+Captura la excepción que lanza PDO debido a que la tabla no existe. El bloque catch muestra el siguiente mensaje:
+
+Error SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dwes.stox' doesn't exist
+
+ 
+Ejercicio resuelto
+
+Agrega control de excepciones para controlar los posibles errores de conexión que se puedan producir en el último ejercicio, mostrando en la parte inferior de la pantalla los errores que se produzcan.
+Autoevaluación
+¿Cuántos bloques &quot;catch&quot; se han de utilizar después de un bloque &quot;try&quot;?
+Uno.
+Uno o más.
+
+Intenta resolver la siguiente actividad relativa a las extensiones para manejo bases de datos MySQL y al control de errores. En la primera y segunda parte el alumno debe indicar, en base a su funcionalidad, los nombres de algunos métodos y funciones propios de la extensión mysqli. En la tercera parte, deberá indicar de forma similar nomenclatura relacionada con la extensión PDO. En la última parte, el alumno deberá introducir nombres relacionados con la gestión de errores y el manejo de excepciones en PHP.
+
+Descarga la Actividad Interactiva sobre extensiones de MySQL (descomprimir y ejecutar el archivo .html)
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007231306259" modified="20171007231913163" orden="030100" tags="[[Utilizaci'on de bases de datos MySQL en PHP]]" title="Extensi'on MySQLi">
+<pre>
+
+Como ya viste, existen dos formas de comunicarse con una base de datos desde PHP: utilizar una extensión nativa programada para un SGBD concreto, o utilizar una extensión que soporte varios tipos de bases de datos. Tradicionalmente las conexiones se establecían utilizando la extensión nativa mysql. Esta extensión se mantiene en la actualidad para dar soporte a las aplicaciones ya existentes que la utilizan, pero no se recomienda utilizarla para desarrollar nuevos programas. Lo más habitual es elegir entre MySQLi (extensión nativa) y PDO.
+
+Con cualquiera de ambas extensiones, podrás realizar acciones sobre las bases de datos como:
+
+    Establecer conexiones.
+    Ejecutar sentencias SQL.
+    Obtener los registros afectados o devueltos por una sentencia SQL.
+    Emplear transacciones.
+    Ejecutar procedimientos almacenados.
+    Gestionar los errores que se produzcan durante la conexión o en el establecimiento de la misma.
+
+PDO y MySQLi (y también la antigua extensión mysql) utilizan un driver de bajo nivel para comunicarse con el servidor MySQL. Hasta hace poco el único driver disponible para realizar esta función era libmysql, que no estaba optimizado para ser utilizado desde PHP. A partir de la versión 5.3, PHP viene preparado para utilizar también un nuevo driver mejorado para realizar esta función, el Driver Nativo de MySQL, mysqlnd.
+</pre>
+</div>
+<div created="20171007225038751" modified="20171007225229284" orden="020200" tags="MySQL/MariaDB" title="Herramientas de administraci'on">
+<pre>
+2.2.- Herramientas de administración.
+Pingüino sentado a una mesa y manejando un ordenador.
+
+Existen muchas herramientas que permiten establecer una conexión con un servidor MySQL para realizar tareas de administración. Algunas herramientas se ejecutan en la línea de comandos, otras presentan un interface gráfico basado en web o propio del sistema operativo en que se ejecuten. Unas se incluyen con el propio servidor, y otras es necesario obtenerlas e instalarlas de forma independiente. Las hay que están orientadas a algún propósito concreto y también que permiten realizar varias funciones de administración.
+
+Con el servidor MySQL se incluyen algunas herramientas de administración en línea de comandos, entre las que debes conocer:
+
+    mysql. Permite conectarse a un servidor MySQL para ejecutar sentencias SQL.
+    mysqladmin. Es un cliente específico para tareas de administración.
+    mysqlshow. Muestra información sobre bases de datos y tablas.
+
+Para saber más
+
+En la documentación de MySQL tienes información sobre las distintas utilidades que incorpora.
+
+Utilidades que incorpora.
+
+Estas herramientas comparten unas cuantas opciones relativas al establecimiento de la conexión con el servidor. Muchas de estas opciones tienen también una forma abreviada:
+
+    --user=nombre_usuario (-u nombre_usuario). Indica un nombre de usuario con permisos para establecer la conexión. Si no se especifica se usará el nombre de usuario actual del sistema operativo.
+    --password=contraseña (-pcontraseña). Contraseña asociada al nombre de usuario anterior. Si se utiliza la opción abreviada, debe figurar justo a continuación de la letra p, sin espacios intermedios. Si es necesario introducir una contraseña y no se indica ninguna, se pedirá para establecer la conexión.
+    --host=equipo_servidor (-h equipo_servidor). Nombre del equipo con el que se establecerá la conexión. Si no se indica nada, se usara &quot;localhost&quot;.
+
+Por ejemplo, para establecer una conexión al servidor local con la herramienta mysql, podemos hacer:
+
+mysql –u root –p
+
+ 
+Recomendación
+Conviene no indicar nunca la contraseña en la misma línea de comandos. En caso de que la cuenta esté convenientemente protegida por una contraseña, es mejor utilizar solo la opción -p como en el ejemplo anterior. De esta forma, la herramienta solicita la introducción de la contraseña y ésta no queda almacenada en ningún registro como puede ser el historial de comandos del sistema.
+Debes conocer
+
+De entre el resto de herramientas de administración independientes que podemos utilizar con MySQL, podemos destacar dos:
+
+MySQL Workbench es una herramienta genérica con interface gráfico nativo que permite administrar tanto el servidor como las bases de datos que éste gestiona. Ha sido desarrollada por los creadores de MySQL y se ofrece en dos ediciones, una de ellas de código abierto bajo licencia GPL.
+
+MySQL Workbench.
+
+phpMyAdmin es una aplicación web muy popular para la administración de servidores MySQL. Presenta un interface web de administración programado en PHP bajo licencia GPL. Su objetivo principal es la administración de las bases de datos y la gestión de la información que maneja el servidor.
+
+phpMyAdmin.
+Autoevaluación
+
+Relaciona cada herramienta de administración con el tipo de interface que utiliza:
+Ejercicio de relacionar Herramienta.	Relación.	Tipo de interface.
+MySQL Workbench. 		1. Línea de comandos.
+mysql. 		2. Web.
+phpMyAdmin. 		3. Nativo.
+mysqladmin. 		4. Línea de comandos.
+  
+Anterior | Siguiente</pre>
+</div>
+<div created="20171007223607507" modified="20171007224910051" orden="020100" tags="MySQL/MariaDB" title="Instalacion y configuracion">
+<pre>
+2.1.- Instalación y configuración.
+
+Llave inglesa sobre un fondo con dígitos binarios.
+
+En la primera unidad ya viste cómo podías instalar en un único paso una plataforma LAMP para desarrollar aplicaciones web en Ubuntu. En Linux, la instalación de MySQL se divide básicamente en dos paquetes que puedes instalar de forma individual según tus necesidades:
+
+    mysql-server. Es el servidor en sí. Necesitas instalar este paquete para gestionar las bases de datos y permitir conexiones desde el equipo local o a través de la red.
+    mysql-client. Son los programas cliente, necesarios para conectarse a un servidor MySQL. Solo necesitas instalarlos en aquel o aquellos equipos que se vayan a conectar al SGBD (en nuestro caso, las conexiones se realizarán normalmente desde el mismo equipo en el que se ejecuta el servidor).
+
+Una vez instalado, puedes gestionar la ejecución del servicio de la misma forma que cualquier otro servicio del sistema:
+
+sudo service mysql status // también start, stop, restart
+
+ 
+
+En una instalación típica, el usuario root no tiene por defecto contraseña de acceso al servidor. Es importante asignarle una por razones de seguridad:
+
+mysqladmin -u root password nueva-contraseña
+
+ 
+
+El servidor se ejecuta por defecto en el Puerto TCP 3306. Esto lo debes tener en cuenta para permitir el acceso a través del cortafuegos en configuraciones en red.
+
+El fichero de configuración del servidor MySQL se llama my.cnf (en linux) o my.ini (en windows) y se encuentra alojado en /etc/mysql (en linux) o C:\xampp\mysql\bin (en windows si trabajas con xampp) . Su contenido se divide en secciones. Las opciones que contiene cada una de las secciones afectan al comportamiento de un módulo concreto. Entre las secciones disponibles destacan:
+
+    [client]. Sus parámetros influyen sobre los distintos clientes que se conectan al servidor MySQL.
+    [mysqld]. Contiene opciones relativas a la ejecución del servidor.
+
+Entre los parámetros que puedes configurar en el fichero my.cnf tienes:
+
+    port. Indica el puerto TCP en el que escuchará el servidor y con el que se establecerán las conexiones.
+    user. Nombre del usuario que se utilizará para ejecutar el servidor.
+    datadir. Directorio del servidor en el que se almacenarán las bases de datos.
+
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007225324042" modified="20171007230120219" orden="020201" tags="[[Herramientas de administraci'on]]" title="mysql y mysqladmin">
+<pre>
+2.2.1.- mysql y mysqladmin.
+Ventana de terminal de Linux con línea de comandos.
+
+La forma más habitual de utilizar la herramienta mysql es en modo interactivo. Una vez te conectas al servidor MySQL, te presenta una línea de órdenes. En esa línea de órdenes puedes introducir sentencias SQL, que se ejecutarán sobre la base de datos seleccionada, y algunos comandos especiales. Las sentencias SQL deben terminar en el carácter &quot;;&quot;. Entre los comandos especiales que puedes usar están:
+
+    connect. Establece una conexión con un servidor MySQL.
+    use. Permite seleccionar una base de datos.
+    exit o quit. Termina la sesión interactiva con mysql.
+    help. Muestra una pantalla de ayuda con la lista de comandos disponibles.
+
+Por ejemplo, si cuando estás utilizando la herramienta quieres seleccionar la base de datos &quot;dwes&quot;, debes hacer:
+
+mysql&gt; use dwes
+
+
+Las sentencias SQL que teclees a partir de ese instante se ejecutarán sobre la base de datos &quot;dwes&quot;.
+Debes conocer
+
+Para comprobar la sintaxis de las sentencias SQL admitidas por MySQL, puedes consultar la documentación en línea.
+
+Documentación en línea.
+
+También puedes usar mysql en modo de procesamiento por lotes, para ejecutar sobre un servidor MySQL todas las sentencias almacenadas en un fichero de texto (normalmente con extensión .sql). Por ejemplo:
+
+mysql –u root –pabc123. &lt; crear_bd_dwes.sql
+
+ 
+Ejercicio resuelto
+
+Utiliza las sentencias SQL que contiene el siguiente fichero para crear la estructura de la base de datos &quot;dwes&quot; en tu instalación de MySQL.
+Fichero por lotes de SQL para crear la base de datos &quot;dwes&quot;. (0.01 MB)
+
+mysqladmin es una herramienta no interactiva orientada a tareas de administración del propio servidor. Las tareas concretas de administración a llevar a cabo, se indican mediante parámetros en la línea de comandos. Entre las tareas que puedes llevar a cabo con esta utilidad se encuentran:
+
+    crear y eliminar bases de datos.
+    mostrar la configuración y el estado del servidor.
+    cambiar contraseñas.
+    detener un servidor.
+
+Por ejemplo, si quieres mostrar información sobre el estado actual del servidor local, puedes utilizar el comando status:
+
+mysqladmin –u root –pabc123. status
+
+Debes conocer
+
+En la documentación de MySQL tienes información sobre todos los comandos que admite mysqladmin y su significado.
+
+Comandos que admite mysqladmin.
+Autoevaluación
+Si quieres saber si en una tabla de una base de datos existe o no un registro, ¿qué herramienta en línea de comandos puedes usar?
+mysqladmin.
+mysql.
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007222420493" modified="20171007223349762" orden="020000" tags="Contenidos" title="MySQL/MariaDB">
+<pre>
+
+MySQL es un sistema gestor de bases de datos (SGBD) relacionales. Es un programa de código abierto que se ofrece bajo licencia GNU GPL, aunque también ofrece una licencia comercial en caso de que quieras utilizarlo para desarrollar aplicaciones de código propietario. En las últimas versiones (a partir de la 5.1), se ofrecen, de hecho, varios productos distintos: uno de código libre (Community Edition), y otro u otros comerciales (Standard Edition, Enterprise Edition).
+
+Incorpora múltiples motores de almacenamiento, cada uno con características propias: unos son más veloces, otros, aportan mayor seguridad o mejores capacidades de búsqueda. Cuando crees una base de datos, puedes elegir el motor en función de las características propias de la aplicación. Si no lo cambias, el motor que se utiliza por defecto se llama MyISAM, que es muy rápido pero a cambio no contempla integridad referencial ni tablas transaccionales. El motor InnoDB es un poco más lento pero sí soporta tanto integridad referencial como tablas transaccionales.
+
+MySQL se emplea en múltiples aplicaciones web, ligado en la mayor parte de los casos al lenguaje PHP y al servidor web Apache. Utiliza SQL para la gestión, consulta y modificación de la información almacenada. Soporta la mayor parte de las características de ANSI SQL 99, y añade además algunas extensiones propias.
+Para saber más
+
+En las siguientes secciones darás un rápido repaso a lo que debes saber sobre la instalación, configuración y las herramientas de administración de MySQL. Si necesitas ampliar información, puedes consultar el manual en línea de MySQL.
+
+Manual en línea de MySQL.
+Autoevaluación
+¿A qué hacen referencia las siglas PDO?
+A un motor de almacenamiento utilizado por MySQL.
+A una extensión de PHP que permite acceder a varios gestores de bases de datos.
+</pre>
 </div>
 <div created="20171002174425415" modified="20171003071623735" orden="010100" tags="[[Acceso a bases de datos desde PHP]]" title="Nociones de OOP">
 <pre>La ''programación orientada a objetos'' es una metodología de programación avanzada y bastante extendida, en la que los sistemas se ''modelan'' creando ''clases'', que son un conjunto de ''datos'' y ''funcionalidades''. ''Las clases son definiciones'', a partir de las que se ''crean objetos''. Los objetos son ejemplares de una clase determinada y como tal, disponen de los datos y funcionalidades definidos en la clase.
@@ -8660,6 +9493,254 @@ nombre_del_objeto-&gt;nombre_del_atributo
 !!La variable `$this`
 
 Dentro de un método, la variable `$this` hace referencia al ''objeto'' sobre el que invocamos el método. En la invocación `$micaja-&gt;introduce(&quot;algo&quot;)` se está llamando al método introduce sobre el objeto ''$micaja''. Cuando se está ejecutando ese método, se vuelca el valor que recibe por parámetro en el atributo contenido. En ese caso ''$this-&gt;contenido'' hace referencia al ''atributo'' contenido del objeto ''$micaja'', que es sobre el que se invocaba el método. </pre>
+</div>
+<div created="20171007233126479" modified="20171007233334521" orden="030104" tags="[[Extensi'on MySQLi]]" title="Obtenci'on y utilizaci'on de conjuntos de resultados">
+<pre>
+3.1.4.- Obtención y utilización de conjuntos de resultados.
+Símbolo de obtención de información de una base de datos junto a las letras mysqli.
+
+Ya sabes que al ejecutar una consulta que devuelve datos obtienes un objeto de la clase mysqli_result. Esta clase sigue los criterios de ofrecer un interface de programación dual, es decir, una función por cada método con la misma funcionalidad que éste.
+
+Para trabajar con los datos obtenidos del servidor, tienes varias posibilidades:
+
+fetch_array (función mysqli_fetch_array). Obtiene un registro completo del conjunto de resultados y lo almacena en un array. Por defecto el array contiene tanto claves numéricas como asociativas. Por ejemplo, para acceder al primer campo devuelto, podemos utilizar como clave el número 0 o su nombre indistintamente.
+
+$resultado = $dwes-&gt;query('SELECT producto, unidades FROM stock WHERE unidades&lt;2');
+
+$stock = $resultado-&gt;fetch_array();  // Obtenemos el primer registro
+
+$producto = $stock['producto'];  // O también $stock[0];
+
+$unidades = $stock['unidades'];  // O también $stock[1];
+
+print &quot;&lt;p&gt;Producto $producto: $unidades unidades.&lt;/p&gt;&quot;;
+
+
+Este comportamiento por defecto se puede modificar utilizando un parámetro opcional, que puede tomar los siguientes valores:
+
+    MYSQLI_NUM. Devuelve un array con claves numéricas.
+    MYSQLI_ASSOC. Devuelve un array asociativo.
+    MYSQLI_BOTH. Es el comportamiento por defecto, en el que devuelve un array con claves numéricas y asociativas.
+
+fetch_assoc (función mysqli_fetch_assoc). Idéntico a fetch_array pasando como parámetro MYSQLI_ASSOC.
+
+fetch_row (función mysqli_fetch_row). Idéntico a fetch_array pasando como parámetro MYSQLI_NUM.
+
+fetch_object (función mysqli_fetch_object). Similar a los métodos anteriores, pero devuelve un objeto en lugar de un array. Las propiedades del objeto devuelto se corresponden con cada uno de los campos del registro.
+
+Parar recorrer todos los registros de un array, puedes hacer un bucle teniendo en cuenta que cualquiera de los métodos o funciones anteriores devolverá null cuando no haya más registros en el conjunto de resultados.
+
+$resultado = $dwes-&gt;query('SELECT producto, unidades FROM stock WHERE unidades&lt;2');
+
+$stock = $resultado-&gt;fetch_object();
+
+while ($stock != null) {
+
+        print &quot;&lt;p&gt;Producto $stock-&gt;producto: $stock-&gt;unidades unidades.&lt;/p&gt;&quot;;
+
+        $stock = $resultado-&gt;fetch_object();
+
+}
+
+ 
+Para saber más
+
+En el manual de PHP tienes más información sobre los métodos y propiedades de la clase mysqli_result.
+
+Clase mysqli_result.
+Ejercicio resuelto
+
+Crea una página web en la que se muestre el stock existente de un determinado producto en cada una de las tiendas. Para seleccionar el producto concreto utiliza un cuadro de selección dentro de un formulario en esa misma página. Puedes usar como base los siguientes ficheros.
+Ficheros de base para resolver el ejercicio. (0.01 MB)
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007235005778" modified="20171007235137110" orden="030203" tags="[[PHP Data Objects (PDO)]]" title="Obtenci'on y utilizaci'on de conjuntos de resultados (II)">
+<pre>
+3.2.3.- Obtención y utilización de conjuntos de resultados.
+
+Símbolo de obtención de información de una base de datos junto a las letras PDO.
+
+Al igual que con la extensión MySQLi, en PDO tienes varias posibilidades para tratar con el conjunto de resultados devuelto por el método query. La más utilizada es el método fetch de la clase PDOStatement. Este método devuelve un registro del conjunto de resultados, o false si ya no quedan registros por recorrer.
+
+$dwes = new PDO(&quot;mysql:host=localhost;dbname=dwes&quot;, &quot;dwes&quot;, &quot;abc123.&quot;);
+
+$resultado = $dwes-&gt;query(&quot;SELECT producto, unidades FROM stock&quot;);
+
+while ($registro = $resultado-&gt;fetch()) {
+
+    echo &quot;Producto &quot;.$registro['producto'].&quot;: &quot;.$registro['unidades'].&quot;&lt;br /&gt;&quot;;
+
+}
+
+ 
+
+Por defecto, el método fetch genera y devuelve a partir de cada registro un array con claves numéricas y asociativas. Para cambiar su comportamiento, admite un parámetro opcional que puede tomar uno de los siguientes valores:
+
+    PDO::FETCH_ASSOC. Devuelve solo un array asociativo.
+    PDO::FETCH_NUM. Devuelve solo un array con claves numéricas.
+    PDO::FETCH_BOTH. Devuelve un array con claves numéricas y asociativas. Es el comportamiento por defecto.
+    PDO::FETCH_OBJ. Devuelve un objeto cuyas propiedades se corresponden con los campos del registro.
+
+$dwes = new PDO(&quot;mysql:host=localhost;dbname=dwes&quot;, &quot;dwes&quot;, &quot;abc123.&quot;);
+
+$resultado = $dwes-&gt;query(&quot;SELECT producto, unidades FROM stock&quot;);
+
+while ($registro = $resultado-&gt;fetch(PDO::FETCH_OBJ)) {
+
+    echo &quot;Producto &quot;.$registro-&gt;producto.&quot;: &quot;.$registro-&gt;unidades.&quot;&lt;br /&gt;&quot;;
+
+}
+
+ 
+
+    PDO::FETCH_LAZY. Devuelve tanto el objeto como el array con clave dual anterior.
+    PDO::FETCH_BOUND. Devuelve true y asigna los valores del registro a variables, según se indique con el método bindColumn. Este método debe ser llamado una vez por cada columna, indicando en cada llamada el número de columna (empezando en 1) y la variable a asignar.
+
+$dwes = new PDO(&quot;mysql:host=localhost;dbname=dwes&quot;, &quot;dwes&quot;, &quot;abc123.&quot;);
+
+$resultado = $dwes-&gt;query(&quot;SELECT producto, unidades FROM stock&quot;);
+
+$resultado-&gt;bindColumn(1, $producto);
+
+$resultado-&gt;bindColumn(2, $unidades);
+
+while ($registro = $resultado-&gt;fetch(PDO::FETCH_BOUND)) {
+
+    echo &quot;Producto &quot;.$producto.&quot;: &quot;.$unidades.&quot;&lt;br /&gt;&quot;;
+
+}
+
+ 
+Ejercicio resuelto
+
+Modifica la página web que muestra el stock de un producto en las distintas tiendas, obtenida en un ejercicio anterior utilizando MySQLi, para que use PDO. Omite la gestión de errores, que veremos en el último punto de este tema.
+Autoevaluación
+¿Cuál es el comportamiento por defecto del método &quot;fetch&quot;?
+Devuelve un array con claves numéricas y asociativas.
+Devuelve un array asociativo.
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007233706355" modified="20171007233837440" orden="030200" tags="[[Utilizaci'on de bases de datos MySQL en PHP]]" title="PHP Data Objects (PDO)">
+<pre>
+3.2.- PHP Data Objects (PDO).
+Captura de pantalla obtenida de los resultados mostrados por la función phpinfo, correspondientes a la sección relativa a la configuración de la extensión PDO.
+
+Si vas a programar una aplicación que utilice como sistema gestor de bases de datos MySQL, la extensión MySQLi que acabas de ver es una buena opción. Ofrece acceso a todas las características del motor de base de datos, a la vez que reduce los tiempos de espera en la ejecución de sentencias.
+
+Sin embargo, si en el futuro tienes que cambiar el SGBD por otro distinto, tendrás que volver a programar gran parte del código de la misma. Por eso, antes de comenzar el desarrollo, es muy importante revisar las características específicas del proyecto. En el caso de que exista la posibilidad, presente o futura, de utilizar otro servidor como almacenamiento, deberás adoptar una capa de abstracción para el acceso a los datos. Existen varias alternativas como ODBC, pero sin duda la opción más recomendable en la actualidad es PDO.
+
+El objetivo es que si llegado el momento necesitas cambiar el servidor de base de datos, las modificaciones que debas realizar en tu código sean mínimas. Incluso es posible desarrollar aplicaciones preparadas para utilizar un almacenamiento u otro según se indique en el momento de la ejecución, pero éste no es el objetivo principal de PDO. PDO no abstrae de forma completa el sistema gestor que se utiliza. Por ejemplo, no modifica las sentencias SQL para adaptarlas a las características específicas de cada servidor. Si esto fuera necesario, habría que programar una capa de abstracción completa.
+
+La extensión PDO debe utilizar un driver o controlador específico para el tipo de base de datos que se utilice. Para consultar los controladores disponibles en tu instalación de PHP, puedes utilizar la información que proporciona la función phpinfo.
+
+PDO se basa en las características de orientación a objetos de PHP pero, al contrario que la extensión MySQLi, no ofrece un interface de programación dual. Para acceder a las funcionalidades de la extensión tienes que emplear los objetos que ofrece, con sus métodos y propiedades. No existen funciones alternativas.
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007230231812" modified="20171007230344896" orden="020202" tags="[[Herramientas de administraci'on]]" title="phpMyAdmin">
+<pre>
+2.2.2.- phpMyAdmin.
+Captura de la página web de inicio de la aplicación phpMyAdmin. Se muestran las siguientes opciones de entrada: idioma, usuario y contraseña.
+
+Al contrario que las dos herramientas anteriores, phpMyAdmin no se instala con el servidor MySQL. Debes instalarlo de forma individual, en el caso de Ubuntu utilizando el gestor de paquetes:
+
+sudo apt-get install phpmyadmin
+
+ 
+
+El proceso de instalación es sencillo. Simplemente te pregunta por el servidor web a utilizar (escoger apache2), y después debes dejar que configure una nueva base de datos propia en el servidor. Una vez instalada la aplicación, podrás acceder vía web con un navegador utilizando la URL &quot;http://localhost/phpmyadmin/&quot;.
+
+Para poder entrar, debes indicar un nombre de usuario y contraseña válidos. Si realizaste el ejercicio anterior, se habrá creado en tu servidor un usuario &quot;dwes&quot; con contraseña &quot;abc123.&quot; con permisos para la base de datos &quot;dwes&quot;. Si utilizas ese usuario para entrar en la aplicación, ésta te permitirá gestionar la base de datos &quot;dwes&quot;.
+
+El interface de la aplicación se compone de un panel de navegación a la izquierda, donde se muestran las bases de datos, y un panel principal con un menú en la parte superior y una serie de acciones e información en la parte central. Si seleccionas la base de datos &quot;dwes&quot;, la información en pantalla cambia.
+Captura de la página web de inicio de la aplicación phpMyAdmin. Se muestran las siguientes opciones de entrada: idioma, usuario y contraseña.
+
+Utilizando los menús de la parte superior, puedes:
+
+    Ver y modificar la estructura de la base de datos.
+    Ejecutar sentencias SQL.
+    Buscar información en toda la base de datos o en parte de la misma.
+    Generar una consulta utilizando un asistente.
+    Exportar e importar información, tanto de la estructura como de los datos.
+    Diseñar las relaciones existentes entre las tablas.
+    Otras operaciones, como hacer una copia de la base de datos.
+
+Si seleccionas una tabla en lugar de la base de datos, podrás efectuar a ese nivel operaciones similares a las anteriores. En la siguiente presentación sobre phpMyAdmin tienes información sobre el maneja básico de la aplicación.
+Captura de la actividad sobre phpMyAdmin.
+Resumen textual alternativo
+Para saber más
+
+En la página web de la aplicación tienes documentación sobre su configuración y utilización.
+
+Página web de la aplicación.
+Ejercicio resuelto
+
+Utiliza phpMyAdmin para ejecutar las consultas del siguiente fichero, que rellenan con datos las tablas de la base de datos &quot;dwes&quot;. Esta información la utilizaremos en los próximos ejercicios.
+Fichero por lotes de SQL para insertar datos en la base de datos &quot;dwes&quot;. (0.01 MB)
+
+Intenta resolver la siguiente actividad relativa a las bases de datos MySQL. Consta de dos partes. En la primera parte el alumno debe unir los nombres de los dos motores de almacenamiento más utilizados, InnoDB y MyISAM, con sus características principales. En la segunda parte, El alumno deberá teclear, a partir de su descripción, los nombres de algunas herramientas y comandos utilizados en la administración de bases de datos MySQL.
+
+Actividad interactiva para descargar (descomprimir y ejecutar archivo .html)
+
+ 
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007232755514" modified="20171007232927639" orden="030103" tags="[[Extensi'on MySQLi]]" title="Transacciones">
+<pre>
+3.1.3.- Transacciones.
+Marca de verificación y equis junto a las letras mysqli.
+
+Como ya comentamos, si necesitas utilizar transacciones deberás asegurarte de que estén soportadas por el motor de almacenamiento que gestiona tus tablas en MySQL. Si utilizas InnoDB, por defecto cada consulta individual se incluye dentro de su propia transacción. Puedes gestionar este comportamiento con el método autocommit (función mysqli_autocommit).
+
+$dwes-&gt;autocommit(false);   // deshabilitamos el modo transaccional automático
+
+
+Al deshabilitar las transacciones automáticas, las siguientes operaciones sobre la base de datos iniciarán una transacción que deberás finalizar utilizando:
+
+    commit (o la función mysqli_commit). Realizar una operación &quot;commit&quot; de la transacción actual, devolviendo true si se ha realizado correctamente o false en caso contrario.
+    rollback (o la función mysqli_rollback). Realizar una operación &quot;rollback&quot; de la transacción actual, devolviendo true si se ha realizado correctamente o false en caso contrario.
+
+…
+
+$dwes-&gt;query('DELETE FROM stock WHERE unidades=0');  // Inicia una transacción
+
+$dwes-&gt;query('UPDATE stock SET unidades=3 WHERE producto=&quot;STYLUSSX515W&quot;');
+
+…
+
+$dwes-&gt;commit();  // Confirma los cambios
+
+
+Una vez finalizada esa transacción, comenzará otra de forma automática.
+Ejercicio resuelto
+
+Según la información que figura en la tabla stock de la base de datos dwes, la tienda 1 (CENTRAL) tiene 2 unidades del producto de código 3DSNG y la tienda 3 (SUCURSAL2) ninguno. Suponiendo que los datos son esos (no hace falta que los compruebes en el código), utiliza una transacción para mover una unidad de ese producto de la tienda 1 a la tienda 3.
+Autoevaluación
+En el modo de gestión de transacciones que se utiliza por defecto, ¿es posible revertir los cambios que se aplican al ejecutar una consulta de acción?
+No.
+Sí.
+Anterior | Siguiente
+</pre>
+</div>
+<div created="20171007230614476" modified="20171007231659845" orden="030000" tags="Contenidos" title="Utilizaci'on de bases de datos MySQL en PHP">
+<pre>
+
+Como ya viste, existen dos formas de comunicarse con una base de datos desde PHP: utilizar una extensión nativa programada para un SGBD concreto, o utilizar una extensión que soporte varios tipos de bases de datos. Tradicionalmente las conexiones se establecían utilizando la extensión nativa mysql. Esta extensión se mantiene en la actualidad para dar soporte a las aplicaciones ya existentes que la utilizan, pero no se recomienda utilizarla para desarrollar nuevos programas. Lo más habitual es elegir entre MySQLi (extensión nativa) y PDO.
+
+Con cualquiera de ambas extensiones, podrás realizar acciones sobre las bases de datos como:
+
+    Establecer conexiones.
+    Ejecutar sentencias SQL.
+    Obtener los registros afectados o devueltos por una sentencia SQL.
+    Emplear transacciones.
+    Ejecutar procedimientos almacenados.
+    Gestionar los errores que se produzcan durante la conexión o en el establecimiento de la misma.
+
+PDO y MySQLi (y también la antigua extensión mysql) utilizan un driver de bajo nivel para comunicarse con el servidor MySQL. Hasta hace poco el único driver disponible para realizar esta función era libmysql, que no estaba optimizado para ser utilizado desde PHP. A partir de la versión 5.3, PHP viene preparado para utilizar también un nuevo driver mejorado para realizar esta función, el Driver Nativo de MySQL, mysqlnd.
+</pre>
 </div>
 
 </div>
