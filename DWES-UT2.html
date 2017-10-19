@@ -8488,34 +8488,34 @@ Error message and password prompt
 <div created="20170925111336136" modified="20170928075251868" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170920175320671" modified="20171015233715745" title="$:/state/sidebar">
+<div created="20170920175320671" modified="20171016233334672" title="$:/state/sidebar">
 <pre>no</pre>
 </div>
 <div created="20170920173643751" modified="20171009223908897" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20170920181845059" modified="20171015235853484" title="$:/state/toc/Contenidos-Anexos-1645261823">
-<pre>open</pre>
+<div created="20170920181845059" modified="20171019003907734" title="$:/state/toc/Contenidos-Anexos-1645261823">
+<pre>close</pre>
 </div>
 <div created="20171010185707440" modified="20171010185718178" title="$:/state/toc/Contenidos-Ejercicios UT02-1645261823">
 <pre>close</pre>
 </div>
-<div created="20170920174356578" modified="20171012230903077" title="$:/state/toc/Contenidos-Elementos del lenguaje PHP-1645261823">
+<div created="20170920174356578" modified="20171017010752321" title="$:/state/toc/Contenidos-Elementos del lenguaje PHP-1645261823">
 <pre>close</pre>
 </div>
-<div created="20170920175410981" modified="20171014104507914" title="$:/state/toc/Contenidos-Estructuras de control-1645261823">
+<div created="20170920175410981" modified="20171017010809349" title="$:/state/toc/Contenidos-Estructuras de control-1645261823">
 <pre>close</pre>
 </div>
-<div created="20170920181321955" modified="20171010152623722" title="$:/state/toc/Contenidos-Formularios web-1645261823">
+<div created="20170920181321955" modified="20171019003908900" title="$:/state/toc/Contenidos-Formularios web-1645261823">
 <pre>close</pre>
 </div>
-<div created="20170920175945495" modified="20171014110521103" title="$:/state/toc/Contenidos-Funciones-1645261823">
+<div created="20170920175945495" modified="20171017012519041" title="$:/state/toc/Contenidos-Funciones-1645261823">
 <pre>close</pre>
 </div>
-<div created="20170920180627850" modified="20171014110525741" title="$:/state/toc/Contenidos-Tipos de datos compuestos-1645261823">
-<pre>open</pre>
+<div created="20170920180627850" modified="20171017225321704" title="$:/state/toc/Contenidos-Tipos de datos compuestos-1645261823">
+<pre>close</pre>
 </div>
-<div list="Contenidos [[Código de ''procesa.php'']]" title="$:/StoryList">
+<div list="Contenidos [[Ejercicios UT02]] [[Ejercicio 11]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170925111501897" modified="20170925111507074" title="$:/temp/advancedsearch">
@@ -8682,7 +8682,7 @@ Error message and password prompt
 <div created="20170920181746326" modified="20170920181840564" orden="060000" tags="Contenidos" title="Anexos">
 <pre></pre>
 </div>
-<div created="20170920180210786" modified="20171014110410580" orden="030300" tags="Funciones" title="Argumentos">
+<div created="20170920180210786" modified="20171017011214336" orden="030300" tags="Funciones" title="Argumentos">
 <pre>En el ejemplo anterior en la función usabas una variable global, lo cual no es una buena práctica. Siempre es mejor utilizar ''argumentos'' o ''parámetros'' al hacer la llamada. Además, en lugar de mostrar el resultado en pantalla o guardar el resultado en una variable global, l''as funciones pueden devolver un valor'' usando la sentencia return. Cuando en una función se encuentra una sentencia `return`, termina su procesamiento y devuelve el valor que se indica.
 
 Puedes reescribir la función anterior de la siguiente forma:
@@ -8690,7 +8690,7 @@ Puedes reescribir la función anterior de la siguiente forma:
 ```
 &lt;?php
     function precio_con_iva($precio) {
-        return $precio * 1.18;
+        return $precio * 1.21;
     }
     $precio = 10;
     $precio_iva = precio_con_iva($precio);
@@ -8704,7 +8704,7 @@ Al definir la función, puedes indicar ''valores por defecto para los argumentos
 
 ```
 &lt;?php
-    function precio_con_iva($precio, $iva=0.18) {
+    function precio_con_iva($precio, $iva=0.21) {
         return $precio * (1 + $iva);
     }
     $precio = 10;
@@ -8722,7 +8722,7 @@ En los ejemplos anteriores los argumentos se pasaban ''por valor''. Esto es, cua
 
 ```
 &lt;?php
-    function precio_con_iva(&amp;$precio, $iva=0.18) {
+    function precio_con_iva(&amp;$precio, $iva=0.21) {
         $precio *= (1 + $iva);
     }
     $precio = 10;
@@ -8736,7 +8736,7 @@ En los ejemplos anteriores los argumentos se pasaban ''por valor''. Esto es, cua
 ¿Está bien definida una función con el siguiente encabezado?
 
 ```
-function precio_final (&amp;$precio, $iva=0.18, $aplicar_iva)
+function precio_final (&amp;$precio, $iva=0.21, $aplicar_iva)
 ```
 &lt;&lt;&lt;
 &lt;&lt;&lt;
@@ -8897,27 +8897,23 @@ MICADENA;
 &lt;/html&gt;
 ```</pre>
 </div>
-<div created="20170920183026889" modified="20170920183303795" orden="060800" tags="Anexos" title="Código necesario para procesar los datos">
+<div created="20170920183026889" modified="20171017225720871" orden="060800" tags="Anexos" title="Código necesario para procesar los datos">
 <pre>```
-&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
-http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
-&lt;!-- Desarrollo Web en Entorno Servidor --&gt;
-&lt;!-- Tema 2 : Características del Lenguaje PHP --&gt;
-&lt;!-- Ejemplo: Procesar datos get --&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
      &lt;head&gt;
-          &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-          &lt;title&gt;Desarrollo Web&lt;/title&gt;
+          &lt;meta charset=&quot;UTF-8&quot;&gt;
+          &lt;title&gt;Código necesario para procesar los datos&lt;/title&gt;
      &lt;/head&gt;
      &lt;body&gt;
-&lt;?php
-     $nombre = $_GET['nombre'];
-     $modulos = $_GET['modulos'];
-     print &quot;Nombre: &quot;.$nombre.&quot;&lt;br /&gt;&quot;;
-     foreach ($modulos as $modulo) {
-          print &quot;Modulo: &quot;.$modulo.&quot;&lt;br /&gt;&quot;;
-     }
-?&gt;
+         &lt;?php
+             $nombre = $_GET['nombre'];
+             $modulos = $_GET['modulos'];
+             print &quot;Nombre: &quot;.$nombre.&quot;&lt;br /&gt;&quot;;
+             foreach ($modulos as $modulo) {
+                 print &quot;Modulo: &quot;.$modulo.&quot;&lt;br /&gt;&quot;;
+             }
+        ?&gt;
      &lt;/body&gt;
 &lt;/html&gt;
 ```</pre>
@@ -9014,31 +9010,27 @@ En PHP no es necesario que definas una función antes de utilizarla, excepto cua
 Cuando una función está definida de una forma condicional sus definiciones deben ser procesadas antes de ser llamadas. Por tanto, ''la definición de la función debe estar antes de cualquier llamada.
 ''</pre>
 </div>
-<div created="20170920183841240" modified="20170920184001038" orden="061100" tags="Anexos" title="Ejemplo de validación">
+<div created="20170920183841240" modified="20171017231705210" orden="061100" tags="Anexos" title="Ejemplo de validación">
 <pre>```
-&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
-http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
-&lt;!-- Desarrollo Web en Entorno Servidor --&gt;
-&lt;!-- Tema 2 : Características del Lenguaje PHP --&gt;
-&lt;!-- Ejemplo: Validar datos en la misma página que el formulario --&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
      &lt;head&gt;
-          &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+          &lt;meta charset=&quot;UTF-8&quot;&gt;
           &lt;title&gt;Desarrollo Web&lt;/title&gt;
      &lt;/head&gt;
      &lt;body&gt;
-&lt;?php
-     if (!empty($_POST['modulos']) &amp;&amp; !empty($_POST['nombre'])) {
-          $nombre = $_POST['nombre'];
-          $modulos = $_POST['modulos'];
-          print &quot;Nombre: &quot;.$nombre.&quot;&lt;br /&gt;&quot;;
-          foreach ($modulos as $modulo) {
-               print &quot;Modulo: &quot;.$modulo.&quot;&lt;br /&gt;&quot;;
-          }
-     }
-     else {
-?&gt;
-     &lt;form name=&quot;input&quot; action=&quot;&lt;?php echo $_SERVER['PHP_SELF'];?&gt;&quot; method=&quot;post&quot;&gt;
+        &lt;?php
+             if (!empty($_POST['modulos']) &amp;&amp; !empty($_POST['nombre'])) {
+                  $nombre = $_POST['nombre'];
+                  $modulos = $_POST['modulos'];
+                  print &quot;Nombre: &quot;.$nombre.&quot;&lt;br /&gt;&quot;;
+                  foreach ($modulos as $modulo) {
+                       print &quot;Modulo: &quot;.$modulo.&quot;&lt;br /&gt;&quot;;
+                  }
+             }
+             else {
+        ?&gt;
+        &lt;form name=&quot;input&quot; action=&quot;&lt;?php echo $_SERVER['PHP_SELF'];?&gt;&quot; method=&quot;post&quot;&gt;
           Nombre del alumno:
           &lt;input type=&quot;text&quot; name=&quot;nombre&quot; value=&quot;&lt;?php if (isset ($_POST['nombre'])) echo $_POST['nombre'];?&gt;&quot; /&gt;
           &lt;?php
@@ -9069,865 +9061,452 @@ http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
           &lt;br /&gt;
           &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; name=&quot;enviar&quot;/&gt;
      &lt;/form&gt;
-&lt;?php
-     }
-?&gt;
+        &lt;?php
+             }
+        ?&gt;
      &lt;/body&gt;
 &lt;/html&gt;
 ```</pre>
 </div>
-<div created="20170920183508187" modified="20170928224432011" orden="060900" tags="Anexos" title="Ejemplo formulario web utilizando ''request''">
+<div created="20170920183508187" modified="20171017230112870" orden="060900" tags="Anexos" title="Ejemplo formulario web utilizando ''request''">
 <pre>```
-&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
-http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
-&lt;!-- Desarrollo Web en Entorno Servidor --&gt;
-&lt;!-- Tema 2 : Características del Lenguaje PHP --&gt;
-&lt;!-- Ejemplo: Procesar datos request --&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
      &lt;head&gt;
-          &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-          &lt;title&gt;Desarrollo Web&lt;/title&gt;
+          &lt;charset=&quot;UTF-8&quot;&gt;
+          &lt;title&gt;Ejemplo de formulario web utilizando &quot;request&quot;&lt;/title&gt;
      &lt;/head&gt;
      &lt;body&gt;
-&lt;?php
-     $nombre = $_REQUEST['nombre'];
-     $modulos = $_REQUEST['modulos'];
-     print &quot;Nombre: &quot;.$nombre.&quot;&lt;br /&gt;&quot;;
-     foreach ($modulos as $modulo) {
-          print &quot;Modulo: &quot;.$modulo.&quot;&lt;br /&gt;&quot;;
-     }
-?&gt;
+         &lt;?php
+             $nombre = $_REQUEST['nombre'];
+             $modulos = $_REQUEST['modulos'];
+             print &quot;Nombre: &quot;.$nombre.&quot;&lt;br /&gt;&quot;;
+             foreach ($modulos as $modulo) {
+                  print &quot;Modulo: &quot;.$modulo.&quot;&lt;br /&gt;&quot;;
+             }
+        ?&gt;
      &lt;/body&gt;
 &lt;/html&gt;
 ```
 </pre>
 </div>
-<div created="20171010153316344" modified="20171010184830885" orden="070100" tags="[[Ejercicios UT02]]" title="Ejercicio 01">
-<pre>```
+<div created="20171010153316344" modified="20171017235433396" orden="070100" tags="[[Ejercicios UT02]]" title="Ejercicio 01">
+<pre>Archivo: `01-01.php`
 
+```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
         Por favor, introduzca dos números: &lt;br&gt;
-        &lt;form action=&quot;01result.php&quot; method=&quot;post&quot;&gt;
+        &lt;form action=&quot;01-02.php&quot; method=&quot;post&quot;&gt;
           x &lt;input type=&quot;text&quot; name=&quot;x&quot;&gt;&lt;br&gt;
           y &lt;input type=&quot;text&quot; name=&quot;y&quot;&gt;&lt;br&gt;
           &lt;input type=&quot;submit&quot; value=&quot;Multiplica&quot;&gt;
         &lt;/form&gt;
-	    &lt;/div&gt;
-	    &lt;div id=&quot;footer&quot;&gt;
-		    © Luis José Sánchez González
-	    &lt;/div&gt;
-    &lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 ```
+Archivo: `01-02.php`
 
 ```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;?php
-          echo $_POST['x'], &quot; * &quot;, $_POST['y'], &quot; = &quot;, $_POST['x'] * $_POST['y'];
-        ?&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-  &lt;/div&gt;
+    &lt;?php
+      echo $_POST['x'], &quot; x &quot;, $_POST['y'], &quot; = &quot;, $_POST['x'] * $_POST['y'];
+    ?&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 
 ```</pre>
 </div>
-<div created="20171010153854338" modified="20171010185009806" orden="070200" tags="[[Ejercicios UT02]]" title="Ejercicio 02">
-<pre>```
+<div created="20171010153854338" modified="20171018000420364" orden="070200" tags="[[Ejercicios UT02]]" title="Ejercicio 02">
+<pre>Archivo: `02-01.php`
+
+```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        
         &lt;h2&gt;Conversor de euros a pesetas&lt;/h2&gt;
-        &lt;form action=&quot;02result.php&quot; method=&quot;post&quot;&gt;
-          Euros &lt;input type=&quot;text&quot; name=&quot;euros&quot;&gt;&lt;br&gt;
+        &lt;form action=&quot;02-02.php&quot; method=&quot;post&quot;&gt;
+          Euros &lt;input type=&quot;text&quot; name=&quot;euros&quot;&gt;&lt;br /&gt;
           &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
         &lt;/form&gt;
-      &lt;/div&gt;
-      
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 
 ```
+Archivo: `02-02.php`
 
 ```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;?php
-            echo $_POST['euros'], &quot; euros son &quot;, round($_POST['euros'] * 166.386), &quot; pesetas.&quot;;
-        ?&gt;
-      &lt;/div&gt;
-      
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;?php
+      echo $_POST['euros'], &quot; euros son &quot;, round($_POST['euros'] * 166.386), &quot; pesetas.&quot;;
+    ?&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 
 ```</pre>
 </div>
-<div created="20171010163459407" modified="20171010185047460" orden="070300" tags="[[Ejercicios UT02]]" title="Ejercicio 03">
-<pre>```
+<div created="20171010163459407" modified="20171018232909098" orden="070300" tags="[[Ejercicios UT02]]" title="Ejercicio 03">
+<pre>Archivo: `03-01.php`
+
+```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;h2&gt;Conversor de pesetas a euros&lt;/h2&gt;
-        &lt;form action=&quot;03result.php&quot; method=&quot;post&quot;&gt;
-          Pesetas &lt;input type=&quot;text&quot; name=&quot;pesetas&quot;&gt;&lt;br&gt;
-          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;h2&gt;Conversor de pesetas a euros&lt;/h2&gt;
+      &lt;form action=&quot;02-01.php&quot; method=&quot;post&quot;&gt;
+        Pesetas &lt;input type=&quot;text&quot; name=&quot;pesetas&quot;&gt;&lt;br&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+      &lt;/form&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 ```
+Archivo: `03-02.php`
 
 ```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;?php
-          echo $_POST['pesetas'], &quot; pesetas son &quot;;
-          echo round($_POST['pesetas'] / 166.386, $precision = 2), &quot; euros.&quot;;
-        ?&gt;
-      &lt;/div&gt;
-      
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;?php
+      echo $_POST['pesetas'], &quot; pesetas son &quot;;
+      echo round($_POST['pesetas'] / 166.386, $precision = 2), &quot; euros.&quot;;
+    ?&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 
 ```</pre>
 </div>
-<div created="20171010163650468" modified="20171010185132030" orden="070400" tags="[[Ejercicios UT02]]" title="Ejercicio 04">
-<pre>```
+<div created="20171010163650468" modified="20171018233222738" orden="070400" tags="[[Ejercicios UT02]]" title="Ejercicio 04">
+<pre>Archivo: `04-01.php`
+
+```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
+    Por favor, introduzca dos números: &lt;br&gt;
+    &lt;form action=&quot;04-02.php&quot; method=&quot;post&quot;&gt;
+      x &lt;input type=&quot;text&quot; name=&quot;x&quot;&gt;&lt;br&gt;
+      y &lt;input type=&quot;text&quot; name=&quot;y&quot;&gt;&lt;br&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+    &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+Archivo: `04-02.php`
 
-      &lt;div id=&quot;content&quot;&gt;
-        Por favor, introduzca dos números: &lt;br&gt;
-        &lt;form action=&quot;04result.php&quot; method=&quot;post&quot;&gt;
-          x &lt;input type=&quot;text&quot; name=&quot;x&quot;&gt;&lt;br&gt;
-          y &lt;input type=&quot;text&quot; name=&quot;y&quot;&gt;&lt;br&gt;
-          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
-      
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-  &lt;/div&gt;
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+      $x = $_POST['x'];
+      $y = $_POST['y'];
+      echo $x, &quot; + &quot;, $y, &quot; = &quot;, $x+$y, &quot;&lt;br&gt;&quot;;
+      echo $x, &quot; - &quot;, $y, &quot; = &quot;, $x-$y, &quot;&lt;br&gt;&quot;;
+      echo $x, &quot; * &quot;, $y, &quot; = &quot;, $x*$y, &quot;&lt;br&gt;&quot;;
+      echo $x, &quot; / &quot;, $y, &quot; = &quot;, round($x/$y, $precision = 2);
+    ?&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</pre>
+</div>
+<div created="20171010183702029" modified="20171018233457275" orden="070500" tags="[[Ejercicios UT02]]" title="Ejercicio 05">
+<pre>Archivo: `05-01.php`
+
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Cálculo del área de un rectángulo&lt;/h2&gt;
+    &lt;form action=&quot;05-02.php&quot; method=&quot;post&quot;&gt;
+      Anchura en cm &lt;input type=&quot;number&quot; name=&quot;ancho&quot; min=&quot;0&quot; autofocus&gt;&lt;br&gt;
+      Altura en cm &lt;input type=&quot;number&quot; name=&quot;alto&quot; min=&quot;0&quot;&gt;&lt;br&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+    &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+Archivo: `05-02.php`
+
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+      echo &quot;El área del rectángulo es &quot;;
+      echo round($_POST['ancho'] * $_POST['alto'], $precision = 2), &quot; cm&lt;sup&gt;2&lt;/sup&gt;&quot;;
+    ?&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</pre>
+</div>
+<div created="20171010183836283" modified="20171019002205812" orden="070600" tags="[[Ejercicios UT02]]" title="Ejercicio 06">
+<pre>Archivo: `06-01.php`
+
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Cálculo del área de un triángulo&lt;/h2&gt;
+      &lt;form action=&quot;06-02.php&quot; method=&quot;post&quot;&gt;
+        Anchura en cm &lt;input type=&quot;number&quot; name=&quot;ancho&quot; min=&quot;0&quot; autofocus&gt;&lt;br&gt;
+        Altura en cm &lt;input type=&quot;number&quot; name=&quot;alto&quot; min=&quot;0&quot;&gt;&lt;br&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+      &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+```
+Archivo:`06-02.php`
+
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+      echo &quot;El área del triángulo es &quot;;
+      echo round(($_POST['ancho'] * $_POST['alto']) / 2, $precision = 2), &quot; cm&lt;sup&gt;2&lt;/sup&gt;&quot;;
+    ?&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;a href=&quot;06-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</pre>
+</div>
+<div created="20171010183948000" modified="20171019002914535" orden="070700" tags="[[Ejercicios UT02]]" title="Ejercicio 07">
+<pre>Archivo: `07-01.php`
+
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Cálculo del total de una factura&lt;/h2&gt;
+      &lt;form action=&quot;07-02.php&quot; method=&quot;post&quot;&gt;
+        Base imponible (en euros) &lt;input type=&quot;number&quot; name=&quot;baseImponible&quot;  min=&quot;0&quot; step=&quot;0.01&quot; autofocus&gt;&lt;br&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+      &lt;/form&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 ```
 
+Archivo: `07-02.php`
+
 ```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;?php
-          $x = $_POST['x'];
-          $y = $_POST['y'];
-
-          echo $x, &quot; + &quot;, $y, &quot; = &quot;, $x+$y, &quot;&lt;br&gt;&quot;;
-          echo $x, &quot; - &quot;, $y, &quot; = &quot;, $x-$y, &quot;&lt;br&gt;&quot;;
-          echo $x, &quot; * &quot;, $y, &quot; = &quot;, $x*$y, &quot;&lt;br&gt;&quot;;
-          echo $x, &quot; / &quot;, $y, &quot; = &quot;, round($x/$y, $precision = 2);
-        ?&gt;
-      &lt;/div&gt;
-      
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;?php
+      echo &quot;El total de la factura es &quot;;
+      echo round($_POST['baseImponible'] * 1.21, $precision = 2), &quot; euros.&quot;;
+    ?&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;a href=&quot;07-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-
-```</pre>
+```
+</pre>
 </div>
-<div created="20171010183702029" modified="20171010185215199" orden="070500" tags="[[Ejercicios UT02]]" title="Ejercicio 05">
-<pre>```
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;h2&gt;Cálculo del área de un rectángulo&lt;/h2&gt;
-        &lt;form action=&quot;05result.php&quot; method=&quot;post&quot;&gt;
-          Anchura en cm &lt;input type=&quot;number&quot; name=&quot;ancho&quot; min=&quot;0&quot; autofocus&gt;&lt;br&gt;
-          Altura en cm &lt;input type=&quot;number&quot; name=&quot;alto&quot; min=&quot;0&quot;&gt;&lt;br&gt;
-          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
-      
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-```
+<div created="20171010184149216" modified="20171019003237994" orden="070800" tags="[[Ejercicios UT02]]" title="Ejercicio 08">
+<pre>Archivo: `08-01.php`
 
 ```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;?php
-          echo &quot;El área del rectángulo es &quot;;
-          echo round($_POST['ancho'] * $_POST['alto'], $precision = 2), &quot; cm&lt;sup&gt;2&lt;/sup&gt;&quot;;
-        ?&gt;
-      &lt;/div&gt;
-      
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-
-```</pre>
-</div>
-<div created="20171010183836283" modified="20171010185247525" orden="070600" tags="[[Ejercicios UT02]]" title="Ejercicio 06">
-<pre>```
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;h2&gt;Cálculo del área de un triángulo&lt;/h2&gt;
-        &lt;form action=&quot;06result.php&quot; method=&quot;post&quot;&gt;
-          Anchura en cm &lt;input type=&quot;number&quot; name=&quot;ancho&quot; min=&quot;0&quot; autofocus&gt;&lt;br&gt;
-          Altura en cm &lt;input type=&quot;number&quot; name=&quot;alto&quot; min=&quot;0&quot;&gt;&lt;br&gt;
-          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
-      
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-  &lt;/div&gt;
+    &lt;h2&gt;Cálculo del salario semanal&lt;/h2&gt;
+      &lt;form action=&quot;08-02.php&quot; method=&quot;post&quot;&gt;
+        Horas trabajadas durante la semana &lt;input type=&quot;number&quot; name=&quot;horas&quot; min=&quot;0&quot; autofocus&gt;&lt;br&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+      &lt;/form&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 ```
 
+Archivo: `08-02.php`
+
 ```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;?php
-          echo &quot;El área del triángulo es &quot;;
-          echo round(($_POST['ancho'] * $_POST['alto']) / 2, $precision = 2), &quot; cm&lt;sup&gt;2&lt;/sup&gt;&quot;;
-        ?&gt;
-        &lt;br&gt;&lt;br&gt;
-        &lt;a href=&quot;index.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-  &lt;/div&gt;
-    &lt;/body&gt;
+    &lt;?php
+      echo &quot;Su salario semanal es &quot;;
+      echo $_POST['horas'] * 12, &quot; euros.&quot;;
+    ?&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;a href=&quot;08-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
 &lt;/html&gt;
-
-```</pre>
+```
+</pre>
 </div>
-<div created="20171010183948000" modified="20171010185313721" orden="070700" tags="[[Ejercicios UT02]]" title="Ejercicio 07">
-<pre>```
+<div created="20171010184321309" modified="20171019003500497" orden="070900" tags="[[Ejercicios UT02]]" title="Ejercicio 09">
+<pre>Archivo: `09-01.php`
+
+```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;h2&gt;Cálculo del total de una factura&lt;/h2&gt;
-        &lt;form action=&quot;07result.php&quot; method=&quot;post&quot;&gt;
-          Base imponible (en euros) &lt;input type=&quot;number&quot; name=&quot;baseImponible&quot;  min=&quot;0&quot; step=&quot;0.01&quot; autofocus&gt;&lt;br&gt;
-          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-  &lt;/div&gt;
-    &lt;/body&gt;
+    &lt;h2&gt;Volumen de un cono&lt;/h2&gt;
+    &lt;form action=&quot;09-02.php&quot; method=&quot;post&quot;&gt;
+      Radio (en cm) &lt;input type=&quot;number&quot; name=&quot;r&quot; min=&quot;0&quot; autofocus&gt;&lt;br&gt;
+      Altura (en cm) &lt;input type=&quot;number&quot; name=&quot;h&quot; min=&quot;0&quot;&gt;&lt;br&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+    &lt;/form&gt;
+  &lt;/body&gt;
 &lt;/html&gt;
 ```
 
+Archivo: `09-02.php`
+
 ```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
+    &lt;?php
+      echo &quot;El volumen del cono es &quot;;
+      $v = (1 / 3) * Math.pi() * $_POST['r'] * $_POST['r'] * $_POST['h'];
+      echo round($v, $precision = 2), &quot; cm&lt;sup&gt;2&lt;/sup&gt;.&quot;;
+    ?&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;a href=&quot;09-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</pre>
+</div>
+<div created="20171010184431461" modified="20171019003853531" orden="071000" tags="[[Ejercicios UT02]]" title="Ejercicio 10">
+<pre>Archivo: `10-01.php`
 
-      &lt;div id=&quot;content&quot;&gt;
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;h2&gt;Conversor de Mb a Kb&lt;/h2&gt;
+      &lt;form action=&quot;10-02.php&quot; method=&quot;post&quot;&gt;
+        Megabytes &lt;input type=&quot;number&quot; name=&quot;mb&quot; min=&quot;0&quot; autofocus&gt;&lt;br&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+      &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+Archivo: `10-02.php`
+
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+      echo $_POST['mb'], &quot; Mb son &quot;, $_POST['mb'] * 1024, &quot; Kb.&quot;;
+    ?&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;a href=&quot;10-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</pre>
+</div>
+<div created="20171010184604193" modified="20171019004115794" orden="071100" tags="[[Ejercicios UT02]]" title="Ejercicio 11">
+<pre>Archivo: `11-01.php`
+
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;h2&gt;Conversor de Kb a Mb&lt;/h2&gt;
+      &lt;form action=&quot;11-02.php&quot; method=&quot;post&quot;&gt;
+        Kilobytes &lt;input type=&quot;number&quot; name=&quot;kb&quot; min=&quot;0&quot; autofocus&gt;&lt;br&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+      &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+Archivo: `11-02.php`
+
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
       &lt;?php
-        echo &quot;El total de la factura es &quot;;
-        echo round($_POST['baseImponible'] * 1.21, $precision = 2), &quot; euros.&quot;;
+        echo $_POST['kb'], &quot; Kb son &quot;, round($_POST['kb'] / 1024, $precision = 2), &quot; Mb.&quot;;
       ?&gt;
       &lt;br&gt;&lt;br&gt;
-      &lt;a href=&quot;index.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-  &lt;/div&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-
-```</pre>
-</div>
-<div created="20171010184149216" modified="20171010185428879" orden="070800" tags="[[Ejercicios UT02]]" title="Ejercicio 08">
-<pre>```
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;h2&gt;Cálculo del salario semanal&lt;/h2&gt;
-        &lt;form action=&quot;08result.php&quot; method=&quot;post&quot;&gt;
-          Horas trabajadas durante la semana &lt;input type=&quot;number&quot; name=&quot;horas&quot; min=&quot;0&quot; autofocus&gt;&lt;br&gt;
-          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-  &lt;/div&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-```
-
-```
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;?php
-          echo &quot;Su salario semanal es &quot;;
-          echo $_POST['horas'] * 12, &quot; euros.&quot;;
-        ?&gt;
-        &lt;br&gt;&lt;br&gt;
-        &lt;a href=&quot;index.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-  &lt;/div&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-
-```</pre>
-</div>
-<div created="20171010184321309" modified="20171010185500676" orden="070900" tags="[[Ejercicios UT02]]" title="Ejercicio 09">
-<pre>```
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;h2&gt;Volumen de un cono&lt;/h2&gt;
-        &lt;form action=&quot;09result.php&quot; method=&quot;post&quot;&gt;
-            Radio (en cm) &lt;input type=&quot;number&quot; name=&quot;r&quot; min=&quot;0&quot; autofocus&gt;&lt;br&gt;
-            Altura (en cm) &lt;input type=&quot;number&quot; name=&quot;h&quot; min=&quot;0&quot;&gt;&lt;br&gt;
-            &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
+      &lt;a href=&quot;11-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 ```
-```
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-      &lt;?php
-        echo &quot;El volumen del cono es &quot;;
-        $v = (1 / 3) * Math.pi() * $_POST['r'] * $_POST['r'] * $_POST['h'];
-        echo round($v, $precision = 2), &quot; cm&lt;sup&gt;2&lt;/sup&gt;.&quot;;
-      ?&gt;
-      &lt;br&gt;&lt;br&gt;
-      &lt;a href=&quot;index.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-```</pre>
-</div>
-<div created="20171010184431461" modified="20171010185535244" orden="071000" tags="[[Ejercicios UT02]]" title="Ejercicio 10">
-<pre>```
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;h2&gt;Conversor de Mb a Kb&lt;/h2&gt;
-        &lt;form action=&quot;10result.php&quot; method=&quot;post&quot;&gt;
-          Megabytes &lt;input type=&quot;number&quot; name=&quot;mb&quot; min=&quot;0&quot; autofocus&gt;&lt;br&gt;
-          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-```
-```
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;?php
-          echo $_POST['mb'], &quot; Mb son &quot;, $_POST['mb'] * 1024, &quot; Kb.&quot;;
-        ?&gt;
-        &lt;br&gt;&lt;br&gt;
-        &lt;a href=&quot;index.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-```</pre>
-</div>
-<div created="20171010184604193" modified="20171010185659804" orden="071100" tags="[[Ejercicios UT02]]" title="Ejercicio 11">
-<pre>```
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;h2&gt;Conversor de Kb a Mb&lt;/h2&gt;
-        &lt;form action=&quot;11result.php&quot; method=&quot;post&quot;&gt;
-          Kilobytes &lt;input type=&quot;number&quot; name=&quot;kb&quot; min=&quot;0&quot; autofocus&gt;&lt;br&gt;
-          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
-        &lt;/form&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-```
-```
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;container&quot;&gt;
-      &lt;div id=&quot;header&quot;&gt;
-        &lt;h1&gt;
-          APRENDE PHP CON EJERCICIOS
-        &lt;/h1&gt;
-        &lt;h2&gt;
-          SOLUCIONES A LOS EJERCICIOS
-        &lt;/h2&gt;
-        &lt;h2&gt;
-          &lt;br&gt;2. Recogida de datos por teclado
-        &lt;/h2&gt;
-      &lt;/div&gt;
-
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;?php
-          echo $_POST['kb'], &quot; Kb son &quot;, round($_POST['kb'] / 1024, $precision = 2), &quot; Mb.&quot;;
-        ?&gt;
-        &lt;br&gt;&lt;br&gt;
-        &lt;a href=&quot;index.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
-      &lt;/div&gt;
-      &lt;div id=&quot;footer&quot;&gt;
-        © Luis José Sánchez González
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-```</pre>
+</pre>
 </div>
 <div created="20171010151554894" modified="20171010152942422" orden="070000" tags="Contenidos" title="Ejercicios UT02">
 <pre>!! [[Ejercicio 01|Ejercicio 01]]
@@ -9999,7 +9578,7 @@ De esta forma, si creas un proyecto nuevo en la ruta `/home/usuario/DWES/Proyect
 Dado que nosotros hemos optado por usar ''XAMMP'' y no hemos instalado Apache de forma independiente, la ''ubicación'' de los ficheros de nuestras páginas web será `/opt/lammp/htdocs` en nuestro Debian a la cual ya le dimos los permisos pertinentes para poder subir ficheros mediante un ''cliente FTP'' o con el propio ''Atom'' con el paquete ''Remote-FTP'' instalado.
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20170920175004670" modified="20170928185039230" orden="020000" tags="Contenidos" title="Estructuras de control">
+<div created="20170920175004670" modified="20171016233516064" orden="020000" tags="Contenidos" title="Estructuras de control">
 <pre>@@float:right;margin:10px;
 [img[https://theinfosphere.org/images/thumb/1/19/10_Home.jpg/200px-10_Home.jpg]]
 @@
@@ -10007,7 +9586,7 @@ Dado que nosotros hemos optado por usar ''XAMMP'' y no hemos instalado Apache de
 
 Para definir el flujo de un programa en PHP, al igual que en la mayoría de lenguajes de programación, hay sentencias para dos tipos de estructuras de control: ''sentencias condicionales'', que permiten definir las condiciones bajo las que debe ejecutarse una sentencia o un bloque de sentencias; y ''sentencias de bucle'', con las que puedes definir si una sentencia o conjunto de sentencias se repite o no, y bajo qué condiciones.
 
-Además, en PHP puedes usar también (aunque no es recomendable) la sentencia `goto`, que te permite saltar directamente a otro punto del programa que indiques mediante una etiqueta.
+Además, en PHP puedes usar también (__aunque no es recomendable__) la sentencia `goto`, que te permite ''saltar directamente'' a otro punto del programa que indiques mediante una etiqueta.
 
 ```
 &lt;?php
@@ -10020,8 +9599,12 @@ Además, en PHP puedes usar también (aunque no es recomendable) la sentencia `g
 ```
 </pre>
 </div>
-<div created="20170920180921053" modified="20170928223249433" orden="050000" tags="Contenidos" title="Formularios web">
-<pre>La forma natural para hacer llegar a la aplicación web los datos del usuario desde un navegador, es utilizar ''formularios HTML''.
+<div created="20170920180921053" modified="20171018001236485" orden="050000" tags="Contenidos" title="Formularios web">
+<pre>&lt;center&gt;&lt;a href=&quot;http://i239.bxjyb2jvda.net/&quot;&gt;[img width=20% [http://i239.bxjyb2jvda.net/img/mask.gif]]&lt;/a&gt;&lt;/center&gt;
+@@float:right;margin:1px;width:10%;
+
+@@
+La forma natural para hacer llegar a la aplicación web los datos del usuario desde un navegador, es utilizar ''formularios HTML''.
 
 Los formularios HTML van encerrados siempre entre las etiquetas `&lt;FORM&gt;` `&lt;/FORM&gt;`. Dentro de un formulario se incluyen los elementos sobre los que puede actuar el usuario, principalmente usando las ''etiquetas'' `&lt;INPUT&gt;`, `&lt;SELECT&gt;`, `&lt;TEXTAREA&gt;` y `&lt;BUTTON&gt;`.
 
@@ -10029,8 +9612,8 @@ El atributo `action` del elemento `FORM` indica la ''página a la que se le envi
 
 Por su parte, el atributo `method` especifica el ''método'' usado para ''enviar la información''. Este atributo puede tener dos valores:
 
-*''get'': con este método los datos del formulario ''se agregan al URI ''utilizando un signo de interrogación `&quot;?&quot;` como separador.
-*''post'': con este método los datos se incluyen en el cuerpo del formulario y se envían utilizando el protocolo HTTP.
+*''get'': con este método los datos del formulario ''se agregan al URI ''utilizando un signo de interrogación `&quot;?&quot;` como separador. Se utiliza cuando ''no se van a producir cambios'' en ningún documento o programa que no sea el navegador del usuario que pretende mandar el formulario, como ocurre cuando se realizan consultas sobre una base de datos. ''La información'' que se envía desde un formalario con el método ''GET'' __''es visible para todo el mundo''__ (todos los nombres de variables y sus valores se muestran en la ''URL''). ''GET'' también tiene una ''limitación'' en cuanto a la cantidad de información que puede enviar (alrededor de ''2000 caracteres''). Sin embargo, justo porque las variables se muestran en la URL, ''es posible marcar la página'' (bookmark) lo cual puede ser útil en algunos casos.
+*''post'': con este método los datos se incluyen en el cuerpo del formulario y se envían utilizando el protocolo HTTP. Se utiliza cuando ''sí se van a producir cambios'', como ocurre cuando el usuario manda datos que deben ser almacenados en una base de datos. Se recomienda usar este último.
 
 Como vamos a ver, ''los datos se recogerán de distinta forma dependiendo de cómo se envíen''.
 
@@ -10158,8 +9741,10 @@ En la documentación de PHP puedes consultar todas las funciones para gestionar 
 [[Funciones para gestionar fechas y horas.|http://php.net/manual/es/ref.datetime.php]]
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20170920180814516" modified="20170928080517245" orden="040300" tags="[[Tipos de datos compuestos]]" title="Funciones relacionadas con los tipos de datos compuestos">
-<pre>Además de asignando valores directamente, ''la función `array` permite crear un array con una sola línea de código'', tal y como vimos anteriormente. Esta función recibe un conjunto de parámetros, y ''crea un array'' a partir de los valores que se le pasan. Si en los parámetros no se indica el valor de la clave, crea un ''array numérico'' (con base 0). Si no se le pasa ningún parámetro, crea un ''array vacío''.
+<div created="20170920180814516" modified="20171016104615318" orden="040300" tags="[[Tipos de datos compuestos]]" title="Funciones relacionadas con los tipos de datos compuestos">
+<pre>@@float:right;margin:10px;width:33%;
+[img[http://www.conficturaindustries.com/images/confictura_logo.jpg]]
+Además de asignando valores directamente, ''la función `array` permite crear un array con una sola línea de código'', tal y como vimos anteriormente. Esta función recibe un conjunto de parámetros, y ''crea un array'' a partir de los valores que se le pasan. Si en los parámetros no se indica el valor de la clave, crea un ''array numérico'' (con base 0). Si no se le pasa ningún parámetro, crea un ''array vacío''.
 
 ```
 $a = array();  // array vacío
@@ -10363,12 +9948,12 @@ $txt_pi = sprintf(&quot;El número π vale %+.2f&quot;, 3.1416);
 Tenemos una variable real, y queremos mostrarla utilizando un número fijo de decimales, por ejemplo 3. ¿Podemos hacerlo sin utilizar la función printf?
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20170920181417961" modified="20170928230551914" orden="050200" tags="[[Formularios web]]" title="Generación de formularios web en PHP">
-<pre>Vamos a volver sobre el ejemplo anterior, revisando los datos que se obtienen antes de mostrarlos. Concretamente, tienes que comprobar que el nombre no esté vacío, y que se haya seleccionado como mínimo uno de los módulos.
+<div created="20170920181417961" modified="20171017231723800" orden="050200" tags="[[Formularios web]]" title="Generación de formularios web en PHP">
+<pre>Vamos a volver sobre el ejemplo anterior, ''revisando'' los datos que se obtienen ''antes'' de mostrarlos. Concretamente, tienes que ''comprobar'' que ''el nombre ''no esté vacío, y que se haya ''seleccionado como mínimo uno'' de los ''módulos''.
 
-Además, en el caso de que falte algún dato, deberás generar el formulario rellenando aquellos datos que el usuario haya introducido correctamente.
+Además, en el caso de que falte algún dato, deberás ''generar'' el formulario ''rellenando'' aquellos datos que el usuario haya introducido ''correctamente''.
 
-Lo primero que tienes que hacer es la validación de los datos. En el ejemplo propuesto será algo así como:
+Lo primero que tienes que hacer es la ''validación de los datos''. En el ejemplo propuesto será algo así como:
 
 ```
 if (!empty($_POST['modulos']) &amp;&amp; !empty($_POST['nombre'])) {
@@ -10380,7 +9965,7 @@ else {
     //   y rellenando los valores correctamente introducidos
 }
 ```
-Para que el usuario no pierda, después de enviar el formulario, los datos correctamente introducidos, utiliza el atributo value en las entradas de texto (utilizamos la función isset para comprobar que la variable que queremos mostrar existe, para que no nos muestre un mensaje de error si es la primera vez que se carga la página y todavía no ha enviado nada el formulario):
+Para que el usuario ''no pierda los datos'' correctamente introducidos después de enviar el formulario, utiliza el atributo `value` en las entradas de texto (utilizamos la función `isset` para comprobar que la variable que queremos mostrar ''existe'', para que ''no'' nos muestre un mensaje de ''error si es la primera vez'' que se carga la página y todavía no ha enviado nada el formulario):
 
 ```
         Nombre del alumno:
@@ -10398,9 +9983,9 @@ Y el atributo `checked` en las casillas de verificación:
 /&gt;
 ```
 
-Fíjate en el uso de la función `in_array` para buscar un elemento en un array.
+Fíjate en el uso de la función `in_array` para ''buscar'' un elemento en un array.
 
-Para indicar al usuario los datos que no ha rellenado (o que ha rellenado de forma incorrecta), deberás comprobar si es la primera vez que se visualiza el formulario, o si ya se ha enviado. Se puede hacer por ejemplo de la siguiente forma:
+Para ''indicar'' al usuario los datos que no ha ''rellenado'' (o que ha rellenado de forma incorrecta), deberás comprobar si es la ''primera vez'' que se visualiza el formulario, o si ya se ha enviado. Se puede hacer por ejemplo de la siguiente forma:
 
 ```
 Nombre del alumno:
@@ -10483,21 +10068,21 @@ Muchos programadores utilizan la doble extensión `.inc.php` para aquellos fiche
 
 </pre>
 </div>
-<div created="20171014072032610" modified="20171014101729461" orden="030400" tags="Funciones" title="PECL">
+<div created="20171014072032610" modified="20171017012512813" orden="030400" tags="Funciones" title="PECL">
 <pre>''PECL'' es un __''repositorio de extensiones''__ de PHP disponible mediante el ''sistema de paquetes PEAR''. Veamos cómo ''obtener'' e ''instalar'' extensiones PECL.
 
 Estas instrucciones asumen que la ruta a la fuente de su distribución de PHP es `/usr/bin`, y que `&lt;extensión&gt;` es el nombre de la ''extensión PECL''.
 
-Para poder usarse, una extensión compartida se debe ''construir'', ''instalar'' y ''cargar''. Los métodos que se van a describir proporcionan varias instrucciones para estos cometidos, pero ''no se cargarán automáticamente''. Éstas extensiones se pueden cargar añadiendo una directiva //''extension''// al fichero `php.ini`, o bien mediante el uso de la función `dl()`.
+Para poder usarse, una extensión compartida se debe ''construir'', ''instalar'' y ''cargar''. Los métodos que se van a describir proporcionan varias instrucciones para estos cometidos, pero ''no se cargarán automáticamente''. Éstas extensiones se pueden cargar añadiendo una directiva //''extension''// al fichero `php.ini` (en nuestro caso `/opt/lampp/etc/php.ini`), o bien mediante el uso de la función `dl()` que ''carga una extensión'' de PHP durante la ''ejecución''.
 
 Al construir un módulo PHP, es importante contar con las versiones correctas de las ''herramientas'' requeridas (`autoconf`, `automake`, `libtool`, etc.).
 
 Hay varias ''opciones'' para ''descargar extensiones'' PECL, a saber:
 
-*El comando: `pecl install &lt;extensión&gt;` descarga el código de la extensión automáticamente, de modo que en este caso no se hace necesario realizar una descarga por separado.
+*El ''comando'': `pecl install &lt;extensión&gt;` descarga el código de la extensión automáticamente, de modo que en este caso no se hace necesario realizar una descarga por separado.
 *La página web de ''PECL'' http://pecl.php.net/ contiene información sobre las diferentes extensiones que ofrece el Equipo de Desarrollo de PHP. La información disponible aquí incluye: ''ChangeLog'', ''notas de la versión'', ''requisitos'', y otros detalles similares.
 *`pecl download extname` puede descargar e instalar las extensiones PECL listadas en el sitio web de PECL usando el comando `pecl`. También se podrán especificar versiones concretas.
-*''SVN'' La mayor parte de las extensiones PECL también están alojadas en SVN. Puede consultar la interfaz web en http://svn.php.net/viewvc/pecl/. Para descargar directamente del SVN, debe usar la siguiente secuencia de comandos:
+*''SVN'' La mayor parte de las extensiones PECL también están alojadas en SVN. Puedes consultar la interfaz web en http://svn.php.net/viewvc/pecl/. Para descargar directamente del SVN, debes usar la siguiente secuencia de comandos:
 ```
     $ svn checkout http://svn.php.net/repository/pecl/extname/trunk extname
 ```
@@ -10516,8 +10101,11 @@ Esto descargará el código fuente de `&lt;extensión&gt;`, lo compilará, e ins
 
 `php-config` es una ''utilidad de consola'' que permite obtener ''información'' sobre la configuración de la instalación de PHP.</pre>
 </div>
-<div created="20170920181155750" modified="20170928225349796" orden="050100" tags="[[Formularios web]]" title="Procesamiento de la información devuelta por un formulario web">
-<pre>En el ejemplo anterior creaste un ''formulario en una página HTML'' que recogía datos del usuario y los enviaba a una página PHP para que los procesara. Como usaste el método `POST`, los datos se pueden recoger utilizando la variable `$_POST`. Si simplemente los quisieras mostrar por pantalla, éste podría ser el código de `procesa.php`:
+<div created="20170920181155750" modified="20171017230742824" orden="050100" tags="[[Formularios web]]" title="Procesamiento de la información devuelta por un formulario web">
+<pre>@@float:right;width:33%;margin:10px;
+[img[http://i.imgur.com/Tf4mFBr.jpg]]
+@@
+En el ejemplo anterior creaste un ''formulario en una página HTML'' que recogía datos del usuario y los enviaba a una página PHP para que los procesara. Como usaste el método `POST`, los datos se pueden recoger utilizando la variable `$_POST`. Si simplemente los quisieras mostrar por pantalla, éste podría ser el código de `procesa.php`:
 
 &lt;center&gt;''Consulta [[Código de ''procesa.php'']]''&lt;/center&gt;
 
@@ -10533,7 +10121,7 @@ Siempre que sea posible, ''es preferible validar los datos que se introducen en 
 
 Si por algún motivo hay datos que se tengan que validar en el servidor, por ejemplo, porque necesites comprobar que los datos de un usuario no existan ya en la base de datos antes de introducirlos, será necesario hacerlo con ''código PHP'' en la ''página'' que figura en el ''atributo action del formulario.''
 
-En este caso, una posibilidad que deberás tener en cuenta es ''usar la misma página que muestra el formulario como destino de los datos''. //Si tras comprobar los datos éstos son correctos, se reenvía a otra página. Si son incorrectos, se rellenan los datos correctos en el formulario y se indican cuáles son incorrectos y por qué.//
+En este caso, una posibilidad que deberás tener en cuenta es ''usar la misma página que muestra el formulario como destino de los datos''. //Si tras comprobar los datos, éstos son correctos, se reenvía a otra página. Si son incorrectos, se rellenan los datos correctos en el formulario y se indican cuáles son incorrectos y por qué.//
 
 Para hacerlo de este modo, tienes que ''comprobar si la página recibe datos'' (hay que mostrarlos y no generar el formulario), ''o si no recibe datos'' (hay que mostrar el formulario). Esto se puede hacer utilizando la función `isset` con una variable de las que se deben recibir (por ejemplo, poniéndole un nombre al botón de enviar y comprobando sobre él). En el siguiente código de ejemplo se muestra cómo hacerlo.
 
@@ -10541,30 +10129,26 @@ Para hacerlo de este modo, tienes que ''comprobar si la página recibe datos'' (
 
 Fíjate en la forma de ''englobar el formulario dentro de una sentencia'' `else` para que sólo se genere ''si no se reciben datos en la página''. Además, para ''enviar los datos a la misma página'' que contiene el formulario puedes usar `$_SERVER['PHP_SELF']` para obtener su nombre; esto hace que no se produzca un error aunque la página se cambie de nombre.</pre>
 </div>
-<div created="20170920183659900" modified="20170928225024618" orden="061000" tags="Anexos" title="Procesar datos en la misma página que el formulario">
+<div created="20170920183659900" modified="20171017230700206" orden="061000" tags="Anexos" title="Procesar datos en la misma página que el formulario">
 <pre>```
-&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
-http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
-&lt;!-- Desarrollo Web en Entorno Servidor --&gt;
-&lt;!-- Tema 2 : Características del Lenguaje PHP --&gt;
-&lt;!-- Ejemplo: Procesar datos en la misma página que el formulario --&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
      &lt;head&gt;
-          &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-          &lt;title&gt;Desarrollo Web&lt;/title&gt;
+          &lt;charset=&quot;UTF-8&quot;&gt;
+          &lt;title&gt;Procesar datos en la misma página que el formulario&lt;/title&gt;
      &lt;/head&gt;
      &lt;body&gt;
-&lt;?php
-     if (isset($_POST['enviar'])) {
-          $nombre = $_POST['nombre'];
-          $modulos = $_POST['modulos'];
-          print &quot;Nombre: &quot;.$nombre.&quot;&lt;br /&gt;&quot;;
-          foreach ($modulos as $modulo) {
-               print &quot;Modulo: &quot;.$modulo.&quot;&lt;br /&gt;&quot;;
-          }
-     }
-     else {
-?&gt;
+        &lt;?php
+             if (isset($_POST['enviar'])) {
+                  $nombre = $_POST['nombre'];
+                  $modulos = $_POST['modulos'];
+                  print &quot;Nombre: &quot;.$nombre.&quot;&lt;br /&gt;&quot;;
+                  foreach ($modulos as $modulo) {
+                       print &quot;Modulo: &quot;.$modulo.&quot;&lt;br /&gt;&quot;;
+                  }
+             }
+             else {
+        ?&gt;
           &lt;form name=&quot;input&quot; action=&quot;&lt;?php echo $_SERVER['PHP_SELF'];?&gt;&quot; method=&quot;post&quot;&gt;
                Nombre del alumno: &lt;input type=&quot;text&quot; name=&quot;nombre&quot; /&gt;&lt;br /&gt;
                &lt;p&gt;Módulos que cursa:&lt;/p&gt;
@@ -10575,9 +10159,9 @@ http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
                &lt;br /&gt;
                &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; name=&quot;enviar&quot;/&gt;
           &lt;/form&gt;
-&lt;?php
-     }
-?&gt;
+        &lt;?php
+             }
+        ?&gt;
      &lt;/body&gt;
 &lt;/html&gt;
 ```
@@ -10634,7 +10218,7 @@ $a[&quot;tres&quot;] = 3;
 
 </pre>
 </div>
-<div created="20170920180639059" modified="20171015234512362" orden="040200" tags="[[Tipos de datos compuestos]]" title="Recorrer arrays (II)">
+<div created="20170920180639059" modified="20171016104512862" orden="040200" tags="[[Tipos de datos compuestos]]" title="Recorrer arrays (II)">
 <pre>@@float:right;margin:10px;width:33%;
 [img [http://payload487.cargocollective.com/1/0/2995/12059511/TRON_MR_fr41_1500.jpg]]
 @@
@@ -10896,17 +10480,13 @@ Haz una página PHP que utilice estas funciones para crear una tabla como la del
 ```
 </pre>
 </div>
-<div created="20170920184014648" modified="20170920184202887" orden="061200" tags="Anexos" title="Solución propuesta VI">
+<div created="20170920184014648" modified="20171017232106768" orden="061200" tags="Anexos" title="Solución propuesta VI">
 <pre>```
-&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;
-http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
-&lt;!-- Desarrollo Web en Entorno Servidor --&gt;
-&lt;!-- Tema 2 : Características del Lenguaje PHP --&gt;
-&lt;!-- Ejemplo: Mostrar fecha completa a partir de día, mes y año introducidos --&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-     &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-     &lt;title&gt;Fecha completa a partir de día, mes y año&lt;/title&gt;
+     &lt;meta charset=&quot;UTF-8&quot;&gt;
+     &lt;title&gt;Solución porpuesta VI&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 &lt;?php
