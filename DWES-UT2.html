@@ -272,6 +272,10 @@ Error message and password prompt
 
 <li>Tanda 3 (T3)</li>
 
+<li>Tanda 4 (T4)</li>
+
+<li>Tanda 5 (T5)</li>
+
 <li>test_infidelidad.txt</li>
 
 <li>Tipos de datos compuestos</li>
@@ -8508,7 +8512,7 @@ Error message and password prompt
 <div created="20170925111336136" modified="20170928075251868" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170920175320671" modified="20171023081411946" title="$:/state/sidebar">
+<div created="20170920175320671" modified="20171024121742967" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20170920173643751" modified="20171009223908897" title="$:/state/tab/sidebar--1835078512">
@@ -8550,7 +8554,7 @@ Error message and password prompt
 <div created="20171019013230283" modified="20171019013345181" title="$:/state/toc/Ejercicios UT2-Tanda (I)-150979669">
 <pre>close</pre>
 </div>
-<div list="[[Tanda 3 (T3)]] Contenidos" title="$:/StoryList">
+<div list="Contenidos [[Tanda 5 (T5)]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170925111501897" modified="20170925111507074" title="$:/temp/advancedsearch">
@@ -8602,8 +8606,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20170925111151364" modified="20171019021222847" title="$:/temp/search">
-<pre>ejercicio</pre>
+<div created="20170925111151364" modified="20171024121752688" title="$:/temp/search">
+<pre>con</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.14">
 <pre>{
@@ -10817,6 +10821,220 @@ Escribe un programa que calcule el factorial de un número entero leído por tec
 Escribe un programa que muestre por pantalla todos los números enteros positivos menores a uno
 leído por teclado que no sean divisibles entre otro también leído de igual forma.
 </pre>
+</div>
+<div created="20171024105023290" modified="20171024120257973" orden="070400" tags="[[Ejercicios UT2]]" title="Tanda 4 (T4)">
+<pre>!!Ejercicio 1
+Define tres arrays de 20 números enteros cada una, con nombres “numero”, “cuadrado” y “cubo”.
+Carga el array “numero” con valores aleatorios entre 0 y 100. En el array “cuadrado” se deben
+almacenar los cuadrados de los valores que hay en el array “numero”. En el array “cubo” se deben
+almacenar los cubos de los valores que hay en “numero”. A continuación, muestra el contenido de
+los tres arrays dispuesto en tres columnas.
+
+!!Ejercicio 2
+Escribe un programa que pida 10 números por teclado y que luego muestre los números introducidos
+junto con las palabras “máximo” y “mínimo” al lado del máximo y del mínimo respectivamente.
+
+!!Ejercicio 3
+Escribe un programa que lea 15 números por teclado y que los almacene en un array. Rota los
+elementos de ese array, es decir, el elemento de la posición 0 debe pasar a la posición 1, el de la 1 a
+la 2, etc. El número que se encuentra en la última posición debe pasar a la posición 0. Finalmente,
+muestra el contenido del array.
+
+!!Ejercicio 4
+Escribe un programa que genere 100 números aleatorios del 0 al 20 y que los muestre por pantalla
+separados por espacios. El programa pedirá entonces por teclado dos valores y a continuación
+cambiará todas las ocurrencias del primer valor por el segundo en la lista generada anteriormente.
+Los números que se han cambiado deben aparecer resaltados de un color diferente.
+
+!!Ejercicio 5
+Realiza un programa que pida la temperatura media que ha hecho en cada mes de un determinado
+año y que muestre a continuación un diagrama de barras horizontales con esos datos. Las barras
+del diagrama se pueden dibujar a base de la concatenación de una imagen.
+
+!!Ejercicio 6
+Realiza un programa que pida 8 números enteros y que luego muestre esos números de colores, los
+pares de un color y los impares de otro.
+
+!!Ejercicio 7
+Escribe un programa que genere 20 números enteros aleatorios entre 0 y 100 y que los almacene en
+un array. El programa debe ser capaz de pasar todos los números pares a las primeras posiciones del
+array (del 0 en adelante) y todos los números impares a las celdas restantes. Utiliza arrays auxiliares
+si es necesario.
+
+!!Ejercicio 8
+Realiza un programa que pida 10 números por teclado y que los almacene en un array. A continuación se mostrará el contenido de ese array junto al índice (0 – 9) utilizando para ello una
+tabla. Seguidamente el programa pasará los primos a las primeras posiciones, desplazando el resto
+de números (los que no son primos) de tal forma que no se pierda ninguno. Al final se debe mostrar
+el array resultante.
+Por ejemplo:
+
+| !Array inicial |&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|
+|0| 1| 2| 3| 4| 5| 6| 7| 8| 9|
+|20| 5| 7| 4| 32| 9| 2| 14| 11| 6|
+
+|!Array final|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|
+|0 |1 |2 |3 |4 |5 |6 |7 |8 |9|
+|5| 7| 2| 11| 20| 4| 32| 9| 14| 6|
+
+!!Ejercicio 9
+Realiza un programa que pida 10 números por teclado y que los almacene en un array. A continuación se mostrará el contenido de ese array junto al índice (0 – 9). Seguidamente el programa
+pedirá dos posiciones a las que llamaremos “inicial” y “final”. Se debe comprobar que inicial es
+menor que final y que ambos números están entre 0 y 9. El programa deberá colocar el número de
+la posición inicial en la posición final, rotando el resto de números para que no se pierda ninguno.
+Al final se debe mostrar el array resultante.
+Por ejemplo:
+
+| !Array inicial |&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|
+|0| 1| 2| 3| 4| 5| 6| 7| 8| 9|
+|20| 5| 7| 4| 32| 9| 2| 14| 11| 6|
+
+|!Array final|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|&gt;|
+|0 |1 |2 |3 |4 |5 |6 |7 |8 |9|
+|6| 20| 5| 7| 32| 9| 2| 4| 14| 11|
+
+
+!!Ejercicio 10
+Realiza un programa que escoja al azar 10 cartas de la baraja española y que diga cuántos puntos
+suman según el juego de la brisca. Emplea un array asociativo para obtener los puntos a partir del
+nombre de la figura de la carta. Asegúrate de que no se repite ninguna carta, igual que si las hubieras
+cogido de una baraja de verdad.
+
+!!Ejercicio 11
+Crea un mini-diccionario español-inglés que contenga, al menos, 20 palabras (con su traducción).
+Utiliza un array asociativo para almacenar las parejas de palabras. El programa pedirá una palabra
+en español y dará la correspondiente traducción en inglés.
+
+!!Ejercicio 12
+Realiza un programa que escoja al azar 5 palabras en español del mini-diccionario del ejercicio
+anterior. El programa pedirá que el usuario teclee la traducción al inglés de cada una de las palabras
+y comprobará si son correctas. Al final, el programa deberá mostrar cuántas respuestas son válidas
+y cuántas erróneas.
+
+!!Ejercicio 13
+Rellena un array bidimensional de 6 filas por 9 columnas con números enteros positivos comprendi-
+dos entre 100 y 999 (ambos incluidos). Todos los números deben ser distintos, es decir, no se puede
+repetir ninguno. Muestra a continuación por pantalla el contenido del array de tal forma que se
+cumplan los siguientes requisitos:
+• Los números de las dos diagonales donde está el mínimo deben aparecer en color verde.
+• El mínimo debe aparecer en color azul.
+• El resto de números debe aparecer en color negro.
+
+!!Ejercicio 14
+Escribe un programa que, dada una posición en un tablero de ajedrez, nos diga a qué casillas podría
+saltar un alfil que se encuentra en esa posición. Indícalo de forma gráfica sobre el tablero con un
+color diferente para estas casillas donde puede saltar la figura. El alfil se mueve siempre en diagonal.
+El tablero cuenta con 64 casillas. Las columnas se indican con las letras de la “a” a la “h” y las filas
+se indican del 1 al 8.
+
+!!Ejercicio 15
+Realiza un programa que sea capaz de rotar todos los elementos de una matriz cuadrada una posición
+en el sentido de las agujas del reloj. La matriz debe tener 12 filas por 12 columnas y debe contener
+números generados al azar entre 0 y 100. Se debe mostrar tanto la matriz original como la matriz
+resultado, ambas con los números convenientemente alineados.
+
+
+</pre>
+</div>
+<div created="20171024120817427" modified="20171024121816197" orden="070500" tags="[[Ejercicios UT2]]" title="Tanda 5 (T5)">
+<pre>!Ejercicios 1-14
+Crea una biblioteca de funciones matemáticas que contenga las siguientes funciones. Recuerda que
+puedes usar unas dentro de otras si es necesario.
+
+1. ''esCapicua'': Devuelve verdadero si el número que se pasa como parámetro es capicúa y falso
+en caso contrario.
+
+2. ''esPrimo'': Devuelve verdadero si el número que se pasa como parámetro es primo y falso en caso contrario.
+
+3. ''siguientePrimo'': Devuelve el menor primo que es mayor al número que se pasa como parámetro.
+
+4. ''potencia'': Dada una base y un exponente devuelve la potencia.
+
+5. ''digitos'': Cuenta el número de dígitos de un número entero.
+
+6. ''voltea'': Le da la vuelta a un número.
+
+7. ''digitoN'': Devuelve el dígito que está en la posición n de un número entero. Se empieza
+contando por el 0 y de izquierda a derecha.
+
+8. ''posicionDeDigito'': Da la posición de la primera ocurrencia de un dígito dentro de un número entero. Si no se encuentra, devuelve -1.
+
+9. ''quitaPorDetras'': Le quita a un número n dígitos por detrás (por la derecha).
+
+10. ''quitaPorDelante'': Le quita a un número n dígitos por delante (por la izquierda).
+
+11. ''pegaPorDetras'': Añade un dígito a un número por detrás.
+
+12. ''pegaPorDelante'': Añade un dígito a un número por delante.
+
+13. ''trozoDeNumero'': Toma como parámetros las posiciones inicial y final dentro de un número y devuelve el trozo correspondiente.
+
+14. ''juntaNumeros'': Pega dos números para formar uno.
+
+!Ejercicio 15
+Muestra los números primos que hay entre 1 y 1000.
+
+!Ejercicio 16
+Muestra los números capicúa que hay entre 1 y 99999.
+
+!Ejercicio 17
+Escribe un programa que pase de binario a decimal.
+
+!Ejercicio 18
+Escribe un programa que pase de decimal a binario.48
+Funciones
+
+!Ejercicio 19
+Une y amplía los dos programas anteriores de tal forma que se permita convertir un número entre
+cualquiera de las siguientes bases: decimal, binario, hexadecimal y octal.
+
+!Ejercicios 20-28
+Crea una biblioteca de funciones para arrays (de una dimensión) de números enteros que contenga
+las siguientes funciones:
+
+1. ''generaArrayInt'': Genera un array de tamaño n con números aleatorios cuyo intervalo
+(mínimo y máximo) se indica como parámetro.
+
+2. ''minimoArrayInt'': Devuelve el mínimo del array que se pasa como parámetro.
+
+3. ''maximoArrayInt'': Devuelve el máximo del array que se pasa como parámetro.
+
+4. ''mediaArrayInt'': Devuelve la media del array que se pasa como parámetro.
+
+5. ''estaEnArrayInt'': Dice si un número está o no dentro de un array.
+
+6. ''posicionEnArray'': Busca un número en un array y devuelve la posición (el índice) en la que
+se encuentra.
+
+7. ''volteaArrayInt'': Le da la vuelta a un array.
+
+8. ''rotaDerechaArrayInt'': Rota n posiciones a la derecha los números de un array.
+
+9. ''rotaIzquierdaArrayInt'': Rota n posiciones a la izquierda los números de un array.
+
+!Ejercicio 29-34
+Crea una biblioteca de funciones para arrays bidimensionales (de dos dimensiones) de números
+enteros que contenga las siguientes funciones:
+
+1. ''generaArrayBiInt'': Genera un array de tamaño n x m con números aleatorios cuyo intervalo
+(mínimo y máximo) se indica como parámetro.
+
+2. ''filaDeArrayBiInt'': Devuelve la fila i-ésima del array que se pasa como parámetro.
+
+3. ''columnaDeArrayBiInt'': Devuelve la columna j-ésima del array que se pasa como parámetro.
+
+4. ''coordenadasEnArrayBiInt'': Devuelve la fila y la columna (en un array con dos elementos)
+de la primera ocurrencia de un número dentro de un array bidimensional. Si el número no
+se encuentra en el array, la función devuelve el array {-1, -1}.
+
+5. ''esPuntoDeSilla'': Dice si un número es o no punto de silla, es decir, mínimo en su fila y
+máximo en su columna.
+
+6. ''diagonal'': Devuelve un array que contiene una de las diagonales del array bidimensional que
+se pasa como parámetro. Se pasan como parámetros fila, columna y dirección. La fila y la
+columna determinan el número que marcará las dos posibles diagonales dentro del array. La
+dirección es una cadena de caracteres que puede ser “nose” o “neso”. La cadena “nose” indica
+que se elige la diagonal que va del noroeste hacia el sureste, mientras que la cadena “neso”
+indica que se elige la diagonal que va del noreste hacia el suroeste.</pre>
 </div>
 <div created="20171019015912498" modified="20171019020032191" tags="" title="test_infidelidad.txt" type="text/plain">
 <pre>1. Tu pareja parece estar más inquieta de lo normal sin ningún motivo aparente.
