@@ -240,6 +240,28 @@ Error message and password prompt
 
 <li>Ejercicio T2-08</li>
 
+<li>Ejercicio T2-09</li>
+
+<li>Ejercicio T2-10</li>
+
+<li>Ejercicio T2-11</li>
+
+<li>Ejercicio T2-12</li>
+
+<li>Ejercicio T2-13</li>
+
+<li>Ejercicio T2-14</li>
+
+<li>Ejercicio T2-15</li>
+
+<li>Ejercicio T2-16</li>
+
+<li>Ejercicio T2-17</li>
+
+<li>Ejercicio T2-18</li>
+
+<li>Ejercicio T2-19</li>
+
 <li>Ejercicios UT2</li>
 
 <li>Elementos del lenguaje PHP</li>
@@ -8536,8 +8558,8 @@ Error message and password prompt
 <div created="20170925111336136" modified="20170928075251868" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170920175320671" modified="20171026104057118" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20170920175320671" modified="20171026124333781" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20170920173643751" modified="20171009223908897" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Recent</pre>
@@ -8581,7 +8603,7 @@ Error message and password prompt
 <div created="20171019013230283" modified="20171019013345181" title="$:/state/toc/Ejercicios UT2-Tanda (I)-150979669">
 <pre>close</pre>
 </div>
-<div list="Contenidos [[Tanda 2 (T2)]] [[Ejercicio T2-08]]" title="$:/StoryList">
+<div list="Contenidos [[Tanda 2 (T2)]] [[Ejercicio T2-19]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170925111501897" modified="20170925111507074" title="$:/temp/advancedsearch">
@@ -10016,6 +10038,855 @@ Archivo: `11-02.php`
   &lt;/body&gt;
 &lt;/html&gt;
 
+```</pre>
+</div>
+<div created="20171026113357236" modified="20171026113434462" title="Ejercicio T2-09">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-09-01.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        Este programa resuelve ecuaciones de segundo grado del tipo &lt;i&gt;ax&lt;sup&gt;2&lt;/sup&gt; + bx + c = 0&lt;/i&gt;
+        &lt;form action=&quot;T2-09-02.php&quot; method=&quot;post&quot;&gt;
+          &lt;h2&gt;
+            &lt;input type=&quot;number&quot; name=&quot;a&quot; step=&quot;0.001&quot; autofocus&gt;x&lt;sup&gt;2&lt;/sup&gt; +
+            &lt;input type=&quot;number&quot; name=&quot;b&quot; step=&quot;0.001&quot;&gt;x +
+            &lt;input type=&quot;number&quot; name=&quot;c&quot; step=&quot;0.001&quot;&gt; = 0&lt;br&gt;
+          &lt;/h2&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+        &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-09-02.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        &lt;?php
+          $a = $_POST['a'];
+          $b = $_POST['b'];
+          $c = $_POST['c'];
+
+
+          // 0x^2 + 0x + 0 = 0
+
+          if (($a == 0) &amp;&amp; ($b == 0) &amp;&amp; ($c == 0)) {
+            echo  &quot;La ecuación tiene infinitas soluciones.&quot;;
+          }
+
+
+          // 0x^2 + 0x + c = 0  con c distinto de 0
+
+          if (($a == 0) &amp;&amp; ($b == 0) &amp;&amp; ($c != 0)) {
+            echo  &quot;La ecuación no tiene solución.&quot;;
+          }
+
+
+          // ax^2 + bx + 0 = 0  con a y b distintos de 0
+
+          if (($a != 0) &amp;&amp; ($b != 0) &amp;&amp; ($c == 0)) {
+            echo  &quot;x&lt;sub&gt;1&lt;/sub&gt; = 0&quot;;
+            echo  &quot;&lt;br&gt;x&lt;sub&gt;2&lt;/sub&gt; = &quot;, (-$b / $a);
+          }
+
+
+          // 0x^2 + bx + c = 0  con b y c distintos de 0
+
+          if (($a == 0) &amp;&amp; ($b != 0) &amp;&amp; ($c != 0)) {
+                  echo  &quot;x&lt;sub&gt;1&lt;/sub&gt; = x&lt;sub&gt;2&lt;/sub&gt; = &quot;, (-$c / $b);
+          }
+
+
+          // ax^2 + bx + c = 0  con a, b y c distintos de 0
+
+          if (($a != 0) &amp;&amp; ($b != 0) &amp;&amp; ($c != 0)) {
+
+            $discriminante = ($b * $b) - (4 * $a * $c);
+
+            if ($discriminante &lt; 0) {
+              echo  &quot;La ecuación no tiene soluciones reales&quot;;
+            } else {
+              echo  &quot;x&lt;sub&gt;1&lt;/sub&gt; = &quot;, (-$b + sqrt($discriminante)) / (2 * $a);
+              echo  &quot;&lt;br&gt;x&lt;sub&gt;2&lt;/sub&gt; = &quot;, (-$b - sqrt($discriminante)) / (2 * $a);
+            }
+          }
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;T2-09-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171026121829260" modified="20171026121916514" title="Ejercicio T2-10">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-10-01.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        Este programa te dirá cuál es tu signo zodiacal a partir de tu fecha de nacimiento.&lt;br&gt;
+        &lt;form action=&quot;T2-10-02.php&quot; method=&quot;post&quot;&gt;
+          Introduzca el número del mes en que nació (1-12):&lt;br&gt;
+          &lt;input type=&quot;number&quot; min=&quot;1&quot; max=&quot;12&quot; name=&quot;mes&quot; autofocus&gt;&lt;br&gt;
+          Introduzca el día:&lt;br&gt;
+          &lt;input type=&quot;number&quot; min=&quot;1&quot; max=&quot;31&quot; name=&quot;dia&quot;&gt;&lt;br&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+        &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-10-02.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        &lt;?php
+          $mes = $_POST['mes'];
+          $dia = $_POST['dia'];
+
+          switch($mes) {
+            case 1:
+              if ($dia &lt; 21) {
+                $horoscopo = &quot;capricornio&quot;;
+              } else {
+                $horoscopo = &quot;acuario&quot;;
+              }
+              break;
+
+            case 2:
+              if ($dia &lt; 20) {
+                $horoscopo = &quot;acuario&quot;;
+              } else {
+                $horoscopo = &quot;piscis&quot;;
+              }
+              break;
+
+            case 3:
+              if ($dia &lt; 21) {
+                $horoscopo = &quot;piscis&quot;;
+              } else {
+                $horoscopo = &quot;aries&quot;;
+              }
+              break;
+
+            case 4:
+              if ($dia &lt; 21) {
+                $horoscopo = &quot;aries&quot;;
+              } else {
+                $horoscopo = &quot;tauro&quot;;
+              }
+              break;
+
+            case 5:
+              if ($dia &lt; 20) {
+                $horoscopo = &quot;tauro&quot;;
+              } else {
+                $horoscopo = &quot;géminis&quot;;
+              }
+              break;
+
+            case 6:
+              if ($dia &lt; 22) {
+                $horoscopo = &quot;géminis&quot;;
+              } else {
+                $horoscopo = &quot;cáncer&quot;;
+              }
+              break;
+
+            case 7:
+              if ($dia &lt; 22) {
+                $horoscopo = &quot;cáncer&quot;;
+              } else {
+                $horoscopo = &quot;Leo&quot;;
+              }
+              break;
+
+            case 8:
+              if ($dia &lt; 24) {
+                $horoscopo = &quot;leo&quot;;
+              } else {
+                $horoscopo = &quot;virgo&quot;;
+              }
+              break;
+
+            case 9:
+              if ($dia &lt; 23) {
+                $horoscopo = &quot;virgo&quot;;
+              } else {
+                $horoscopo = &quot;libra&quot;;
+              }
+              break;
+
+            case 10:
+              if ($dia &lt; 23) {
+                $horoscopo = &quot;libra&quot;;
+              } else {
+                $horoscopo = &quot;escorpio&quot;;
+              }
+              break;
+
+            case 11:
+              if ($dia &lt; 23) {
+                $horoscopo = &quot;escorpio&quot;;
+              } else {
+                $horoscopo = &quot;sagitario&quot;;
+              }
+              break;
+
+            case 12:
+              if ($dia &lt; 21) {
+                $horoscopo = &quot;sagitario&quot;;
+              } else {
+                $horoscopo = &quot;capricornio&quot;;
+              }
+              break;
+          }
+
+          echo &quot;Su horóscopo es &quot;, $horoscopo;
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;T2-10-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171026122519201" modified="20171026122618423" title="Ejercicio T2-11">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-03-01.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        A continuación deberá introducir una hora del día.&lt;br&gt;
+        &lt;form action=&quot;T2-11-02.php&quot; method=&quot;post&quot;&gt;
+          Hora &lt;input type=&quot;number&quot; name=&quot;hora&quot; autofocus&gt;&lt;br&gt;
+          Minuto &lt;input type=&quot;number&quot; name=&quot;minuto&quot;&gt;&lt;br&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+        &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-11-02.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        &lt;?php
+          $hora = $_POST['hora'];
+          $minuto = $_POST['minuto'];
+
+          $segundosTranscurridos = ($hora * 3600) + ($minuto * 60);
+          $segundosHastaMedianoche = (24 * 3600) - $segundosTranscurridos;
+
+          echo &quot;Desde las $hora:$minuto hasta la medianoche faltan &quot;;
+          echo &quot;$segundosHastaMedianoche segundos.&quot;;
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;T2-11-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171026122822454" modified="20171026123021933" title="Ejercicio T2-12">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-12-01.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        &lt;h2&gt;Cuestionario&lt;/h2&gt;
+
+        &lt;form action=&quot;T2-12-02.php&quot; method=&quot;post&quot;&gt;
+          &lt;ol&gt;
+            &lt;li&gt;
+              ¿Cuál de los siguientes tipos de datos de Java tiene más precisión?&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r1&quot; value=&quot;0&quot;&gt;a) int&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r1&quot; value=&quot;1&quot;&gt;b) double&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r1&quot; value=&quot;0&quot;&gt;c) float&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+              ¿Cuál es el lenguaje que se utiliza para hacer consultas en las bases de datos?&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r2&quot; value=&quot;0&quot;&gt;a) XML&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r2&quot; value=&quot;0&quot;&gt;b) SELECT&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r2&quot; value=&quot;1&quot;&gt;c) SQL&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+              Para insertar un hiperenlace en una página se utiliza la etiqueta...&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r3&quot; value=&quot;0&quot;&gt;a) href&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r3&quot; value=&quot;1&quot;&gt;b) a&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r3&quot; value=&quot;0&quot;&gt;c) link&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                ¿En qué directorio se encuentran los archivos de configuración de Linux?&lt;br&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;r4&quot; value=&quot;1&quot;&gt;a) /etc&lt;br&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;r4&quot; value=&quot;0&quot;&gt;b) /config&lt;br&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;r4&quot; value=&quot;0&quot;&gt;c) /cfg&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+                ¿Cuál de las siguientes memorias es volátil?&lt;br&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;r5&quot; value=&quot;1&quot;&gt;a) RAM&lt;br&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;r5&quot; value=&quot;0&quot;&gt;b) EPROM&lt;br&gt;
+                &lt;input type=&quot;radio&quot; name=&quot;r5&quot; value=&quot;0&quot;&gt;c) ROM&lt;br&gt;
+            &lt;/li&gt;
+
+          &lt;/ol&gt;
+
+          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+        &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```
+
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-11-02.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        &lt;?php
+          $hora = $_POST['hora'];
+          $minuto = $_POST['minuto'];
+
+          $segundosTranscurridos = ($hora * 3600) + ($minuto * 60);
+          $segundosHastaMedianoche = (24 * 3600) - $segundosTranscurridos;
+
+          echo &quot;Desde las $hora:$minuto hasta la medianoche faltan &quot;;
+          echo &quot;$segundosHastaMedianoche segundos.&quot;;
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;T2-11-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171026123546263" modified="20171026123630114" title="Ejercicio T2-13">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-03-01.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        Este programa ordena tres números.&lt;br&gt;
+        &lt;form action=&quot;T2-13-02.php&quot; method=&quot;post&quot;&gt;
+          Número 1 &lt;input type=&quot;number&quot; name=&quot;a&quot;&gt;&lt;br&gt;
+          Número 2 &lt;input type=&quot;number&quot; name=&quot;b&quot;&gt;&lt;br&gt;
+          Número 3 &lt;input type=&quot;number&quot; name=&quot;c&quot;&gt;&lt;br&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+        &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-13-02.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;div id=&quot;content&quot;&gt;
+        &lt;?php
+
+          $a = $_POST['a'];
+          $b = $_POST['b'];
+          $c = $_POST['c'];
+
+          // ordenación de los dos primeros números
+          if ($a &gt; $b) {
+            $aux = $a;
+            $a = $b;
+            $b = $aux;
+          }
+
+          // ordenación de los dos últimos números
+          if ($b &gt; $c) {
+            $aux = $b;
+            $b = $c;
+            $c = $aux;
+          }
+
+          // se vuelven a ordenar los dos primeros
+          if ($a &gt; $b) {
+            $aux = $a;
+            $a = $b;
+            $b = $aux;
+          }
+
+          echo &quot;Los números introducidos ordenados de menor a mayor son $a, $b y $c.&quot;;
+
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;T2-13-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171026123653826" modified="20171026123734948" title="Ejercicio T2-14">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-03-01.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        Por favor, introduzca un número entero:
+        &lt;form action=&quot;T2-14-02.php&quot; method=&quot;post&quot;&gt;
+          &lt;input type=&quot;number&quot; name=&quot;n&quot; autofocus&gt;&lt;br&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+        &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;link href=&quot;default.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        &lt;?php
+          $n = $_POST['n'];
+
+          if (($n % 2) == 0) {
+            echo &quot;El número introducido es par&quot;;
+          } else {
+            echo &quot;El número introducido es impar&quot;;
+          }
+
+          if (($n % 5) == 0) {
+            echo &quot; y divisible entre 5.&quot;;
+          } else {
+            echo &quot; y no es divisible entre 5.&quot;;
+          }
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;T2-14-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171026123806612" modified="20171026123832113" title="Ejercicio T2-15">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-15-01.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        &lt;h2&gt;Test de infidelidad&lt;/h2&gt;
+        &lt;form action=&quot;T2-15-02.php&quot; method=&quot;post&quot;&gt;
+          &lt;ol&gt;
+            &lt;li&gt;
+              Tu pareja parece estar más inquieta de lo normal sin ningún motivo
+              aparente.&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r1&quot; value=&quot;3&quot;&gt;verdadero&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r1&quot; value=&quot;0&quot;&gt;falso&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+              Ha aumentado sus gastos de vestuario.&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r2&quot; value=&quot;3&quot;&gt;verdadero&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r2&quot; value=&quot;0&quot;&gt;falso&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+              Ha perdido el interés que mostraba anteriormente por ti.&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r3&quot; value=&quot;3&quot;&gt;verdadero&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r3&quot; value=&quot;0&quot;&gt;falso&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+              Ahora se afeita y se asea con más frecuencia (si es hombre) o ahora se
+              arregla el pelo y se asea con más frecuencia (si es mujer).&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r4&quot; value=&quot;3&quot;&gt;verdadero&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r4&quot; value=&quot;0&quot;&gt;falso&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+              No te deja que mires la agenda de su teléfono móvil.&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r5&quot; value=&quot;3&quot;&gt;verdadero&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r5&quot; value=&quot;0&quot;&gt;falso&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+              A veces tiene llamadas que dice no querer contestar cuando estás
+              tú delante.&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r6&quot; value=&quot;3&quot;&gt;verdadero&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r6&quot; value=&quot;0&quot;&gt;falso&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+              Últimamente se preocupa más en cuidar la línea y/o estar bronceado/a.&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r7&quot; value=&quot;3&quot;&gt;verdadero&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r7&quot; value=&quot;0&quot;&gt;falso&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+              Muchos días viene tarde después de trabajar porque dice tener mucho
+              más trabajo.&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r8&quot; value=&quot;3&quot;&gt;verdadero&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r8&quot; value=&quot;0&quot;&gt;falso&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+              Has notado que últimamente se perfuma más.&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r9&quot; value=&quot;3&quot;&gt;verdadero&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r9&quot; value=&quot;0&quot;&gt;falso&lt;br&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;
+              Se confunde y te dice que ha estado en sitios donde no ha ido contigo.&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r10&quot; value=&quot;3&quot;&gt;verdadero&lt;br&gt;
+              &lt;input type=&quot;radio&quot; name=&quot;r10&quot; value=&quot;0&quot;&gt;falso&lt;br&gt;
+            &lt;/li&gt;
+          &lt;/ol&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+        &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-03-01.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        &lt;?php
+          $puntos = 0;
+
+          foreach($_POST as $respuesta) {
+            $puntos += $respuesta;
+          }
+
+          // Muestra el resultado del test
+
+          if ( $puntos &lt;= 10 ) {
+            echo &quot;¡Enhorabuena! Tu pareja parece ser totalmente fiel.&quot;;
+          }
+
+          if ( ($puntos &gt; 11 ) &amp;&amp; ($puntos &lt;= 22) ) {
+            echo &quot;Quizás exista el peligro de otra persona en su vida o en su mente, &quot;;
+            echo &quot;aunque seguramente será algo sin importancia. No bajes la guardia.&quot;;
+          }
+
+          if ( $puntos &gt;= 22 ) {
+            echo &quot;Tu pareja tiene todos los ingredientes de estar viviendo un &quot;;
+            echo &quot;romance con otra persona. Te aconsejamos que indagues un poco más &quot;;
+            echo &quot;y averigües qué es lo que está pasando por su cabeza.&quot;;
+          }
+
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;T2-15-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171026124232380" modified="20171026124338596" title="Ejercicio T2-16">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-03-01.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        Por favor, introduzca un número entero:
+        &lt;form action=&quot;T2-16-02.php&quot; method=&quot;post&quot;&gt;
+          &lt;input type=&quot;number&quot; name=&quot;n&quot; autofocus&gt;&lt;br&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-016-02.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        &lt;?php
+            $n = $_POST['n'];
+            echo &quot;La última cifra de $n es &quot;, $n % 10;
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;T2-16-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171026124602584" modified="20171026124754082" title="Ejercicio T2-17">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-17-01.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        Por favor, introduzca un número entero (como máximo de 5 cifras):
+        &lt;form action=&quot;T2-17-02.php&quot; method=&quot;post&quot;&gt;
+          &lt;input type=&quot;number&quot; min=&quot;-99999&quot; max=&quot;99999&quot; name=&quot;n&quot; autofocus&gt;&lt;br&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-17-02.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+      &lt;div id=&quot;content&quot;&gt;
+        &lt;?php
+          $n = $_POST['n'];
+
+          // si el número
+          if ($n&lt;0){
+            $n = -$n;
+          }
+
+          if ( $n &lt; 10 ) {
+            $primera = n;
+          }
+
+          if (( $n &gt;= 10 ) &amp;&amp; ( $n &lt; 100 )) {
+            $primera = $n / 10;
+          }
+
+          if (( $n &gt;= 100 ) &amp;&amp; ( $n &lt; 1000 )) {
+            $primera = $n / 100;
+          }
+
+          if (( $n &gt;= 1000 ) &amp;&amp; ( $n &lt; 10000 )) {
+            $primera = $n / 1000;
+          }
+
+          if ( $n &gt;= 10000 ) {
+            $primera = $n / 10000;
+          }
+
+          echo &quot;La primera cifra del número introducido es &quot;, floor($primera);
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;T2-17-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171026124820336" modified="20171026124851677" title="Ejercicio T2-18">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-18-01.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        Por favor, introduzca un número entero (como máximo de 5 cifras):
+        &lt;form action=&quot;T2-18-02.php&quot; method=&quot;post&quot;&gt;
+          &lt;input type=&quot;number&quot; min=&quot;-99999&quot; max=&quot;99999&quot; name=&quot;n&quot; autofocus&gt;&lt;br&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+        &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-18-02.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        &lt;?php
+          $n = $_POST['n'];
+
+          // si el número es negativo, se le quita el signo
+          if ($n &lt; 0){
+            $n = -$n;
+          }
+
+          if ( $n &lt; 10 ) {
+            $digitos = 1;
+          }
+
+          if (( $n &gt;= 10 ) &amp;&amp; ( $n &lt; 100 )) {
+            $digitos = 2;
+          }
+
+          if (( $n &gt;= 100 ) &amp;&amp; ( $n &lt; 1000 )) {
+            $digitos = 3;
+          }
+
+          if (( $n &gt;= 1000 ) &amp;&amp; ( $n &lt; 10000 )) {
+            $digitos = 4;
+          }
+
+          if ( $n &gt;= 10000 ) {
+            $digitos = 5;
+          }
+
+          echo &quot;El número introducido tiene $digitos dígitos.&quot;;
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;T2-18-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171026124917653" modified="20171026124956147" title="Ejercicio T2-19">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-18-02.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        &lt;?php
+          $n = $_POST['n'];
+
+          // si el número es negativo, se le quita el signo
+          if ($n &lt; 0){
+            $n = -$n;
+          }
+
+          if ( $n &lt; 10 ) {
+            $digitos = 1;
+          }
+
+          if (( $n &gt;= 10 ) &amp;&amp; ( $n &lt; 100 )) {
+            $digitos = 2;
+          }
+
+          if (( $n &gt;= 100 ) &amp;&amp; ( $n &lt; 1000 )) {
+            $digitos = 3;
+          }
+
+          if (( $n &gt;= 1000 ) &amp;&amp; ( $n &lt; 10000 )) {
+            $digitos = 4;
+          }
+
+          if ( $n &gt;= 10000 ) {
+            $digitos = 5;
+          }
+
+          echo &quot;El número introducido tiene $digitos dígitos.&quot;;
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;T2-18-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T2-19-02.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+        &lt;?php
+          $n = $_POST['n'];
+
+          $capicua = false;
+
+          // número de una cifra
+          if ( $n &lt; 10 ) {
+            $capicua = true;
+          }
+
+          // número de dos cifras
+          if (( $n &gt;= 10 ) &amp;&amp; ( $n &lt; 100 )) {
+            if ( floor($n / 10) == ($n % 10) ) {
+              $capicua = true;
+            }
+          }
+
+          // número de tres cifras
+          if (( $n &gt;= 100 ) &amp;&amp; ( $n &lt; 1000 )) {
+            if ( floor($n / 100) == ($n % 10) ) {
+              $capicua = true;
+            }
+          }
+
+          // número de cuatro cifras
+          if (( $n &gt;= 1000 ) &amp;&amp; ( $n &lt; 10000 )) {
+            if ((floor( $n / 1000 ) == ($n % 10) ) &amp;&amp; ( (floor( $n / 100 ) % 10 )== (floor( $n / 10) % 10 ))) {
+              $capicua = true;
+            }
+          }
+
+          // número de cinco cifras
+          if ( $n &gt;= 10000) {
+            if ((floor( $n / 10000 ) == ($n % 10) ) &amp;&amp; ( ( (floor($n / 1000) % 10) ) == (floor( $n / 10) % 10))) {
+              $capicua = true;
+            }
+          }
+
+          if ( $capicua ) {
+            echo &quot;El número introducido es capicúa.&quot;;
+          } else {
+            echo &quot;El número introducido no es capicúa.&quot;;
+          }
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;T2-19-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 ```</pre>
 </div>
 <div created="20171019012617165" modified="20171019013149986" orden="070000" tags="Contenidos" title="Ejercicios UT2">
