@@ -9,7 +9,7 @@ Escribe un programa que muestre tu nombre por pantalla. Utiliza código PHP.
   </head>
   <body>
     <?php
-      echo "Paco Ávila";
+      echo "Paco Ávila Sánchez";
     ?>
   </body>
 </html>

@@ -31,6 +31,8 @@
           } else {
           ?>
             <br><br>La media de los números introducidos es <?php echo $total / ($cuentaNumeros - 1); ?>
+            <br><br>
+            <a href="10.php">>> Volver</a>
           <?php
           }
         ?>

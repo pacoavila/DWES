@@ -32,6 +32,6 @@
           }
         ?>
         <br><br>
-        <a href="T2-08-02.php">>> Volver</a>
+        <a href="T2-08-01.php">>> Volver</a>
   </body>
 </html>
