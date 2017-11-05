@@ -6,9 +6,7 @@
   </head>
   <body>
         <?php
-          $alturaIntroducida = $_POST['alturaIntroducida'];
-
-          if (!isset($alturaIntroducida)){
+          if (!isset($_POST['alturaIntroducida'])){
           ?>
             <h2>Pirámide de números</h2>
             <form action="24.php" method="post">
@@ -17,11 +15,13 @@
             </form>
           <?php
           } else {
+            $alturaIntroducida = $_POST['alturaIntroducida'];
+
             $altura = 1;
             $i = 0;
             $espacios = $alturaIntroducida-1;
 
-            echo "<p style=\"font-family: courier\">";
+            echo "<code>";
             while ($altura <= $alturaIntroducida) {
 
               // inserta espacios
@@ -43,10 +43,10 @@
               $altura++;
               $espacios--;
             } // while
-            echo "</p>";
+            echo "</code></p>";
           }
         ?>
-        <br><br>
+        <br>
         <a href="24.php">>> Volver</a>
   </body>
 </html>

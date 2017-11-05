@@ -6,9 +6,7 @@
   </head>
   <body>
         <?php
-          $n = $_POST['n'];
-
-          if (!isset($n)){
+          if (!isset($_POST['n'])){
           ?>
             <h2>Factorial</h2>
             Introduzca un número entero positivo:
@@ -18,6 +16,7 @@
             </form>
           <?php
           } else {
+            $n = $_POST['n'];
             $factorial = $n;
 
             if ($n == 0) {
