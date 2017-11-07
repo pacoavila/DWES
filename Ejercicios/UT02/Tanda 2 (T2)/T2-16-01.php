@@ -10,6 +10,5 @@
           <input type="number" name="n" autofocus><br>
           <input type="submit" value="Aceptar">
         </form>
-      </div>
   </body>
 </html>

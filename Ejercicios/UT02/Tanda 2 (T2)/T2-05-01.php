@@ -5,7 +5,6 @@
     <title>T2-05-01.php</title>
   </head>
   <body>
-      <div id="content">
         Este programa resuelve ecuaciones de primer grado del tipo <i>ax + b = 0</i>
         <form action="T2-05-02.php" method="post">
           <h2>

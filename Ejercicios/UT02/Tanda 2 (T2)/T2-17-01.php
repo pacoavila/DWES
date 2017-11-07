@@ -10,6 +10,5 @@
           <input type="number" min="-99999" max="99999" name="n" autofocus><br>
           <input type="submit" value="Aceptar">
         </form>
-      </div>
   </body>
 </html>

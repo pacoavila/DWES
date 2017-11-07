@@ -5,7 +5,6 @@
     <title>T2-13-02.php</title>
   </head>
   <body>
-      <div id="content">
         <?php
 
           $a = $_POST['a'];

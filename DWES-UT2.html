@@ -8614,11 +8614,11 @@ Error message and password prompt
 <div created="20170925111336136" modified="20170928075251868" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170920175320671" modified="20171102111756864" title="$:/state/sidebar">
-<pre>no</pre>
+<div created="20170920175320671" modified="20171107114714773" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
-<div created="20170920173643751" modified="20171009223908897" title="$:/state/tab/sidebar--1835078512">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20170920173643751" modified="20171107115414375" title="$:/state/tab/sidebar--1835078512">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div created="20170920181845059" modified="20171019021254439" title="$:/state/toc/Contenidos-Anexos-1645261823">
 <pre>close</pre>
@@ -8659,11 +8659,11 @@ Error message and password prompt
 <div created="20171019013230283" modified="20171019013345181" title="$:/state/toc/Ejercicios UT2-Tanda (I)-150979669">
 <pre>close</pre>
 </div>
-<div list="Contenidos [[Tanda 4 (T4)]]" title="$:/StoryList">
+<div list="[[Ejercicio T2-17]] Contenidos [[Tanda 2 (T2)]]" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20170925111501897" modified="20170925111507074" title="$:/temp/advancedsearch">
-<pre>camel</pre>
+<div created="20170925111501897" modified="20171107115148742" title="$:/temp/advancedsearch">
+<pre>div</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -8711,8 +8711,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20170925111151364" modified="20171024121752688" title="$:/temp/search">
-<pre>con</pre>
+<div created="20170925111151364" modified="20171107115223176" title="$:/temp/search">
+<pre>div</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.14">
 <pre>{
@@ -9108,7 +9108,7 @@ Solución: [[Solución propuesta I]]
 ¿Siempre se puede sustituir una sentencia switch por otra sentencia o sentencias if?
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20170920174340411" modified="20171019013158621" tags="" title="Contenidos">
+<div created="20170920174340411" modified="20171107114707677" tags="" title="Contenidos">
 <pre>&lt;&lt;toc-selective-expandable Contenidos sort[orden]&gt;&gt;</pre>
 </div>
 <div created="20171025221730779" modified="20171025222129973" orden="080200" tags="[[Truco o trato]]" title="Editor PHP online">
@@ -9772,7 +9772,7 @@ Archivo: `11-02.php`
 &lt;/html&gt;
 ```</pre>
 </div>
-<div created="20171026104758488" modified="20171026105026640" title="Ejercicio T2-03">
+<div created="20171026104758488" modified="20171107114636914" title="Ejercicio T2-03">
 <pre>```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -9786,8 +9786,7 @@ Archivo: `11-02.php`
           &lt;input type=&quot;text&quot; name=&quot;n&quot; autofocus&gt;&lt;br&gt;
           &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
         &lt;/form&gt;
-      &lt;/div&gt;
-  &lt;/body&gt;
+      &lt;/body&gt;
 &lt;/html&gt;
 ```
 
@@ -9881,7 +9880,7 @@ Archivo: `11-02.php`
 
 ```</pre>
 </div>
-<div created="20171026110215493" modified="20171026110739674" title="Ejercicio T2-05">
+<div created="20171026110215493" modified="20171107114815469" title="Ejercicio T2-05">
 <pre>```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -9890,7 +9889,6 @@ Archivo: `11-02.php`
     &lt;title&gt;T2-05-01.php&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-      &lt;div id=&quot;content&quot;&gt;
         Este programa resuelve ecuaciones de primer grado del tipo &lt;i&gt;ax + b = 0&lt;/i&gt;
         &lt;form action=&quot;T2-05-02.php&quot; method=&quot;post&quot;&gt;
           &lt;h2&gt;
@@ -10364,7 +10362,7 @@ Archivo: `11-02.php`
 
 ```</pre>
 </div>
-<div created="20171026122822454" modified="20171026123021933" title="Ejercicio T2-12">
+<div created="20171026122822454" modified="20171107114505157" title="Ejercicio T2-12">
 <pre>```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -10426,27 +10424,21 @@ Archivo: `11-02.php`
 &lt;html&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;T2-11-02.php&lt;/title&gt;
+    &lt;title&gt;T2-12-02.php&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
         &lt;?php
-          $hora = $_POST['hora'];
-          $minuto = $_POST['minuto'];
-
-          $segundosTranscurridos = ($hora * 3600) + ($minuto * 60);
-          $segundosHastaMedianoche = (24 * 3600) - $segundosTranscurridos;
-
-          echo &quot;Desde las $hora:$minuto hasta la medianoche faltan &quot;;
-          echo &quot;$segundosHastaMedianoche segundos.&quot;;
+          $puntos = $_POST['r1'] + $_POST['r2'] + $_POST['r3'] + $_POST['r4'] + $_POST['r5'];
+          echo &quot;Ha obtenido $puntos puntos.&quot;;
         ?&gt;
         &lt;br&gt;&lt;br&gt;
-        &lt;a href=&quot;T2-11-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+        &lt;a href=&quot;T2-12-01.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 
 ```</pre>
 </div>
-<div created="20171026123546263" modified="20171026123630114" title="Ejercicio T2-13">
+<div created="20171026123546263" modified="20171107114911081" title="Ejercicio T2-13">
 <pre>```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -10473,7 +10465,6 @@ Archivo: `11-02.php`
     &lt;title&gt;T2-13-02.php&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-      &lt;div id=&quot;content&quot;&gt;
         &lt;?php
 
           $a = $_POST['a'];
@@ -10680,7 +10671,7 @@ Archivo: `11-02.php`
 
 ```</pre>
 </div>
-<div created="20171026124232380" modified="20171026124338596" title="Ejercicio T2-16">
+<div created="20171026124232380" modified="20171107115347113" title="Ejercicio T2-16">
 <pre>```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -10694,7 +10685,6 @@ Archivo: `11-02.php`
           &lt;input type=&quot;number&quot; name=&quot;n&quot; autofocus&gt;&lt;br&gt;
           &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
         &lt;/form&gt;
-      &lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 ```
@@ -10717,7 +10707,7 @@ Archivo: `11-02.php`
 
 ```</pre>
 </div>
-<div created="20171026124602584" modified="20171026124754082" title="Ejercicio T2-17">
+<div created="20171026124602584" modified="20171107115519499" title="Ejercicio T2-17">
 <pre>```
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -10731,7 +10721,6 @@ Archivo: `11-02.php`
           &lt;input type=&quot;number&quot; min=&quot;-99999&quot; max=&quot;99999&quot; name=&quot;n&quot; autofocus&gt;&lt;br&gt;
           &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
         &lt;/form&gt;
-      &lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 ```
@@ -10743,8 +10732,7 @@ Archivo: `11-02.php`
     &lt;title&gt;T2-17-02.php&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-      &lt;div id=&quot;content&quot;&gt;
-        &lt;?php
+          &lt;?php
           $n = $_POST['n'];
 
           // si el número

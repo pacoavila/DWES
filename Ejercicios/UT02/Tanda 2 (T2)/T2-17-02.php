@@ -5,7 +5,6 @@
     <title>T2-17-02.php</title>
   </head>
   <body>
-      <div id="content">
         <?php
           $n = $_POST['n'];
 
