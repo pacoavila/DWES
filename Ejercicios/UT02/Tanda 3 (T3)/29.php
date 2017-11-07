@@ -30,9 +30,11 @@
                 echo "$i ";
               }
             }
+            ?>
+            <br><br>
+            <a href="29.php">>> Volver</a>
+            <?php
           }
         ?>
-        <br><br>
-        <a href="29.php">>> Volver</a>
   </body>
 </html>

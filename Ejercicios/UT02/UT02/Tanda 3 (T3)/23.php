@@ -20,9 +20,7 @@
           if ($suma < 10000) {
             $suma += $n;
             $numeroDeElementos++;
-          }
-
-          if ((!isset($_POST['n'])) || ($suma < 10000)) {
+          } else {
           ?>
             Introduzca un número. El programa seguirá pidiendo números mientras la suma de ellos sea inferior a 10000.<br>
             <form action="23.php" method="post">

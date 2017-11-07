@@ -20,13 +20,13 @@
             $factorial = $n;
 
             if ($n == 0) {
-              echo "El factorial del 0 es 1.";
+              echo "El factorial de 0 es 1.";
             } else {
               for ($i = 1; $i < $n; $i++) {
                 $factorial *= $i;
               }
 
-              echo "El factorial del $n es $factorial.";
+              echo "El factorial de $n es $factorial.";
             }
           }
         ?>
