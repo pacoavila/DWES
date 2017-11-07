@@ -6,7 +6,9 @@
   </head>
   <body>
       <?php
-        if (!isset($_POST['n'])){
+        $n = $_POST['n'];
+
+        if (!isset($n)){
         ?>
         Por favor, introduzca un número entero:
         <form action="25.php" method="post">
@@ -15,7 +17,6 @@
         </form>
         <?php
         } else {
-          $n = $_POST['n'];
           $volteado = 0;
 
           $numero = $n;

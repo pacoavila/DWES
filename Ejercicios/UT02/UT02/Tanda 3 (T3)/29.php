@@ -6,7 +6,10 @@
   </head>
   <body>
         <?php
-          if (!isset($_POST['numeroGrande'])){
+          $numeroGrande = $_POST['numeroGrande'];
+          $numeroPequeno = $_POST['numeroPequeno'];
+
+          if (!isset($numeroGrande)){
           ?>
             <form action="29.php" method="post">
               Introduzca un número entero positivo (relativamente grande):
@@ -17,8 +20,6 @@
             </form>
         <?php
           } else {
-            $numeroGrande = $_POST['numeroGrande'];
-            $numeroPequeno = $_POST['numeroPequeno'];
             $cuenta = 0;
             $suma = 0;
 

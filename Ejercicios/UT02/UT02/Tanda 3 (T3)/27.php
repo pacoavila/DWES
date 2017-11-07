@@ -6,8 +6,9 @@
   </head>
   <body>
         <?php
+          $n = $_POST['n'];
 
-          if (!isset($_POST['n'])){
+          if (!isset($n)){
           ?>
             Introduzca un número entero mayor que 1:
             <form action="27.php" method="post">
@@ -16,11 +17,10 @@
             </form>
           <?php
           } else {
-            $n = $_POST['n'];
             $cuenta = 0;
             $suma = 0;
 
-            for ($i = 1; $i <= $n; $i++) {
+            for ($i = 1; $i < $n; $i++) {
               if (($i % 3) == 0) {
                 echo "$i&nbsp;&nbsp;&nbsp;";
                 $cuenta++;
@@ -31,6 +31,6 @@
           } // else
         ?>
         <br><br>
-        <a href="27.php">>> Volver</a>
+        <a href="index.php">>> Volver</a>
   </body>
 </html>

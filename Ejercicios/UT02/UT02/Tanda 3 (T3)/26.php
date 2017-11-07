@@ -6,7 +6,10 @@
   </head>
   <body>
         <?php
-          if (!isset($_POST['n'])){
+          $n = $_POST['n'];
+          $digito = $_POST['digito'];
+
+          if (!isset($n)){
           ?>
           <form action="26.php" method="post">
             Introduzca un número entero: <input type="number" name="n" min="0" autofocus="" required=""><br>
@@ -15,13 +18,11 @@
           </form>
           <?php
           } else {
-            $n = $_POST['n'];
-            $digito = $_POST['digito'];
             $volteado = 0;
             $longitud = 0;
             $posicion = 1;
 
-            echo "Contando de izquierda a derecha, el $digito aparece dentro de $n en las siguientes posiciones:&nbsp;&nbsp;";
+            echo "Contando de izquierda a derecha, el $digito aparece dentro de $n en las siguientes posiciones: ";
 
             // le da la vueta al número y calcula la longitud
             $numero = $n;
@@ -39,7 +40,7 @@
             // comprueba la posición
             while ($volteado > 0) {
               if (($volteado % 10) == $digito) {
-                echo "$posicion&nbsp;&nbsp;";
+                echo "$posicion&nbsp;&nbsp;&nbsp;";
               }
               $volteado = floor($volteado/10);
               $posicion++;
