@@ -318,6 +318,34 @@ Error message and password prompt
 
 <li>Ejercicio T3-29</li>
 
+<li>Ejercicio T4-01</li>
+
+<li>Ejercicio T4-02</li>
+
+<li>Ejercicio T4-03</li>
+
+<li>Ejercicio T4-04</li>
+
+<li>Ejercicio T4-05</li>
+
+<li>Ejercicio T4-06</li>
+
+<li>Ejercicio T4-07</li>
+
+<li>Ejercicio T4-08</li>
+
+<li>Ejercicio T4-09</li>
+
+<li>Ejercicio T4-10</li>
+
+<li>Ejercicio T4-11</li>
+
+<li>Ejercicio T4-12</li>
+
+<li>Ejercicio T4-13</li>
+
+<li>Ejercicio T4-14</li>
+
 <li>Ejercicios UT2</li>
 
 <li>Elementos del lenguaje PHP</li>
@@ -8614,7 +8642,7 @@ Error message and password prompt
 <div created="20170925111336136" modified="20170928075251868" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20170920175320671" modified="20171107114714773" title="$:/state/sidebar">
+<div created="20170920175320671" modified="20171109232002787" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20170920173643751" modified="20171107115414375" title="$:/state/tab/sidebar--1835078512">
@@ -8650,7 +8678,7 @@ Error message and password prompt
 <div created="20171025222104634" modified="20171025222133477" title="$:/state/toc/Contenidos-Truco o trato-1645261823">
 <pre>close</pre>
 </div>
-<div created="20171019225003768" modified="20171031132157417" title="$:/state/toc/Contenidos/Ejercicios UT2-Tanda 1 (T1)-1645261823">
+<div created="20171019225003768" modified="20171109123252379" title="$:/state/toc/Contenidos/Ejercicios UT2-Tanda 1 (T1)-1645261823">
 <pre>close</pre>
 </div>
 <div created="20171019224751095" modified="20171019224751095" title="$:/state/toc/Contenidos/Ejercicios UT2-Tanda 2 (T2)-1645261823">
@@ -8659,7 +8687,7 @@ Error message and password prompt
 <div created="20171019013230283" modified="20171019013345181" title="$:/state/toc/Ejercicios UT2-Tanda (I)-150979669">
 <pre>close</pre>
 </div>
-<div list="[[Ejercicio T2-17]] Contenidos [[Tanda 2 (T2)]]" title="$:/StoryList">
+<div list="Contenidos [[Tanda 5 (T5)]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20170925111501897" modified="20171107115148742" title="$:/temp/advancedsearch">
@@ -8711,8 +8739,8 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20170925111151364" modified="20171107115223176" title="$:/temp/search">
-<pre>div</pre>
+<div created="20170925111151364" modified="20171109130726860" title="$:/temp/search">
+<pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.14">
 <pre>{
@@ -12217,6 +12245,1073 @@ Archivo: `11-02.php`
 
 ```</pre>
 </div>
+<div created="20171109113213214" modified="20171109113313299" tags="" title="Ejercicio T4-01">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T4-01.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+      for ($i = 0; $i &lt; 20; $i++) {
+          $numero[] = rand(0,100);
+      }
+
+      foreach ($numero as $elemento) {
+          $cuadrado[] = $elemento * $elemento;
+          $cubo[] = $elemento * $elemento * $elemento;
+      }
+
+    ?&gt;
+      &lt;table&gt;
+      &lt;tr&gt;&lt;td&gt;Número&lt;/td&gt;&lt;td&gt;Cuadrado&lt;/td&gt;&lt;td&gt;Cubo&lt;/td&gt;&lt;/tr&gt;
+    &lt;?php
+      for ($i = 0; $i &lt; 20; $i++) {
+          echo &quot;&lt;tr&gt;&lt;td&gt;&quot;.$numero[$i].&quot;&lt;/td&gt;&quot;;
+          echo &quot;&lt;td&gt;&quot;.$cuadrado[$i].&quot;&lt;/td&gt;&quot;;
+          echo &quot;&lt;td&gt;&quot;.$cubo[$i].&quot;&lt;/td&gt;&lt;/tr&gt;&quot;;
+      }
+    ?&gt;
+      &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</pre>
+</div>
+<div created="20171109115222864" modified="20171109115317142" tags="" title="Ejercicio T4-02">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;T4-02.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+        if (!isset($_GET['n'])) {
+          $contadorNumeros = 0;
+          $numeroTexto = &quot;&quot;;
+          $n = &quot;&quot;;
+        } else {
+          $n = $_GET['n'];
+          $contadorNumeros = $_GET['contadorNumeros'];
+          $numeroTexto = $_GET['numeroTexto'];
+        }
+
+      ////////////////////////////////////////////////////////////////
+      //  Programa principal una vez recogidos los datos del array.
+      //  El array con los números es $numero
+      ////////////////////////////////////////////////////////////////
+
+      if ($contadorNumeros == 10) {
+        $numeroTexto = $numeroTexto . &quot; &quot; . $n; // añade el último número leído
+        $numeroTexto = substr($numeroTexto, 2); // quita espacios sobrantes
+        $numero = explode(&quot; &quot;, $numeroTexto);
+        $maximo = -PHP_INT_MAX;
+        $minimo = PHP_INT_MAX;
+
+
+        foreach ($numero as $n) {
+          if ($n &lt; $minimo) {
+            $minimo = $n;
+          }
+          if ($n &gt; $maximo) {
+            $maximo = $n;
+          }
+        }
+
+        foreach ($numero as $n) {
+          echo &quot;$n&quot;;
+          if ($n == $minimo) {
+            echo &quot; mínimo&quot;;
+          }
+          if ($n == $maximo) {
+            echo &quot; máximo&quot;;
+          }
+          echo &quot;&lt;br&gt;&quot;;
+        }
+        ?&gt;
+        &lt;br&gt;
+        &lt;a href=&quot;02.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+        &lt;?php
+      }
+      ////////////////////////////////////////////////////////////////
+      // Pide número y añade el actual a la cadena
+      ////////////////////////////////////////////////////////////////
+      if ($contadorNumeros &lt; 10)  {
+        ?&gt;
+        &lt;form action=&quot;02.php&quot; method=&quot;get&quot;&gt;
+          Introduzca un número:
+          &lt;input type=&quot;number&quot; name =&quot;n&quot; autofocus&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;contadorNumeros&quot; value=&quot;&lt;?= ++$contadorNumeros ?&gt;&quot;&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;numeroTexto&quot; value=&quot;&lt;?= $numeroTexto . &quot; &quot; . $n ?&gt;&quot;&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;OK&quot;&gt;
+        &lt;/form&gt;
+        &lt;?php
+      }
+      ?&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+```</pre>
+</div>
+<div created="20171109123746950" modified="20171109123811305" tags="" title="Ejercicio T4-03">
+<pre>```
+&lt;?php
+    if (!isset($_GET['n'])) {
+    $contadorNumeros = 0;
+    $numeroTexto = &quot;&quot;;
+    $n = &quot;&quot;;
+  } else {
+    $n = $_GET['n'];
+    $contadorNumeros = $_GET['contadorNumeros'];
+    $numeroTexto = $_GET['numeroTexto'];
+  }
+
+  ////////////////////////////////////////////////////////////////
+  //  Programa principal una vez recogidos los datos del array.
+  //  El array con los números es $numero
+  ////////////////////////////////////////////////////////////////
+
+  if ($contadorNumeros == 15) {
+    $numeroTexto = $numeroTexto . &quot; &quot; . $n; // añade el último número leído
+    $numeroTexto = substr($numeroTexto, 2); // quita espacios sobrantes
+
+    $numero = explode(&quot; &quot;, $numeroTexto);
+
+    // Muestra el array original
+
+    echo &quot;Array original:&lt;br&gt;&quot;;
+
+    echo &quot;&lt;table&gt;&lt;tr&gt;&quot;;
+
+    for ($i = 0; $i &lt; 15; $i++) {
+      echo &quot;&lt;td&gt;$i&lt;/td&gt;&quot;;
+    }
+
+    echo &quot;&lt;/tr&gt;&quot;;
+
+    for ($i = 0; $i &lt; 15; $i++) {
+      echo &quot;&lt;td&gt;&quot;.$numero[$i].&quot;&lt;/td&gt;&quot;;
+    }
+
+    echo &quot;&lt;/tr&gt;&lt;/table&gt;&quot;;
+
+
+    // Rota los elementos del array hacia la derecha
+
+    $aux = $numero[14];
+
+    for ($i = 14; $i &gt; 0; $i--) {
+       $numero[$i] = $numero[$i - 1];
+    }
+
+    $numero[0] = $aux;
+
+    // Muestra el array rotado
+
+    echo &quot;&lt;br&gt;Array rotado:&lt;br&gt;&quot;;
+    echo &quot;&lt;table&gt;&lt;tr&gt;&quot;;
+
+    for ($i = 0; $i &lt; 15; $i++) {
+      echo &quot;&lt;td&gt;$i&lt;/td&gt;&quot;;
+    }
+
+    echo &quot;&lt;/tr&gt;&quot;;
+
+    for ($i = 0; $i &lt; 15; $i++) {
+      echo &quot;&lt;td&gt;&quot;.$numero[$i].&quot;&lt;/td&gt;&quot;;
+    }
+
+    echo &quot;&lt;/tr&gt;&lt;/table&gt;&quot;;
+    ?&gt;
+    &lt;br&gt;
+    &lt;a href=&quot;03.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+    &lt;?php
+  }
+  //////////////////////////////////////////////////////////////////////////////
+
+  // Pide número y añade el actual a la cadena
+  if ($contadorNumeros &lt; 15){
+    ?&gt;
+    &lt;form action=&quot;03.php&quot; method=&quot;get&quot;&gt;
+      Introduzca un número:
+      &lt;input type=&quot;number&quot; name =&quot;n&quot; autofocus&gt;
+      &lt;input type=&quot;hidden&quot; name=&quot;contadorNumeros&quot; value=&quot;&lt;?= ++$contadorNumeros ?&gt;&quot;&gt;
+      &lt;input type=&quot;hidden&quot; name=&quot;numeroTexto&quot; value=&quot;&lt;?= $numeroTexto . &quot; &quot; . $n ?&gt;&quot;&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;OK&quot;&gt;
+    &lt;/form&gt;
+    &lt;?php
+  }
+
+```</pre>
+</div>
+<div created="20171109124233849" modified="20171109124251551" tags="" title="Ejercicio T4-04">
+<pre>```
+&lt;?php
+  if (!isset($_GET['numeroTexto'])) {
+    // Genera el array aleatorio
+    for ($i = 0; $i &lt; 100; $i++) {
+        $numero[$i] = rand(0, 20);
+        echo $numero[$i].&quot; &quot;;
+    }
+
+    $numeroTexto = implode(&quot; &quot;, $numero);
+    ?&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;form action=&quot;04.php&quot; method=&quot;get&quot;&gt;
+      Valor a sustituir: &lt;input type=&quot;number&quot; name =&quot;viejo&quot; autofocus=&quot;&quot; required=&quot;&quot;&gt;&lt;br&gt;
+      Valor nuevo: &lt;input type=&quot;number&quot; name =&quot;nuevo&quot; required=&quot;&quot;&gt;
+      &lt;input type=&quot;hidden&quot; name=&quot;numeroTexto&quot; value=&quot;&lt;?php echo $numeroTexto; ?&gt;&quot;&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;OK&quot;&gt;
+    &lt;/form&gt;
+    &lt;?php
+  } else {
+    $numeroTexto = $_GET['numeroTexto'];
+    $viejo = $_GET['viejo'];
+    $nuevo = $_GET['nuevo'];
+
+    $numero = explode(&quot; &quot;, $numeroTexto);
+
+    foreach ($numero as $n) {
+      if ($n == $viejo) {
+        echo &quot;&lt;span style=\&quot;color: green; font-weight: bold;\&quot;&gt;$nuevo&lt;/span&gt; &quot;;
+      } else {
+        echo  &quot;$n &quot;;
+      }
+    }
+    ?&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;a href=&quot;04.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+    &lt;?php
+  }
+
+```</pre>
+</div>
+<div created="20171109125427537" modified="20171109125455641" tags="" title="Ejercicio T4-05">
+<pre>```
+&lt;?php
+  if (!isset($_GET['temperatura'])) {
+    // Pide los datos de las temperaturas
+    $mes = array(
+      &quot;Enero&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;, &quot;Febrero&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;, &quot;Marzo&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;, &quot;Abril&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;, &quot;Mayo&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;, &quot;Junio&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;,
+      &quot;Julio&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;, &quot;Agosto&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;, &quot;Septiembre&quot;, &quot;Octubre&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;, &quot;Noviembre&amp;nbsp;&quot;, &quot;Diciembre&amp;nbsp;&quot;);
+    ?&gt;
+    Por favor, introduzca la temperatura media de cada mes: &lt;br&gt;&lt;br&gt;
+    &lt;form action=&quot;05.php&quot; method=&quot;get&quot;&gt;
+      &lt;?php
+      echo &quot;&lt;table&gt;&quot;;
+      for ($i = 0; $i &lt; 12; $i++) {
+        echo &quot;&lt;tr&gt;&lt;td&gt;$mes[$i]&lt;/td&gt;&lt;td&gt; &lt;input type=\&quot;number\&quot; name =\&quot;temperatura[$mes[$i]]\&quot;&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&quot;;
+      }
+      echo &quot;&lt;/table&gt;&lt;br&gt;&quot;;
+      ?&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;OK&quot;&gt;
+
+    &lt;/form&gt;
+
+    &lt;?php
+  } else {
+    // Pinta el diagrama de barras
+    $temperatura = $_GET['temperatura'];
+    echo &quot;&lt;table&gt;&quot;;
+    foreach($temperatura as $mes =&gt; $temperaturaMes) {
+      echo &quot;&lt;tr&gt;&lt;td&gt;$mes &lt;/td&gt;&lt;td&gt;&quot;;
+      // Pinta la barra
+      for ($i = 0; $i &lt; $temperaturaMes; $i++) {
+        echo &quot;&lt;img src=\&quot;bggreen.png\&quot;&gt;&quot;;
+      }
+      echo &quot; $temperaturaMes&quot;.&quot;ºC&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&quot;;
+    }
+    echo &quot;&lt;/table&gt;&quot;;
+    ?&gt;
+    &lt;br&gt;
+    &lt;a href=&quot;05.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+    &lt;?php
+  }
+
+```</pre>
+</div>
+<div created="20171109130153650" modified="20171109130233558" tags="" title="Ejercicio T4-06">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;06.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+
+      if (!isset($_GET['n'])) {
+        $contadorNumeros = 1;
+        $numeroTexto = &quot;&quot;;
+      } else {
+        $contadorNumeros = $_GET['contadorNumeros'];
+        $numeroTexto = $_GET['numeroTexto'];
+      }
+
+      if ($contadorNumeros &lt; 9) {
+        $contadorNumeros = $_GET['contadorNumeros'];
+        $n = $_GET['n'];
+        $numeroTexto = $_GET['numeroTexto'];
+
+        if ($numeroTexto == &quot;&quot;) {
+            $numeroTexto = $n;
+        } else {
+            $numeroTexto = $numeroTexto.' '.$n;
+        }
+
+        $contadorNumeros++;
+      }
+
+      if (!isset($_GET['n']) || ($contadorNumeros &lt; 16)) {
+      ?&gt;
+        &lt;form action=&quot;06.php&quot; method=&quot;get&quot;&gt;
+          Introduzca un número:
+          &lt;input type=&quot;number&quot; name =&quot;n&quot; autofocus=&quot;&quot; required=&quot;&quot;&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;contadorNumeros&quot; value=&quot;&lt;?php echo $contadorNumeros; ?&gt;&quot;&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;numeroTexto&quot; value=&quot;&lt;?php echo $numeroTexto; ?&gt;&quot;&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;OK&quot;&gt;
+        &lt;/form&gt;
+      &lt;?php
+      }
+
+      ////////////////////////////////////////////////////////////////
+      //  Programa principal una vez recogidos los datos del array.
+      //  El array con los números es $numero
+      ////////////////////////////////////////////////////////////////
+
+      if ($contadorNumeros == 9) {
+        $numero = explode(&quot; &quot;, $numeroTexto);
+
+        foreach ($numero as $n) {
+          if ($n % 2 == 0) {
+            echo &quot;&lt;span style=\&quot;color: magenta;\&quot;&gt;$n&amp;nbsp;&amp;nbsp;&lt;/span&gt;&quot;;
+          } else {
+            echo &quot;&lt;span style=\&quot;color: green;\&quot;&gt;$n&amp;nbsp;&amp;nbsp;&lt;/span&gt;&quot;;
+          }
+        }
+
+        echo &quot;&lt;span style=\&quot;color: magenta;\&quot;&gt;&lt;br&gt;pares&lt;br&gt;&lt;/span&gt;&quot;;
+        echo &quot;&lt;span style=\&quot;color: green;\&quot;&gt;impares&lt;/span&gt;&quot;;
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;06.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+        &lt;?php
+      }
+      ?&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171109130729770" modified="20171109130758665" tags="" title="Ejercicio T4-07">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;UT4 07.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+      // Genera el array aleatorio
+      for ($i = 0; $i &lt; 20; $i++) {
+        $numero[$i] = rand(0, 100);
+      }
+
+      // Muestra el array original
+
+      // Índice
+      echo &quot;Array original:&lt;br&gt;&quot;;
+      echo &quot;&lt;table&gt;&lt;tr&gt;&quot;;
+      for ($i = 0; $i &lt; 20; $i++) {
+        echo &quot;&lt;td&gt;$i&lt;/td&gt;&quot;;
+      }
+      echo &quot;&lt;/tr&gt;&quot;;
+
+      // Contenido
+      for ($i = 0; $i &lt; 20; $i++) {
+        echo &quot;&lt;td&gt;&quot;.$numero[$i].&quot;&lt;/td&gt;&quot;;
+      }
+      echo &quot;&lt;/tr&gt;&lt;/table&gt;&quot;;
+
+      // Guarda los pares y los impares en arrays diferentes
+      $cuentaPares = 0;
+      $cuentaImpares = 0;
+
+      for ($i = 0; $i &lt; 20; $i++) {
+        if ($numero[$i] % 2 == 0) {
+          $pares[$cuentaPares] = $numero[$i];
+          $cuentaPares++;
+        } else {
+          $impares[$cuentaImpares] = $numero[$i];
+          $cuentaImpares++;
+        }
+      }
+
+      // Guarda los datos en el array original
+      // según lo que pide el ejercicio
+
+      for ($i = 0; $i &lt; $cuentaPares; $i++) {
+        $numero[$i] = $pares[$i];
+      }
+
+      for ($i = $cuentaPares; $i &lt; $cuentaPares + $cuentaImpares; $i++) {
+        $numero[$i] = $impares[$i - $cuentaPares];
+      }
+
+      // Muestra el array resultante
+
+      // Índice
+      echo &quot;&lt;br&gt;Array resultante con los pares al principio y los impares al final:&lt;br&gt;&quot;;
+      echo &quot;&lt;table&gt;&lt;tr&gt;&quot;;
+      for ($i = 0; $i &lt; 20; $i++) {
+        echo &quot;&lt;td&gt;$i&lt;/td&gt;&quot;;
+      }
+      echo &quot;&lt;/tr&gt;&quot;;
+
+      // Contenido
+      for ($i = 0; $i &lt; 20; $i++) {
+        echo &quot;&lt;td&gt;&quot;.$numero[$i].&quot;&lt;/td&gt;&quot;;
+      }
+      echo &quot;&lt;/tr&gt;&lt;/table&gt;&quot;;
+      ?&gt;
+      &lt;br&gt;
+      &lt;a href=&quot;07.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+''''
+```</pre>
+</div>
+<div created="20171109131305668" modified="20171109131345069" tags="" title="Ejercicio T4-08">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;UT2 T4 08.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    &lt;?php
+
+      if (!isset($_GET['n'])) {
+        $contadorNumeros = 1;
+        $numeroTexto = &quot;&quot;;
+      } else {
+        $contadorNumeros = $_GET['contadorNumeros'];
+        $numeroTexto = $_GET['numeroTexto'];
+      }
+
+      if ($contadorNumeros &lt; 11) {
+        $contadorNumeros = $_GET['contadorNumeros'];
+        $n = $_GET['n'];
+        $numeroTexto = $_GET['numeroTexto'];
+
+        if ($numeroTexto == &quot;&quot;) {
+            $numeroTexto = $n;
+        } else {
+            $numeroTexto = $numeroTexto.' '.$n;
+        }
+
+        $contadorNumeros++;
+      }
+
+      if (!isset($_GET['n']) || ($contadorNumeros &lt; 11)) {
+      ?&gt;
+        &lt;form action=&quot;08.php&quot; method=&quot;get&quot;&gt;
+          Introduzca un número:
+          &lt;input type=&quot;number&quot; name =&quot;n&quot; autofocus=&quot;&quot; required=&quot;&quot;&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;contadorNumeros&quot; value=&quot;&lt;?php echo $contadorNumeros; ?&gt;&quot;&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;numeroTexto&quot; value=&quot;&lt;?php echo $numeroTexto; ?&gt;&quot;&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;OK&quot;&gt;
+        &lt;/form&gt;
+      &lt;?php
+      }
+
+      ////////////////////////////////////////////////////////////////
+      //  Programa principal una vez recogidos los datos del array.
+      //  El array con los números es $numero
+      ////////////////////////////////////////////////////////////////
+
+      if ($contadorNumeros == 11) {
+        $numero = explode(&quot; &quot;, $numeroTexto);
+
+        // Muestra el array original
+
+        // Índice
+        echo &quot;Array original:&lt;br&gt;&quot;;
+        echo &quot;&lt;table&gt;&lt;tr&gt;&quot;;
+        for ($i = 0; $i &lt; 10; $i++) {
+          echo &quot;&lt;td&gt;$i&lt;/td&gt;&quot;;
+        }
+        echo &quot;&lt;/tr&gt;&quot;;
+
+        // Contenido
+        for ($i = 0; $i &lt; 10; $i++) {
+          echo &quot;&lt;td&gt;&quot;.$numero[$i].&quot;&lt;/td&gt;&quot;;
+        }
+        echo &quot;&lt;/tr&gt;&lt;/table&gt;&quot;;
+
+        // Guarda los primos y los no primos en arrays diferentes
+        $cuentaPrimos = 0;
+        $cuentaNoPrimos = 0;
+
+        for ($i = 0; $i &lt; 10; $i++) {
+          $esPrimo = true;
+
+          for ($j = 2; $j &lt; $numero[$i]; $j++) {
+            if (($numero[$i] % $j) == 0) {
+                $esPrimo = false;
+            }
+          }
+
+          if ($esPrimo) {
+            $primos[$cuentaPrimos] = $numero[$i];
+            $cuentaPrimos++;
+          } else {
+            $noPrimos[$cuentaNoPrimos] = $numero[$i];
+            $cuentaNoPrimos++;
+          }
+        }
+
+        // Guarda los datos en el array original
+        // según lo que pide el ejercicio
+
+        for ($i = 0; $i &lt; $cuentaPrimos; $i++) {
+          $numero[$i] = $primos[$i];
+        }
+
+        for ($i = $cuentaPrimos; $i &lt; $cuentaPrimos + $cuentaNoPrimos; $i++) {
+          $numero[$i] = $noPrimos[$i - $cuentaPrimos];
+        }
+
+        // Muestra el array resultante
+
+        // Índice
+        echo &quot;&lt;br&gt;Array resultante con los primos al principio y los no primos al final:&lt;br&gt;&quot;;
+        echo &quot;&lt;table&gt;&lt;tr&gt;&quot;;
+        for ($i = 0; $i &lt; 10; $i++) {
+          echo &quot;&lt;td&gt;$i&lt;/td&gt;&quot;;
+        }
+        echo &quot;&lt;/tr&gt;&quot;;
+
+        // Contenido
+        for ($i = 0; $i &lt; 10; $i++) {
+          echo &quot;&lt;td&gt;&quot;.$numero[$i].&quot;&lt;/td&gt;&quot;;
+        }
+        echo &quot;&lt;/tr&gt;&lt;/table&gt;&quot;;
+      }
+      ?&gt;
+      &lt;br&gt;
+      &lt;a href=&quot;08.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171109231742287" modified="20171109231749190" title="Ejercicio T4-09">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;UT2 T4 09.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+
+      if (!isset($_GET['n'])) {
+        $contadorNumeros = 1;
+        $numeroTexto = &quot;&quot;;
+      } else {
+        $contadorNumeros = $_GET['contadorNumeros'];
+        $numeroTexto = $_GET['numeroTexto'];
+      }
+
+      if ($contadorNumeros &lt; 11) {
+        $contadorNumeros = $_GET['contadorNumeros'];
+        $n = $_GET['n'];
+        $numeroTexto = $_GET['numeroTexto'];
+
+        if ($numeroTexto == &quot;&quot;) {
+            $numeroTexto = $n;
+        } else {
+            $numeroTexto = $numeroTexto.' '.$n;
+        }
+
+        $contadorNumeros++;
+      }
+
+      if (!isset($_GET['n']) || ($contadorNumeros &lt; 11)) {
+      ?&gt;
+        &lt;form action=&quot;09.php&quot; method=&quot;get&quot;&gt;
+          Introduzca un número:
+          &lt;input type=&quot;number&quot; name =&quot;n&quot; autofocus=&quot;&quot; required=&quot;&quot;&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;contadorNumeros&quot; value=&quot;&lt;?php echo $contadorNumeros; ?&gt;&quot;&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;numeroTexto&quot; value=&quot;&lt;?php echo $numeroTexto; ?&gt;&quot;&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;OK&quot;&gt;
+        &lt;/form&gt;
+      &lt;?php
+      }
+
+      ////////////////////////////////////////////////////////////////
+      //  Programa principal una vez recogidos los datos del array.
+      //  El array con los números es $numero
+      ////////////////////////////////////////////////////////////////
+
+      // Se han introducido los números y hay que pedir las posiciones inicial y final
+      if ($contadorNumeros == 11) {
+        $numero = explode(&quot; &quot;, $numeroTexto);
+
+        // Muestra el array original
+
+        // Índice
+        echo &quot;Array original:&lt;br&gt;&quot;;
+        echo &quot;&lt;table&gt;&lt;tr&gt;&quot;;
+        for ($i = 0; $i &lt; 10; $i++) {
+          echo &quot;&lt;td&gt;$i&lt;/td&gt;&quot;;
+        }
+        echo &quot;&lt;/tr&gt;&quot;;
+
+        // Contenido
+        for ($i = 0; $i &lt; 10; $i++) {
+          echo &quot;&lt;td&gt;&quot;.$numero[$i].&quot;&lt;/td&gt;&quot;;
+        }
+        echo &quot;&lt;/tr&gt;&lt;/table&gt;&quot;;
+
+        // Pide las posiciones inicial y final
+        ?&gt;
+        &lt;form action=&quot;09.php&quot; method=&quot;get&quot;&gt;
+          Posición inicial: &lt;input type=&quot;number&quot; name=&quot;inicial&quot; autofocus=&quot;&quot; min=&quot;0&quot; max=&quot;9&quot; required=&quot;&quot;&gt;&lt;br&gt;
+          Posición final: &lt;input type=&quot;number&quot; name=&quot;final&quot; min=&quot;0&quot; max=&quot;9&quot; required=&quot;&quot;&gt;&lt;br&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;contadorNumeros&quot; value=&quot;13&quot;&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;numeroTexto&quot; value=&quot;&lt;?php echo $numeroTexto; ?&gt;&quot;&gt;
+          &lt;input type=&quot;hidden&quot; name=&quot;n&quot; value=&quot;basura&quot;&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;OK&quot;&gt;
+        &lt;/form&gt;
+      &lt;?php
+      }
+
+
+      // Se han introducido los números y además las posiciones inicial y final
+      if ($contadorNumeros == 13) {
+
+        $inicial = $_GET['inicial'];
+        $final = $_GET['final'];
+
+        if (($inicial &gt;= $final) || ($inicial &lt; 0) || ($inicial &gt; 9) || ($final &lt; 0) || ($final &gt; 9)) {
+
+          echo 'Los datos introducidos no son correctos';
+
+        } else {
+
+          $numero = explode(&quot; &quot;, $numeroTexto);
+
+          // Muestra el array original
+
+          // Índice
+          echo &quot;Array original:&lt;br&gt;&quot;;
+          echo &quot;&lt;table&gt;&lt;tr&gt;&quot;;
+          for ($i = 0; $i &lt; 10; $i++) {
+            echo &quot;&lt;td&gt;$i&lt;/td&gt;&quot;;
+          }
+          echo &quot;&lt;/tr&gt;&quot;;
+
+          // Contenido
+          for ($i = 0; $i &lt; 10; $i++) {
+            echo &quot;&lt;td&gt;&quot;.$numero[$i].&quot;&lt;/td&gt;&quot;;
+          }
+          echo &quot;&lt;/tr&gt;&lt;/table&gt;&quot;;
+
+          // Rotación
+
+          // Primer tramo
+          $auxiliar = $numero[9];
+          for ($i = 9; $i &gt; $final; $i--) {
+            $numero[$i] = $numero[$i - 1];
+          }
+          $numero[$final] = $numero[$inicial];
+
+          // Segundo tramo
+          for ($i = $inicial; $i &gt; 0; $i--) {
+            $numero[$i] = $numero[$i - 1];
+          }
+          $numero[0] = $auxiliar;
+
+
+          // Muestra el array resultante
+
+          // Índice
+          echo &quot;&lt;br&gt;&lt;br&gt;Inicial: $inicial Final: $final&lt;br&gt;&quot;;
+          echo &quot;&lt;br&gt;Array resultante:&lt;br&gt;&quot;;
+          echo &quot;&lt;table&gt;&lt;tr&gt;&quot;;
+          for ($i = 0; $i &lt; 10; $i++) {
+            echo &quot;&lt;td&gt;$i&lt;/td&gt;&quot;;
+          }
+          echo &quot;&lt;/tr&gt;&quot;;
+
+          // Contenido
+          for ($i = 0; $i &lt; 10; $i++) {
+            echo &quot;&lt;td&gt;&quot;.$numero[$i].&quot;&lt;/td&gt;&quot;;
+          }
+          echo &quot;&lt;/tr&gt;&lt;/table&gt;&quot;;
+        }
+      }
+      ?&gt;
+      &lt;br&gt;&lt;br&gt;
+      &lt;a href=&quot;09.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171109231820013" modified="20171109231826933" title="Ejercicio T4-10">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;UT2 T4 10.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+        $puntuacion = array (
+          'As' =&gt; 11, 'Dos' =&gt; 0, 'Tres' =&gt; 10, 'Cuatro' =&gt; 0, 'Cinco' =&gt; 0,
+          'Seis' =&gt; 0, 'Siete' =&gt; 0, 'Sota' =&gt; 2, 'Caballo' =&gt; 3, 'Rey' =&gt; 4);
+
+        $palo = array ('Oros', 'Copas', 'Espadas', 'Bastos');
+
+        $figura = array ('As', 'Dos', 'Tres', 'Cuatro', 'Cinco', 'Seis', 'Siete', 'Sota', 'Caballo', 'Rey');
+
+        $cartasEchadas[] = &quot;&quot;;
+        $contadorCartasEchadas = 0;
+        $puntosTotales = 0;
+
+        do {
+          $paloCarta = $palo[rand(0, 3)];
+          $figuraCarta = $figura[rand(0, 9)];
+          $puntosCarta = $puntuacion[$figuraCarta];
+          $nombreCarta = &quot;$figuraCarta de $paloCarta&quot;;
+          if (!in_array($nombreCarta, $cartasEchadas)) {
+            echo &quot;$nombreCarta - $puntosCarta puntos&lt;br&gt;&quot;;
+            $cartasEchadas[] = $nombreCarta;
+            $contadorCartasEchadas++;
+            $puntosTotales += $puntosCarta;
+          }
+        } while ($contadorCartasEchadas &lt; 10);
+
+        echo &quot;&lt;br&gt;&lt;b&gt;Total: $puntosTotales puntos&lt;/b&gt;&quot;;
+        ?&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;a href=&quot;10.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171109231850015" modified="20171109231911127" title="Ejercicio T4-11">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;UT2 T4 11.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Diccionario español - inglés&lt;/h2&gt;
+    &lt;?php
+      if (isset($_GET['palabra'])) {
+        $palabra = $_GET['palabra'];
+
+        $diccionario = array (
+          &quot;ordenador&quot; =&gt; &quot;computer&quot;,
+          &quot;gato&quot; =&gt; &quot;cat&quot;,
+          &quot;rojo&quot; =&gt; &quot;red&quot;,
+          &quot;árbol&quot; =&gt; &quot;tree&quot;,
+          &quot;pingüino&quot; =&gt; &quot;penguin&quot;,
+          &quot;sol&quot; =&gt; &quot;sun&quot;,
+          &quot;agua&quot; =&gt; &quot;water&quot;,
+          &quot;viento&quot; =&gt; &quot;wind&quot;,
+          &quot;siesta&quot; =&gt; &quot;siesta&quot;,
+          &quot;arriba&quot; =&gt; &quot;up&quot;,
+          &quot;ratón&quot; =&gt; &quot;mouse&quot;,
+          &quot;estadio&quot; =&gt; &quot;arena&quot;,
+          &quot;calumnia&quot; =&gt; &quot;aspersion&quot;,
+          &quot;aguacate&quot; =&gt; &quot;avocado&quot;,
+          &quot;cuerpo&quot; =&gt; &quot;body&quot;,
+          &quot;concurso&quot; =&gt; &quot;contest&quot;,
+          &quot;cena&quot; =&gt; &quot;dinner&quot;,
+          &quot;salida&quot; =&gt; &quot;exit&quot;,
+          &quot;lenteja&quot; =&gt; &quot;lentil&quot;,
+          &quot;cacerola&quot; =&gt; &quot;pan&quot;,
+          &quot;pastel&quot; =&gt; &quot;pie&quot;,
+          &quot;membrillo&quot; =&gt; &quot;quince&quot;
+        );
+
+        foreach ($diccionario as $clave =&gt; $valor) {
+          $palabrasEspanolas[] = $clave;
+        }
+
+        if (in_array($palabra, $palabrasEspanolas)) {
+          echo &quot;&lt;b&gt;$palabra&lt;/b&gt; en inglés es &lt;b&gt;&quot;.$diccionario[$palabra].&quot;&lt;/b&gt;&lt;br&gt;&lt;br&gt;&quot;;
+        } else {
+          echo &quot;Lo siento, no conozco esa palabra.&lt;br&gt;&lt;br&gt;&quot;;
+        }
+      }
+    ?&gt;
+    &lt;form action=&quot;11.php&quot; method=&quot;get&quot;&gt;
+      Palabra en español : &lt;input type=&quot;text&quot; name =&quot;palabra&quot; autofocus=&quot;&quot; required=&quot;&quot;&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;OK&quot;&gt;
+    &lt;/form&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</pre>
+</div>
+<div created="20171109231927385" modified="20171109231934804" title="Ejercicio T4-12">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;UT2 T4 12.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Prueba tu vocabulario en inglés&lt;/h2&gt;
+    &lt;?php
+      $diccionario = array (
+        &quot;ordenador&quot; =&gt; &quot;computer&quot;,
+        &quot;gato&quot; =&gt; &quot;cat&quot;,
+        &quot;rojo&quot; =&gt; &quot;red&quot;,
+        &quot;árbol&quot; =&gt; &quot;tree&quot;,
+        &quot;pingüino&quot; =&gt; &quot;penguin&quot;,
+        &quot;sol&quot; =&gt; &quot;sun&quot;,
+        &quot;agua&quot; =&gt; &quot;water&quot;,
+        &quot;viento&quot; =&gt; &quot;wind&quot;,
+        &quot;siesta&quot; =&gt; &quot;nap&quot;,
+        &quot;arriba&quot; =&gt; &quot;up&quot;,
+        &quot;ratón&quot; =&gt; &quot;mouse&quot;,
+        &quot;estadio&quot; =&gt; &quot;arena&quot;,
+        &quot;calumnia&quot; =&gt; &quot;aspersion&quot;,
+        &quot;aguacate&quot; =&gt; &quot;avocado&quot;,
+        &quot;cuerpo&quot; =&gt; &quot;body&quot;,
+        &quot;concurso&quot; =&gt; &quot;contest&quot;,
+        &quot;cena&quot; =&gt; &quot;dinner&quot;,
+        &quot;salida&quot; =&gt; &quot;exit&quot;,
+        &quot;lenteja&quot; =&gt; &quot;lentil&quot;,
+        &quot;cacerola&quot; =&gt; &quot;pan&quot;,
+        &quot;pastel&quot; =&gt; &quot;pie&quot;,
+        &quot;membrillo&quot; =&gt; &quot;quince&quot;
+      );
+
+      if (!isset($_GET['espanol'])) {
+        echo &quot;Por favor, introduzca la traducción al inglés de las siguientes palabras.&lt;br&gt;&quot;;
+        $espanol = [];
+
+        // Extrae las palabras españolas
+        foreach ($diccionario as $clave =&gt; $valor) {
+          $palabrasEspanolas[] = $clave;
+        }
+
+        // Elige 5 palabras en español sin que se repita ninguna
+        $contadorPalabras = 0;
+        do {
+          $palabra = $palabrasEspanolas[rand(0, 19)];
+          if (!in_array($palabra, $espanol)) {
+            $espanol[] = $palabra;
+            $contadorPalabras++;
+          }
+        } while ($contadorPalabras &lt; 5);
+
+        echo '&lt;form action=&quot;12.php&quot; method=&quot;get&quot;&gt;';
+        for ($i = 0; $i &lt; 5; $i++) {
+          echo $espanol[$i].&quot; &quot;;
+          echo '&lt;input type=&quot;hidden&quot; name=&quot;espanol['.$i.']&quot; value=&quot;'.$espanol[$i].'&quot;&gt;';
+          echo '&lt;input type=&quot;text&quot; name=&quot;ingles['.$i.']&quot; &gt;&lt;br&gt;';
+        }
+        echo '&lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;';
+        echo '&lt;/form&gt;';
+
+      } else {
+        $espanol = $_GET['espanol'];
+        $ingles = $_GET['ingles'];
+
+        for ($i = 0; $i &lt; 5; $i++) {
+          if ($diccionario[$espanol[$i]] == $ingles[$i]) {
+            echo '&lt;span style=&quot;color: green;&quot;&gt;'.$espanol[$i].&quot;: &quot;.$ingles[$i];
+            echo &quot; - correcto&lt;/span&gt;&lt;br&gt;&quot;;
+          } else {
+            echo '&lt;span style=&quot;color: red;&quot;&gt;'.$espanol[$i].&quot;: &quot;.$ingles[$i];
+            echo &quot; - incorrecto&lt;/span&gt;, la respuesta correcta es &lt;b&gt;&quot;.$diccionario[$espanol[$i]].&quot;&lt;/b&gt;&lt;br&gt;&quot;;
+          }
+        }
+      }
+      ?&gt;
+      &lt;br&gt;
+      &lt;a href=&quot;12.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171109231953185" modified="20171109232001020" title="Ejercicio T4-13">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;UT2 T4 13.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+
+    &lt;h2&gt;Resalta el mínimo y sus diagonales&lt;/h2&gt;
+    &lt;?php
+      // Genera un array con números aleatorios que no se repiten
+      // Primero se meten en un array lineal (todos seguidos)...
+      $i = 0;
+      $lineal = [];
+      do {
+        $n = rand(100, 999);
+        if (!in_array($n, $lineal)) {
+          $lineal[] = $n;
+          $i++;
+        }
+      } while ($i &lt; 54);
+      // ...y después se vuelca en un array de 9x6
+      // al mismo tiempo que se calculan las coordenadas
+      // del mínimo
+      $minimo = 999;
+      $i = 0;
+      for ($x = 0; $x &lt; 9; $x++) {
+        for ($y = 0; $y &lt; 6; $y++) {
+          $numero[$x][$y] = $lineal[$i];
+          $i++;
+          if ($numero[$x][$y] &lt; $minimo) {
+            $minimo = $numero[$x][$y];
+            $xMinimo = $x;
+            $yMinimo = $y;
+          }
+        }
+      }
+
+      // Se muestra el array con el mínimo en azul y sus
+      // diagonales en verde
+      // Nota: abs($x) devuelve el valor absoluto de $x
+      echo &quot;&lt;table&gt;&quot;;
+      for ($x = 0; $x &lt; 9; $x++) {
+        echo &quot;&lt;tr&gt;&quot;;
+        for ($y = 0; $y &lt; 6; $y++) {
+          if ($numero[$x][$y] == $minimo) {
+            echo '&lt;td&gt;&lt;span style=&quot;color: blue; font-weight:bold&quot;&gt;'.$numero[$x][$y].' &lt;/span&gt;&lt;/td&gt;';
+          } else if (abs((abs($x) - abs($xMinimo))) == abs((abs($y) - abs($yMinimo)))) {
+            echo '&lt;td&gt;&lt;span style=&quot;color: green; font-weight:bold&quot;&gt;'.$numero[$x][$y].' &lt;/span&gt;&lt;/td&gt;';
+          } else {
+            echo '&lt;td&gt;'.$numero[$x][$y].'&lt;/td&gt;';
+          }
+        }
+        echo &quot;&lt;/tr&gt;&quot;;
+      }
+      echo &quot;&lt;/table&gt;&quot;;
+      ?&gt;
+      &lt;br&gt;
+      &lt;a href=&quot;13.php&quot;&gt;&gt;&gt; Volver&lt;/a&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+
+```</pre>
+</div>
+<div created="20171109232024351" modified="20171109232108683" title="Ejercicio T4-14">
+<pre>```
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;UT2 T4 14.php&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    table, th, td {
+      border: 0px;
+      text-align: center;
+    }
+    td.negro {
+      background-color: black;
+    }
+    td.blanco {
+      background-color: white;
+    }
+    tr.marron {
+      background-color: brown;
+    }
+  &lt;/style&gt;
+
+  &lt;h2&gt; Movimiento de un alfil&lt;/h2&gt;
+  &lt;?php
+    // Recoge la posición del alfil
+    $posicion = $_GET['posicion'];
+    $x = ord(substr($posicion, 0, 1)) - ord('a');
+    $y = 8 - substr($posicion, 1, 1);
+
+    // Pinta el tablero de ajedrez
+    $color = &quot;blanco&quot;; // color de la primera casilla
+    echo '&lt;table&gt;&lt;tr class=&quot;marron&quot;&gt;';
+    echo '&lt;td&gt;&lt;/td&gt;&lt;td&gt;a&lt;/td&gt;&lt;td&gt;b&lt;/td&gt;&lt;td&gt;c&lt;/td&gt;&lt;td&gt;d&lt;/td&gt;&lt;td&gt;e&lt;/td&gt;&lt;td&gt;f&lt;/td&gt;&lt;td&gt;g&lt;/td&gt;&lt;td&gt;h&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;';
+    for ($fila = 0; $fila &lt; 8; $fila++) {
+      echo '&lt;tr&gt;&lt;td style=&quot;text-align: right; background-color: brown;&quot;&gt;'.(8 - $fila).'&lt;/td&gt;';
+      for ($columna = 0; $columna &lt; 8; $columna++) {
+        echo &quot;&lt;td class=\&quot;$color\&quot;&gt;&quot;;
+
+        // Comprueba si el alfil está en la posición actual
+        if (($x == $columna) &amp;&amp; ($y == $fila)) {
+          echo '&lt;img src=&quot;alfil.png&quot;&gt;';
+        // Comprueba si es una posición a la que puede llegar el alfil
+        } else if (abs((abs($x) - abs($columna))) == abs((abs($y) - abs($fila)))) {
+          echo '&lt;img src=&quot;alfilsemitransparente.png&quot;&gt;';
+        } else {
+          echo '&lt;img src=&quot;vacio.png&quot;&gt;';
+        }
+        echo &quot;&lt;/td&gt;&quot;;
+
+        // Alterna el color de la casilla
+        if ($color == &quot;blanco&quot;) {
+          $color = &quot;negro&quot;;
+        } else {
+          $color = &quot;blanco&quot;;
+        }
+        echo &quot;&lt;/td&gt;&quot;;
+      }
+      if ($color == &quot;blanco&quot;) {
+        $color = &quot;negro&quot;;
+      } else {
+        $color = &quot;blanco&quot;;
+      }
+      echo '&lt;td style=&quot;text-align: left; background-color: brown;&quot;&gt;'.(8 - $fila).'&lt;/td&gt;&lt;/tr&gt;';
+    }
+    ?&gt;
+    &lt;tr class=&quot;marron&quot;&gt;
+      &lt;td&gt;&lt;/td&gt;&lt;td&gt;a&lt;/td&gt;&lt;td&gt;b&lt;/td&gt;&lt;td&gt;c&lt;/td&gt;&lt;td&gt;d&lt;/td&gt;&lt;td&gt;e&lt;/td&gt;&lt;td&gt;f&lt;/td&gt;&lt;td&gt;g&lt;/td&gt;&lt;td&gt;h&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/table&gt;
+
+    &lt;br&gt;
+    Introduzca las coordenadas del alfil (p. ej. e4)
+    &lt;br&gt;
+    &lt;form action=&quot;14.php&quot; method=&quot;get&quot;&gt;
+      &lt;input type=&quot;text&quot; name=&quot;posicion&quot; autofocus=&quot;&quot; required=&quot;&quot;&gt;&lt;br&gt;
+      &lt;input type=&quot;submit&quot; value=&quot;Aceptar&quot;&gt;
+    &lt;/form&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+```</pre>
+</div>
 <div created="20171019012617165" modified="20171019013149986" orden="070000" tags="Contenidos" title="Ejercicios UT2">
 <pre>&lt;&lt;toc-selective-expandable [[Ejercicios UT2]] sort[orden]&gt;&gt;</pre>
 </div>
@@ -13543,49 +14638,42 @@ Escribe un programa que calcule el factorial de un número entero leído por tec
 Escribe un programa que muestre por pantalla todos los números enteros positivos menores a uno leído por teclado que no sean divisibles entre otro también leído de igual forma.
 </pre>
 </div>
-<div created="20171024105023290" modified="20171106234856046" orden="070400" tags="[[Ejercicios UT2]]" title="Tanda 4 (T4)">
-<pre>!!Ejercicio 1
+<div created="20171024105023290" modified="20171109222132919" orden="070400" tags="[[Ejercicios UT2]]" title="Tanda 4 (T4)">
+<pre>!![[Ejercicio 1|Ejercicio T4-01]]
 Define tres arrays de 20 números enteros cada una, con nombres “numero”, “cuadrado” y “cubo”.
 Carga el array “numero” con valores aleatorios entre 0 y 100. En el array “cuadrado” se deben
 almacenar los cuadrados de los valores que hay en el array “numero”. En el array “cubo” se deben
 almacenar los cubos de los valores que hay en “numero”. A continuación, muestra el contenido de
 los tres arrays dispuesto en tres columnas.
-
-!!Ejercicio 2
+!![[Ejercicio 2|Ejercicio T4-02]]
 Escribe un programa que pida 10 números por teclado y que luego muestre los números introducidos
 junto con las palabras “máximo” y “mínimo” al lado del máximo y del mínimo respectivamente.
-
-!!Ejercicio 3
+!![[Ejercicio 3|Ejercicio T4-03]]
 Escribe un programa que lea 15 números por teclado y que los almacene en un array. Rota los
 elementos de ese array, es decir, el elemento de la posición 0 debe pasar a la posición 1, el de la 1 a
 la 2, etc. El número que se encuentra en la última posición debe pasar a la posición 0. Finalmente,
 muestra el contenido del array.
 
-!!Ejercicio 4
+!![[Ejercicio 4|Ejercicio T4-04]]
 Escribe un programa que genere 100 números aleatorios del 0 al 20 y que los muestre por pantalla
 separados por espacios. El programa pedirá entonces por teclado dos valores y a continuación
 cambiará todas las ocurrencias del primer valor por el segundo en la lista generada anteriormente.
 Los números que se han cambiado deben aparecer resaltados de un color diferente.
 
-!!Ejercicio 5
+!![[Ejercicio 5|Ejercicio T4-05]]
 Realiza un programa que pida la temperatura media que ha hecho en cada mes de un determinado
-año y que muestre a continuación un diagrama de barras horizontales con esos datos. Las barras
-del diagrama se pueden dibujar a base de la concatenación de una imagen.
+año y que muestre a continuación un diagrama de barras horizontales con esos datos. Las barras del diagrama se pueden dibujar a base de la concatenación de una imagen.
 
-!!Ejercicio 6
+!![[Ejercicio 6|Ejercicio T4-06]]
 Realiza un programa que pida 8 números enteros y que luego muestre esos números de colores, los
 pares de un color y los impares de otro.
 
-!!Ejercicio 7
-Escribe un programa que genere 20 números enteros aleatorios entre 0 y 100 y que los almacene en
-un array. El programa debe ser capaz de pasar todos los números pares a las primeras posiciones del
-array (del 0 en adelante) y todos los números impares a las celdas restantes. Utiliza arrays auxiliares
+!![[Ejercicio 7|Ejercicio T4-07]]
+Escribe un programa que genere 20 números enteros aleatorios entre 0 y 100 y que los almacene en un array. El programa debe ser capaz de pasar todos los números pares a las primeras posiciones del array (del 0 en adelante) y todos los números impares a las celdas restantes. Utiliza arrays auxiliares
 si es necesario.
 
-!!Ejercicio 8
-Realiza un programa que pida 10 números por teclado y que los almacene en un array. A continuación se mostrará el contenido de ese array junto al índice (0 – 9) utilizando para ello una
-tabla. Seguidamente el programa pasará los primos a las primeras posiciones, desplazando el resto
-de números (los que no son primos) de tal forma que no se pierda ninguno. Al final se debe mostrar
+!![[Ejercicio 8|Ejercicio T4-08]]
+Realiza un programa que pida 10 números por teclado y que los almacene en un array. A continuación se mostrará el contenido de ese array junto al índice (0 – 9) utilizando para ello una tabla. Seguidamente el programa pasará los primos a las primeras posiciones, desplazando el resto de números (los que no son primos) de tal forma que no se pierda ninguno. Al final se debe mostrar
 el array resultante.
 Por ejemplo:
 
@@ -13597,7 +14685,7 @@ Por ejemplo:
 |0 |1 |2 |3 |4 |5 |6 |7 |8 |9|
 |5| 7| 2| 11| 20| 4| 32| 9| 14| 6|
 
-!!Ejercicio 9
+!![[Ejercicio 9|Ejercicio T4-09]]
 Realiza un programa que pida 10 números por teclado y que los almacene en un array. A continuación se mostrará el contenido de ese array junto al índice (0 – 9). Seguidamente el programa
 pedirá dos posiciones a las que llamaremos “inicial” y “final”. Se debe comprobar que inicial es
 menor que final y que ambos números están entre 0 y 9. El programa deberá colocar el número de
@@ -13615,36 +14703,35 @@ el array resultante debería ser algo como:
 |0 |1 |2 |3 |4 |5 |6 |7 |8 |9|
 |6| 20| 5| 7| 32| 9| 2| 4| 14| 11|
 
-
-!!Ejercicio 10
+!![[Ejercicio 10|Ejercicio T4-10]]
 Realiza un programa que escoja al azar 10 cartas de la baraja española y que diga cuántos puntos
 suman según el juego de la brisca. Emplea un array asociativo para obtener los puntos a partir del
 nombre de la figura de la carta. Asegúrate de que no se repite ninguna carta, igual que si las hubieras
 cogido de una baraja de verdad.
 
-!!Ejercicio 11
+!![[Ejercicio 11|Ejercicio T4-11]]
 Crea un mini-diccionario español-inglés que contenga, al menos, 20 palabras (con su traducción).
 Utiliza un array asociativo para almacenar las parejas de palabras. El programa pedirá una palabra
 en español y dará la correspondiente traducción en inglés.
 
-!!Ejercicio 12
+!![[Ejercicio 12|Ejercicio T4-12]]
 Realiza un programa que escoja al azar 5 palabras en español del mini-diccionario del ejercicio
 anterior. El programa pedirá que el usuario teclee la traducción al inglés de cada una de las palabras
 y comprobará si son correctas. Al final, el programa deberá mostrar cuántas respuestas son válidas
 y cuántas erróneas.
 
-!!Ejercicio 13
+!![[Ejercicio 13|Ejercicio T4-13]]
 Rellena un array bidimensional de 6 filas por 9 columnas con números enteros positivos comprendidos entre 100 y 999 (ambos inclusive). Todos los números deben ser distintos, es decir, no se puede
 repetir ninguno. Muestra a continuación por pantalla el contenido del array de tal forma que se cumplan los siguientes requisitos:
 • Los números de las dos diagonales donde está el mínimo deben aparecer en color verde.
 • El mínimo debe aparecer en color azul.
 • El resto de números debe aparecer en color negro.
 
-!!Ejercicio 14
+!![[Ejercicio 14|Ejercicio T4-14]]
 Escribe un programa que, dada una posición en un tablero de ajedrez, nos diga a qué casillas podría saltar un alfil que se encuentra en esa posición. Indícalo de forma gráfica sobre el tablero con un color diferente para estas casillas donde puede saltar la figura. El alfil se mueve siempre en diagonal.
 El tablero cuenta con 64 casillas. Las columnas se indican con las letras de la “a” a la “h” y las filas se indican del 1 al 8.
 
-!!Ejercicio 15
+!![[Ejercicio 15|Ejercicio T4-15]]
 Realiza un programa que sea capaz de rotar todos los elementos de una matriz cuadrada una posición en el sentido de las agujas del reloj. La matriz debe tener 12 filas por 12 columnas y debe contener números generados al azar entre 0 y 100. Se debe mostrar tanto la matriz original como la matriz resultado, ambas con los números convenientemente alineados.</pre>
 </div>
 <div created="20171024120817427" modified="20171102093105353" orden="070500" tags="[[Ejercicios UT2]]" title="Tanda 5 (T5)">

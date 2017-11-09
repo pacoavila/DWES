@@ -8437,14 +8437,14 @@ Error message and password prompt
 <div created="20171002172638357" modified="20171002172638357" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20171002141131853" modified="20171007235000056" title="$:/state/sidebar">
+<div created="20171002141131853" modified="20171109111318177" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20171002175126016" modified="20171002183106298" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div created="20171002175406975" modified="20171007235154879" title="$:/state/toc/Contenidos-Acceso a bases de datos desde PHP-1645261823">
-<pre>close</pre>
+<div created="20171002175406975" modified="20171109095350652" title="$:/state/toc/Contenidos-Acceso a bases de datos desde PHP-1645261823">
+<pre>open</pre>
 </div>
 <div created="20171007224927075" modified="20171007235156476" title="$:/state/toc/Contenidos-MySQL/MariaDB-1645261823">
 <pre>close</pre>
@@ -8461,7 +8461,7 @@ Error message and password prompt
 <div created="20171007234602724" modified="20171007234602724" title="$:/state/toc/Contenidos/Utilizaci'on de bases de datos MySQL en PHP-PHP Data Objects (PDO)-1645261823">
 <pre>open</pre>
 </div>
-<div list="Excepciones Contenidos" title="$:/StoryList">
+<div list="Contenidos" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20171002141449145" modified="20171002141450198" title="$:/temp/advancedsearch">
@@ -8625,7 +8625,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20171002141303101" modified="20171002175334158" orden="010000" tags="Contenidos" title="Acceso a bases de datos desde PHP" type="text/vnd.tiddlywiki">
+<div created="20171002141303101" modified="20171109095344165" orden="010000" tags="Contenidos" title="Acceso a bases de datos desde PHP" type="text/vnd.tiddlywiki">
 <pre>@@float:right;width:50%;margin:10px;
 [img[http://f3.fsm.wikidi.com/aq/aa/jg/db02699ac67db4d623c56c17a48bcf8b988db176.jpg]]
 @@
@@ -8634,7 +8634,7 @@ Una de las aplicaciones más frecuentes de PHP es ''generar un interface web'' p
 
 PHP ''soporta'' más de ''15'' sistemas gestores de bases de datos: ''SQLite'', ''Oracle'', ''SQL Server'', ''PostgreSQL'', ''IBM DB2'', ''MySQL/MariaDB'', etc. ''Hasta la versión 5'' de PHP, el acceso a las bases de datos se hacía principalmente utilizando ''extensiones específicas'' para cada sistema gestor de base de datos (''extensiones nativas''). Es decir, que si queríamos acceder a una base de datos de PostgreSQL, deberíamos instalar y utilizar la extensión de ese gestor en concreto. __''Las funciones y objetos a utilizar eran distintos para cada extensión.''__
 
-A partir de la versión 5 de PHP se introdujo en el lenguaje una ''extensión para acceder de una forma común a distintos sistemas gestores'': ''PDO''. La gran ventaja de ''PDO'' está clara: ''__podemos seguir utilizando una misma sintaxis aunque cambiemos el motor de nuestra base de datos__''. Por el contrario, en algunas ocasiones preferiremos seguir usando extensiones nativas en nuestros programas. Mientras PDO ofrece un conjunto común de funciones, ''las extensiones nativas'' normalmente ofrecen más ''potencia'' (acceso a funciones específicas de cada gestor de base de datos) y en algunos casos también mayor ''velocidad''.
+A partir de la versión 5 de PHP se introdujo en el lenguaje una ''extensión para acceder de una forma común a distintos sistemas gestores'': '[['PDO''|http://php.net/manual/es/book.pdo.php]] (PHP Data Object). La gran ventaja de ''PDO'' está clara: ''__podemos seguir utilizando una misma sintaxis aunque cambiemos el motor de nuestra base de datos__''. Por el contrario, en algunas ocasiones preferiremos seguir usando extensiones nativas en nuestros programas. Mientras PDO ofrece un conjunto común de funciones, ''las extensiones nativas'' normalmente ofrecen más ''potencia'' (acceso a funciones específicas de cada gestor de base de datos) y en algunos casos también mayor ''velocidad''.
 
 De los distintos SGBD existentes, vas a aprender a utilizar ''MySQL/MariaDB''. MySQL/MariaDB es un ''gestor de bases de datos'' relacionales de código abierto bajo licencia GNU GPL. Es el gestor de bases de datos ''más empleado'' con el lenguaje PHP. Como ya vimos, es la letra ''&quot;M&quot;'' que figura en los acrónimos ''AMP'' y ''XAMPP''.
 
@@ -8648,15 +8648,14 @@ En PHP se utiliza la palabra `new` para crear un nuevo objeto instanciando una c
 $a = new A();
 ```
 
-Y para acceder a los miembros de un objeto, debes utilizar el operador flecha -&gt;:
+Y para acceder a los miembros de un objeto, debes utilizar el operador flecha ''-&gt;'':
 
 ```
 $a-&gt;fecha();
 ```</pre>
 </div>
 <div created="20171007233420383" modified="20171007233527627" orden="030105" tags="[[Extensi'on MySQLi]]" title="Consultas preparadas">
-<pre>
-3.1.5.- Consultas preparadas.
+<pre>3.1.5.- Consultas preparadas.
 Símbolo de obtención de información de una base de datos sobre la que se encuentra media rueda dentada, y junto a las letras mysqli.
 
 Cada vez que se envía una consulta al servidor, éste debe analizarla antes de ejecutarla. Algunas sentencias SQL, como las que insertan valores en una tabla, deben repetirse de forma habitual en un programa. Para acelerar este proceso, MySQL admite consultas preparadas. Estas consultas se almacenan en el servidor listas para ser ejecutadas cuando sea necesario.
@@ -8758,8 +8757,7 @@ Anterior | Siguiente
 </pre>
 </div>
 <div created="20171007235234224" modified="20171007235426140" orden="030204" tags="[[PHP Data Objects (PDO)]]" title="Consultas preparadas (III)">
-<pre>
-3.2.4.- Consultas preparadas.
+<pre>3.2.4.- Consultas preparadas.
 Símbolo de obtención de información de una base de datos sobre la que se encuentra media rueda dentada, y junto a las letras PDO.
 
 Al igual que con MySQLi, también utilizando PDO podemos preparar consultas parametrizadas en el servidor para ejecutarlas de forma repetida. El procedimiento es similar e incluso los métodos a ejecutar tienen prácticamente los mismos nombres.
@@ -8826,8 +8824,7 @@ Anterior | Siguiente
 <pre>&lt;&lt;toc-selective-expandable Contenidos sort[orden]&gt;&gt;</pre>
 </div>
 <div created="20171007232413607" modified="20171007232623728" orden="030102" tags="[[Extensi'on MySQLi]]" title="Ejecuci'on de consultas">
-<pre>
-3.1.2.- Ejecución de consultas.
+<pre>3.1.2.- Ejecución de consultas.
 Símbolo de media rueda dentada junto a las letras mysqli.
 
 La forma más inmediata de ejecutar una consulta, si utilizas esta extensión, es el método query, equivalente a la función mysqli_query. Si se ejecuta una consulta de acción que no devuelve datos (como una sentencia SQL de tipo UPDATE, INSERT o DELETE), la llamada devuelve true si se ejecuta correctamente o false en caso contrario. El número de registros afectados se puede obtener con la propiedad affected_rows (o con la función mysqli_affected_rows).
@@ -8877,8 +8874,7 @@ Anterior | Siguiente
 </pre>
 </div>
 <div created="20171007234029387" modified="20171007234535727" orden="030202" tags="[[PHP Data Objects (PDO)]]" title="Ejecuci'on de consultas(II)">
-<pre>
-3.2.2.- Ejecución de consultas.
+<pre>3.2.2.- Ejecución de consultas.
 Símbolo de media rueda dentada junto a las letras PDO.
 
 Para ejecutar una consulta SQL utilizando PDO, debes diferenciar aquellas sentencias SQL que no devuelven como resultado un conjunto de datos, de aquellas otras que sí lo devuelven.
@@ -8932,8 +8928,7 @@ Anterior | Siguiente
 </pre>
 </div>
 <div created="20171007235515711" modified="20171007235620283" orden="040000" tags="Contenidos" title="Errores y manejo de excepciones">
-<pre>
-4.- Errores y manejo de excepciones.
+<pre>4.- Errores y manejo de excepciones.
 Caso práctico
 Símbolo de exclamación sobre un triángulo.
 
@@ -9004,8 +8999,7 @@ Anterior | Siguiente
 </pre>
 </div>
 <div created="20171007232024936" modified="20171007232309997" orden="030101" tags="[[Extensi'on MySQLi]]" title="Establecimiento de conexiones">
-<pre>
-3.1.1.- Establecimiento de conexiones.
+<pre>3.1.1.- Establecimiento de conexiones.
 Símbolo de conexión de dos enchufes junto a las letras mysqli.
 
 Para poder comunicarte desde un programa PHP con un servidor MySQL, el primer paso es establecer una conexión. Toda comunicación posterior que tenga lugar, se hará utilizando esa conexión.
@@ -9083,8 +9077,7 @@ Anterior | Siguiente
 </pre>
 </div>
 <div created="20171007234738792" modified="20171007234847989" orden="030201" tags="[[PHP Data Objects (PDO)]]" title="Establecimiento de conexiones (II)">
-<pre>
-3.2.1.- Establecimiento de conexiones.
+<pre>3.2.1.- Establecimiento de conexiones.
 Símbolo de conexión de dos enchufes junto a las letras PDO.
 
 Para establecer una conexión con una base de datos utilizando PDO, debes instanciar un objeto de la clase PDO pasándole los siguientes parámetros (solo el primero es obligatorio):
@@ -9145,8 +9138,7 @@ Anterior | Siguiente
 </pre>
 </div>
 <div created="20171007235753190" modified="20171007235936481" orden="040100" tags="[[Errores y manejo de excepciones]]" title="Excepciones">
-<pre>
-4.1.- Excepciones.
+<pre>4.1.- Excepciones.
 Símbolos de media rueda dentada, uno de ellos con un símbolo de exclamación.
 
 A partir de la versión 5 se introdujo en PHP un modelo de excepciones similar al existente en otros lenguajes de programación:
@@ -9243,7 +9235,6 @@ Anterior | Siguiente
 </div>
 <div created="20171007231306259" modified="20171007231913163" orden="030100" tags="[[Utilizaci'on de bases de datos MySQL en PHP]]" title="Extensi'on MySQLi">
 <pre>
-
 Como ya viste, existen dos formas de comunicarse con una base de datos desde PHP: utilizar una extensión nativa programada para un SGBD concreto, o utilizar una extensión que soporte varios tipos de bases de datos. Tradicionalmente las conexiones se establecían utilizando la extensión nativa mysql. Esta extensión se mantiene en la actualidad para dar soporte a las aplicaciones ya existentes que la utilizan, pero no se recomienda utilizarla para desarrollar nuevos programas. Lo más habitual es elegir entre MySQLi (extensión nativa) y PDO.
 
 Con cualquiera de ambas extensiones, podrás realizar acciones sobre las bases de datos como:
@@ -9259,8 +9250,7 @@ PDO y MySQLi (y también la antigua extensión mysql) utilizan un driver de bajo
 </pre>
 </div>
 <div created="20171007225038751" modified="20171007225229284" orden="020200" tags="MySQL/MariaDB" title="Herramientas de administraci'on">
-<pre>
-2.2.- Herramientas de administración.
+<pre>2.2.- Herramientas de administración.
 Pingüino sentado a una mesa y manejando un ordenador.
 
 Existen muchas herramientas que permiten establecer una conexión con un servidor MySQL para realizar tareas de administración. Algunas herramientas se ejecutan en la línea de comandos, otras presentan un interface gráfico basado en web o propio del sistema operativo en que se ejecuten. Unas se incluyen con el propio servidor, y otras es necesario obtenerlas e instalarlas de forma independiente. Las hay que están orientadas a algún propósito concreto y también que permiten realizar varias funciones de administración.
@@ -9313,8 +9303,7 @@ mysqladmin. 		4. Línea de comandos.
 Anterior | Siguiente</pre>
 </div>
 <div created="20171007223607507" modified="20171007224910051" orden="020100" tags="MySQL/MariaDB" title="Instalacion y configuracion">
-<pre>
-2.1.- Instalación y configuración.
+<pre>2.1.- Instalación y configuración.
 
 Llave inglesa sobre un fondo con dígitos binarios.
 
@@ -9352,8 +9341,7 @@ Anterior | Siguiente
 </pre>
 </div>
 <div created="20171007225324042" modified="20171007230120219" orden="020201" tags="[[Herramientas de administraci'on]]" title="mysql y mysqladmin">
-<pre>
-2.2.1.- mysql y mysqladmin.
+<pre>2.2.1.- mysql y mysqladmin.
 Ventana de terminal de Linux con línea de comandos.
 
 La forma más habitual de utilizar la herramienta mysql es en modo interactivo. Una vez te conectas al servidor MySQL, te presenta una línea de órdenes. En esa línea de órdenes puedes introducir sentencias SQL, que se ejecutarán sobre la base de datos seleccionada, y algunos comandos especiales. Las sentencias SQL deben terminar en el carácter &quot;;&quot;. Entre los comandos especiales que puedes usar están:
@@ -9410,7 +9398,6 @@ Anterior | Siguiente
 </div>
 <div created="20171007222420493" modified="20171007223349762" orden="020000" tags="Contenidos" title="MySQL/MariaDB">
 <pre>
-
 MySQL es un sistema gestor de bases de datos (SGBD) relacionales. Es un programa de código abierto que se ofrece bajo licencia GNU GPL, aunque también ofrece una licencia comercial en caso de que quieras utilizarlo para desarrollar aplicaciones de código propietario. En las últimas versiones (a partir de la 5.1), se ofrecen, de hecho, varios productos distintos: uno de código libre (Community Edition), y otro u otros comerciales (Standard Edition, Enterprise Edition).
 
 Incorpora múltiples motores de almacenamiento, cada uno con características propias: unos son más veloces, otros, aportan mayor seguridad o mejores capacidades de búsqueda. Cuando crees una base de datos, puedes elegir el motor en función de las características propias de la aplicación. Si no lo cambias, el motor que se utiliza por defecto se llama MyISAM, que es muy rápido pero a cambio no contempla integridad referencial ni tablas transaccionales. El motor InnoDB es un poco más lento pero sí soporta tanto integridad referencial como tablas transaccionales.
@@ -9495,8 +9482,7 @@ nombre_del_objeto-&gt;nombre_del_atributo
 Dentro de un método, la variable `$this` hace referencia al ''objeto'' sobre el que invocamos el método. En la invocación `$micaja-&gt;introduce(&quot;algo&quot;)` se está llamando al método introduce sobre el objeto ''$micaja''. Cuando se está ejecutando ese método, se vuelca el valor que recibe por parámetro en el atributo contenido. En ese caso ''$this-&gt;contenido'' hace referencia al ''atributo'' contenido del objeto ''$micaja'', que es sobre el que se invocaba el método. </pre>
 </div>
 <div created="20171007233126479" modified="20171007233334521" orden="030104" tags="[[Extensi'on MySQLi]]" title="Obtenci'on y utilizaci'on de conjuntos de resultados">
-<pre>
-3.1.4.- Obtención y utilización de conjuntos de resultados.
+<pre>3.1.4.- Obtención y utilización de conjuntos de resultados.
 Símbolo de obtención de información de una base de datos junto a las letras mysqli.
 
 Ya sabes que al ejecutar una consulta que devuelve datos obtienes un objeto de la clase mysqli_result. Esta clase sigue los criterios de ofrecer un interface de programación dual, es decir, una función por cada método con la misma funcionalidad que éste.
@@ -9556,8 +9542,7 @@ Anterior | Siguiente
 </pre>
 </div>
 <div created="20171007235005778" modified="20171007235137110" orden="030203" tags="[[PHP Data Objects (PDO)]]" title="Obtenci'on y utilizaci'on de conjuntos de resultados (II)">
-<pre>
-3.2.3.- Obtención y utilización de conjuntos de resultados.
+<pre>3.2.3.- Obtención y utilización de conjuntos de resultados.
 
 Símbolo de obtención de información de una base de datos junto a las letras PDO.
 
@@ -9623,8 +9608,7 @@ Anterior | Siguiente
 </pre>
 </div>
 <div created="20171007233706355" modified="20171007233837440" orden="030200" tags="[[Utilizaci'on de bases de datos MySQL en PHP]]" title="PHP Data Objects (PDO)">
-<pre>
-3.2.- PHP Data Objects (PDO).
+<pre>3.2.- PHP Data Objects (PDO).
 Captura de pantalla obtenida de los resultados mostrados por la función phpinfo, correspondientes a la sección relativa a la configuración de la extensión PDO.
 
 Si vas a programar una aplicación que utilice como sistema gestor de bases de datos MySQL, la extensión MySQLi que acabas de ver es una buena opción. Ofrece acceso a todas las características del motor de base de datos, a la vez que reduce los tiempos de espera en la ejecución de sentencias.
@@ -9640,8 +9624,7 @@ Anterior | Siguiente
 </pre>
 </div>
 <div created="20171007230231812" modified="20171007230344896" orden="020202" tags="[[Herramientas de administraci'on]]" title="phpMyAdmin">
-<pre>
-2.2.2.- phpMyAdmin.
+<pre>2.2.2.- phpMyAdmin.
 Captura de la página web de inicio de la aplicación phpMyAdmin. Se muestran las siguientes opciones de entrada: idioma, usuario y contraseña.
 
 Al contrario que las dos herramientas anteriores, phpMyAdmin no se instala con el servidor MySQL. Debes instalarlo de forma individual, en el caso de Ubuntu utilizando el gestor de paquetes:
@@ -9689,8 +9672,7 @@ Anterior | Siguiente
 </pre>
 </div>
 <div created="20171007232755514" modified="20171007232927639" orden="030103" tags="[[Extensi'on MySQLi]]" title="Transacciones">
-<pre>
-3.1.3.- Transacciones.
+<pre>3.1.3.- Transacciones.
 Marca de verificación y equis junto a las letras mysqli.
 
 Como ya comentamos, si necesitas utilizar transacciones deberás asegurarte de que estén soportadas por el motor de almacenamiento que gestiona tus tablas en MySQL. Si utilizas InnoDB, por defecto cada consulta individual se incluye dentro de su propia transacción. Puedes gestionar este comportamiento con el método autocommit (función mysqli_autocommit).
@@ -9727,7 +9709,6 @@ Anterior | Siguiente
 </div>
 <div created="20171007230614476" modified="20171007231659845" orden="030000" tags="Contenidos" title="Utilizaci'on de bases de datos MySQL en PHP">
 <pre>
-
 Como ya viste, existen dos formas de comunicarse con una base de datos desde PHP: utilizar una extensión nativa programada para un SGBD concreto, o utilizar una extensión que soporte varios tipos de bases de datos. Tradicionalmente las conexiones se establecían utilizando la extensión nativa mysql. Esta extensión se mantiene en la actualidad para dar soporte a las aplicaciones ya existentes que la utilizan, pero no se recomienda utilizarla para desarrollar nuevos programas. Lo más habitual es elegir entre MySQLi (extensión nativa) y PDO.
 
 Con cualquiera de ambas extensiones, podrás realizar acciones sobre las bases de datos como:
