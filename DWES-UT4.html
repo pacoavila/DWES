@@ -8426,14 +8426,14 @@ Error message and password prompt
 <div created="20171014205920539" modified="20171014210015542" title="$:/SiteTitle">
 <pre>UT4.- Desarrollo de aplicaciones web con PHP</pre>
 </div>
-<div created="20180104180344315" modified="20180108014554165" title="$:/state/SampleReveal2">
-<pre>hide</pre>
+<div created="20180104180344315" modified="20180122082956033" title="$:/state/SampleReveal2">
+<pre>show</pre>
 </div>
 <div created="20180104021343786" modified="20180104021343787" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20171014210615963" modified="20180108015004871" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20171014210615963" modified="20180122082952215" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20171014210049251" modified="20171014211508301" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Recent</pre>
@@ -8444,7 +8444,7 @@ Error message and password prompt
 <div created="20171014211722738" modified="20180108015436032" title="$:/state/toc/Contenidos-Manejo de sesiones-1645261823">
 <pre>close</pre>
 </div>
-<div list="Contenidos" title="$:/StoryList">
+<div list="Contenidos Cookies" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8660,7 +8660,7 @@ Si la información del usuario que quieres almacenar incluye contenido privado c
 <div created="20171014210619776" modified="20180122074900757" tags="" title="Contenidos">
 <pre>&lt;&lt;toc-selective-expandable Contenidos sort[orden]&gt;&gt;</pre>
 </div>
-<div created="20171014211231714" modified="20180108010052407" orden="020000" tags="Contenidos" title="Cookies">
+<div created="20171014211231714" modified="20180122090041987" orden="020000" tags="Contenidos" title="Cookies">
 <pre>Una ''cookie'' es un ''fichero de texto'' que un sitio web guarda en el ''entorno del usuario'' del navegador. Su uso más típico es el almacenamiento de las preferencias del usuario (por ejemplo, el idioma en que se deben mostrar las páginas), para que no tenga que volver a indicarlas la próxima vez que visite el sitio.
 
 &lt;&lt;&lt;
@@ -8708,52 +8708,52 @@ Sobre el mismo ejercicio anterior, ''almacena en una cookie'' el último instant
 &lt;?php
 // Si el usuario aún no se ha autentificado, pedimos las credenciales
 if (!isset($_SERVER['PHP_AUTH_USER'])){
-	header('WWW-Authenticate: Basic realm=&quot;Contenido restringido&quot;');
-	header(&quot;HTTP/1.0 401 Unauthorized&quot;);
-	exit;
+    header('WWW-Authenticate: Basic realm=&quot;Contenido restringido&quot;');
+    header(&quot;HTTP/1.0 401 Unauthorized&quot;);
+    exit;
 }
 // Si ya ha enviado las credenciales, las comprobamos con la base de datos
 else
 {
-	// Conectamos a la base de datos
-try {	
-	@$dwes=new mysqli(&quot;localhost&quot;,&quot;dwes&quot;,&quot;abc123.&quot;,&quot;dwes&quot;);
-	$error=$dwes-&gt;connect_errno;
-	}catch (Exception $ex)
-        {
+    // Conectamos a la base de datos
+    try {
+        @$dwes=new mysqli(&quot;localhost&quot;,&quot;dwes&quot;,&quot;abc123&quot;,&quot;dwes&quot;);
+        $error=$dwes-&gt;connect_errno;
+    }
+    catch (Exception $ex)
+    {
+        exit;
+    }
+    // Si se estableció la conexión
+    if ($error==null){
+        date_default_timezone_set('Europe/Madrid');
+        // Ejecutamos la consulta para comprobar si existe
+        // esa combinación de usuario y contraseña
+        $sql=&quot;SELECT usuario FROM usuarios WHERE usuario='$_SERVER[PHP_AUTH_USER]' AND contrasena=md5('$_SERVER[PHP_AUTH_PW]')&quot;;
+        $resultado=$dwes-&gt;query($sql);
+        // Si no existe, se vuelven a pedir las credenciales
+        if($resultado-&gt;num_rows==0){
+            header('WWW-Authenticate: Basic realm=&quot;Contenido restringido&quot;');
+            header(&quot;HTTP/1.0 401 Unauthorized&quot;);
+            echo &quot;Debes introducir un usuario y contraseña!&quot;;
             exit;
         }
-	// Si se estableció la conexión
-if ($error==null){
-
-		 date_default_timezone_set('Europe/Madrid');
-		 
-		// Ejecutamos la consulta para comprobar si existe
-		// esa combinación de usuario y contraseña
-		$sql=&quot;SELECT usuario FROM usuarios WHERE usuario='$_SERVER[PHP_AUTH_USER]' AND contrasena=md5('$_SERVER[PHP_AUTH_PW]')&quot;;
-		$resultado=$dwes-&gt;query($sql);
-		// Si no existe, se vuelven a pedir las credenciales
-		if($resultado-&gt;num_rows==0){
-			header('WWW-Authenticate: Basic realm=&quot;Contenido restringido&quot;');
-			header(&quot;HTTP/1.0 401 Unauthorized&quot;);
-			echo &quot;Debes introducir un usuario y contraseña!&quot;;
-			exit;
-		}
-		else {
-			if(isset($_COOKIE['ultimo_login'])){
-				$ultimo_login=$_COOKIE['ultimo_login'];
-			}
-			setcookie(&quot;ultimo_login&quot;,time(),time()+3600);
-		}
-		$resultado-&gt;close();
-		$dwes-&gt;close();
-	}
-	else {
-		echo &quot;Ocurrió algún error al conectar con la base de datos&quot;;
-		exit;
-	}
+        else {
+            if(isset($_COOKIE['ultimo_login'])){
+                $ultimo_login=$_COOKIE['ultimo_login'];
+            }
+            setcookie(&quot;ultimo_login&quot;,time(),time()+3600);
+        }
+        $resultado-&gt;close();
+        $dwes-&gt;close();
+    }
+    else {
+        echo &quot;Ocurrió algún error al conectar con la base de datos&quot;;
+        exit;
+    }
 }
 ?&gt;
+
 
 ```
 &lt;/$reveal&gt;
