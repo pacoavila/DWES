@@ -1,0 +1,5 @@
+AuthName "Contenido restringido"
+AuthType Basic
+AuthUserFile /opt/lampp/bin/users
+
+require valid-user
