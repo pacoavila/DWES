@@ -8461,8 +8461,8 @@ Error message and password prompt
 <div created="20171014205920539" modified="20171014210015542" title="$:/SiteTitle">
 <pre>UT4.- Desarrollo de aplicaciones web con PHP</pre>
 </div>
-<div created="20180104180344315" modified="20180205084049465" title="$:/state/SampleReveal2">
-<pre>hide</pre>
+<div created="20180104180344315" modified="20180208121241789" title="$:/state/SampleReveal2">
+<pre>show</pre>
 </div>
 <div created="20180104021343786" modified="20180205090534688" title="$:/state/showeditpreview">
 <pre>no</pre>
@@ -8509,7 +8509,7 @@ Error message and password prompt
 <div created="20171014211722738" modified="20180205081122664" title="$:/state/toc/Contenidos-Manejo de sesiones-1645261823">
 <pre>open</pre>
 </div>
-<div list="Contenidos [[Depuración de código en PHP]]" title="$:/StoryList">
+<div list="Contenidos [[Inicio y fin de una sesión]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9785,7 +9785,7 @@ Las dos posibilidades que hemos visto para solicitar al usuario que se autentifi
 *La función `header`.
 </pre>
 </div>
-<div created="20171014211741936" modified="20180108011729081" orden="030200" tags="[[Manejo de sesiones]]" title="Inicio y fin de una sesión">
+<div created="20171014211741936" modified="20180208121332998" orden="030200" tags="[[Manejo de sesiones]]" title="Inicio y fin de una sesión">
 <pre>El ''inicio'' de una sesión puede tener lugar de ''dos'' formas. Si has activado la directiva `session.auto_start` en la configuración de PHP, la sesión comenzará ''automáticamente'' en cuanto un usuario se conecte a tu sitio web. En caso de que ese usuario ''ya haya abierto'' una sesión con anterioridad, y esta no se haya eliminado, en lugar de abrir una nueva sesión se ''reanudará'' la anterior. Para ello se utilizará el ''SID anterior'', que estará almacenado en una ''cookie'' (recuerda que si usas propagación del SID, no podrás restaurar sesiones anteriores; ''el SID figura en la URL y se pierde cuando cierras el navegador'').
 
 Si por el contrario, decides ''no utilizar el inicio automático'' de sesiones, deberás ejecutar la función `session_start` para indicar a PHP que inicie una ''nueva'' sesión o ''reanude'' la anterior. Aunque anteriormente esta función devolvía siempre `true`, a partir de la versión 5.3.0 de PHP su comportamiento es más coherente: devuelve `false` en caso de ''no poder iniciar o restaurar'' la sesión.
@@ -9862,7 +9862,7 @@ if (!isset($_SESSION['usuario']))
 if ($_SESSION['usuario']==null){ //if (count($_SESSION['usuario'])==0){
 	// Conectamos a la base de datos
 	try {	
-		@$dwes=new mysqli(&quot;localhost&quot;,&quot;dwes&quot;,&quot;abc123.&quot;,&quot;dwes&quot;);
+		@$dwes=new mysqli(&quot;localhost&quot;,&quot;dwes&quot;,&quot;abc123&quot;,&quot;dwes&quot;);
 		$error=$dwes-&gt;connect_errno;
 		}catch (Exception $ex)
 			{
